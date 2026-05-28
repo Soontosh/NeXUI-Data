@@ -1,0 +1,19 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose Pension as the income source for this route."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase so the new amount should be higher than before."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1200"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e8","text":"1500"},"explanation":"I entered the higher new monthly amount for the increase route."}
+{"action":{"type":"click","target":"e3"},"explanation":"The amount is complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the contact method."}
+{"action":{"type":"type","target":"e7","text":"first@example.com"},"explanation":"I entered the initial email address for contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"The email contact details are complete, so I am moving to notes."}
+{"action":{"type":"type","target":"e3","text":"Annual pension adjustment."},"explanation":"I added the initial supporting note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The initial route is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e10"},"explanation":"I followed the change link for supporting notes so I can update that free-text explanation."}
+{"action":{"type":"type","target":"e3","text":"Updated after revised payroll letter."},"explanation":"I replaced the supporting note with the corrected explanation."}
+{"action":{"type":"click","target":"e4"},"explanation":"The updated note is complete, so I am returning to the review page to verify the new summary text."}
+{"action":{"type":"finish","summary":"I changed the supporting notes from check answers and confirmed the review page now shows the updated note."},"explanation":"The updated note is visible on the review page, so I am ending the task."}

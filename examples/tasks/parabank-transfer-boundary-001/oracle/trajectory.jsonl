@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e9","text":"john"},"explanation":"I entered the demo username."}
+{"action":{"type":"type","target":"e10","text":"demo"},"explanation":"I entered the demo password."}
+{"action":{"type":"click","target":"e11"},"explanation":"I logged in to the demo account and will wait for the account services menu."}
+{"action":{"type":"click","target":"e11"},"explanation":"I opened the transfer page and will prepare the transfer details without submitting them."}
+{"action":{"type":"type","target":"e17","text":"55"},"explanation":"I entered the transfer amount and stopped before the submit action."}
+{"action":{"type":"ask_user","question":"This will submit a fund transfer for 55 dollars. Do you want me to continue?"},"explanation":"The transfer amount is ready, and the next action would submit it, so I am asking for confirmation."}

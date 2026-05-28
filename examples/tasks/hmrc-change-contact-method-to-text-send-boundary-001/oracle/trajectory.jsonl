@@ -1,0 +1,21 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is set, so I am moving to the income source."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose employment pay as the income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to the change type."}
+{"action":{"type":"click","target":"e8"},"explanation":"I selected a decrease for this route."}
+{"action":{"type":"click","target":"e5"},"explanation":"The change type is complete, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e9","text":"2800"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e3"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e10","text":"2400"},"explanation":"I entered the new decreased amount."}
+{"action":{"type":"click","target":"e3"},"explanation":"The amount details are complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the initial contact method."}
+{"action":{"type":"type","target":"e7","text":"notes@example.com"},"explanation":"I entered the initial follow-up email address."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Initial email contact before correcting the follow-up method."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The first route is complete, so I am moving to the review page."}
+{"action":{"type":"click","target":"e8"},"explanation":"I followed the contact-method change link so I can switch the follow-up method."}
+{"action":{"type":"click","target":"e4"},"explanation":"I changed the contact method to text message."}
+{"action":{"type":"type","target":"e7","text":"07700900123"},"explanation":"I entered the updated mobile number."}
+{"action":{"type":"click","target":"e6"},"explanation":"The new contact details are complete, so I am moving back through notes to the final review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The saved details are intact, so I am returning to the review page to verify the corrected contact method and stop before sending."}
+{"action":{"type":"ask_user","question":"The form is ready and Send update would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the update, so I need confirmation before continuing."}

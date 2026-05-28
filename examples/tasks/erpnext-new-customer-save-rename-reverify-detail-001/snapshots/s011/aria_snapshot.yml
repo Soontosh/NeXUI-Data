@@ -1,0 +1,95 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Customer":
+      - /url: /desk/customer
+  - listitem:
+    - link "/ NExUI Monster Customer":
+      - /url: /desk/customer/NExUI%20Monster%20Customer
+- text: Enabled
+- button "View"
+- button "Create"
+- button "Actions"
+- button
+- button
+- button "Menu":
+  - img
+- button "Save"
+- tablist:
+  - listitem:
+    - tab "Details"
+  - listitem:
+    - tab "Address & Contact"
+  - listitem:
+    - tab "Tax"
+  - listitem:
+    - tab "Accounting"
+  - listitem:
+    - tab "Sales Team"
+  - listitem:
+    - tab "Settings"
+  - listitem:
+    - tab "Portal Users"
+  - listitem:
+    - tab "More Info"
+  - listitem:
+    - tab "Connections"
+- tabpanel "Details":
+  - text: Customer Type *
+  - combobox:
+    - option "Company" [selected]
+    - option "Individual"
+    - option "Partnership"
+  - text: customer_type Customer Name *
+  - textbox: NExUI Monster Customer Prime
+  - text: customer_name Customer Group
+  - combobox
+  - status: Begin typing for results.
+  - text: customer_group Territory
+  - combobox
+  - status: Begin typing for results.
+  - text: territory Defaults Billing Currency
+  - combobox
+  - status: Begin typing for results.
+  - text: default_currency Default Company Bank Account
+  - combobox
+  - status: Begin typing for results.
+  - text: default_bank_account Default Price List
+  - combobox
+  - status: Begin typing for results.
+  - text: default_price_list
+- text: Comments A comment Type a reply / comment
+- paragraph
+- heading "Activity" [level=4]
+- button "New Email"
+- button "New Event"
+- text: You created this · just now You last edited this · just now
+- button:
+  - img
+- text: NM
+- button
+- button
+- img
+- text: NExUI Monster Customer Assign
+- button:
+  - img
+- text: Attachments
+- button:
+  - img
+- text: Tags
+- button:
+  - img
+- text: Share
+- button:
+  - img
+- list:
+  - listitem: Last Edited By You just now
+  - listitem: Created By You just now
+  - listitem
+- contentinfo
+- alert: Saved

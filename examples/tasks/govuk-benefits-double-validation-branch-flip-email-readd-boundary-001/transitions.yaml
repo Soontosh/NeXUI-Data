@@ -1,0 +1,363 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e2"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/children\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/work-status\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/income\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter a valid monthly income\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "2140.25"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s010",
+    "notes": []
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "casey.benefits"
+    },
+    "to": "s011",
+    "notes": []
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s012",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter an email address in the correct format\""
+    ]
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "casey.benefits@example.com"
+    },
+    "to": "s013",
+    "notes": []
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s014",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"2 children\"",
+      "postcondition 3: passed - text present \"Employed\"",
+      "postcondition 4: passed - text present \"casey.benefits@example.com\""
+    ]
+  },
+  {
+    "from": "s014",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s015",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/work-status\""
+    ]
+  },
+  {
+    "from": "s015",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s016",
+    "notes": [
+      "postcondition 1: passed - text present \"You may still be eligible if you are about to start work\""
+    ]
+  },
+  {
+    "from": "s016",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s017",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/income\""
+    ]
+  },
+  {
+    "from": "s017",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s018",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s018",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s019",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Not working\"",
+      "postcondition 3: passed - text present \"casey.benefits@example.com\""
+    ]
+  },
+  {
+    "from": "s019",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s020",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/children\""
+    ]
+  },
+  {
+    "from": "s020",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s021",
+    "notes": []
+  },
+  {
+    "from": "s021",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s022",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/work-status\""
+    ]
+  },
+  {
+    "from": "s022",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s023",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/income\""
+    ]
+  },
+  {
+    "from": "s023",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s024",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s024",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s025",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"3 or more children\"",
+      "postcondition 3: passed - text present \"Not working\"",
+      "postcondition 4: passed - text present \"casey.benefits@example.com\""
+    ]
+  },
+  {
+    "from": "s025",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s026",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s026",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s027",
+    "notes": []
+  },
+  {
+    "from": "s027",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s028",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"No\"",
+      "postcondition 3: passed - text absent \"casey.benefits@example.com\""
+    ]
+  },
+  {
+    "from": "s028",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s029",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s029",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s030",
+    "notes": [
+      "postcondition 1: passed - text present \"Email address\""
+    ]
+  },
+  {
+    "from": "s030",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s031",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter an email address\""
+    ]
+  },
+  {
+    "from": "s031",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "casey.benefits.final@example.com"
+    },
+    "to": "s032",
+    "notes": []
+  },
+  {
+    "from": "s032",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s033",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"3 or more children\"",
+      "postcondition 3: passed - text present \"Not working\"",
+      "postcondition 4: passed - text present \"casey.benefits.final@example.com\"",
+      "postcondition 5: passed - text absent \"casey.benefits@example.com\""
+    ]
+  }
+]

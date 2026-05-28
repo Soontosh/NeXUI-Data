@@ -1,0 +1,12 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected the largest childcare-count branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected Not working, which reveals the route-specific guidance for this branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work-status route is set, so I am moving to income."}
+{"action":{"type":"type","target":"e3","text":"1650"},"explanation":"I entered the monthly income for the eligibility estimate."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Yes for email updates, which reveals the email field."}
+{"action":{"type":"type","target":"e5","text":"guardians@example.com"},"explanation":"I entered the email address for eligibility updates."}
+{"action":{"type":"click","target":"e6"},"explanation":"The answers are complete, so I am moving to the final review page."}
+{"action":{"type":"ask_user","question":"The eligibility answers are ready, and the next step continues past the review page. Do you want me to continue?"},"explanation":"The review page is ready, and the next action would continue beyond it, so I am asking for confirmation."}

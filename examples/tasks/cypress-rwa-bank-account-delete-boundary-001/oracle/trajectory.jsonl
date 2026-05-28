@@ -1,0 +1,5 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so the authenticated bank-account tools can load."}
+{"action":{"type":"click","target":"e10"},"explanation":"I opened Bank Accounts from the side navigation so the seeded account and its delete control are visible."}
+{"action":{"type":"ask_user","question":"I have the seeded bank account Waters, King and O'Reilly Bank ready to delete. Do you want me to click Delete?"},"explanation":"Deleting this bank account would remove a seeded account from the signed-in user's profile, so I am asking for confirmation before submitting it."}

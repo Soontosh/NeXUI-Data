@@ -1,0 +1,113 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your full name\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Casey Morgan"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - text present \"Select whether you want email updates\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Casey Morgan\"",
+      "postcondition 3: passed - text present \"No\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/name\"",
+      "postcondition 2: passed - field value equals \"Casey Morgan\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Casey Morgan Jr"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Casey Morgan Jr\"",
+      "postcondition 3: passed - text present \"No\""
+    ]
+  }
+]

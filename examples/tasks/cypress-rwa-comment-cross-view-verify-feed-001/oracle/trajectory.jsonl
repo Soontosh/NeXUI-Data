@@ -1,0 +1,10 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so the authenticated transaction feeds can load."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched to the personal feed so the signed-in user's own transactions are visible."}
+{"action":{"type":"click","target":"e17"},"explanation":"I opened the seeded pending request detail so I can add a comment to it."}
+{"action":{"type":"type","target":"e6","text":"NExUI cross-view comment"},"explanation":"I entered a distinctive comment so the detail and feed states can be verified later."}
+{"action":{"type":"press","key":"Enter"},"explanation":"I submitted the comment from the transaction detail view."}
+{"action":{"type":"click","target":"e8"},"explanation":"I returned to the transaction feeds so I can verify the updated comment count from another view."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched back to the personal feed to verify the updated request row there."}
+{"action":{"type":"finish","summary":"I added a comment to the seeded pending request and verified the updated comment count from the personal feed."},"explanation":"The updated request row is visible in the personal feed now, so I am ending the task."}

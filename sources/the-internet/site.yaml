@@ -1,0 +1,121 @@
+{
+  "schema_version": "0.0",
+  "site_id": "the-internet",
+  "site_name": "The Internet",
+  "base_url": "https://the-internet.herokuapp.com/",
+  "source_track": "ui_automation_demo",
+  "category": "ui_automation_demo",
+  "hosting_mode": "live_demo",
+  "redistribution_class": "live_only_academic_source",
+  "authoring_status": "validated",
+  "reset_strategy": "none",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "demo_credentials",
+    "credentials_env_vars": [],
+    "notes": "Some tasks may rely on documented demo credentials for specific pages."
+  },
+  "task_families": [
+    "async_state_changes",
+    "keyboard_interaction",
+    "modal_and_layout_shift",
+    "short_validation_feedback"
+  ],
+  "difficulty_bands": [
+    "easy",
+    "medium"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Stateless live demo with strong support for short deterministic interaction tasks."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "home",
+      "label": "Home",
+      "url": "https://the-internet.herokuapp.com/",
+      "goal_hint": "Survey the index of benchmarkable interaction pages.",
+      "notes": "Homepage links to login, dynamic loading, file download, and modal scenarios."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "internet-dropdown-option-2",
+      "summary": "Select Option 2 from the dropdown and stop on the resulting selected state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-dropdown-001."
+    },
+    {
+      "idea_id": "internet-dynamic-loading-hello-world",
+      "summary": "Start dynamic loading and stop when Hello World appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-dynamic-loading-001."
+    },
+    {
+      "idea_id": "internet-dynamic-controls-remove-checkbox",
+      "summary": "Remove the checkbox and stop when the page confirms that it is gone.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-dynamic-controls-remove-001."
+    },
+    {
+      "idea_id": "internet-key-presses-enter",
+      "summary": "Focus the key input area, press Enter, and stop when the result text updates.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-key-presses-enter-001."
+    },
+    {
+      "idea_id": "internet-add-remove-one-element",
+      "summary": "Add one Delete button, remove it, and stop when it disappears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-add-remove-elements-001."
+    },
+    {
+      "idea_id": "internet-login-invalid",
+      "summary": "Submit invalid credentials and stop when the login error message appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-login-invalid-001."
+    },
+    {
+      "idea_id": "internet-dynamic-controls-enable-type",
+      "summary": "Enable the disabled input, wait for it to become interactive, type text, and stop on the populated state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-dynamic-controls-enable-type-001. First task using recorder step postconditions."
+    },
+    {
+      "idea_id": "internet-shifting-content-portfolio",
+      "summary": "Open Portfolio from the shifting menu and stop on the destination page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-shifting-content-portfolio-001."
+    },
+    {
+      "idea_id": "internet-entry-ad-close-modal",
+      "summary": "Dismiss the entry-ad modal and stop after the page returns to its non-modal state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as internet-entry-ad-close-modal-001. Uses selector-promotion authoring to target the transient modal footer control."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Strong early source for controlled interaction diversity. Includes validated dropdown, keyboard, login, dynamic-state, layout-shift, modal-dismissal, and postcondition-based async tasks."
+  }
+}

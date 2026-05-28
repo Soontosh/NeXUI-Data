@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, open Contact Details for the seeded admin employee, enter nexui.admin+alt@example.test for Other Email, save the update, and stop once the saved value is still visible.

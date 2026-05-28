@@ -1,0 +1,160 @@
+{
+  "task_id": "pretix-create-product-save-verify-list-001",
+  "title": "Create A pretix Product And Verify It From The Product List",
+  "goal": "Sign in to pretix, create a new product, return to the products list, and verify the new product from that second view.",
+  "instruction": "Open the self-hosted pretix add-product form for the seeded event, sign in as admin@localhost with password admin, create a product named NExUI Workshop Pass priced at 40.00, return to the products list, and verify the new product appears there.",
+  "url": "http://localhost:8100/control/event/nexui/nexui-event/items/add",
+  "source": {
+    "site_id": "pretix-self-hosted",
+    "site_name": "pretix Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "pretix-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 7,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "pretix",
+    "authenticated",
+    "mutating",
+    "product-list",
+    "hard"
+  ],
+  "review_notes": "First reseed-required Pretix mutating task. It creates a new product and verifies it from the products list on a second view.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/control/event/nexui/nexui-event/items/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Workshop Pass"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "url contains \"/control/event/nexui/nexui-event/items/\""
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_email",
+        "text": "admin@localhost"
+      },
+      "explanation": "I entered the seeded Pretix administrator email after landing on the protected add-product route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded Pretix administrator password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log in"
+      },
+      "explanation": "I signed in so Pretix can return to the add-product form.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/add"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Create product"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_name_0",
+        "text": "NExUI Workshop Pass"
+      },
+      "explanation": "I entered the deterministic Pretix product name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_default_price",
+        "text": "40.00"
+      },
+      "explanation": "I entered the deterministic Pretix default price."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save and continue with more settings"
+      },
+      "explanation": "I saved the new Pretix product so I can verify it from the products list.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Your changes have been saved."
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/control/event/nexui/nexui-event/items/']"
+      },
+      "explanation": "I returned to the products list so I can verify the saved product from a second view.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Workshop Pass"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Complete the travel support prototype to check answers without email updates. Then change the full name, switch to the email-updates branch, recover from the missing-email validation error, and verify the final summary.

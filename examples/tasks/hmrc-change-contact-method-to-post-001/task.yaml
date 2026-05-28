@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "hmrc-change-contact-method-to-post-001",
+  "title": "Change Contact Method To Post From Check Answers",
+  "goal": "Reach the review page on the email branch, change the contact method to Post, and stop after the summary shows the postal-address label and value.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011",
+    "s012",
+    "s013",
+    "s014",
+    "s015",
+    "s016",
+    "s017",
+    "s018",
+    "s019",
+    "s020"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/check-answers",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T21:51:53.094Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 18,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "source_surface": "hmrc-income-change-prototype-local",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Post"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Postal address"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "42 River Lane, Bristol"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "first@example.com"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task that changes both the contact-method answer and the contact-detail label/value from the check-answers page."
+}

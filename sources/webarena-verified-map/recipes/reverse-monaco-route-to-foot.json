@@ -1,0 +1,134 @@
+{
+  "task_id": "webarena-map-reverse-monaco-route-to-foot-001",
+  "title": "Reverse The Monaco Route And Switch It To Foot",
+  "goal": "Reverse the seeded Monaco route, switch the reversed route from car to foot, and stop once the reversed walking route result is visible.",
+  "instruction": "Open the seeded WebArena map Monaco route, reverse the directions, switch the reversed route to Foot (OSRM), and stop once the reversed walking route result is visible.",
+  "url": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7384,7.4246;43.7308,7.4189&from=Avenue%20de%20l%27Hermitage&to=Monaco-Ville",
+  "source": {
+    "site_id": "webarena-verified-map",
+    "site_name": "WebArena Verified Map",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-map",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "select",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 2,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": true,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 0,
+  "tags": [
+    "recorded",
+    "webarena",
+    "map",
+    "routing",
+    "reverse-route",
+    "foot",
+    "hard"
+  ],
+  "review_notes": "Chained route-state task that first reverses the seeded Monaco route and then switches the reversed route to Foot (OSRM).",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "From"
+      },
+      "value": "43.7308, 7.4189"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "To"
+      },
+      "value": "43.7384, 7.4246"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Distance: 1.4km. Time: 0:17."
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Reverse Directions"
+      },
+      "explanation": "I reversed the seeded Monaco route so the origin and destination swap before changing travel mode.",
+      "post_delay_ms": 12000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 500
+    },
+    {
+      "action": {
+        "type": "select",
+        "target_selector": "select.routing_engines >> nth=1",
+        "option": "2"
+      },
+      "explanation": "I switched the reversed route to Foot (OSRM) so the Monaco route is recalculated for walking.",
+      "post_delay_ms": 12000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "From"
+          },
+          "value": "43.7308, 7.4189"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "To"
+          },
+          "value": "43.7384, 7.4246"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Distance: 1.4km. Time: 0:17."
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 500
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reversed the seeded Monaco route and switched the reversed route to Foot (OSRM)."
+      },
+      "explanation": "The reversed walking route result is visible now, so I am ending the task."
+    }
+  ]
+}

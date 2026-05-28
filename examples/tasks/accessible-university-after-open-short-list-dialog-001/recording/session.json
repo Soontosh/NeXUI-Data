@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-05-28T14:51:51.489Z",
+  "final_snapshot": "s001",
+  "final_url": "https://projects.accesscomputing.uw.edu/au/after.html",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e18"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "modal state is \"dialog_open\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://projects.accesscomputing.uw.edu/au/after.html"
+    }
+  ]
+}

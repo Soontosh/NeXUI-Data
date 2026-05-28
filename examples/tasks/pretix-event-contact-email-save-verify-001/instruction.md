@@ -1,0 +1,1 @@
+Open the self-hosted pretix seeded event settings page, sign in as admin@localhost with password admin, change Contact address to contact@example.test, save the change, and verify that the saved value still appears on the event settings form.

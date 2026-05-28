@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected add-product route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the add-product form."}
+{"action":{"type":"type","target":"e28","text":"NExUI Workshop Pass"},"explanation":"I entered the deterministic Pretix product name."}
+{"action":{"type":"type","target":"e43","text":"40.00"},"explanation":"I entered the deterministic Pretix default price and left the form ready for confirmation."}
+{"action":{"type":"ask_user","question":"I have prepared a new Pretix product named NExUI Workshop Pass priced at 40.00. Do you want me to save it?"},"explanation":"Saving this form would create a new product in the seeded Pretix event, so I am asking for confirmation before submitting it."}

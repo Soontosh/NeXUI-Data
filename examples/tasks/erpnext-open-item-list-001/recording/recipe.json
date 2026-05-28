@@ -1,0 +1,106 @@
+{
+  "task_id": "erpnext-open-item-list-001",
+  "title": "Log In To ERPNext And Stop On The Item List",
+  "goal": "Sign in to ERPNext and stop on the authenticated item list view.",
+  "instruction": "Open the ERPNext item list route, sign in as Administrator with password admin, and stop once the authenticated item list is visible.",
+  "url": "http://localhost:8090/app/item",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "item-list",
+    "hard"
+  ],
+  "review_notes": "Authenticated ERPNext navigation task that lands on the empty item list view.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/item"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Add Item"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so ERPNext can redirect back to the item list.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/item"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Add Item"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened the ERPNext item list."
+      },
+      "explanation": "The authenticated item list is visible now, so I am ending the task."
+    }
+  ]
+}

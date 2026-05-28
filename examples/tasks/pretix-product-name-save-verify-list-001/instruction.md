@@ -1,0 +1,1 @@
+Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, change the Item name to NExUI General Admission, save the change, return to the products list, and verify the renamed product appears there.

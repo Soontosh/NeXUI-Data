@@ -1,0 +1,103 @@
+{
+  "task_id": "webarena-admin-open-add-user-form-001",
+  "title": "Open The Magento Add New User Form",
+  "goal": "Open the authenticated Magento admin users grid, navigate to the Add New User form, and stop on the creation form.",
+  "instruction": "From the authenticated Magento admin users grid, open the Add New User form and stop when the full user-creation form is visible.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 1,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "new-user-form",
+    "hard"
+  ],
+  "review_notes": "First sandboxed list-to-form navigation task on the Magento admin users surface.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/new/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 1: New User"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "User Name"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "Email"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "Your Password"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Current User Identity Verification"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "User Role"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add New User"
+      },
+      "explanation": "I opened the user-creation form from the authenticated admin grid and stopped on the new-user page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/new/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 1: New User"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

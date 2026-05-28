@@ -1,0 +1,21 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the income report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose Pension as the income source for this route."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase so the new amount should be higher than before."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1200"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1500"},"explanation":"I entered the higher new monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount is complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose Email as the initial contact method."}
+{"action":{"type":"type","target":"e7","text":"first@example.com"},"explanation":"I entered the initial email address for contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"The email contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Annual pension adjustment."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The initial route is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e8"},"explanation":"I followed the contact-method change link so I can update how follow-up contact should work."}
+{"action":{"type":"click","target":"e5"},"explanation":"I changed the contact method to Post, which switches the detail field to a postal address."}
+{"action":{"type":"type","target":"e7","text":"42 River Lane, Bristol"},"explanation":"I entered the postal address for follow-up contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"The updated contact details are complete, so I am moving back through supporting notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The notes were preserved, so I am returning to the review page to verify the updated contact method and address."}
+{"action":{"type":"finish","summary":"I changed the contact method from Email to Post and confirmed the review page now shows the postal-address label and value."},"explanation":"The updated contact method and postal address are visible on the review page, so I am ending the task."}

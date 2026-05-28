@@ -1,0 +1,55 @@
+{
+  "task_id": "accessible-university-after-open-short-list-dialog-001",
+  "title": "Open Short List Dialog On Accessible AU Page",
+  "goal": "Open the short list of accessibility issues dialog from the accessible AU home page and stop with the dialog open.",
+  "instruction": "On the accessible AU home page, open the short list of accessibility issues dialog and stop when the dialog is visible.",
+  "url": "https://projects.accesscomputing.uw.edu/au/after.html",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "accessibility",
+    "modal",
+    "dialog"
+  ],
+  "review_notes": "Medium-difficulty accessibility-first task from the dataset matrix. Adds a modal interaction to the AU track while staying within a stable demo surface.",
+  "success_assertions": [
+    {
+      "type": "modal_state_is",
+      "value": "dialog_open"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e18"
+      },
+      "explanation": "I opened the short list of accessibility issues dialog from the accessible AU page.",
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "dialog_open"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 200
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the short list of accessibility issues dialog and stopped with it visible."
+      },
+      "explanation": "The requested dialog is open now, so I am ending the task."
+    }
+  ]
+}

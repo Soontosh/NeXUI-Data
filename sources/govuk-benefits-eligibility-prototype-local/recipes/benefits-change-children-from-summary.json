@@ -1,0 +1,275 @@
+{
+  "task_id": "govuk-benefits-change-children-from-summary-001",
+  "title": "Change Childcare Count From Check Answers",
+  "goal": "Reach check answers, change the childcare-count answer, and stop after the final review page shows the updated count while preserving the later route details.",
+  "instruction": "Complete the childcare-support eligibility prototype to check answers, then change the childcare-count answer from the summary and verify the updated review state.",
+  "path": "../../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 13,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task on the benefits prototype. It changes the childcare count and verifies the later work-status and income route remain intact.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "3 or more children"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "1 child"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Employed"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "£2100.00"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected Yes because the user usually lives in the UK."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The residency answer is complete, so I am moving to the childcare question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "1 child"
+      },
+      "explanation": "I selected one child for the initial route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The childcare answer is complete, so I am moving to work status.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/work-status"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Employed"
+      },
+      "explanation": "I selected Employed as the work status."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The work status is complete, so I am moving to income.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Monthly income",
+        "text": "2100"
+      },
+      "explanation": "I entered the monthly income for the initial route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income is complete, so I am moving to updates.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No"
+      },
+      "explanation": "I selected no email updates so the initial route stays simple."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The answers are complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "1 child"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-children"
+      },
+      "explanation": "I followed the change link for the childcare count so I can update that earlier answer.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "3 or more children"
+      },
+      "explanation": "I changed the childcare-count answer to the largest branch."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The updated childcare count is set, so I am moving forward through the preserved later answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/work-status"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The work-status answer remained intact, so I am moving to income.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income answer remained intact, so I am moving to updates.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The later route choices are still preserved, so I am returning to check answers to verify the updated childcare count.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "3 or more children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the childcare-count answer from check answers and confirmed the final review page now shows the updated value while preserving the later route details."
+      },
+      "explanation": "The updated childcare count is visible on the review page and the later route details are still intact, so I am ending the task."
+    }
+  ]
+}

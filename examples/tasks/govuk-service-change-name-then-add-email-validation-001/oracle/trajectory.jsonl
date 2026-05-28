@@ -1,0 +1,12 @@
+{"action":{"type":"type","target":"e2","text":"Leah Morgan"},"explanation":"I entered the initial applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates for the initial route."}
+{"action":{"type":"click","target":"e5"},"explanation":"The initial route is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e3"},"explanation":"I followed the full-name change link so I can update the applicant name from the summary."}
+{"action":{"type":"type","target":"e2","text":"Leah Patel"},"explanation":"I replaced the original name with the corrected value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The new name is entered, so I am moving back through the updates page."}
+{"action":{"type":"click","target":"e3"},"explanation":"I switched the route to the email-updates branch, which now requires an email address."}
+{"action":{"type":"click","target":"e5"},"explanation":"I continued without an email so the page would show the new required-field validation."}
+{"action":{"type":"type","target":"e6","text":"leah.patel@example.com"},"explanation":"I entered the required email address so the updated branch can continue."}
+{"action":{"type":"click","target":"e5"},"explanation":"Both edits are complete now, so I am returning to check answers to verify the updated summary."}
+{"action":{"type":"finish","summary":"I changed the full name, switched to the email branch, recovered from the missing-email validation, and returned to check answers with the updated summary."},"explanation":"The final summary shows both the corrected name and the new email row, so I am ending the task."}

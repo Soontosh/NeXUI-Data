@@ -1,0 +1,1 @@
+Sign in to the self-hosted Cypress Real World App, open Bank Accounts, open Create, enter NExUI Savings Bank as the bank name, 987654321 as the routing number, 123456789012 as the account number, and ask for confirmation before clicking Save.

@@ -1,0 +1,93 @@
+{
+  "task_id": "demoblaze-open-apple-monitor-24-from-monitors-001",
+  "title": "Open Apple Monitor 24 From Monitors Category",
+  "goal": "Filter the storefront to Monitors, open Apple monitor 24, and stop on the product detail page.",
+  "instruction": "On the Demoblaze storefront, open the Monitors category, then open the Apple monitor 24 product page and stop when that detail view is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "multi-step",
+    "product-detail",
+    "category-filter"
+  ],
+  "review_notes": "First longer Demoblaze retail flow. It requires filtering the listing before selecting the correct product.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "prod.html?idp_=10"
+    },
+    {
+      "type": "text_present",
+      "value": "Apple monitor 24"
+    },
+    {
+      "type": "text_present",
+      "value": "Add to cart"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "wait",
+        "duration_ms": 3000
+      },
+      "explanation": "I waited briefly for the storefront product cards to finish loading."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Monitors"
+      },
+      "explanation": "I filtered the storefront to the Monitors category first.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "value": "Apple monitor 24"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Apple monitor 24"
+      },
+      "explanation": "I opened the Apple monitor 24 product detail page from the filtered monitor list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "prod.html?idp_=10"
+        },
+        {
+          "type": "text_present",
+          "value": "Add to cart"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I filtered to Monitors, opened Apple monitor 24, and stopped on the product detail page."
+      },
+      "explanation": "The requested product page is open now, so I am ending the task."
+    }
+  ]
+}

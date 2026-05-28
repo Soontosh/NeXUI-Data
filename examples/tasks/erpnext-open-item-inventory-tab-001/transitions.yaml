@@ -1,0 +1,42 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Administrator"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/item/NEXUI-ITEM-001\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e15"
+    },
+    "to": "s004",
+    "notes": []
+  }
+]

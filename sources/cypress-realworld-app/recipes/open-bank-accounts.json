@@ -1,0 +1,120 @@
+{
+  "task_id": "cypress-rwa-open-bank-accounts-001",
+  "title": "Sign In And Open Bank Accounts",
+  "goal": "Sign in with a seeded example user, open the Bank Accounts page, and stop when the account-management view is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the seeded account, open Bank Accounts, and stop when the bank account management page is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "bank-accounts",
+    "hard"
+  ],
+  "review_notes": "Authenticated navigation task that opens the bank-account management page from the side navigation.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/bankaccounts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Bank Accounts"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "link",
+        "name": "Create"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated navigation can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='sidenav-bankaccounts']"
+      },
+      "explanation": "I opened Bank Accounts from the side navigation so the account-management page is visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Bank Accounts"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened the Bank Accounts page."
+      },
+      "explanation": "The bank account management page is visible now, so I am ending the task."
+    }
+  ]
+}

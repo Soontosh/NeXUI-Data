@@ -1,0 +1,105 @@
+{
+  "recorded_at": "2026-05-28T15:09:46.036Z",
+  "final_snapshot": "s004",
+  "final_url": "https://demoblaze.com/",
+  "snapshot_count": 5,
+  "transition_count": 4,
+  "oracle_step_count": 5,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "modal state is \"dialog_open\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "dialog_open",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "nexui@example.com"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"nexui@example.com\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "dialog_open",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "type",
+        "target": "e4",
+        "text": "NExUI"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"NExUI\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "dialog_open",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e5",
+        "text": "Testing the contact dialog"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"Testing the contact dialog\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "dialog_open",
+      "url": "https://demoblaze.com/"
+    }
+  ]
+}

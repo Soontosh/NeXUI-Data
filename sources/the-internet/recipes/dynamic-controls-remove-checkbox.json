@@ -1,0 +1,42 @@
+{
+  "task_id": "internet-dynamic-controls-remove-001",
+  "title": "Remove Checkbox And Wait",
+  "goal": "Remove the checkbox on the dynamic controls page and stop when the completion message appears.",
+  "instruction": "Remove the checkbox and stop when the page confirms that it is gone.",
+  "url": "https://the-internet.herokuapp.com/dynamic_controls",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "dynamic-controls",
+    "wait"
+  ],
+  "review_notes": "Exercises changing page state after asynchronous UI control removal.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Remove"
+      },
+      "explanation": "I triggered removal of the checkbox. The page should confirm the change after it finishes updating.",
+      "post_delay_ms": 6000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "The checkbox was removed and the page confirmed it, so I stopped there."
+      },
+      "explanation": "The checkbox is gone and the confirmation message is visible, so I am ending the task."
+    }
+  ]
+}

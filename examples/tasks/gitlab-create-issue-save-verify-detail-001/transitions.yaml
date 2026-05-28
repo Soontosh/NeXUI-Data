@@ -1,0 +1,89 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "byteblaze"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "hello1234"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/new\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e35",
+      "text": "NExUI issue save verify"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e53",
+      "text": "This issue was created by the NExUI GitLab save-and-verify benchmark task."
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e62"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+      "postcondition 2: passed - text present \"NExUI issue save verify\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues\"",
+      "postcondition 2: passed - text present \"NExUI issue save verify\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e52"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+      "postcondition 2: passed - text present \"NExUI issue save verify\""
+    ]
+  }
+]

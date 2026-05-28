@@ -1,0 +1,5 @@
+{"action":{"type":"type","target":"e2","text":"byteblaze"},"explanation":"I entered the seeded GitLab username after landing on the protected settings route."}
+{"action":{"type":"type","target":"e3","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e6"},"explanation":"I signed in so GitLab can redirect back to the project settings form."}
+{"action":{"type":"type","target":"e46","text":" [NExUI draft]"},"explanation":"I appended the bounded draft suffix to the project description while leaving the final save action pending."}
+{"action":{"type":"ask_user","question":"The project description edit is ready. Do you want me to click Save changes?"},"explanation":"Saving the description would mutate the seeded GitLab project state, so I need confirmation before doing that."}

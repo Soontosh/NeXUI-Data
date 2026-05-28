@@ -1,0 +1,327 @@
+{
+  "task_id": "pretix-product-multi-tab-save-list-open-verify-001",
+  "title": "Save Three Product Edits Across Tabs, Verify Them From The List, And Reopen The Product",
+  "goal": "Sign in to pretix, edit the seeded product across multiple tabs, save the changes, verify them from the products list, reopen the product, and verify the saved values again on the detail form.",
+  "instruction": "Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, change the Item name to NExUI Workshop Ultra Pass, switch to the Price tab and change the Default price to 40.00, switch to the Availability tab and set Maximum amount per order to 4, save the product, verify the updated name and price from the products list, reopen the product, verify the saved purchase limit on the Availability tab, then verify the saved name on General and the saved price on Price before finishing.",
+  "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/",
+  "source": {
+    "site_id": "pretix-self-hosted",
+    "site_name": "pretix Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "pretix-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 15,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 7,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "pretix",
+    "authenticated",
+    "mutating",
+    "product-detail",
+    "cross-view",
+    "very-hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous Pretix product mutation that edits three fields across three tabs, saves once, verifies from the list, reopens the product, and verifies the saved values again on multiple tab states.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#tab-0-1-open"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "NExUI Workshop Ultra Pass"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "value": "40.00"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_email",
+        "text": "admin@localhost"
+      },
+      "explanation": "I entered the seeded Pretix administrator email after landing on the protected product route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded Pretix administrator password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log in"
+      },
+      "explanation": "I signed in so Pretix can return to the seeded product detail page.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_name_0",
+        "text": "NExUI Workshop Ultra Pass"
+      },
+      "explanation": "I changed the product name on the General tab first."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Price"
+      },
+      "explanation": "I switched to the Price tab so I can update the default ticket price.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-1-open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Default price"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_default_price",
+        "text": "40.00"
+      },
+      "explanation": "I updated the deterministic default price on the Price tab."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Availability"
+      },
+      "explanation": "I switched to the Availability tab to edit the purchase limit before saving all three changes together.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-2-open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Maximum amount per order"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_max_per_order",
+        "text": "4"
+      },
+      "explanation": "I entered the deterministic maximum amount per order on the Availability tab."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the multi-tab product mutation so I can verify the changes from the list and again after reopening the product.",
+      "wait_until": "load",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Your changes have been saved."
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "spinbutton",
+            "value": "4"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/control/event/nexui/nexui-event/items/']"
+      },
+      "explanation": "I returned to the products list so I can verify the saved name and price from a second surface.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "NExUI Workshop Ultra Pass"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "$40.00"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "NExUI Workshop Ultra Pass"
+      },
+      "explanation": "I reopened the renamed product from the products list to verify the saved values again on the detail form.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/1/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Modify product: NExUI Workshop Ultra Pass"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Availability"
+      },
+      "explanation": "I reopened the Availability tab first so I can verify the saved purchase limit after the list round-trip.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-2-open"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "spinbutton",
+            "value": "4"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "General"
+      },
+      "explanation": "I switched back to General so I can verify the saved product name after reopening the detail page.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-0-open"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "value": "NExUI Workshop Ultra Pass"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Price"
+      },
+      "explanation": "I ended on the Price tab so the reopened detail page proves the saved default price persisted through the full list-and-reopen loop.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-1-open"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "value": "40.00"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved three Pretix product edits across tabs, verified the name and price from the products list, reopened the product, and verified the saved values again on the detail form."
+      },
+      "explanation": "The saved name, default price, and purchase limit have all been verified after the list round-trip now, so I am ending the task."
+    }
+  ]
+}

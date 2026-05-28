@@ -1,0 +1,148 @@
+{
+  "task_id": "webarena-admin-add-user-missing-email-validation-001",
+  "title": "Trigger Missing Email Validation On Magento Add User",
+  "goal": "Open the authenticated Magento Add New User form, fill the other required fields, attempt to save without an email, and stop once the validation error is visible.",
+  "instruction": "From the authenticated Magento admin users grid, open Add New User, enter username ari.validation, first name Ari, last name Validation, password NExUIUser!2026, confirm the password, enter your current password admin1234, try to save without entering an email, and stop when the missing-email validation is visible.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "validation",
+    "hard"
+  ],
+  "review_notes": "Sandboxed admin validation-recovery precursor on the Magento Add New User form.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/new/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "This is a required field."
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "User Name"
+      },
+      "value": "ari.validation"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add New User"
+      },
+      "explanation": "I opened the Add New User form so I can trigger the missing-email validation path.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/new/"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='username']",
+        "text": "ari.validation"
+      },
+      "explanation": "I entered the benchmark username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='firstname']",
+        "text": "Ari"
+      },
+      "explanation": "I entered the first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='lastname']",
+        "text": "Validation"
+      },
+      "explanation": "I entered the last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I entered the password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password_confirmation']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I confirmed the password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='current_password']",
+        "text": "admin1234"
+      },
+      "explanation": "I entered the current admin password needed to authorize a save attempt."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save User"
+      },
+      "explanation": "I tried to save the user without an email so the required-field validation appears.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "This is a required field."
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I attempted to save the new Magento admin user without an email and surfaced the validation error."
+      },
+      "explanation": "The missing-email validation is visible now, so I am ending the task."
+    }
+  ]
+}

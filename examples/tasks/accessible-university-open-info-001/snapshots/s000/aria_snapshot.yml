@@ -1,0 +1,103 @@
+- banner:
+  - navigation "Demo site menu":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: index.html
+      - listitem:
+        - link "Before":
+          - /url: before.html
+      - listitem:
+        - link "After":
+          - /url: after.html
+      - listitem:
+        - link "Info":
+          - /url: info.html
+- main:
+  - heading "Accessible University" [level=1]
+  - paragraph:
+    - text: Accessible University (AU) is a fictional university home page designed to demonstrate a variety of common web design problems that result in visitors with disabilities being unable to access content or features. AU was originally developed by
+    - link "AccessIT":
+      - /url: http://www.washington.edu/accessit
+    - text: and is maintained by
+    - link "AccessComputing":
+      - /url: http://www.washington.edu/accesscomputing
+    - text: ", both projects based out of the University of Washington. Use the AU site to:"
+  - list:
+    - listitem: demonstrate common web accessibility principles at trainings, presentations, and workshops on accessible web design.
+    - listitem: learn common web accessibility problems and solutions in an easy-to-understand way.
+  - paragraph:
+    - text: Available on
+    - link "GitHub":
+      - /url: https://github.com/terrill/AU
+  - heading "Index of Accessible University Pages" [level=2]
+  - list:
+    - listitem:
+      - link "Before":
+        - /url: before.html
+      - text: "- This"
+      - strong: inaccessible page
+      - text: "demonstrates common web accessibility issues using the fictitious AU home page. See how many web accessibility problems you can identify. NOTE: Since the purpose of this page is to demonstrate inaccessible web design, certain features are inherently inaccessible to some groups of users."
+    - listitem:
+      - link "After":
+        - /url: after.html
+      - text: "- This"
+      - strong: accessible page
+      - text: is a modified version of the
+      - emphasis: Before
+      - text: page, with all accessibility issues fixed.
+    - listitem:
+      - link "Info":
+        - /url: info.html
+      - text: "- This page provides an explanation of all issues demonstrated on the AU home page, including problems, solutions, and links to additional resources."
+  - heading "Additional Files for Demonstrating Document Accessibility" [level=2]
+  - paragraph:
+    - text: In addition to the AU web pages, we have created two sets of digital documents that can be used for demonstrating document accessibility issues in presentations and workshops. Links are provided below for downloading the files. For details about each file, see the
+    - link "Document Accessibility Samples":
+      - /url: docinfo.html
+    - text: web page.
+  - heading "Syllabus" [level=3]
+  - paragraph:
+    - text: Each of the files in this section contains the same content, a syllabus from a fictional
+    - emphasis: Introduction to Physics
+    - text: course, provided in Microsoft Word and PDF formats, with varying levels of accessibility.
+  - list:
+    - listitem:
+      - link "HTML version - Accessible":
+        - /url: documents/syllabus.html
+    - listitem:
+      - link "Word version - Not accessible":
+        - /url: documents/syllabus_NOTaccessible.docx
+    - listitem:
+      - link "Word version - Accessible":
+        - /url: documents/syllabus_accessible.docx
+    - listitem:
+      - link "PDF version - Scanned":
+        - /url: documents/syllabus_scanned.pdf
+    - listitem:
+      - link "PDF version - Not Accessible":
+        - /url: documents/syllabus_NOTaccessible.pdf
+    - listitem:
+      - link "PDF version - Accessible":
+        - /url: documents/syllabus_accessible.pdf
+  - heading "Presentation" [level=3]
+  - paragraph: The files in this section are both PowerPoint files, with and without accessibility problems.
+  - list:
+    - listitem:
+      - link "PowerPoint - Not accessible":
+        - /url: documents/presentation_NOTaccessible.pptx
+    - listitem:
+      - link "PowerPoint - Accessible":
+        - /url: documents/presentation_accessible.pptx
+- contentinfo:
+  - link "Creative Commons License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    - img "Creative Commons License"
+  - text: Accessible University by
+  - link "University of Washington":
+    - /url: http://washington.edu/accesscomputing/AU
+  - text: is licensed under a
+  - link "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+  - text: .
+  - paragraph: "This product was originally developed with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and has been subsequently updated and maintained with support from the National Science Foundation (grants #CNS-0540615, CNS-0837508, CNS-1042260, CNS-1539179, and CNS-2137312). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement."

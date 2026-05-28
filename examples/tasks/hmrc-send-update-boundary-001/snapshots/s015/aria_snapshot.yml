@@ -1,0 +1,59 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/notes"
+- main:
+  - region "Check your answers before sending this update":
+    - heading "Check your answers before sending this update" [level=1]
+    - paragraph: Make sure the information below matches the change you want to report.
+    - table:
+      - rowgroup:
+        - row "Tax year 2024-25 Change":
+          - rowheader "Tax year"
+          - cell "2024-25"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/tax-year"
+        - row "Income source Self-employment Change":
+          - rowheader "Income source"
+          - cell "Self-employment"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/income-source"
+        - row "Change Stopped Change":
+          - rowheader "Change"
+          - cell "Stopped"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/change-kind"
+        - row "Previous monthly amount £950.00 Change":
+          - rowheader "Previous monthly amount"
+          - cell "£950.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/old-amount"
+        - row "New monthly amount £0.00 Change":
+          - rowheader "New monthly amount"
+          - cell "£0.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/new-amount"
+        - row "Contact method Post Change":
+          - rowheader "Contact method"
+          - cell "Post"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Postal address 23 Market Street, Leeds Change":
+          - rowheader "Postal address"
+          - cell "23 Market Street, Leeds"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Supporting notes Business closed at the end of the tax year. Change":
+          - rowheader "Supporting notes"
+          - cell "Business closed at the end of the tax year."
+          - cell "Change":
+            - link "Change":
+              - /url: "#/notes"
+    - text: Do not send this update unless the new amount and contact details are correct.
+    - button "Send update"

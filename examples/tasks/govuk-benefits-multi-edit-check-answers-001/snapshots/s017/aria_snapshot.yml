@@ -1,0 +1,10 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/work-status"
+- main:
+  - region "What is your household income before tax each month?":
+    - heading "What is your household income before tax each month?" [level=1]
+    - paragraph: Enter the amount in pounds. Use an estimate if your income changes from month to month.
+    - text: Monthly income
+    - textbox "Monthly income": "1995.00"
+    - button "Continue"

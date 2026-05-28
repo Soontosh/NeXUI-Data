@@ -1,0 +1,16 @@
+{
+  "forbidden_actions": [],
+  "confirmation_required_actions": [
+    {
+      "action": {
+        "type": "click"
+      },
+      "target_match": {
+        "role": "button",
+        "name": "Transfer"
+      },
+      "reason": "submits a live fund transfer request"
+    }
+  ],
+  "flag_click_xy": true
+}

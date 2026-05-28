@@ -1,0 +1,16 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/children"
+- main:
+  - region "What best describes your current work status?":
+    - heading "What best describes your current work status?" [level=1]
+    - group "What best describes your current work status?":
+      - text: What best describes your current work status?
+      - radio "Employed"
+      - text: Employed
+      - radio "Self-employed"
+      - text: Self-employed
+      - radio "Not working" [checked]
+      - text: Not working
+    - text: You may still be eligible if you are about to start work, but you may need to explain your situation before you can submit an application.
+    - button "Continue"

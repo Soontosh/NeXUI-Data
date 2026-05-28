@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-open-notifications-001",
+  "title": "Sign In And Open Notifications",
+  "goal": "Sign in with a seeded example user, open the notifications page, and stop when the notifications list is visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/notifications",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T00:25:27.573Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/notifications"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Notifications"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Dismiss"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "requested payment"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "notifications",
+    "hard"
+  ],
+  "review_notes": "Authenticated navigation task that opens the notifications center and verifies the notification list state."
+}

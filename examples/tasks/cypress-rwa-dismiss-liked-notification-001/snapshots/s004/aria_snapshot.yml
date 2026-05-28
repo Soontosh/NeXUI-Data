@@ -1,0 +1,60 @@
+- banner:
+  - button "open drawer"
+  - heading [level=1]:
+    - link:
+      - /url: /
+      - img
+  - link "New":
+    - /url: /transaction/new
+  - link "8":
+    - /url: /notifications
+- img "Ted Parisian"
+- heading "Ted P" [level=6]
+- heading "@Heath93" [level=6]
+- heading "$1,427.53" [level=6]
+- heading "Account Balance" [level=6]
+- separator
+- list:
+  - link "Home":
+    - /url: /
+  - link "My Account":
+    - /url: /user/settings
+  - link "Bank Accounts":
+    - /url: /bankaccounts
+  - link "Notifications":
+    - /url: /notifications
+- separator
+- list:
+  - button "Logout"
+- main:
+  - heading "Notifications" [level=2]
+  - list:
+    - listitem:
+      - text: Ted Parisian commented on a transaction.
+      - button "Dismiss"
+    - listitem:
+      - text: Ruthie Prosacco requested payment.
+      - button "Dismiss"
+    - listitem:
+      - text: Ruthie Prosacco received payment.
+      - button "Dismiss"
+    - listitem:
+      - text: Ted Parisian requested payment.
+      - button "Dismiss"
+    - listitem:
+      - text: Ruthie Prosacco received payment.
+      - button "Dismiss"
+    - listitem:
+      - text: Kristian Bradtke commented on a transaction.
+      - button "Dismiss"
+    - listitem:
+      - text: Ted Parisian received payment.
+      - button "Dismiss"
+    - listitem:
+      - text: Ruthie Prosacco requested payment.
+      - button "Dismiss"
+  - paragraph:
+    - text: Built by
+    - link:
+      - /url: https://cypress.io
+      - img

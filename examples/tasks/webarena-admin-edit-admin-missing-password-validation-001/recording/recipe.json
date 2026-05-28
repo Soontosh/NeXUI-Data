@@ -1,0 +1,107 @@
+{
+  "task_id": "webarena-admin-edit-admin-missing-password-validation-001",
+  "title": "Trigger Current Password Validation On Magento Admin Edit",
+  "goal": "Open the seeded Magento admin user, change the email, attempt to save without the current password, and stop once the validation error is visible.",
+  "instruction": "From the authenticated Magento admin users grid, open the seeded admin user, change the email to admin+needs-password@example.test, try to save without entering the current password, and stop when the missing-password validation is visible.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-edit",
+    "validation",
+    "hard"
+  ],
+  "review_notes": "Sandboxed admin validation task on the seeded Magento edit form.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "This is a required field."
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Email"
+      },
+      "value": "admin+needs-password@example.test"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//tr[@data-role='row' and contains(@title,'/admin/admin/user/edit/user_id/1/')]"
+      },
+      "explanation": "I opened the seeded admin user so I can trigger the missing-password validation path.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/edit/user_id/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='email']",
+        "text": "admin+needs-password@example.test"
+      },
+      "explanation": "I changed the admin email without filling the authorizing password field."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save User"
+      },
+      "explanation": "I tried to save the edit without the current password so the required-field validation appears.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "This is a required field."
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I attempted to save the seeded Magento admin edit without a current password and surfaced the validation error."
+      },
+      "explanation": "The missing-password validation is visible now, so I am ending the task."
+    }
+  ]
+}

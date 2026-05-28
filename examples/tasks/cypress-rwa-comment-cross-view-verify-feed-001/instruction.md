@@ -1,0 +1,1 @@
+Sign in to the self-hosted Cypress Real World App, open the seeded pending request transaction detail, add the comment 'NExUI cross-view comment', return to the personal feed, and stop when the same request shows the updated 0 5 social-count state there.

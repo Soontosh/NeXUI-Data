@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-open-bank-accounts-001",
+  "title": "Sign In And Open Bank Accounts",
+  "goal": "Sign in with a seeded example user, open the Bank Accounts page, and stop when the account-management view is visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/bankaccounts",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T00:25:27.394Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/bankaccounts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Bank Accounts"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "link",
+        "name": "Create"
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "bank-accounts",
+    "hard"
+  ],
+  "review_notes": "Authenticated navigation task that opens the bank-account management page from the side navigation."
+}

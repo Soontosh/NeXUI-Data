@@ -1,0 +1,164 @@
+{
+  "recorded_at": "2026-05-29T20:21:15.061Z",
+  "final_snapshot": "s008",
+  "final_url": "http://localhost:3000/bankaccounts/new",
+  "snapshot_count": 9,
+  "transition_count": 8,
+  "oracle_step_count": 9,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "Heath93"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/signin"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "s3cret"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/signin"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Account Balance\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e10"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"http://localhost:3000/bankaccounts\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/bankaccounts"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"http://localhost:3000/bankaccounts/new\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/bankaccounts/new"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "type",
+        "target": "e5",
+        "text": "NExUI Savings Bank"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/bankaccounts/new"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e6",
+        "text": "987654321"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/bankaccounts/new"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "type",
+        "target": "e7",
+        "text": "123456789012"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3000/bankaccounts/new"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{"action":{"type":"click","target":"e15"},"explanation":"I opened the Magento admin user-creation form so I can create the benchmark account."}
+{"action":{"type":"type","target":"e24","text":"lyra.quinn"},"explanation":"I entered the new admin username."}
+{"action":{"type":"type","target":"e25","text":"Lyra"},"explanation":"I entered the new admin first name."}
+{"action":{"type":"type","target":"e26","text":"Quinn"},"explanation":"I entered the new admin last name."}
+{"action":{"type":"type","target":"e27","text":"lyra.quinn@example.test"},"explanation":"I entered the benchmark email address."}
+{"action":{"type":"type","target":"e28","text":"NExUIUser!2026"},"explanation":"I entered the new admin password."}
+{"action":{"type":"type","target":"e29","text":"NExUIUser!2026"},"explanation":"I confirmed the new admin password."}
+{"action":{"type":"type","target":"e33","text":"admin1234"},"explanation":"I entered the current admin password required to authorize the new account."}
+{"action":{"type":"click","target":"e19"},"explanation":"I switched to the role-selection tab so the administrator role can be confirmed before the first save."}
+{"action":{"type":"click","target":"e32"},"explanation":"I selected the Administrators role for the new account."}
+{"action":{"type":"click","target":"e18"},"explanation":"I returned to the main form so the completed user details are visible before the first save."}
+{"action":{"type":"click","target":"e17"},"explanation":"I saved the new Magento admin account so I can verify the row and then prepare a second mutation on the reopened user."}
+{"action":{"type":"click","target":"e37"},"explanation":"I reopened the saved grid row so I can prepare a second edit from the persisted user state."}
+{"action":{"type":"type","target":"e25","text":"Lyra Prime"},"explanation":"I prepared the second-stage first-name edit on the reopened user."}
+{"action":{"type":"type","target":"e27","text":"lyra.quinn+review@example.test"},"explanation":"I prepared the second-stage email edit on the reopened user."}
+{"action":{"type":"click","target":"e38"},"explanation":"I switched back to User Role so the final state proves the administrator role stayed selected even after the second edit was prepared."}
+{"action":{"type":"click","target":"e36"},"explanation":"I returned to the main form so the prepared second-stage edits are visible right before the second save boundary."}
+{"action":{"type":"ask_user","question":"The reopened user now has a second edit prepared and the Administrators role is still selected. Do you want me to click Save User again?"},"explanation":"A second save would apply another mutation to the newly created admin user, so I need confirmation before doing that."}

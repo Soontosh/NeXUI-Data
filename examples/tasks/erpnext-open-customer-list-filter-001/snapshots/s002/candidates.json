@@ -1,0 +1,132 @@
+[
+  {
+    "ref": "e1",
+    "role": "textbox",
+    "name": "Email",
+    "description": "",
+    "text": "Administrator",
+    "tag": "input",
+    "value": "Administrator",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 560,
+      "y": 192.59,
+      "width": 320,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": true
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "textbox",
+    "name": "Password",
+    "description": "",
+    "text": "admin",
+    "tag": "input",
+    "value": "admin",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 560,
+      "y": 236.59,
+      "width": 320,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": true,
+      "invalid": false,
+      "required": true
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "link",
+    "name": "Forgot Password?",
+    "description": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fcustomer#forgot",
+    "text": "Forgot Password?",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 764.83,
+      "y": 281.59,
+      "width": 115.17,
+      "height": 16
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "button",
+    "name": "Login",
+    "description": "",
+    "text": "Login",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 560,
+      "y": 316.59,
+      "width": 320,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "link",
+    "name": "Login with Email Link",
+    "description": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fcustomer#login-with-email-link",
+    "text": "Login with Email Link",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 564,
+      "y": 399.39,
+      "width": 312,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo Account Home</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4efe6;
+        --ink: #1d1a17;
+        --card: #fffaf2;
+        --accent: #004a56;
+        --line: #d9cbb3;
+      }
+
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: radial-gradient(circle at top, #fff8e8 0%, var(--bg) 55%);
+        color: var(--ink);
+      }
+
+      .shell {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      button,
+      a {
+        font: inherit;
+      }
+
+      .menu-wrap {
+        position: relative;
+      }
+
+      .menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        min-width: 220px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        padding: 8px;
+      }
+
+      .menu[hidden],
+      .panel[hidden] {
+        display: none;
+      }
+
+      .menu a {
+        display: block;
+        padding: 10px 12px;
+        color: var(--ink);
+        text-decoration: none;
+        border-radius: 8px;
+      }
+
+      .menu a:hover,
+      .menu a:focus-visible {
+        background: #efe1c9;
+      }
+
+      .hero,
+      .panel {
+        margin-top: 40px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+        padding: 28px;
+      }
+
+      .hero p,
+      .panel p {
+        max-width: 60ch;
+      }
+
+      .settings-actions {
+        margin-top: 24px;
+      }
+
+      .settings-actions button,
+      #account-button {
+        border: none;
+        border-radius: 999px;
+        background: var(--accent);
+        color: white;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="brand">Northwind Ledger</div>
+        <div class="menu-wrap">
+          <button id="account-button" aria-haspopup="menu" aria-expanded="false">Account</button>
+          <div id="account-menu" class="menu" role="menu" hidden>
+            <a href="#settings" id="settings-link" role="menuitem">Settings</a>
+            <a href="#logout" role="menuitem">Log out</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="home-panel" class="hero">
+          <h1>Welcome back</h1>
+          <p>Your account overview is ready. Open the account menu to access personal settings.</p>
+        </section>
+
+        <section id="settings-panel" class="panel" hidden>
+          <h1>Account Settings</h1>
+          <p>Review notification preferences and profile details on this page.</p>
+          <div class="settings-actions">
+            <button type="button">Save changes</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const accountButton = document.getElementById('account-button');
+      const accountMenu = document.getElementById('account-menu');
+      const settingsLink = document.getElementById('settings-link');
+      const homePanel = document.getElementById('home-panel');
+      const settingsPanel = document.getElementById('settings-panel');
+
+      accountButton.addEventListener('click', () => {
+        const expanded = accountButton.getAttribute('aria-expanded') === 'true';
+        accountButton.setAttribute('aria-expanded', String(!expanded));
+        accountMenu.hidden = expanded;
+      });
+
+      settingsLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        accountButton.setAttribute('aria-expanded', 'false');
+        accountMenu.hidden = true;
+        homePanel.hidden = true;
+        settingsPanel.hidden = false;
+        document.title = 'Account Settings';
+        history.pushState({}, '', '#settings');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+{
+  "task_id": "cypress-rwa-request-submit-verify-feed-001",
+  "title": "Submit A Seeded Request And Verify It In The Personal Feed",
+  "goal": "Sign in, create a seeded money request to Kristian Bradtke, return to the transaction feeds, and verify the new request appears in the personal feed.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, create a money request to Kristian Bradtke for a seeded amount and note, return to the transaction feeds, open the personal feed, and stop once the new request is visible there.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 11,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "new-transaction",
+    "cross-view-verification",
+    "very_hard"
+  ],
+  "review_notes": "Long-horizon authenticated task that creates a new request in the transaction wizard and then verifies the resulting transaction from the personal feed.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/personal"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI seeded request"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Kristian Bradtke"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "requested"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated transaction tools can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-new-transaction']"
+      },
+      "explanation": "I opened the new transaction wizard from the top navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/new"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Select Contact"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='user-list-search-input']",
+        "text": "Kristian"
+      },
+      "explanation": "I searched for the seeded contact so the receiver list narrows to the intended person."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='user-list-item-GjWovtg2hr']"
+      },
+      "explanation": "I selected Kristian Bradtke as the receiver for the request.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Kristian Bradtke"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Request"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-amount-input'] input",
+        "text": "33"
+      },
+      "explanation": "I entered the seeded request amount."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-description-input'] input",
+        "text": "NExUI seeded request"
+      },
+      "explanation": "I entered a unique note so the new request can be verified later in the feed."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='transaction-create-submit-request']"
+      },
+      "explanation": "I submitted the money request for the seeded receiver.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Requested $33.00 for NExUI seeded request"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Return To Transactions"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='new-transaction-return-to-transactions']"
+      },
+      "explanation": "I returned from the transaction wizard to the main transaction feeds so I can verify the new request.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched to the personal feed to verify that the newly created request appears in the signed-in user's feed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI seeded request"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, created a request for Kristian Bradtke, returned to the transaction feeds, and verified the new request in the personal feed."
+      },
+      "explanation": "The newly created request is visible in the personal feed now, so I am ending the task."
+    }
+  ]
+}

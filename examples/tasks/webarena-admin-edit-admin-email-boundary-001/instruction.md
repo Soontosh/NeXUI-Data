@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open the seeded admin user, change the email to admin+nexui@example.test, enter your current password admin1234, and ask for confirmation before clicking Save User.

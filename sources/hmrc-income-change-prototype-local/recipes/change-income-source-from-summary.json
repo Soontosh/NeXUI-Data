@@ -1,0 +1,338 @@
+{
+  "task_id": "hmrc-change-income-source-from-summary-001",
+  "title": "Change Income Source From Check Answers",
+  "goal": "Reach the review page on the pension route, change the income source to employment pay from the summary, and stop after the updated review page reflects the new source.",
+  "instruction": "Complete the income change prototype to the review page, then use the change flow to switch the income source from Pension to Employment pay and verify the summary updates.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "check-answers",
+    "state-propagation",
+    "hard"
+  ],
+  "review_notes": "Harder summary-edit task that changes an earlier route choice and then carries the user back through the remaining pages with preserved data.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Employment pay"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Income source Pension"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "notes@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2025 to 2026"
+      },
+      "explanation": "I selected the tax year for the update."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is set, so I am moving to the income source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Pension"
+      },
+      "explanation": "I chose pension as the initial income source."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income source is set, so I am moving to the change type.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It increased"
+      },
+      "explanation": "I selected an increase for the first pass through the form."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is complete, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "1300"
+      },
+      "explanation": "I entered the previous monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "1525"
+      },
+      "explanation": "I entered the increased new monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The amount details are complete, so I am moving to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Email"
+      },
+      "explanation": "I chose email as the contact method."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#contact-detail",
+        "text": "notes@example.com"
+      },
+      "explanation": "I entered the follow-up email address."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The contact details are complete, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Initial pension update before correcting the source."
+      },
+      "explanation": "I added a short note before reaching review."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The first route is complete, so I am moving to the review page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Pension"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-income-source"
+      },
+      "explanation": "I followed the income-source change link so I can correct the earlier route choice.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Employment pay"
+      },
+      "explanation": "I changed the income source to employment pay."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The corrected source is set, so I am moving back through the remaining pages.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The existing change type is still suitable, so I am keeping it and moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount remains valid, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The new amount still fits the route, so I am moving to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The contact details are unchanged, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The saved details are intact, so I am returning to the review page to verify the corrected source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Employment pay"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the income source from Pension to Employment pay and confirmed the review page now reflects the corrected source while keeping the other details."
+      },
+      "explanation": "The review page now shows the corrected source and preserved details, so I am ending the task."
+    }
+  ]
+}

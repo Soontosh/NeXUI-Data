@@ -1,0 +1,1 @@
+Open the ERPNext supplier list, sign in as Administrator with password admin, filter Supplier Name to NExUI Test Supplier, open that supplier record, switch to the Address & Contact tab, and stop once the address and contact panel is visible.

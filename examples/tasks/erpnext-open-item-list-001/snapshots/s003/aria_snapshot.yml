@@ -1,0 +1,40 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Item":
+      - /url: /desk/item
+- button "List View"
+- button "Saved Filters"
+- button
+- button "Menu":
+  - img
+- button "Add Item"
+- textbox "ID"
+- button
+- text: name
+- textbox "Item Name"
+- button
+- text: item_name
+- combobox "Item Group"
+- status: Begin typing for results.
+- text: item_group
+- combobox "Variant Of"
+- status: Begin typing for results.
+- text: variant_of
+- checkbox "Has Variants"
+- text: Has Variants has_variants
+- button "Filters 1"
+- button "Clear all filters"
+- button "descending":
+  - img
+- button "Created On"
+- img
+- paragraph: No Item found with matching filters. Clear filters to see all Item.
+- paragraph:
+  - button "Create a new Item"
+- contentinfo

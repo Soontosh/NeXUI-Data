@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-06-02T01:20:03.664Z",
+  "final_snapshot": "s001",
+  "final_url": "http://localhost:3030/directions?engine=fossgis_osrm_foot&route=43.7384%2C7.4246%3B43.7308%2C7.4189#map=16/43.7347/7.4210",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "select",
+        "target": "e17",
+        "option": "2"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"engine=fossgis_osrm_foot\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "field value equals \"43.738, 7.425\"",
+          "label": "postcondition",
+          "index": 2
+        },
+        {
+          "passed": true,
+          "message": "field value equals \"43.731, 7.419\"",
+          "label": "postcondition",
+          "index": 3
+        },
+        {
+          "passed": true,
+          "message": "text present \"Distance: 1.4km. Time: 0:17.\"",
+          "label": "postcondition",
+          "index": 4
+        }
+      ],
+      "postcondition_attempts": 28,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/directions?engine=fossgis_osrm_foot&route=43.7384%2C7.4246%3B43.7308%2C7.4189"
+    }
+  ]
+}

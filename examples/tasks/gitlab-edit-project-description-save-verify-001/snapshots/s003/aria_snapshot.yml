@@ -1,0 +1,473 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-syntax-highlighting":
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+        - text: A a11y-syntax-highlighting
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-syntax-highlighting/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: Issues 1
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: Merge requests 0
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - img
+        - text: CI/CD
+    - listitem:
+      - link "Security & Compliance":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/security/configuration
+        - img
+        - text: Security & Compliance
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Infrastructure":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Infrastructure
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/metrics
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/snippets
+        - img
+        - text: Snippets
+    - listitem:
+      - link "Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - img
+        - text: Settings
+      - list:
+        - listitem:
+          - link "General":
+            - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - listitem:
+          - link "Integrations":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/integrations
+        - listitem:
+          - link "Webhooks":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/hooks
+        - listitem:
+          - link "Access Tokens":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/access_tokens
+        - listitem:
+          - link "Repository":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/repository
+        - listitem:
+          - link "Merge requests":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/merge_requests
+        - listitem:
+          - link "CI/CD":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/ci_cd
+        - listitem:
+          - link "Packages and registries":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/packages_and_registries
+        - listitem:
+          - link "Monitor":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/settings/operations
+        - listitem:
+          - link "Usage Quotas":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/usage_quotas
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+      - img
+    - listitem:
+      - link "General Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+- main:
+  - searchbox "Search page"
+  - heading "Naming, topics, avatar" [level=4]
+  - button "Collapse"
+  - paragraph: Update your project name, topics, description, and avatar.
+  - group:
+    - text: Project name
+    - textbox "Project name": a11y-syntax-highlighting
+    - text: Project ID
+    - textbox: "186"
+    - text: Topics
+    - listbox:
+      - textbox "Search for topic"
+    - text: Project description (optional)
+    - textbox "Project description (optional)": 💄 Accessible light and dark syntax highlighting themes
+  - text: Repository size limit (MB)
+  - spinbutton "Repository size limit (MB)" [disabled]
+  - text: Want to use this feature for free? Read more about the
+  - link "Registration Features Program":
+    - /url: /help/user/admin_area/settings/usage_statistics.md#registration-features-program
+  - text: . A Project avatar
+  - button "Choose file…"
+  - text: No file chosen. Max file size is 200 KB.
+  - button "Save changes" [disabled]
+  - heading "Visibility, project features, permissions" [level=4]
+  - button "Expand"
+  - paragraph: Choose visibility level, enable/disable project features and their permissions, disable email notifications, and show default award emoji.
+  - text: Project visibility Manage who can see the project in the public access directory.
+  - link "Learn more":
+    - /url: /help/user/public_access
+  - text: .
+  - combobox:
+    - option "Private"
+    - option "Internal"
+    - option "Public" [selected]
+  - text: Accessible by anyone, regardless of authentication.
+  - strong: Additional options
+  - checkbox "Users can request access" [checked]
+  - text: Users can request access Issues Flexible tool to collaboratively develop ideas and plan work in this project.
+  - link "Learn more":
+    - /url: /help/user/project/issues/index
+  - text: . Issues
+  - switch "Issues" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Repository View and edit files in this project. When set to **Everyone With Access** non-project members have only read access. Repository
+  - switch "Repository" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Merge requests Submit changes to be merged upstream. Merge requests
+  - switch "Merge requests" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Forks Users can copy the repository to a new project. Forks
+  - switch "Forks" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Git Large File Storage (LFS) Manages large files such as audio, video, and graphics files.
+  - link "Learn more":
+    - /url: /help/topics/git/lfs/index
+  - text: . Git Large File Storage (LFS)
+  - switch "Git Large File Storage (LFS)" [checked]
+  - text: CI/CD Build, test, and deploy your changes. CI/CD
+  - switch "CI/CD" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Analytics View project analytics. Analytics
+  - switch "Analytics" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Security & Compliance Security & Compliance for this project Security & Compliance
+  - switch "Security & Compliance" [checked]
+  - combobox:
+    - option "Only Project Members" [selected]
+    - option "Everyone With Access"
+  - text: Wiki Pages for project documentation. Wiki
+  - switch "Wiki" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Snippets Share code with others outside the project. Snippets
+  - switch "Snippets" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Package registry Publish, store, and view packages in a project.
+  - link "Learn more":
+    - /url: /help/user/packages/index
+  - text: . Package registry
+  - switch "Package registry" [checked]
+  - text: Monitor Monitor the health of your project and respond to incidents. Monitor
+  - switch "Monitor" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Metrics Dashboard Visualize the project's performance metrics.
+  - combobox:
+    - option "Only Project Members" [selected]
+    - option "Everyone With Access"
+  - text: Environments Every project can make deployments to environments either via CI/CD or API calls. Non-project members have read-only access.
+  - link "Learn more":
+    - /url: /help/ci/environments/index
+  - text: . Environments
+  - switch "Environments" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Feature flags Roll out new features without redeploying with feature flags.
+  - link "Learn more":
+    - /url: /help/operations/feature_flags
+  - text: . Feature flags
+  - switch "Feature flags" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Infrastructure Configure your infrastructure.
+  - link "Learn more":
+    - /url: /help/user/infrastructure/index
+  - text: . Infrastructure
+  - switch "Infrastructure" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - text: Releases Combine git tags with release notes, release evidence, and assets to create a release.
+  - link "Learn more":
+    - /url: /help/user/project/releases/index
+  - text: . Releases
+  - switch "Releases" [checked]
+  - combobox:
+    - option "Only Project Members"
+    - option "Everyone With Access" [selected]
+  - checkbox "Disable email notifications"
+  - text: Disable email notifications Override user notification preferences for all project members.
+  - checkbox "Show default award emojis Always show thumbs-up and thumbs-down award emoji buttons on issues, merge requests, and snippets." [checked]
+  - text: Show default award emojis
+  - paragraph: Always show thumbs-up and thumbs-down award emoji buttons on issues, merge requests, and snippets.
+  - checkbox "Warn about Potentially Unwanted Characters Highlight the usage of hidden unicode characters. These have innocent uses for right-to-left languages, but can also be used in potential exploits." [checked]
+  - text: Warn about Potentially Unwanted Characters
+  - paragraph: Highlight the usage of hidden unicode characters. These have innocent uses for right-to-left languages, but can also be used in potential exploits.
+  - button "Save changes"
+  - alert:
+    - img
+    - button "Dismiss":
+      - img
+    - alert:
+      - heading "Merge requests and approvals settings have moved." [level=4]
+      - text: On the left sidebar, select
+      - link "Settings > Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/settings/merge_requests
+      - text: to view them.
+  - heading "Badges" [level=4]
+  - button "Expand"
+  - paragraph:
+    - text: Customize this project's badges.
+    - link "What are badges?":
+      - /url: /help/user/project/badges
+  - group:
+    - text: Name
+    - textbox
+  - text: Link
+  - paragraph:
+    - text: Supported
+    - link "variables":
+      - /url: /help/user/project/badges
+    - text: ":"
+    - code: "%{project_path}"
+    - text: ","
+    - code: "%{project_title}"
+    - text: ","
+    - code: "%{project_name}"
+    - text: ","
+    - code: "%{project_id}"
+    - text: ","
+    - code: "%{default_branch}"
+    - text: ","
+    - code: "%{commit_sha}"
+  - textbox
+  - text: "Example: https://example.gitlab.com/%{project_path} Badge image URL"
+  - paragraph:
+    - text: Supported
+    - link "variables":
+      - /url: /help/user/project/badges
+    - text: ":"
+    - code: "%{project_path}"
+    - text: ","
+    - code: "%{project_title}"
+    - text: ","
+    - code: "%{project_name}"
+    - text: ","
+    - code: "%{project_id}"
+    - text: ","
+    - code: "%{default_branch}"
+    - text: ","
+    - code: "%{commit_sha}"
+  - textbox
+  - text: "Example: https://example.gitlab.com/%{project_path}/badges/%{default_branch}/pipeline.svg Badge image preview"
+  - paragraph: No image to preview
+  - button "Add badge"
+  - text: Your badges 0 This project has no badges
+  - heading "Service Desk" [level=4]
+  - button "Expand"
+  - paragraph:
+    - text: Enable and disable Service Desk. Some additional configuration might be required.
+    - link "Learn more":
+      - /url: /help/user/project/service_desk
+    - text: .
+  - heading "Improve customer support with Service Desk" [level=1]
+  - paragraph: Service Desk allows people to create issues in your GitLab instance without their own user account. It provides a unique email address for end users to create issues in a project. Replies can be sent either through the GitLab interface or by email. End users only see threads through email.
+  - link "Configure Service Desk":
+    - /url: /help/user/project/service_desk.html#configuring-service-desk
+  - button "Dismiss Service Desk promotion":
+    - img
+  - heading "Advanced" [level=4]
+  - button "Expand"
+  - paragraph: Housekeeping, export, archive, change path, transfer, and delete.
+  - heading "Housekeeping" [level=4]
+  - paragraph:
+    - text: Runs a number of housekeeping tasks within the current repository, such as compressing file revisions and removing unreachable objects.
+    - link "Learn more.":
+      - /url: /help/administration/housekeeping
+  - link "Run housekeeping":
+    - /url: /byteblaze/a11y-syntax-highlighting/housekeeping
+  - heading "Export project" [level=4]
+  - paragraph:
+    - text: Export this project with all its related data in order to move it to a new GitLab instance. When the exported file is ready, you can download it from this page or from the download link in the email notification you will receive. You can then import it when creating a new project.
+    - link "Learn more.":
+      - /url: /help/user/project/settings/import_export
+  - paragraph
+  - paragraph: "The following items will be exported:"
+  - list:
+    - listitem: Project and wiki repositories
+    - listitem: Project uploads
+    - listitem: Project configuration, excluding integrations
+    - listitem: Issues with comments, merge requests with diffs and comments, labels, milestones, snippets, and other project entities
+    - listitem: LFS objects
+    - listitem: Issue Boards
+    - listitem: Design Management files and data
+  - paragraph: "The following items will NOT be exported:"
+  - list:
+    - listitem: Job logs and artifacts
+    - listitem: Container registry images
+    - listitem: CI variables
+    - listitem: Pipeline triggers
+    - listitem: Webhooks
+    - listitem: Any encrypted tokens
+  - paragraph
+  - link "Export project":
+    - /url: /byteblaze/a11y-syntax-highlighting/export
+  - heading "Archive project" [level=4]
+  - paragraph:
+    - text: Archiving the project makes it entirely read-only. It is hidden from the dashboard and doesn't display in searches.
+    - strong: The repository cannot be committed to, and no issues, comments, or other entities can be created.
+    - link "Learn more.":
+      - /url: /help/user/project/settings/index#archive-a-project
+  - link "Archive project":
+    - /url: /byteblaze/a11y-syntax-highlighting/archive
+  - heading "Change path" [level=4]
+  - paragraph:
+    - text: A project’s repository name defines its URL (the one you use to access the project via a browser) and its place on the file disk where GitLab is installed.
+    - link "Learn more.":
+      - /url: /help/user/project/settings/index#rename-a-repository
+  - list:
+    - listitem: Be careful. Renaming a project's repository can have unintended side effects.
+    - listitem: You will need to update your local repositories to point to the new location.
+  - text: Path http://localhost:8023/byteblaze/
+  - textbox "Path": a11y-syntax-highlighting
+  - button "Change path"
+  - heading "Transfer project" [level=4]
+  - paragraph:
+    - text: Transfer your project into another namespace.
+    - link "Learn more.":
+      - /url: /help/user/project/settings/index#transfer-a-project-to-another-namespace
+  - paragraph: When you transfer your project to a group, you can easily manage multiple projects, view usage quotas for storage, pipeline minutes, and users, and start a trial or upgrade to a paid tier.
+  - paragraph:
+    - text: Don't have a group?
+    - link "Create one":
+      - /url: /groups/new
+  - text: "Things to be aware of before transferring:"
+  - list:
+    - listitem: Be careful. Changing the project's namespace can have unintended side effects.
+    - listitem: You can only transfer the project to namespaces you manage.
+    - listitem: You will need to update your local repositories to point to the new location.
+    - listitem: Project visibility level will be changed to match namespace rules when transferring to a group.
+  - group "Select a new namespace":
+    - text: Select a new namespace
+    - group "Select a new namespace":
+      - button "Select a new namespace"
+  - button "Transfer project" [disabled]
+  - heading "Delete project" [level=4]
+  - paragraph:
+    - strong: Deleting the project will delete its repository and all related resources, including issues and merge requests.
+    - link "Learn more.":
+      - /url: /help/user/project/settings/index#remove-a-fork-relationship
+  - paragraph:
+    - strong: Deleted projects cannot be restored!
+  - button "Delete project"

@@ -1,0 +1,8 @@
+{"action":{"type":"type","target":"e2","text":"byteblaze"},"explanation":"I entered the seeded GitLab username after landing on the protected new-issue form."}
+{"action":{"type":"type","target":"e3","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e6"},"explanation":"I signed in so GitLab can redirect back to the new-issue form."}
+{"action":{"type":"type","target":"e35","text":"NExUI issue save verify"},"explanation":"I entered the deterministic issue title."}
+{"action":{"type":"type","target":"e53","text":"This issue was created by the NExUI GitLab save-and-verify benchmark task."},"explanation":"I entered the deterministic issue description."}
+{"action":{"type":"click","target":"e62"},"explanation":"I created the issue so I can verify the resulting issue-detail page."}
+{"action":{"type":"click","target":"e14"},"explanation":"I navigated back to the project issues list so I can verify the created issue from a second authenticated view."}
+{"action":{"type":"click","target":"e52"},"explanation":"I reopened the created issue from the list so I can verify the saved detail state after the cross-view check."}

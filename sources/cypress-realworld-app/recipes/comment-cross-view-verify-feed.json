@@ -1,0 +1,200 @@
+{
+  "task_id": "cypress-rwa-comment-cross-view-verify-feed-001",
+  "title": "Add A Comment And Verify The Updated Count In The Personal Feed",
+  "goal": "Sign in, open a seeded request transaction detail, add a comment, return to the personal feed, and verify the updated comment count from the feed view.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, open the seeded pending request transaction detail, add the comment 'NExUI cross-view comment', return to the personal feed, and stop when the same request shows the updated 0 5 social-count state there.",
+  "url": "http://localhost:3000/signin",
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "press",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 10,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "transaction-detail",
+    "cross-view-verification",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware modern-app task that adds a comment in transaction detail and then verifies the comment count from the personal feed.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/personal"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted Parisian requested Kristian Bradtke"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Request: GjWovtg2hr to uBmeaz5pX"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "0 5"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated transaction feeds can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched to the personal feed so the signed-in user's own transactions are visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='transaction-item-gGF4nSbm3q4']"
+      },
+      "explanation": "I opened the seeded pending request detail so I can add a comment to it.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/gGF4nSbm3q4"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-comment-input-gGF4nSbm3q4']",
+        "text": "NExUI cross-view comment"
+      },
+      "explanation": "I entered a distinctive comment so the detail and feed states can be verified later."
+    },
+    {
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "explanation": "I submitted the comment from the transaction detail view.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI cross-view comment"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Home"
+      },
+      "explanation": "I returned to the transaction feeds so I can verify the updated comment count from another view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched back to the personal feed to verify the updated request row there.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Ted Parisian requested Kristian Bradtke"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Request: GjWovtg2hr to uBmeaz5pX"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "0 5"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I added a comment to the seeded pending request and verified the updated comment count from the personal feed."
+      },
+      "explanation": "The updated request row is visible in the personal feed now, so I am ending the task."
+    }
+  ]
+}

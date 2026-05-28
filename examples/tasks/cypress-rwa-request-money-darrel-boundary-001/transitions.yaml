@@ -1,0 +1,85 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Heath93"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "s3cret"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Account Balance\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/transaction/new\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "Darrel"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - text present \"Darrel Ortiz\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "24"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "NExUI Darrel request"
+    },
+    "to": "s008",
+    "notes": []
+  }
+]

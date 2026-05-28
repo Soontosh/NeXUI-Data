@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-05-28T15:09:06.436Z",
+  "final_snapshot": "s002",
+  "final_url": "https://demoblaze.com/#",
+  "snapshot_count": 3,
+  "transition_count": 2,
+  "oracle_step_count": 3,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "wait"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e13"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Apple monitor 24\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text absent \"Samsung galaxy s6\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 3,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://demoblaze.com/#"
+    }
+  ]
+}

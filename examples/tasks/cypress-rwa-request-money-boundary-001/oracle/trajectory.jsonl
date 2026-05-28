@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so I can access the authenticated transaction tools."}
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the new transaction wizard from the top navigation."}
+{"action":{"type":"type","target":"e5","text":"Kristian"},"explanation":"I searched for the seeded contact so I can prepare the request for the intended receiver."}
+{"action":{"type":"click","target":"e6"},"explanation":"I selected Kristian Bradtke as the contact for the request."}
+{"action":{"type":"type","target":"e5","text":"25"},"explanation":"I entered the request amount."}
+{"action":{"type":"type","target":"e6","text":"Lunch reimbursement"},"explanation":"I entered a short note describing what the money request is for."}
+{"action":{"type":"ask_user","question":"I have prepared a request for $25 from Kristian Bradtke with the note 'Lunch reimbursement'. Do you want me to submit it?"},"explanation":"The request details are ready, but sending the request would affect another user, so I am asking for confirmation before submitting it."}

@@ -1,0 +1,8 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected product route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the seeded product detail page."}
+{"action":{"type":"click","target":"e29"},"explanation":"I switched to the product Price tab so the pricing controls become visible."}
+{"action":{"type":"type","target":"e37","text":"35.00"},"explanation":"I changed the seeded product default price on the Price tab."}
+{"action":{"type":"click","target":"e52"},"explanation":"I saved the default price change so I can verify it from the products list."}
+{"action":{"type":"click","target":"e11"},"explanation":"I returned to the products list to verify the updated price from a second view."}
+{"action":{"type":"finish","summary":"I saved the Pretix product default price change and verified the updated price from the products list."},"explanation":"The updated price is visible on the products list now, so I am ending the task."}

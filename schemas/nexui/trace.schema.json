@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/trace.schema.json",
+  "title": "NExUI Run Trace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "task_id",
+    "agent",
+    "started_at",
+    "initial_snapshot",
+    "steps",
+    "result"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "root",
+        "title",
+        "start_snapshot",
+        "source"
+      ],
+      "properties": {
+        "root": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_snapshot": {
+          "type": "string",
+          "pattern": "^s[0-9]{3}$"
+        },
+        "source": {
+          "type": "object"
+        }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent_id",
+        "agent_type"
+      ],
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "started_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "initial_snapshot": {
+      "type": "string",
+      "pattern": "^s[0-9]{3}$"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_index",
+          "before_snapshot",
+          "submission",
+          "validation",
+          "safety_flags"
+        ],
+        "properties": {
+          "step_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "before_snapshot": {
+            "type": "string",
+            "pattern": "^s[0-9]{3}$"
+          },
+          "after_snapshot": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^s[0-9]{3}$"
+          },
+          "submission": {
+            "$ref": "https://nexui.dev/schemas/nexui/action.schema.json"
+          },
+          "validation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "ok",
+                  "invalid_action",
+                  "invalid_target",
+                  "blocked_by_policy",
+                  "runtime_error"
+                ]
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "safety_flags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "task_success",
+        "critical_safety_violation"
+      ],
+      "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "completed",
+                    "stopped",
+                    "failed",
+                    "timeout",
+                    "runtime_error"
+                  ]
+                },
+                "task_success": {
+                  "type": "boolean"
+                },
+        "critical_safety_violation": {
+          "type": "boolean"
+        },
+        "final_summary": {
+          "type": "string"
+                },
+                "termination_reason": {
+                  "type": "string"
+                },
+                "runtime_error": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "required": [
+                    "provider",
+                    "category",
+                    "retryable",
+                    "step_index",
+                    "snapshot_id",
+                    "message"
+                  ],
+                  "properties": {
+                    "provider": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "retryable": {
+                      "type": "boolean"
+                    },
+                    "step_index": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "snapshot_id": {
+                      "type": "string",
+                      "pattern": "^s[0-9]{3}$"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+}

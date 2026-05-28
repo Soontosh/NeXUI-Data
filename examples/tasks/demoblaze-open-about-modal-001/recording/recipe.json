@@ -1,0 +1,58 @@
+{
+  "task_id": "demoblaze-open-about-modal-001",
+  "title": "Open About Us Modal",
+  "goal": "Open the About us modal from the Demoblaze storefront and stop with the dialog visible.",
+  "instruction": "On the Demoblaze storefront, open the About us dialog and stop when it is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "modal",
+    "dialog"
+  ],
+  "review_notes": "Companion modal task to the contact dialog. Useful for broader retail dialog coverage without shared cart dependence.",
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Play Video"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "About us"
+      },
+      "explanation": "I opened the About us dialog from the storefront navigation.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Play Video"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the About us dialog and stopped with it visible."
+      },
+      "explanation": "The requested dialog is open now, so I am ending the task."
+    }
+  ]
+}

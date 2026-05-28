@@ -1,0 +1,140 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=16/43.7341/7.4206
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=16/43.7341/7.4206
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=16/43.7341/7.4206
+    - link "Export":
+      - /url: http://localhost:3030/export#map=16/43.7341/7.4206
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2Fdirections%3Fengine%3Dfossgis_osrm_car%26route%3D43.7384%2C7.4246%3B43.7308%2C7.4189%26from%3DAvenue%2520de%2520l%2527Hermitage%26to%3DMonaco-Ville#map=16/43.7341/7.4206
+    - link "Sign Up":
+      - /url: /user/new
+- button "Close"
+- img
+- textbox "From": 43.738, 7.425
+- img
+- textbox "To": 43.731, 7.419
+- combobox:
+  - option "Bicycle (OSRM)"
+  - option "Car (OSRM)" [selected]
+  - option "Foot (OSRM)"
+- button "Go"
+- button "Reverse Directions"
+- heading "Directions" [level=2]
+- button "Close"
+- paragraph: "Distance: 2.4km. Time: 0:04."
+- table:
+  - row "1. Start on Avenue de l'Hermitage 20m":
+    - cell
+    - cell "1. Start on Avenue de l'Hermitage"
+    - cell "20m"
+  - row "2. Turn left onto Avenue de la Costa 400m":
+    - cell
+    - cell "2. Turn left onto Avenue de la Costa"
+    - cell "400m"
+  - row "3. Turn right onto Avenue d'Ostende 200m":
+    - cell
+    - cell "3. Turn right onto Avenue d'Ostende"
+    - cell "200m"
+  - row "4. At roundabout take 1st exit onto Rue Grimaldi 10m":
+    - cell
+    - cell "4. At roundabout take 1st exit onto Rue Grimaldi"
+    - cell "10m"
+  - row "5. Exit roundabout onto Rue Grimaldi 600m":
+    - cell
+    - cell "5. Exit roundabout onto Rue Grimaldi"
+    - cell "600m"
+  - row "6. At roundabout take 3rd exit onto Avenue du Port 40m":
+    - cell
+    - cell "6. At roundabout take 3rd exit onto Avenue du Port"
+    - cell "40m"
+  - row "7. Exit roundabout onto Avenue du Port 300m":
+    - cell
+    - cell "7. Exit roundabout onto Avenue du Port"
+    - cell "300m"
+  - row "8. Turn right onto unnamed road 50m":
+    - cell
+    - cell "8. Turn right onto unnamed road"
+    - cell "50m"
+  - row "9. Turn right onto Tunnel Rocher Noghes 160m":
+    - cell
+    - cell "9. Turn right onto Tunnel Rocher Noghes"
+    - cell "160m"
+  - row "10. At the fork turn left onto Tunnel Rocher-Fontvieille 300m":
+    - cell
+    - cell "10. At the fork turn left onto Tunnel Rocher-Fontvieille"
+    - cell "300m"
+  - row "11. Continue on Avenue Albert II 170m":
+    - cell
+    - cell "11. Continue on Avenue Albert II"
+    - cell "170m"
+  - row "12. At roundabout take 3rd exit onto Avenue Albert II 60m":
+    - cell
+    - cell "12. At roundabout take 3rd exit onto Avenue Albert II"
+    - cell "60m"
+  - row "13. Exit roundabout onto Avenue Albert II 190m":
+    - cell
+    - cell "13. Exit roundabout onto Avenue Albert II"
+    - cell "190m"
+  - row "14. Reach destination":
+    - cell
+    - cell "14. Reach destination"
+    - cell
+- paragraph:
+  - text: Directions courtesy of
+  - link "OSRM (FOSSGIS)":
+    - /url: https://routing.openstreetmap.de/about.html
+- img
+- button "Marker"
+- button "Marker"
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 100 m 500 ft ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

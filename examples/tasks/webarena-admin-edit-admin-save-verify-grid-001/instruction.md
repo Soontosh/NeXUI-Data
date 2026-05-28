@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open the seeded admin user, change the email to admin+nexui-saved@example.test, enter your current password admin1234, save the update, return to the users grid, and stop once the updated email is visible there.

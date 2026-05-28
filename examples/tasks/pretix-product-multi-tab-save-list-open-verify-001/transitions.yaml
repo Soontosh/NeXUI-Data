@@ -1,0 +1,160 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin@localhost"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/1/\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e38",
+      "text": "NExUI Workshop Ultra Pass"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e29"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-1-open\"",
+      "postcondition 2: passed - text present \"Default price\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e37",
+      "text": "40.00"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e30"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-2-open\"",
+      "postcondition 2: passed - text present \"Maximum amount per order\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e47",
+      "text": "4"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e52"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - text present \"Your changes have been saved.\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"spinbutton\",\"value\":\"4\"}"
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e11"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/\"",
+      "postcondition 2: passed - text present \"NExUI Workshop Ultra Pass\"",
+      "postcondition 3: passed - text present \"$40.00\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e30"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/1/\"",
+      "postcondition 2: passed - text present \"Modify product: NExUI Workshop Ultra Pass\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e30"
+    },
+    "to": "s012",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-2-open\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"spinbutton\",\"value\":\"4\"}"
+    ]
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "click",
+      "target": "e28"
+    },
+    "to": "s013",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-0-open\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"value\":\"NExUI Workshop Ultra Pass\"}"
+    ]
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "click",
+      "target": "e29"
+    },
+    "to": "s014",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-1-open\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"value\":\"40.00\"}"
+    ]
+  }
+]

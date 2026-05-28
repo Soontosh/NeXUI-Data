@@ -1,0 +1,61 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  admin@localhost":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/
+      - listitem:
+        - link " Events":
+          - /url: /control/events/
+      - listitem:
+        - link " Organizers":
+          - /url: /control/organizers/
+      - listitem:
+        - link " Search":
+          - /url: /control/search/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " User settings":
+          - /url: /control/settings
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "Dashboard" [level=1]
+- textbox "Go to event"
+- heading "Your upcoming events" [level=2]
+- link " Create a new event":
+  - /url: /control/events/add
+- link "NExUI Benchmark Event Mon, June 15, 2026 00:00":
+  - /url: /control/event/nexui/nexui-event/
+- link "0 orders":
+  - /url: /control/event/nexui/nexui-event/orders/
+- link "Shop disabled":
+  - /url: /control/event/nexui/nexui-event/
+- paragraph:
+  - link "View all upcoming events":
+    - /url: /control/events/?ordering=date_from&status=date_future
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3ALQWJDPqPLlnAjF9t01p65Lj3xmzDYm2YlkuERRH2iEQ

@@ -1,0 +1,129 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list:
+    - listitem:
+      - link " Go to shop":
+        - /url: /nexui/nexui-event/
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  NExUI Benchmark Event Mon, June 15, 2026":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " TEST MODE":
+          - /url: /control/event/nexui/nexui-event/live/
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/event/nexui/nexui-event/
+      - listitem:
+        - link " Settings":
+          - /url: /control/event/nexui/nexui-event/settings/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Products":
+          - /url: /control/event/nexui/nexui-event/items/
+        - link "":
+          - /url: "#"
+        - list:
+          - listitem:
+            - link "Products":
+              - /url: /control/event/nexui/nexui-event/items/
+          - listitem:
+            - link "Quotas":
+              - /url: /control/event/nexui/nexui-event/quotas/
+          - listitem:
+            - link "Categories":
+              - /url: /control/event/nexui/nexui-event/categories/
+          - listitem:
+            - link "Questions":
+              - /url: /control/event/nexui/nexui-event/questions/
+          - listitem:
+            - link "Discounts":
+              - /url: /control/event/nexui/nexui-event/discounts/
+      - listitem:
+        - link " Orders":
+          - /url: /control/event/nexui/nexui-event/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Vouchers":
+          - /url: /control/event/nexui/nexui-event/vouchers/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Check-in":
+          - /url: /control/event/nexui/nexui-event/checkinlists/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Send out emails":
+          - /url: /control/event/nexui/nexui-event/sendmail/
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "Products" [level=1]
+- paragraph: Below, you find a list of all available products. You can click on a product name to inspect and change product details. You can also use the buttons on the right to change the order of products or move products to a different category.
+- paragraph:
+  - link " Create a new product":
+    - /url: /control/event/nexui/nexui-event/items/add
+- table:
+  - rowgroup:
+    - row "Product name Default price Edit":
+      - columnheader "Product name"
+      - columnheader
+      - columnheader
+      - columnheader
+      - columnheader
+      - columnheader
+      - columnheader "Default price"
+      - columnheader "Edit"
+  - rowgroup
+  - rowgroup:
+    - row "Tickets ":
+      - columnheader "Tickets ":
+        - text: Tickets
+        - link "":
+          - /url: /control/event/nexui/nexui-event/categories/1/
+  - rowgroup:
+    - 'row "NExUI General Admission #1   $25.00      "':
+      - 'cell "NExUI General Admission #1 "':
+        - strong:
+          - link "NExUI General Admission":
+            - /url: /control/event/nexui/nexui-event/items/1/
+        - text: "#1 "
+      - cell
+      - cell ""
+      - cell
+      - cell
+      - cell
+      - cell "$25.00"
+      - cell "     ":
+        - button "" [disabled]
+        - button "" [disabled]
+        - text: 
+        - link "":
+          - /url: /control/event/nexui/nexui-event/items/1/
+        - link "":
+          - /url: /control/event/nexui/nexui-event/items/add?copy_from=1
+        - link "":
+          - /url: /control/event/nexui/nexui-event/items/1/delete
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3Alc1_V_iEJ0m0xZMsmTL_o2SEYXfx0KmgzncaT9oloEQ

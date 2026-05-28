@@ -1,0 +1,52 @@
+{
+  "task_id": "internet-login-invalid-001",
+  "title": "Submit Invalid Login",
+  "goal": "Submit invalid credentials on the login page and stop on the error message.",
+  "instruction": "Enter invalid credentials, submit the form, and stop when the login error appears.",
+  "url": "https://the-internet.herokuapp.com/login",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["type", "click", "finish"],
+  "tags": ["recorded", "login", "error-state", "form"],
+  "review_notes": "Uses an intentionally invalid login to create a deterministic feedback state without hidden credentials.",
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Username",
+        "text": "invalid-user"
+      },
+      "explanation": "I entered an invalid username as part of the login attempt."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "invalid-password"
+      },
+      "explanation": "I entered an invalid password to trigger the error state safely."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "button[type=\"submit\"]"
+      },
+      "explanation": "I submitted the invalid credentials. The page should now show a login error message.",
+      "post_delay_ms": 1000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I submitted invalid credentials and stopped when the login error appeared."
+      },
+      "explanation": "The login error is visible now, so I am ending the task."
+    }
+  ]
+}

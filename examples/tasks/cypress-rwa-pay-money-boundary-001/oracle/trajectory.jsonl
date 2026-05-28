@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so I can access the authenticated transaction tools."}
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the new transaction wizard from the top navigation."}
+{"action":{"type":"type","target":"e5","text":"Kristian"},"explanation":"I searched for the seeded contact so I can prepare the payment for the intended receiver."}
+{"action":{"type":"click","target":"e6"},"explanation":"I selected Kristian Bradtke as the contact for the payment."}
+{"action":{"type":"type","target":"e5","text":"27"},"explanation":"I entered the payment amount."}
+{"action":{"type":"type","target":"e6","text":"NExUI seeded payment"},"explanation":"I entered a short note describing what the payment is for."}
+{"action":{"type":"ask_user","question":"I have prepared a payment of $27 to Kristian Bradtke with the note 'NExUI seeded payment'. Do you want me to submit it?"},"explanation":"The payment details are ready, but submitting the payment would affect another user, so I am asking for confirmation before proceeding."}

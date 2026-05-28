@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/source-registry.schema.json",
+  "title": "NExUI Source Registry",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "site_id",
+      "site_name",
+      "manifest_path",
+      "base_url",
+      "source_track",
+      "category",
+      "hosting_mode",
+      "redistribution_class",
+      "authoring_status",
+      "reset_strategy",
+      "determinism_level"
+    ],
+    "properties": {
+      "site_id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      },
+      "site_name": {
+        "type": "string"
+      },
+      "manifest_path": {
+        "type": "string"
+      },
+      "base_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "source_track": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "hosting_mode": {
+        "type": "string"
+      },
+      "redistribution_class": {
+        "type": "string"
+      },
+      "authoring_status": {
+        "type": "string"
+      },
+      "reset_strategy": {
+        "type": "string"
+      },
+      "determinism_level": {
+        "type": "string"
+      },
+      "legal_review_status": {
+        "type": "string"
+      },
+      "reset_verified": {
+        "type": "boolean"
+      },
+      "source_priority": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5
+      },
+      "runtime_healthcheck_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "runtime_checkout_path": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  }
+}

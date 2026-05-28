@@ -1,0 +1,49 @@
+{
+  "task_id": "internet-add-remove-elements-001",
+  "title": "Add And Remove One Element",
+  "goal": "Add one Delete button, remove it, and stop there.",
+  "instruction": "Add one element, remove the new Delete button, and stop when it is gone.",
+  "url": "https://the-internet.herokuapp.com/add_remove_elements/",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "dynamic-controls",
+    "state-change"
+  ],
+  "review_notes": "Exercises a two-step state change where the second control appears only after the first action.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add Element"
+      },
+      "explanation": "I added one element, so a Delete button should now be available."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Delete"
+      },
+      "explanation": "I removed the added element, so the Delete button should disappear."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I added one element, removed it, and stopped after the Delete button disappeared."
+      },
+      "explanation": "The added element is gone now, so I am ending the task."
+    }
+  ]
+}

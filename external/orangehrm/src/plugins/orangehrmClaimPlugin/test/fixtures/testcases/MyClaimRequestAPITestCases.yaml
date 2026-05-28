@@ -1,0 +1,911 @@
+Create:
+  'Create Claim Request':
+    userId: 1
+    now:
+      datetime: '2023-01-17 05:40:00'
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 1
+      currencyId: 'CAD'
+      remarks: description
+    data:
+      id: 11
+      referenceId: 202301170000011
+      claimEvent:
+        id: 1
+        name: Office Rent
+        isDeleted: false
+        status: true
+      currencyType:
+        id: CAD
+        name: Canadian Dollar
+      remarks: description
+      status: INITIATED
+    meta: [ ]
+
+  'Create Claim Request - Deactivated Claim Event':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 3
+      currencyId: 'CAD'
+      remarks: description
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\InvalidParamException'
+      message: 'Invalid Parameter'
+
+  'Create Claim Request - ESS User':
+    userId: 2
+    now:
+      datetime: '2023-01-17 05:40:00'
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 2
+      currencyId: 'USD'
+      remarks: sample claim request description
+    data:
+      id: 11
+      referenceId: 202301170000011
+      claimEvent:
+        id: 2
+        name: Employee Salaries
+        isDeleted: false
+        status: true
+      currencyType:
+        id: USD
+        name: United States Dollar
+      remarks: sample claim request description
+      status: INITIATED
+    meta: [ ]
+
+  'Create Claim Request - Without description':
+    userId: 2
+    now:
+      datetime: '2023-01-17 05:40:00'
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 2
+      currencyId: 'USD'
+      remarks: ''
+    data:
+      id: 11
+      referenceId: 202301170000011
+      claimEvent:
+        id: 2
+        name: Employee Salaries
+        isDeleted: false
+        status: true
+      currencyType:
+        id: USD
+        name: United States Dollar
+      remarks:
+      status: INITIATED
+    meta: [ ]
+
+  'Create Claim Request - With null description':
+    userId: 2
+    now:
+      datetime: '2023-01-17 05:40:00'
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 2
+      currencyId: 'USD'
+      remarks: null
+    data:
+      id: 11
+      referenceId: 202301170000011
+      claimEvent:
+        id: 2
+        name: Employee Salaries
+        isDeleted: false
+        status: true
+      currencyType:
+        id: USD
+        name: United States Dollar
+      remarks: null
+      status: INITIATED
+    meta: [ ]
+
+  'Create Claim Request - Wrong Event Id':
+    userId: 2
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 20
+      currencyId: 'USD'
+      remarks: sample claim request description
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\InvalidParamException'
+      message: 'Invalid Parameter'
+
+  'Create Claim Request - Wrong Currency Id':
+    userId: 2
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      admin.pay_grade_service: \OrangeHRM\Admin\Service\PayGradeService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    body:
+      claimEventId: 2
+      currencyId: USDS
+      remarks: sample claim request description
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\InvalidParamException'
+      message: 'Invalid Parameter'
+
+GetOne:
+  'GetOne - Claim Request - has INITIATED state as a admin user':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 1
+    data:
+      {
+        "id": 1,
+        "referenceId": "202301170000001",
+        "claimEvent": {
+          "id": 3,
+          "name": "Travel Expenses",
+          "isDeleted": false,
+          "status": false
+        },
+        "currencyType": {
+          "id": "USD",
+          "name": "United States Dollar"
+        },
+        "remarks": "Travel expenses for business trip to New York",
+        "status": "INITIATED",
+      }
+    meta:
+      "allowedActions": [
+        {
+          "action": "SUBMIT",
+          "name": "Submit"
+        },
+        {
+          "action": "CANCEL",
+          "name": "Cancel"
+        }
+      ]
+      "employee":
+        "empNumber": 4
+        "firstName": "Landon"
+        "lastName": "Abrahams"
+        "middleName": ""
+        "employeeId": "0004"
+        "terminationId": null
+
+  'GetOne - Claim Request - has CANCELLED state as a admin user':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 8
+    data:
+      {
+        "id": 8,
+        "referenceId": "202301170000008",
+        "claimEvent": {
+          "id": 3,
+          "name": "Travel Expenses",
+          "isDeleted": false,
+          "status": false
+        },
+        "currencyType": {
+          "id": "USD",
+          "name": "United States Dollar"
+        },
+        "remarks": "Travel expenses for business trip to New York",
+        "status": "CANCELLED",
+      }
+    meta:
+      "allowedActions": [ ]
+      "employee":
+        "empNumber": 4
+        "firstName": "Landon"
+        "lastName": "Abrahams"
+        "middleName": ""
+        "employeeId": "0004"
+        "terminationId": null
+
+  'GetOne - Claim Request - has REJECTED state as a Admin user':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 5
+    data:
+      {
+        "id": 5,
+        "referenceId": "202301170000005",
+        "claimEvent": {
+          "id": 3,
+          "name": "Travel Expenses",
+          "isDeleted": false,
+          "status": false
+        },
+        "currencyType": {
+          "id": "USD",
+          "name": "United States Dollar"
+        },
+        "remarks": "Expenses for social media advertising campaign",
+        "status": "REJECTED",
+      }
+    meta:
+      "allowedActions": [
+        {
+          "action": "SUBMIT",
+          "name": "Submit"
+        }
+      ]
+      "employee":
+        "empNumber": 4
+        "firstName": "Landon"
+        "lastName": "Abrahams"
+        "middleName": ""
+        "employeeId": "0004"
+        "terminationId": null
+
+  'GetOne - Claim Request - Admin try to get ESS claim request':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 2
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\ForbiddenException'
+      message: 'Unauthorized'
+
+  'GetOne - Claim Request - has SUBMITTED state as a ESS user':
+    userId: 2
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 2
+    data:
+      {
+        "id": 2,
+        "referenceId": "202301170000002",
+        "claimEvent": {
+          "id": 3,
+          "name": "Travel Expenses",
+          "isDeleted": false,
+          "status": false
+        },
+        "currencyType": {
+          "id": "USD",
+          "name": "United States Dollar"
+        },
+        "remarks": "Marketing expenses for trade show",
+        "status": "SUBMITTED",
+      }
+    meta:
+      "allowedActions": [
+        {
+          "action": "CANCEL",
+          "name": "Cancel"
+        }
+      ]
+      "employee":
+        "empNumber": 1
+        "firstName": "Kayla"
+        "lastName": "Abbey"
+        "middleName": ""
+        "employeeId": "0001"
+        "terminationId": null
+
+  'GetOne - Claim Request - has CANCELLED state as a ESS user':
+    userId: 2
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 9
+    data:
+      {
+        "id": 9,
+        "referenceId": "202301170000009",
+        "claimEvent": {
+          "id": 3,
+          "name": "Travel Expenses",
+          "isDeleted": false,
+          "status": false
+        },
+        "currencyType": {
+          "id": "USD",
+          "name": "United States Dollar"
+        },
+        "remarks": "Travel expenses for business trip to New York",
+        "status": "CANCELLED",
+      }
+    meta:
+      "allowedActions": [],
+      "employee":
+        "empNumber": 1
+        "firstName": "Kayla"
+        "lastName": "Abbey"
+        "middleName": ""
+        "employeeId": "0001"
+        "terminationId": null
+
+  'GetOne - Claim Request - ESS try to get Admin claim request':
+    userId: 2
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 1
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\ForbiddenException'
+      message: 'Unauthorized'
+
+  'Get Deleted Claim Request':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+      admin.user_service: \OrangeHRM\Admin\Service\UserService
+      pim.employee_service: \OrangeHRM\Pim\Service\EmployeeService
+      core.config_service: \OrangeHRM\Core\Service\ConfigService
+      core.normalizer_service: \OrangeHRM\Core\Service\NormalizerService
+      core.authorization.user_role_manager_helper: \OrangeHRM\Core\Authorization\Helper\UserRoleManagerHelper
+    factories:
+      core.authorization.user_role_manager: [ '\OrangeHRM\Core\Authorization\Manager\UserRoleManagerFactory', 'getNewUserRoleManager' ]
+    attributes:
+      id: 10
+    exception:
+      class: '\OrangeHRM\Core\Api\V2\Exception\RecordNotFoundException'
+      message: 'Record Not Found'
+
+GetAll:
+  'GetAll - Admin getAll claim requests':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    data:
+      [
+        {
+          "id": 8,
+          "referenceId": "202301170000008",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "CANCELLED",
+          "amount": 300.0,
+          "submittedDate": "2022-12-15"
+        },
+        {
+          "id": 5,
+          "referenceId": "202301170000005",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Expenses for social media advertising campaign",
+          "status": "REJECTED",
+          "amount": 0.0,
+          "submittedDate": "2022-08-20"
+        },
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        },
+        {
+          "id": 1,
+          "referenceId": "202301170000001",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "INITIATED",
+          "amount": 350.0,
+          "submittedDate": null
+        },
+      ]
+    meta: { total: 4 }
+
+  'GetAll - Admin getAll claim requests - with filter by status':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      status: 'SUBMITTED'
+    data:
+      [
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        }
+      ]
+    meta: { total: 1 }
+
+  'GetAll - Admin getAll claim requests - with filter by referenceId':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      referenceId: '202301170000004'
+    data:
+      [
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        }
+      ]
+    meta: { total: 1 }
+
+  'GetAll - Admin getAll claim requests - with filter by not existing referenceId':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      referenceId: '202301170000090'
+    data:
+      [ ]
+    meta: { total: 0 }
+
+  'GetAll - Admin getAll claim requests - with sortOrder - ASC':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      sortOrder: 'ASC'
+    data:
+      [
+        {
+          "id": 1,
+          "referenceId": "202301170000001",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "INITIATED",
+          "amount": 350.0,
+          "submittedDate": null
+        },
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        },
+        {
+          "id": 5,
+          "referenceId": "202301170000005",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Expenses for social media advertising campaign",
+          "status": "REJECTED",
+          "amount": 0.0,
+          "submittedDate": "2022-08-20"
+        },
+        {
+          "id": 8,
+          "referenceId": "202301170000008",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "CANCELLED",
+          "amount": 300.0,
+          "submittedDate": "2022-12-15"
+        }
+      ]
+    meta: { total: 4 }
+
+  'GetAll - Admin getAll claim requests - with sortField - status':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      sortField: 'claimRequest.status'
+      sortOrder: 'ASC'
+    data:
+      [
+        {
+          "id": 8,
+          "referenceId": "202301170000008",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "CANCELLED",
+          "amount": 300.0,
+          "submittedDate": "2022-12-15"
+        },
+        {
+          "id": 1,
+          "referenceId": "202301170000001",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "INITIATED",
+          "amount": 350.0,
+          "submittedDate": null
+        },
+        {
+          "id": 5,
+          "referenceId": "202301170000005",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Expenses for social media advertising campaign",
+          "status": "REJECTED",
+          "amount": 0.0,
+          "submittedDate": "2022-08-20"
+        },
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        }
+      ]
+    meta: { total: 4 }
+
+  'GetAll - Admin getAll claim requests - with sortField - status - DESC':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      sortField: 'claimRequest.status'
+      sortOrder: 'DESC'
+    data:
+      [
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        },
+        {
+          "id": 5,
+          "referenceId": "202301170000005",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Expenses for social media advertising campaign",
+          "status": "REJECTED",
+          "amount": 0.0,
+          "submittedDate": "2022-08-20"
+        },
+        {
+          "id": 1,
+          "referenceId": "202301170000001",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "INITIATED",
+          "amount": 350.0,
+          "submittedDate": null
+        },
+        {
+          "id": 8,
+          "referenceId": "202301170000008",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "CANCELLED",
+          "amount": 300.0,
+          "submittedDate": "2022-12-15"
+        }
+      ]
+    meta: { total: 4 }
+
+  'GetAll - Admin getAll claim requests - with query - fromDate 2022-09-01':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      fromDate: '2022-09-01'
+    data:
+      [
+        {
+          "id": 8,
+          "referenceId": "202301170000008",
+          "claimEvent": {
+            "id": 3,
+            "name": "Travel Expenses"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Travel expenses for business trip to New York",
+          "status": "CANCELLED",
+          "amount": 300.0,
+          "submittedDate": "2022-12-15"
+        },
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        }
+      ]
+    meta: { total: 2 }
+
+  'GetAll - Admin getAll claim requests - with query - fromDate 2022-09-01 - toDate 2022-10-01':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      fromDate: '2022-09-01'
+      toDate: '2022-10-01'
+    data:
+      [
+        {
+          "id": 4,
+          "referenceId": "202301170000004",
+          "claimEvent": {
+            "id": 2,
+            "name": "Employee Salaries"
+          },
+          "currencyType": {
+            "id": "USD",
+            "name": "United States Dollar"
+          },
+          "description": "Salary expenses for temporary employee",
+          "status": "SUBMITTED",
+          "amount": 0.0,
+          "submittedDate": "2022-09-30"
+        }
+      ]
+    meta: { total: 1 }
+
+  'GetAll - Admin getAll claim requests - with query - fromDate > toDate':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      fromDate: '2022-12-31'
+      toDate: '2022-08-01'
+    data:
+      [ ]
+    meta: { total: 0 }
+
+  'GetAll - Admin getAll claim requests - with invalid query':
+    userId: 1
+    services:
+      claim.claim_service: OrangeHRM\Claim\Service\ClaimService
+    query:
+      empNumber: 1
+    invalidOnly: [ empNumber ]

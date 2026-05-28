@@ -1,0 +1,119 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Leah Morgan"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/name\"",
+      "postcondition 2: passed - field value equals \"Leah Morgan\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Leah Patel"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your email address\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "leah.patel@example.com"
+    },
+    "to": "s010",
+    "notes": []
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Leah Patel\"",
+      "postcondition 3: passed - text present \"leah.patel@example.com\""
+    ]
+  }
+]

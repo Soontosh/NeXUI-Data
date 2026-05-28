@@ -1,0 +1,77 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Heath93"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "s3cret"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Account Balance\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/personal\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e17"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/transaction/gGF4nSbm3q4\"",
+      "postcondition 2: passed - text present \"Transaction Detail\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "NExUI seeded comment"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "press",
+      "key": "Enter"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - text present \"NExUI seeded comment\""
+    ]
+  }
+]

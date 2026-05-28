@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-06-01T21:26:30.870Z",
+  "final_snapshot": "s001",
+  "final_url": "http://localhost:3030/#map=5/51.495/-5.581",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e29"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Map Layers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"CyclOSM\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/#map=5/51.495/-5.581"
+    }
+  ]
+}

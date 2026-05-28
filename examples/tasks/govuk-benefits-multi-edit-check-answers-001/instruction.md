@@ -1,0 +1,1 @@
+Complete the childcare-support eligibility prototype to check answers, then make two edits from the summary: add email updates and change the work status to Not working. Stop after the final review page reflects both changes.

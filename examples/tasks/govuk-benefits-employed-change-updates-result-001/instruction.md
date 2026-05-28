@@ -1,0 +1,1 @@
+Complete the childcare-support eligibility prototype on the employed route without email updates, then change updates to Yes, add casey.benefits@example.com, and stop on the final eligibility result page.

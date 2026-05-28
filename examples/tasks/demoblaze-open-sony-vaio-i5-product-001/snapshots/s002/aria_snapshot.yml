@@ -1,0 +1,56 @@
+- navigation:
+  - link "PRODUCT STORE":
+    - /url: index.html
+    - img
+    - text: PRODUCT STORE
+  - list:
+    - listitem:
+      - link "Home (current)":
+        - /url: index.html
+    - listitem:
+      - link "Contact":
+        - /url: "#"
+    - listitem:
+      - link "About us":
+        - /url: "#"
+    - listitem:
+      - link "Cart":
+        - /url: cart.html
+    - listitem:
+      - link "Log in":
+        - /url: "#"
+    - listitem
+    - listitem
+    - listitem:
+      - link "Sign up":
+        - /url: "#"
+- list:
+  - listitem
+  - listitem
+  - listitem
+- link:
+  - /url: "#myCarousel-2"
+- link:
+  - /url: "#myCarousel-2"
+- heading "Sony vaio i5" [level=2]
+- separator
+- heading "$790 *includes tax" [level=3]
+- separator
+- list:
+  - listitem
+- strong: Product description
+- paragraph: Sony is so confident that the VAIO S is a superior ultraportable laptop that the company proudly compares the notebook to Apple's 13-inch MacBook Pro. And in a lot of ways this notebook is better, thanks to a lighter weight.
+- separator
+- link "Add to cart":
+  - /url: "#"
+- heading "About Us" [level=4]
+- paragraph: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+- heading "Get in Touch" [level=4]
+- paragraph: "Address: 2390 El Camino Real"
+- paragraph: "Phone: +440 123456"
+- paragraph: "Email: demo@blazemeter.com"
+- heading "PRODUCT STORE" [level=4]:
+  - img
+  - text: PRODUCT STORE
+- contentinfo:
+  - paragraph: Copyright © Product Store

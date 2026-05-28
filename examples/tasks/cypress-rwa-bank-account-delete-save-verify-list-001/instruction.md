@@ -1,0 +1,1 @@
+Sign in to the self-hosted Cypress Real World App, open Bank Accounts, delete the seeded bank account Waters, King and O'Reilly Bank, and stop once the deleted account no longer appears in the bank-account list.

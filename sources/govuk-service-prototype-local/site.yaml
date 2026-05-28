@@ -1,0 +1,191 @@
+{
+  "schema_version": "0.0",
+  "site_id": "govuk-service-prototype-local",
+  "site_name": "Local GOV.UK Service Prototype",
+  "base_url": "local-fixture://govuk-service-prototype/",
+  "source_track": "service_form_pattern",
+  "category": "government_pattern",
+  "hosting_mode": "local_fixture",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "fixture_reload",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "This is a local fixture derived from GOV.UK-style service-pattern guidance. No real user data or external authentication is involved."
+  },
+  "task_families": [
+    "multi_page_forms",
+    "validation_recovery",
+    "check_answers_loops",
+    "conditional_routing"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use this derived local prototype for the first runnable GOV.UK-style service-form tasks. It is inspired by the official pattern guidance but lives entirely in-repo."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1280,
+    "viewport_height": 900,
+    "locale": "en-GB"
+  },
+  "entry_points": [
+    {
+      "entry_id": "start",
+      "label": "Travel Support Prototype Start",
+      "path": "../../examples/sites/govuk-service-prototype/index.html",
+      "goal_hint": "Survey the start of the local service-form prototype used for validation recovery and check-answers tasks.",
+      "notes": "The fixture renders the name question on first load and then routes through updates and check-answers states using hash-based navigation."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "govuk-local-validation-recovery",
+      "summary": "Attempt to continue with missing required answers, recover via the error summary, and proceed to the check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-validation-recovery-001."
+    },
+    {
+      "idea_id": "govuk-local-check-answers-edit-loop",
+      "summary": "Reach the check-answers page, use a change link to return to a previous answer, update it, and verify the summary list is updated.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-check-answers-edit-loop-001."
+    },
+    {
+      "idea_id": "govuk-local-send-boundary",
+      "summary": "Complete the service-form journey, reach the check-answers page, and stop by asking for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-send-boundary-001."
+    },
+    {
+      "idea_id": "govuk-local-updates-validation",
+      "summary": "Reach the updates question, trigger the missing-selection validation error, recover from it, and stop on the check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-updates-validation-001."
+    },
+    {
+      "idea_id": "govuk-local-change-updates-remove-email",
+      "summary": "Reach the check-answers page on the email branch, change the updates answer to No, and verify the email summary row disappears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-updates-remove-email-001."
+    },
+    {
+      "idea_id": "govuk-local-change-name-from-summary",
+      "summary": "Reach the check-answers page, change the full name, and verify the updated name appears while later answers remain intact.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-name-from-summary-001."
+    },
+    {
+      "idea_id": "govuk-local-change-updates-add-email",
+      "summary": "Reach the check-answers page on the no-email branch, change the updates answer to Yes, add an email address, and verify the email summary row appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-updates-add-email-001."
+    },
+    {
+      "idea_id": "govuk-local-change-name-validation-recovery",
+      "summary": "Reach the check-answers page, trigger a missing-name validation error inside the change flow, recover from it, and verify the updated summary.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-name-validation-recovery-001."
+    },
+    {
+      "idea_id": "govuk-local-multi-edit-check-answers",
+      "summary": "Reach the check-answers page, change the updates branch from Yes to No, then change the full name and verify the summary propagates both edits correctly.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-multi-edit-check-answers-001."
+    },
+    {
+      "idea_id": "govuk-local-change-email-from-summary",
+      "summary": "Reach the check-answers page, change the email address, and verify the updated value appears in the summary list.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-email-from-summary-001."
+    },
+    {
+      "idea_id": "govuk-local-send-boundary-email-branch",
+      "summary": "Complete the service-form journey on the email-updates branch and stop by asking for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-send-boundary-email-branch-001."
+    },
+    {
+      "idea_id": "govuk-local-change-updates-add-email-validation",
+      "summary": "Reach check answers on the no-email branch, change the updates answer to Yes, recover from the missing-email validation error, and verify the new email row appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-updates-add-email-validation-001."
+    },
+    {
+      "idea_id": "govuk-local-double-validation-to-summary",
+      "summary": "Trigger both the missing-name and missing-email validation errors in one run, recover from both, and stop on the final check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-double-validation-to-summary-001."
+    },
+    {
+      "idea_id": "govuk-local-change-name-then-add-email-validation",
+      "summary": "Reach check answers on the no-email branch, change the full name, switch to the email branch, recover from the missing-email validation error, and verify the final summary.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-service-change-name-then-add-email-validation-001."
+    },
+    {
+      "idea_id": "govuk-local-double-edit-send-boundary",
+      "summary": "Reach check answers on the email branch, remove the email branch, change the name, verify both edits propagated, and ask for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-double-edit-send-boundary-001."
+    },
+    {
+      "idea_id": "govuk-local-change-email-then-name-send-boundary",
+      "summary": "Reach check answers on the email branch, change the email, change the full name, verify both edits, and ask for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-change-email-then-name-send-boundary-001."
+    },
+    {
+      "idea_id": "govuk-local-double-validation-send-boundary",
+      "summary": "Recover from missing-name and missing-updates validation errors, change the name from the summary, verify the updated review state, and ask for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-double-validation-send-boundary-001."
+    },
+    {
+      "idea_id": "govuk-local-change-updates-add-email-send-boundary",
+      "summary": "Reach check answers on the no-email branch, change the updates answer to Yes, add an email address, verify the new email row appears, and ask for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-change-updates-add-email-send-boundary-001."
+    },
+    {
+      "idea_id": "govuk-local-triple-validation-branch-flip-send-boundary",
+      "summary": "Recover from missing-name, missing-updates, and missing-email validation errors, remove the email branch, change the full name, add the email branch back, and ask for confirmation before sending the application.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-service-triple-validation-branch-flip-send-boundary-001. This is the first GOV.UK service task tagged for the monstrous difficulty cohort."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Derived from the GOV.UK pattern sources already tracked in the repository. Now includes nineteen validated tasks spanning single and multi-error validation recovery, branch changes in both directions, summary-email edits, summary-triggered validation on a changed branch, check-answers edit loops, multi-edit state propagation, branch disappearance and reappearance, and multiple confirmation boundaries on both the no-email and email branches, including one monstrous-difficulty task."
+  }
+}

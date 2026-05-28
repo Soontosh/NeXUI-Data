@@ -1,0 +1,20 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose Pension as the income source for this run."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to the change type."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected a decrease, which means the new amount must be lower than the old amount."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is set, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1200"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1300"},"explanation":"I entered an invalid decreased amount first so the form shows the numeric validation error."}
+{"action":{"type":"click","target":"e4"},"explanation":"The page should reject a decreased route when the new amount is not actually lower."}
+{"action":{"type":"type","target":"e3","text":"900"},"explanation":"I corrected the new amount so the decrease route can continue."}
+{"action":{"type":"click","target":"e4"},"explanation":"The corrected amount is valid now, so I am moving to contact details."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected text message as the follow-up contact method."}
+{"action":{"type":"type","target":"e7","text":"abc"},"explanation":"I entered an invalid mobile number first so the contact-detail validation appears."}
+{"action":{"type":"click","target":"e6"},"explanation":"The page should reject the invalid mobile number on the text-message branch."}
+{"action":{"type":"type","target":"e7","text":"07123456789"},"explanation":"I corrected the mobile number so the contact branch can continue."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact details are valid now, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Updated pension income after a lower monthly payment."},"explanation":"I added a short note so the review page shows the completed route."}
+{"action":{"type":"click","target":"e4"},"explanation":"Both validation issues are resolved, so I am moving to the review page."}
+{"action":{"type":"ask_user","question":"The income update is ready to send after both validation recoveries. Do you want me to continue and submit it?"},"explanation":"The review page is ready, and the next action would submit the update, so I am asking for confirmation."}

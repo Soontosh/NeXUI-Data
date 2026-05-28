@@ -1,0 +1,140 @@
+{
+  "task_id": "cypress-rwa-dismiss-liked-notification-001",
+  "title": "Dismiss A Specific Notification",
+  "goal": "Sign in, open the notifications page, dismiss the seeded Kristian Bradtke liked-a-transaction notification, and stop once it disappears from the list.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, open Notifications, dismiss the Kristian Bradtke liked-a-transaction notification, and stop when that notification is no longer visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "notifications",
+    "state-change",
+    "hard"
+  ],
+  "review_notes": "Authenticated notification-state task that dismisses one specific seeded notification and verifies it disappears from the list.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/notifications"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Kristian Bradtke liked a transaction."
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted Parisian commented on a transaction."
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated navigation can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-notifications-link']"
+      },
+      "explanation": "I opened the notifications page from the top navigation so the alert list is visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/notifications"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Notifications"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=(//button[normalize-space()='Dismiss'])[2]"
+      },
+      "explanation": "I dismissed the specific liked-notification and stopped once it disappeared from the list.",
+      "postconditions": [
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "Kristian Bradtke liked a transaction."
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Ted Parisian commented on a transaction."
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, opened Notifications, and dismissed the specific Kristian Bradtke liked-notification."
+      },
+      "explanation": "That notification is no longer visible now, so I am ending the task."
+    }
+  ]
+}

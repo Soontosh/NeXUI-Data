@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-open-friends-payment-detail-001",
+  "title": "Open A Friends Feed Payment Detail",
+  "goal": "Sign in, switch to the Friends feed, open a seeded payment transaction, and stop once the detail page is visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/transaction/Ec6hHyL6SC2F",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T18:30:19.427Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "validation",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/transaction/Ec6hHyL6SC2F"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Transaction Detail"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Darrel Ortiz paid Lia Rosenbaum"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "-$307.99"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "friends-feed",
+    "transaction-detail",
+    "hard"
+  ],
+  "review_notes": "Authenticated feed-to-detail task that moves from the Friends feed into a seeded payment detail view."
+}

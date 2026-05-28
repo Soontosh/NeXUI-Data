@@ -1,0 +1,455 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- main:
+  - heading "Projects" [level=1]
+  - link "New project":
+    - /url: /projects/new
+  - list:
+    - listitem:
+      - link "Yours 14":
+        - /url: /dashboard/projects
+    - listitem:
+      - link "Starred 3":
+        - /url: /dashboard/projects/starred
+    - listitem:
+      - link "Explore":
+        - /url: /explore
+    - listitem:
+      - link "Topics":
+        - /url: /explore/projects/topics
+  - searchbox "Filter by name"
+  - button "Name":
+    - text: Name
+    - img
+  - list:
+    - listitem:
+      - link "All":
+        - /url: /dashboard/projects
+    - listitem:
+      - link "Personal":
+        - /url: /?personal=true&sort=name_asc
+  - list:
+    - listitem:
+      - link "A":
+        - /url: /byteblaze/a11y-syntax-highlighting
+      - heading "Byte Blaze / a11y-syntax-highlighting" [level=2]:
+        - link "Byte Blaze / a11y-syntax-highlighting":
+          - /url: /byteblaze/a11y-syntax-highlighting
+      - img
+      - text: Owner
+      - paragraph: 💄 Accessible light and dark syntax highlighting themes
+      - link "1":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/starrers
+        - img
+        - text: "1"
+      - link "0":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: "0"
+      - link "2":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: "2"
+      - text: Updated
+      - time: just now
+    - listitem:
+      - link "A":
+        - /url: /byteblaze/a11y-webring.club
+      - heading "Byte Blaze / a11y-webring.club" [level=2]:
+        - link "Byte Blaze / a11y-webring.club":
+          - /url: /byteblaze/a11y-webring.club
+      - img
+      - text: Owner
+      - paragraph: 🌐 A webring for digital accessibility practitioners.
+      - link "2":
+        - /url: /byteblaze/a11y-webring.club/-/starrers
+        - img
+        - text: "2"
+      - link "0":
+        - /url: /byteblaze/a11y-webring.club/-/forks
+        - img
+        - text: "0"
+      - link "1":
+        - /url: /byteblaze/a11y-webring.club/-/merge_requests
+        - img
+        - text: "1"
+      - link "4":
+        - /url: /byteblaze/a11y-webring.club/-/issues
+        - img
+        - text: "4"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "A":
+        - /url: /a11yproject/a11yproject.com
+      - heading "The A11Y Project / a11yproject.com" [level=2]:
+        - link "The A11Y Project / a11yproject.com":
+          - /url: /a11yproject/a11yproject.com
+      - img
+      - text: Maintainer
+      - paragraph: The A11Y Project is a community-driven effort to make digital accessibility easier.
+      - link "21":
+        - /url: /a11yproject/a11yproject.com/-/starrers
+        - img
+        - text: "21"
+      - link "0":
+        - /url: /a11yproject/a11yproject.com/-/forks
+        - img
+        - text: "0"
+      - link "10":
+        - /url: /a11yproject/a11yproject.com/-/merge_requests
+        - img
+        - text: "10"
+      - link "40":
+        - /url: /a11yproject/a11yproject.com/-/issues
+        - img
+        - text: "40"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "A":
+        - /url: /byteblaze/accessible-html-content-patterns
+      - heading "Byte Blaze / accessible-html-content-patterns" [level=2]:
+        - link "Byte Blaze / accessible-html-content-patterns":
+          - /url: /byteblaze/accessible-html-content-patterns
+      - img
+      - text: Owner
+      - paragraph: ♿ ️ The full HTML5 Doctor Element Index as well as common markup patterns for quick reference.
+      - link "1":
+        - /url: /byteblaze/accessible-html-content-patterns/-/starrers
+        - img
+        - text: "1"
+      - link "0":
+        - /url: /byteblaze/accessible-html-content-patterns/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/accessible-html-content-patterns/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/accessible-html-content-patterns/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link:
+        - /url: /byteblaze/cloud-to-butt
+      - heading "Byte Blaze / cloud-to-butt" [level=2]:
+        - link "Byte Blaze / cloud-to-butt":
+          - /url: /byteblaze/cloud-to-butt
+      - img
+      - text: Owner
+      - paragraph: Chrome extension that replaces occurrences of 'the cloud' with 'my butt'
+      - link "0":
+        - /url: /byteblaze/cloud-to-butt/-/starrers
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/cloud-to-butt/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/cloud-to-butt/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/cloud-to-butt/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "D":
+        - /url: /primer/design
+      - heading "Primer / design" [level=2]:
+        - link "Primer / design":
+          - /url: /primer/design
+      - img
+      - text: Developer
+      - paragraph: Primer Design Guidelines
+      - link "21":
+        - /url: /primer/design/-/starrers
+        - img
+        - text: "21"
+      - link "0":
+        - /url: /primer/design/-/forks
+        - img
+        - text: "0"
+      - link "16":
+        - /url: /primer/design/-/merge_requests
+        - img
+        - text: "16"
+      - link "21":
+        - /url: /primer/design/-/issues
+        - img
+        - text: "21"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "D":
+        - /url: /byteblaze/dotfiles
+      - heading "Byte Blaze / dotfiles" [level=2]:
+        - link "Byte Blaze / dotfiles":
+          - /url: /byteblaze/dotfiles
+      - img
+      - text: Owner
+      - paragraph: 🤖 Computer setup
+      - link "0":
+        - /url: /byteblaze/dotfiles/-/starrers
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/dotfiles/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/dotfiles/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/dotfiles/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "E":
+        - /url: /byteblaze/empathy-prompts
+      - heading "Byte Blaze / empathy-prompts" [level=2]:
+        - link "Byte Blaze / empathy-prompts":
+          - /url: /byteblaze/empathy-prompts
+      - img
+      - text: Owner
+      - paragraph: 💡 Ideas to help consider Inclusive Design principles when making things for others to use.
+      - link "6":
+        - /url: /byteblaze/empathy-prompts/-/starrers
+        - img
+        - text: "6"
+      - link "1":
+        - /url: /byteblaze/empathy-prompts/-/forks
+        - img
+        - text: "1"
+      - link "2":
+        - /url: /byteblaze/empathy-prompts/-/merge_requests
+        - img
+        - text: "2"
+      - link "6":
+        - /url: /byteblaze/empathy-prompts/-/issues
+        - img
+        - text: "6"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "E":
+        - /url: /byteblaze/ericwbailey.website
+      - heading "Byte Blaze / ericwbailey.website" [level=2]:
+        - link "Byte Blaze / ericwbailey.website":
+          - /url: /byteblaze/ericwbailey.website
+      - img
+      - text: Owner
+      - paragraph: 📐 Repo for my personal website.
+      - link "2":
+        - /url: /byteblaze/ericwbailey.website/-/starrers
+        - img
+        - text: "2"
+      - link "0":
+        - /url: /byteblaze/ericwbailey.website/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/ericwbailey.website/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/ericwbailey.website/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "G":
+        - /url: /byteblaze/gimmiethat.space
+      - heading "Byte Blaze / gimmiethat.space" [level=2]:
+        - link "Byte Blaze / gimmiethat.space":
+          - /url: /byteblaze/gimmiethat.space
+      - img
+      - text: Owner
+      - paragraph: I need some space.
+      - link "0":
+        - /url: /byteblaze/gimmiethat.space/-/starrers
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/gimmiethat.space/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/gimmiethat.space/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/gimmiethat.space/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "M":
+        - /url: /byteblaze/millennials-to-snake-people
+      - heading "Byte Blaze / millennials-to-snake-people" [level=2]:
+        - link "Byte Blaze / millennials-to-snake-people":
+          - /url: /byteblaze/millennials-to-snake-people
+      - img
+      - text: Owner
+      - paragraph: 🐍 Chrome extension that replaces occurrences of 'Millennials' with 'Snake People'
+      - link "6":
+        - /url: /byteblaze/millennials-to-snake-people/-/starrers
+        - img
+        - text: "6"
+      - link "0":
+        - /url: /byteblaze/millennials-to-snake-people/-/forks
+        - img
+        - text: "0"
+      - link "2":
+        - /url: /byteblaze/millennials-to-snake-people/-/merge_requests
+        - img
+        - text: "2"
+      - link "4":
+        - /url: /byteblaze/millennials-to-snake-people/-/issues
+        - img
+        - text: "4"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "R":
+        - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline
+      - heading "Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline" [level=2]:
+        - link "Byte Blaze / remove-board-movement-events-from-the-github-issue-timeline":
+          - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline
+      - img
+      - text: Owner
+      - paragraph: This extension can remove and restore the presence of timeline items generated by a project board event from GitHub's timeline.
+      - link "0":
+        - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline/-/starrers
+        - img
+        - text: "0"
+      - link "1":
+        - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline/-/forks
+        - img
+        - text: "1"
+      - link "0":
+        - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/remove-board-movement-events-from-the-github-issue-timeline/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "S":
+        - /url: /byteblaze/solarized-prism-theme
+      - heading "Byte Blaze / solarized-prism-theme" [level=2]:
+        - link "Byte Blaze / solarized-prism-theme":
+          - /url: /byteblaze/solarized-prism-theme
+      - img
+      - text: Owner
+      - paragraph: solarized theme for prism.js
+      - link "0":
+        - /url: /byteblaze/solarized-prism-theme/-/starrers
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/solarized-prism-theme/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/solarized-prism-theme/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/solarized-prism-theme/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago
+    - listitem:
+      - link "T":
+        - /url: /byteblaze/timeit
+      - heading "Byte Blaze / timeit" [level=2]:
+        - link "Byte Blaze / timeit":
+          - /url: /byteblaze/timeit
+      - img
+      - text: Owner
+      - paragraph: Rails implementation of time tracking tool timeit
+      - link "0":
+        - /url: /byteblaze/timeit/-/starrers
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/timeit/-/forks
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/timeit/-/merge_requests
+        - img
+        - text: "0"
+      - link "0":
+        - /url: /byteblaze/timeit/-/issues
+        - img
+        - text: "0"
+      - text: Updated
+      - time: 3 years ago

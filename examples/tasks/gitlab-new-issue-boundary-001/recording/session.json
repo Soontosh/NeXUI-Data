@@ -1,0 +1,101 @@
+{
+  "recorded_at": "2026-06-01T02:19:14.515Z",
+  "final_snapshot": "s005",
+  "final_url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new",
+  "snapshot_count": 6,
+  "transition_count": 5,
+  "oracle_step_count": 6,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "byteblaze"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/users/sign_in"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "hello1234"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/users/sign_in"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/new\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e35",
+        "text": "NExUI benchmark issue draft"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e53",
+        "text": "This issue body is prepared for a bounded GitLab benchmark task."
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "ref": "e1",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 235,
+      "y": 13.11,
+      "width": 16,
+      "height": 20
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "link",
+    "name": "Supplier",
+    "description": "http://localhost:8090/desk/supplier",
+    "text": "Supplier",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 251,
+      "y": 13.44,
+      "width": 81.84,
+      "height": 20
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "button",
+    "name": "List View",
+    "description": "",
+    "text": "List View",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 948.45,
+      "y": 10,
+      "width": 117.53,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "button",
+    "name": "Saved Filters",
+    "description": "",
+    "text": "Saved Filters",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1075.98,
+      "y": 10,
+      "width": 123.64,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "button",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1209.63,
+      "y": 10,
+      "width": 32,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "button",
+    "name": "Menu",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1251.63,
+      "y": 10,
+      "width": 32,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "button",
+    "name": "Add Supplier",
+    "description": "",
+    "text": "Add Supplier",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1293.63,
+      "y": 10,
+      "width": 121.38,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "textbox",
+    "name": "ID",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 235,
+      "y": 62,
+      "width": 109.31,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "button",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 344.31,
+      "y": 62,
+      "width": 33,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "textbox",
+    "name": "Supplier Name",
+    "description": "",
+    "text": "%NExUI Test Supplier%",
+    "tag": "input",
+    "value": "%NExUI Test Supplier%",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 387.31,
+      "y": 62,
+      "width": 109.31,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e11",
+    "role": "button",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 496.63,
+      "y": 62,
+      "width": 33,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e12",
+    "role": "combobox",
+    "name": "Supplier Group",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 539.63,
+      "y": 62,
+      "width": 142.31,
+      "height": 28
+    },
+    "states": {
+      "enabled": true,
+      "expanded": false,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e13",
+    "role": "button",
+    "name": "0 Filter Applied",
+    "description": "",
+    "text": "Filter",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1153.94,
+      "y": 62,
+      "width": 70.97,
+      "height": 30.67
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e14",
+    "role": "button",
+    "name": "Clear all filters",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1223.91,
+      "y": 62,
+      "width": 33,
+      "height": 30.67
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e15",
+    "role": "button",
+    "name": "ascending",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1266.91,
+      "y": 62,
+      "width": 32,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e16",
+    "role": "button",
+    "name": "Created On",
+    "description": "",
+    "text": "Created On",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1297.91,
+      "y": 62,
+      "width": 117.09,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e17",
+    "role": "checkbox",
+    "name": "on",
+    "description": "Select All",
+    "text": "on",
+    "tag": "input",
+    "value": "on",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 250,
+      "y": 110.5,
+      "width": 14,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e18",
+    "role": "div",
+    "name": "NExUI Test Supplier Enabled Company NExUI Test Supplier 1 d 0 ·",
+    "description": "",
+    "text": "NExUI Test Supplier Enabled Company NExUI Test Supplier 1 d 0 ·",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 235,
+      "y": 133,
+      "width": 1206.27,
+      "height": 41
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e19",
+    "role": "checkbox",
+    "name": "on",
+    "description": "",
+    "text": "on",
+    "tag": "input",
+    "value": "on",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 250,
+      "y": 146,
+      "width": 14,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e20",
+    "role": "link",
+    "name": "NExUI Test Supplier",
+    "description": "http://localhost:8090/desk/supplier/NExUI%20Test%20Supplier",
+    "text": "NExUI Test Supplier",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 272,
+      "y": 142.5,
+      "width": 144.33,
+      "height": 21
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e21",
+    "role": "button",
+    "name": "20",
+    "description": "",
+    "text": "20",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": false,
+    "bounds": {
+      "x": 236,
+      "y": 863,
+      "width": 34.56,
+      "height": 29
+    },
+    "states": {
+      "enabled": false,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e22",
+    "role": "button",
+    "name": "100",
+    "description": "",
+    "text": "100",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 269.56,
+      "y": 863,
+      "width": 40.84,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e23",
+    "role": "button",
+    "name": "500",
+    "description": "",
+    "text": "500",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 309.41,
+      "y": 863,
+      "width": 43.84,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e24",
+    "role": "button",
+    "name": "2500",
+    "description": "",
+    "text": "2500",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 352.25,
+      "y": 863,
+      "width": 52.13,
+      "height": 29
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

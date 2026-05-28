@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-05-29T18:58:33.561Z",
+  "final_snapshot": "s001",
+  "final_url": "http://localhost:7780/admin/admin/user/new/",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 1,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e15"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/admin/admin/user/new/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Heading level 1: New User\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    }
+  ]
+}

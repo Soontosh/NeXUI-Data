@@ -1,0 +1,87 @@
+{
+  "task_id": "accessible-university-after-open-visitors-menu-001",
+  "title": "Open Visitors Menu On Accessible AU Page",
+  "goal": "Open the Visitors menu on the accessible AU home page and stop after its submenu items become visible.",
+  "instruction": "On the accessible AU home page, open the Visitors menu and stop when its submenu items are visible.",
+  "url": "https://projects.accesscomputing.uw.edu/au/after.html",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "accessible-university",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "accessibility",
+    "navigation",
+    "menu",
+    "structure"
+  ],
+  "review_notes": "Accessibility-first menu-expansion task on the corrected AU page. It verifies that an expandable navigation region exposes the Visitors submenu items.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/after.html"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Visitors",
+        "states": {
+          "expanded": true
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Visitors"
+      },
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Visitors",
+            "states": {
+              "expanded": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 200,
+      "explanation": "I expanded the Visitors menu so its submenu items are now visible on the accessible page."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Visitors menu on the accessible AU page and stopped after the submenu items appeared."
+      },
+      "explanation": "The requested Visitors submenu is visible now, so I am ending the task."
+    }
+  ]
+}

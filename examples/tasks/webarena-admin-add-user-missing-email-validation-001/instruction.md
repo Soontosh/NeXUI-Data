@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open Add New User, enter username ari.validation, first name Ari, last name Validation, password NExUIUser!2026, confirm the password, enter your current password admin1234, try to save without entering an email, and stop when the missing-email validation is visible.

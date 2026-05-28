@@ -1,0 +1,134 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Amina Patel"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "old-address@example.com"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\"",
+      "postcondition 2: passed - field value equals \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"No\"",
+      "postcondition 3: passed - text absent \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/name\"",
+      "postcondition 2: passed - field value equals \"Amina Patel\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Amina Khan"
+    },
+    "to": "s010",
+    "notes": []
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s012",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Amina Khan\"",
+      "postcondition 3: passed - text absent \"Email address\""
+    ]
+  }
+]

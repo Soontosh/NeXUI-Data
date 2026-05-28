@@ -1,0 +1,159 @@
+{
+  "task_id": "cypress-rwa-open-new-transaction-contact-step-001",
+  "title": "Sign In And Select A Contact For A New Transaction",
+  "goal": "Sign in, open the new transaction flow, choose a seeded contact, and stop once the payment step for that contact is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, open the New transaction flow, select the seeded contact Kristian Bradtke, and stop when the payment step is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 7,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "new-transaction",
+    "contact-selection",
+    "hard"
+  ],
+  "review_notes": "Modern authenticated task that enters the multi-step transaction wizard, searches the seeded user list, and lands on the transaction payment/request step for a specific contact.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/transaction/new"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Kristian Bradtke"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Request"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Pay"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so I can access the authenticated transaction tools.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-new-transaction']"
+      },
+      "explanation": "I opened the new transaction wizard from the top navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/new"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Select Contact"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='user-list-search-input']",
+        "text": "Kristian"
+      },
+      "explanation": "I searched for the seeded contact so the user list narrows to the intended receiver."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='user-list-item-GjWovtg2hr']"
+      },
+      "explanation": "I selected Kristian Bradtke as the contact for the new transaction.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Kristian Bradtke"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Request"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, opened the new transaction flow, and selected Kristian Bradtke so the payment step is ready."
+      },
+      "explanation": "The transaction step for the chosen contact is visible now, so I am ending the task."
+    }
+  ]
+}

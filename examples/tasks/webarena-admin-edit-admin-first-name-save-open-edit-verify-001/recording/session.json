@@ -1,0 +1,119 @@
+{
+  "recorded_at": "2026-06-01T05:02:08.535Z",
+  "final_snapshot": "s005",
+  "final_url": "http://localhost:7780/admin/admin/user/edit/user_id/1/",
+  "snapshot_count": 6,
+  "transition_count": 5,
+  "oracle_step_count": 6,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e37"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/admin/admin/user/edit/user_id/1/\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e27",
+        "text": "Benchmark"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "type",
+        "target": "e34",
+        "text": "admin1234"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e19"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Benchmark\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e37"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/admin/admin/user/edit/user_id/1/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "field value equals \"Benchmark\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "internet-dropdown-001",
+  "title": "Select Dropdown Option 2",
+  "goal": "Open the dropdown page, select Option 2, and stop there.",
+  "instruction": "Select Option 2 from the dropdown and stop when it is selected.",
+  "url": "https://the-internet.herokuapp.com/dropdown",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "select",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "form-control",
+    "selection"
+  ],
+  "review_notes": "Selects a stable dropdown option on The Internet.",
+  "steps": [
+    {
+      "action": {
+        "type": "select",
+        "target_selector": "#dropdown",
+        "option": "2"
+      },
+      "explanation": "I selected Option 2 from the dropdown."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I selected Option 2 from the dropdown and stopped there."
+      },
+      "explanation": "The requested option is selected, so I am ending the task."
+    }
+  ]
+}

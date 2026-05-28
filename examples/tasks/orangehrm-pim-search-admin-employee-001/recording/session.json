@@ -1,0 +1,142 @@
+{
+  "recorded_at": "2026-05-29T17:19:31.582Z",
+  "final_snapshot": "s006",
+  "final_url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+  "snapshot_count": 7,
+  "transition_count": 6,
+  "oracle_step_count": 6,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "nexui_admin"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "NExUIAdmin!2026"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/web/index.php/dashboard/index\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Dashboard\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/dashboard/index"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/web/index.php/pim/viewEmployeeList\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Employee Information\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e24",
+        "text": "0001"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e31"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"NExUI Admin\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList"
+    }
+  ]
+}

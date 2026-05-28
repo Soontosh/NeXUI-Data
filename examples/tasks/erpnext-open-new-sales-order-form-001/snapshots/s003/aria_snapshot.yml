@@ -1,0 +1,115 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Sales Order":
+      - /url: /desk/sales-order
+  - listitem:
+    - link "/ New Sales Order":
+      - /url: /desk/sales-order/new-sales-order-gnirljhgdd
+- text: Not Saved
+- button "Get Items From"
+- button "Save"
+- tablist:
+  - listitem:
+    - tab "Details"
+  - listitem:
+    - tab "Terms"
+  - listitem:
+    - tab "More Info"
+- tabpanel "Details":
+  - text: Series *
+  - combobox:
+    - option "SAL-ORD-.YYYY.-" [selected]
+  - text: naming_series Customer *
+  - combobox
+  - status: Begin typing for results.
+  - text: customer Order Type *
+  - combobox:
+    - option
+    - option "Sales" [selected]
+    - option "Maintenance"
+    - option "Shopping Cart"
+  - text: order_type Date *
+  - textbox: 05-31-2026
+  - text: transaction_date Delivery Date
+  - textbox
+  - text: delivery_date
+  - checkbox "Is Subcontracted"
+  - text: Is Subcontracted
+  - paragraph
+  - text: is_subcontracted Title
+  - textbox
+  - text: title Currency and Price List Items Scan Barcode
+  - textbox
+  - text: scan_barcode Set Source Warehouse
+  - combobox
+  - status: Begin typing for results.
+  - text: set_warehouse items Items
+  - checkbox
+  - text: No. Item Code * Delivery Date * Quantity * Rate (USD) Amount (USD)
+  - checkbox
+  - text: 1 0 $ 0.00 $ 0.00
+  - button "Add row"
+  - button "Add multiple"
+  - button "Download"
+  - button "Upload"
+  - text: Total Quantity 0 total_qty Total (USD) $ 0.00 total Taxes Tax Category
+  - combobox
+  - status: Begin typing for results.
+  - text: tax_category Sales Taxes and Charges Template
+  - combobox: US ST 6%
+  - status: Begin typing for results.
+  - text: taxes_and_charges
+  - checkbox "Is customer exempted from sales tax?"
+  - text: Is customer exempted from sales tax?
+  - paragraph
+  - text: exempt_from_sales_tax Shipping Rule
+  - combobox
+  - status: Begin typing for results.
+  - text: shipping_rule Incoterm
+  - combobox
+  - status: Begin typing for results.
+  - text: incoterm taxes Sales Taxes and Charges
+  - checkbox
+  - text: No. Type * Account Head * Tax Rate Net Amount (USD) Amount (USD) Total (USD)
+  - checkbox
+  - text: 1 On Net Total
+  - link "ST 6% - NBL":
+    - /url: /desk/account/ST%206%25%20-%20NBL
+  - text: 6 $ 0.00 $ 0.00 $ 0.00
+  - button "Add row"
+  - text: Total Taxes and Charges (USD) $ 0.00 base_total_taxes_and_charges Total Taxes and Charges (USD) $ 0.00 total_taxes_and_charges Totals (USD) Grand Total (USD) $ 0.00 grand_total Rounding Adjustment (USD) $ 0.00 rounding_adjustment Rounded Total (USD) $ 0.00 rounded_total Advance Paid (USD) $ 0.00 advance_paid
+- contentinfo
+- navigation:
+  - img
+  - text: May, 2026
+  - img
+- text: "Su Mo Tu We Th Fr Sa 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 Today 18 : 46 : 36"
+- slider: "18"
+- slider: "46"
+- slider: "36"
+- text: Today
+- navigation:
+  - text: May, 2026
+  - img
+- text: Su Mo Tu We Th Fr Sa 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 Today
+- navigation:
+  - img
+  - text: May, 2026
+  - img
+- text: Su Mo Tu We Th Fr Sa 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 Today
+- navigation:
+  - img
+  - text: May, 2026
+  - img
+- text: Su Mo Tu We Th Fr Sa 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 Today
+- navigation:
+  - img
+  - text: May, 2026
+  - img
+- text: Su Mo Tu We Th Fr Sa 26 27 28 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 3 4 5 6 Today

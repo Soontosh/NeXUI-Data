@@ -1,0 +1,222 @@
+{
+  "task_id": "govuk-service-change-name-then-add-email-validation-001",
+  "title": "Change Name, Add Email Branch, And Recover From Validation",
+  "goal": "Reach check answers on the no-email branch, change the full name, switch the updates answer to Yes, recover from the missing-email validation error, and stop after the summary reflects both edits.",
+  "instruction": "Complete the travel support prototype to check answers without email updates. Then change the full name, switch to the email-updates branch, recover from the missing-email validation error, and verify the final summary.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-service-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 12,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 5,
+  "tags": [
+    "recorded",
+    "service-form",
+    "validation-recovery",
+    "check-answers",
+    "edit-loop",
+    "very-hard"
+  ],
+  "review_notes": "Very-hard summary-edit task on the travel-support prototype. It changes the applicant name, then switches to the email branch and recovers from the new required-field validation before returning to check answers.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Leah Patel"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "leah.patel@example.com"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Leah Morgan"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Leah Morgan"
+      },
+      "explanation": "I entered the initial applicant name to start the service journey."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The name is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No"
+      },
+      "explanation": "I selected no email updates for the initial route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial route is complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-name"
+      },
+      "explanation": "I followed the full-name change link so I can update the applicant name from the summary.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/name"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Full name"
+          },
+          "value": "Leah Morgan"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Leah Patel"
+      },
+      "explanation": "I replaced the original name with the corrected value."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The new name is entered, so I am moving back through the updates page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I switched the route to the email-updates branch, which now requires an email address."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "I continued without an email so the page would show the new required-field validation.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter your email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "leah.patel@example.com"
+      },
+      "explanation": "I entered the required email address so the updated branch can continue."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "Both edits are complete now, so I am returning to check answers to verify the updated summary.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Leah Patel"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "leah.patel@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the full name, switched to the email branch, recovered from the missing-email validation, and returned to check answers with the updated summary."
+      },
+      "explanation": "The final summary shows both the corrected name and the new email row, so I am ending the task."
+    }
+  ]
+}

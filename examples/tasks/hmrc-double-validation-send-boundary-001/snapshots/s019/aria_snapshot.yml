@@ -1,0 +1,59 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/notes"
+- main:
+  - region "Check your answers before sending this update":
+    - heading "Check your answers before sending this update" [level=1]
+    - paragraph: Make sure the information below matches the change you want to report.
+    - table:
+      - rowgroup:
+        - row "Tax year 2025-26 Change":
+          - rowheader "Tax year"
+          - cell "2025-26"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/tax-year"
+        - row "Income source Pension Change":
+          - rowheader "Income source"
+          - cell "Pension"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/income-source"
+        - row "Change Decreased Change":
+          - rowheader "Change"
+          - cell "Decreased"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/change-kind"
+        - row "Previous monthly amount £1200.00 Change":
+          - rowheader "Previous monthly amount"
+          - cell "£1200.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/old-amount"
+        - row "New monthly amount £900.00 Change":
+          - rowheader "New monthly amount"
+          - cell "£900.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/new-amount"
+        - row "Contact method Text message Change":
+          - rowheader "Contact method"
+          - cell "Text message"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Mobile number 07123456789 Change":
+          - rowheader "Mobile number"
+          - cell "07123456789"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Supporting notes Updated pension income after a lower monthly payment. Change":
+          - rowheader "Supporting notes"
+          - cell "Updated pension income after a lower monthly payment."
+          - cell "Change":
+            - link "Change":
+              - /url: "#/notes"
+    - text: Do not send this update unless the new amount and contact details are correct.
+    - button "Send update"

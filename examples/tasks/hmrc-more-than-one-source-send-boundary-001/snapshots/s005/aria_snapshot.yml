@@ -1,0 +1,16 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/income-source"
+- main:
+  - region "How did the income change?":
+    - heading "How did the income change?" [level=1]
+    - paragraph: Tell us whether your more than one source went up, went down, or stopped.
+    - group "How did the income change?":
+      - text: How did the income change?
+      - radio "It increased" [checked]
+      - text: It increased
+      - radio "It decreased"
+      - text: It decreased
+      - radio "It stopped"
+      - text: It stopped
+    - button "Continue"

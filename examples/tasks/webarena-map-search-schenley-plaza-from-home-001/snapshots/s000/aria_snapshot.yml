@@ -1,0 +1,90 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=5/51.500/-0.100
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=5/51.500/-0.100
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=5/51.500/-0.100
+    - link "Export":
+      - /url: http://localhost:3030/export#map=5/51.500/-0.100
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2F#map=5/51.500/-0.100
+    - link "Sign Up":
+      - /url: /user/new
+- link "Where is this?":
+  - /url: "#"
+- textbox "Search"
+- button "Go"
+- link "Find directions between two points":
+  - /url: /directions
+  - img
+- heading "Welcome to OpenStreetMap!" [level=2]
+- button "Close"
+- paragraph: OpenStreetMap is a map of the world, created by people like you and free to use under an open license.
+- paragraph:
+  - text: Hosting is supported by
+  - link "UCL":
+    - /url: https://www.ucl.ac.uk
+  - text: ","
+  - link "Fastly":
+    - /url: https://www.fastly.com/
+  - text: ","
+  - link "Bytemark Hosting":
+    - /url: https://www.bytemark.co.uk
+  - text: ", and other"
+  - link "partners":
+    - /url: https://hardware.openstreetmap.org/thanks/
+  - text: .
+- link "Learn More":
+  - /url: /about
+- link "Start Mapping":
+  - /url: /user/new
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 300 km 100 mi ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

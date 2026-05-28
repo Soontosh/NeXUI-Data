@@ -1,0 +1,392 @@
+[
+  {
+    "ref": "e1",
+    "role": "button",
+    "name": "open drawer",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 252,
+      "y": 9.5,
+      "width": 45,
+      "height": 45
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:3000/",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 668.64,
+      "y": 22,
+      "width": 235,
+      "height": 20
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "link",
+    "name": "NEW",
+    "description": "http://localhost:3000/transaction/new",
+    "text": "NEW",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1275.3,
+      "y": 13,
+      "width": 95.7,
+      "height": 38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "link",
+    "name": "8",
+    "description": "http://localhost:3000/notifications",
+    "text": "8",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1371,
+      "y": 9.5,
+      "width": 45,
+      "height": 45
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "tab",
+    "name": "EVERYONE",
+    "description": "http://localhost:3000/",
+    "text": "EVERYONE",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 698.67,
+      "y": 64,
+      "width": 102.66,
+      "height": 48
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": true,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "tab",
+    "name": "FRIENDS",
+    "description": "http://localhost:3000/contacts",
+    "text": "FRIENDS",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": false,
+    "bounds": {
+      "x": 801.33,
+      "y": 64,
+      "width": 90,
+      "height": 48
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": false,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "tab",
+    "name": "MINE",
+    "description": "http://localhost:3000/personal",
+    "text": "MINE",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": false,
+    "bounds": {
+      "x": 891.33,
+      "y": 64,
+      "width": 90,
+      "height": 48
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": false,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "link",
+    "name": "Home",
+    "description": "http://localhost:3000/",
+    "text": "Home",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 155.5,
+      "width": 182.56,
+      "height": 44.02
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "link",
+    "name": "My Account",
+    "description": "http://localhost:3000/user/settings",
+    "text": "My Account",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 199.52,
+      "width": 182.56,
+      "height": 44.02
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "link",
+    "name": "Bank Accounts",
+    "description": "http://localhost:3000/bankaccounts",
+    "text": "Bank Accounts",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 243.53,
+      "width": 182.56,
+      "height": 44.02
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e11",
+    "role": "link",
+    "name": "Notifications",
+    "description": "http://localhost:3000/notifications",
+    "text": "Notifications",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 287.55,
+      "width": 182.56,
+      "height": 44.02
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e12",
+    "role": "button",
+    "name": "Logout",
+    "description": "",
+    "text": "Logout",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 347.56,
+      "width": 131.73,
+      "height": 44.02
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e13",
+    "role": "button",
+    "name": "Date: ALL",
+    "description": "",
+    "text": "Date: ALL",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 446,
+      "y": 160,
+      "width": 96.25,
+      "height": 32
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e14",
+    "role": "button",
+    "name": "Amount: $0 - $1,000",
+    "description": "",
+    "text": "Amount: $0 - $1,000",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 550.25,
+      "y": 160,
+      "width": 150.8,
+      "height": 32
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e15",
+    "role": "link",
+    "name": "",
+    "description": "https://cypress.io/",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 830.61,
+      "y": 1239.23,
+      "width": 60,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "task_id": "erpnext-open-supplier-list-filter-001",
+  "title": "Filter The ERPNext Supplier List To The Seeded Supplier",
+  "goal": "Sign in to ERPNext, filter the supplier list to the seeded supplier, and stop on the filtered list state.",
+  "instruction": "Open the ERPNext supplier list, sign in as Administrator with password admin, filter Supplier Name to NExUI Test Supplier, apply the filter, and stop once the filtered list shows that supplier.",
+  "url": "http://localhost:8090/app/supplier",
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": ["click", "type", "finish"],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": ["recorded", "erpnext", "authenticated", "supplier-list", "filter", "hard"],
+  "review_notes": "Fixture-backed ERPNext list task that proves the seeded supplier is visible and filterable.",
+  "success_assertions": [
+    {"type": "url_contains", "value": "/desk/supplier?supplier_name="},
+    {
+      "type": "field_value_equals",
+      "match": {"role": "textbox", "name": "Supplier Name"},
+      "value": "NExUI Test Supplier"
+    },
+    {"type": "text_present", "artifact": "reader_view", "value": "NExUI Test Supplier"}
+  ],
+  "steps": [
+    {
+      "action": {"type": "type", "target_role": "textbox", "target_name": "Email", "text": "Administrator"},
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {"type": "type", "target_role": "textbox", "target_name": "Password", "text": "admin"},
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {"type": "click", "target_role": "button", "target_name": "Login"},
+      "explanation": "I signed in so ERPNext can redirect back to the supplier list.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {"type": "url_contains", "value": "/desk/supplier"},
+        {"type": "candidate_exists", "match": {"role": "textbox", "name": "Supplier Name"}}
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {"type": "type", "target_role": "textbox", "target_name": "Supplier Name", "text": "NExUI Test Supplier"},
+      "explanation": "I entered the seeded supplier name into the list filter."
+    },
+    {
+      "action": {"type": "click", "target_role": "button", "target_name": "Filter"},
+      "explanation": "I applied the supplier-name filter so the seeded row is isolated.",
+      "postconditions": [
+        {"type": "url_contains", "value": "/desk/supplier?supplier_name="},
+        {
+          "type": "field_value_equals",
+          "match": {"role": "textbox", "name": "Supplier Name"},
+          "value": "NExUI Test Supplier"
+        },
+        {"type": "text_present", "artifact": "reader_view", "value": "NExUI Test Supplier"}
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {"type": "finish", "summary": "I signed in, filtered the supplier list, and confirmed the seeded supplier is shown."},
+      "explanation": "The supplier list is filtered to the seeded supplier now, so I am ending the task."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/updates"
+- main:
+  - region "Check your answers before continuing":
+    - heading "Check your answers before continuing" [level=1]
+    - table:
+      - rowgroup:
+        - row "Usually live in the UK Yes Change":
+          - rowheader "Usually live in the UK"
+          - cell "Yes"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/residency"
+        - row "Children needing childcare 1 child Change":
+          - rowheader "Children needing childcare"
+          - cell "1 child"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/children"
+        - row "Work status Employed Change":
+          - rowheader "Work status"
+          - cell "Employed"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/work-status"
+        - row "Monthly income £2100.00 Change":
+          - rowheader "Monthly income"
+          - cell "£2100.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/income"
+        - row "Email updates No Change":
+          - rowheader "Email updates"
+          - cell "No"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/updates"
+    - text: The next step would continue to a fuller eligibility result. Stop and review the details here before moving on.
+    - button "Continue to eligibility result"

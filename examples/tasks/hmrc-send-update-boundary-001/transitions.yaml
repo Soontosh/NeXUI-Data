@@ -1,0 +1,159 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/income-source\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/change-kind\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/old-amount\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "950"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/new-amount\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "0"
+    },
+    "to": "s009",
+    "notes": []
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/contact-method\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - text present \"Postal address\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "23 Market Street, Leeds"
+    },
+    "to": "s012",
+    "notes": []
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s013",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/notes\""
+    ]
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "Business closed at the end of the tax year."
+    },
+    "to": "s014",
+    "notes": []
+  },
+  {
+    "from": "s014",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s015",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Self-employment\"",
+      "postcondition 3: passed - candidate exists for {\"role\":\"button\",\"name\":\"Send update\"}"
+    ]
+  }
+]

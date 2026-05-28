@@ -1,0 +1,24 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is set, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose pension as the initial income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase for the first pass through the form."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is complete, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1300"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1525"},"explanation":"I entered the increased new monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount details are complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the contact method."}
+{"action":{"type":"type","target":"e6","text":"notes@example.com"},"explanation":"I entered the follow-up email address."}
+{"action":{"type":"click","target":"e7"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Initial pension update before correcting the source."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The first route is complete, so I am moving to the review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the income-source change link so I can correct the earlier route choice."}
+{"action":{"type":"click","target":"e3"},"explanation":"I changed the income source to employment pay."}
+{"action":{"type":"click","target":"e7"},"explanation":"The corrected source is set, so I am moving back through the remaining pages."}
+{"action":{"type":"click","target":"e6"},"explanation":"The existing change type is still suitable, so I am keeping it and moving to the previous amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount remains valid, so I am moving to the new amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The new amount still fits the route, so I am moving to contact details."}
+{"action":{"type":"click","target":"e7"},"explanation":"The contact details are unchanged, so I am moving to supporting notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The saved details are intact, so I am returning to the review page to verify the corrected source."}
+{"action":{"type":"finish","summary":"I changed the income source from Pension to Employment pay and confirmed the review page now reflects the corrected source while keeping the other details."},"explanation":"The review page now shows the corrected source and preserved details, so I am ending the task."}

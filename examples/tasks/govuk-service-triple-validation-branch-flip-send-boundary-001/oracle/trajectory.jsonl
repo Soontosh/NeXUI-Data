@@ -1,0 +1,20 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I tried to continue immediately so the required-name validation appears."}
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the missing applicant name so the journey can continue."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete now, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I continued without choosing updates so the required selection validation appears."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Yes so the journey starts on the email-updates branch."}
+{"action":{"type":"type","target":"e7","text":"old-address@example.com"},"explanation":"I entered the initial email address so the first review state includes the email row."}
+{"action":{"type":"click","target":"e4"},"explanation":"The initial answers are complete, so I am moving to check answers on the email branch."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the updates change link so I can remove the email branch from the summary."}
+{"action":{"type":"click","target":"e5"},"explanation":"I switched the updates answer to No, which should remove the email row from the review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The branch changed, so I am returning to review to confirm the email row disappeared."}
+{"action":{"type":"click","target":"e3"},"explanation":"I followed the name change link so I can make a second summary edit on the no-email branch."}
+{"action":{"type":"type","target":"e2","text":"Jordan Reed"},"explanation":"I replaced the original name with the final corrected value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The updated name is entered, so I am moving back through the preserved updates answer."}
+{"action":{"type":"click","target":"e4"},"explanation":"The no-email branch is still complete, so I am returning to review to confirm the name change before re-adding email."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the updates change link again so I can add the email branch back from the summary."}
+{"action":{"type":"click","target":"e3"},"explanation":"I switched the route back to the email branch, which makes the email address required again."}
+{"action":{"type":"click","target":"e4"},"explanation":"I continued without an email so the new required-field validation appears inside the change flow."}
+{"action":{"type":"type","target":"e7","text":"jordan.reed@example.com"},"explanation":"I entered the replacement email address so the re-added branch can continue."}
+{"action":{"type":"click","target":"e4"},"explanation":"The final email branch is complete now, so I am returning to review to verify the final summary and stop before sending."}
+{"action":{"type":"ask_user","question":"The application is ready and Send application would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the application, so I need confirmation before continuing."}

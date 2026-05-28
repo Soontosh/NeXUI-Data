@@ -1,0 +1,21 @@
+{"action":{"type":"type","target":"e1","text":"nexui_admin"},"explanation":"I entered the seeded OrangeHRM admin username."}
+{"action":{"type":"type","target":"e2","text":"NExUIAdmin!2026"},"explanation":"I entered the seeded OrangeHRM admin password."}
+{"action":{"type":"click","target":"e3"},"explanation":"I signed in and returned to the employee list so I can start the first mutation from PIM."}
+{"action":{"type":"type","target":"e23","text":"Ava"},"explanation":"I searched for Ava Patel so the PIM table narrows to the seeded employee row."}
+{"action":{"type":"click","target":"e31"},"explanation":"I applied the PIM employee filter before opening Ava Patel's record."}
+{"action":{"type":"click","target":"e33"},"explanation":"I opened Ava Patel's personal-details view to apply the first mutation."}
+{"action":{"type":"type","target":"e43","text":"Quinn"},"explanation":"I entered Quinn as Ava Patel's middle name."}
+{"action":{"type":"click","target":"e54"},"explanation":"I saved the personal-details update so I can later verify it after returning through PIM."}
+{"action":{"type":"click","target":"e18"},"explanation":"I returned to the employee list so the saved middle name can be reverified through a second PIM navigation path."}
+{"action":{"type":"type","target":"e23","text":"Ava"},"explanation":"I searched for Ava Patel again so the saved record can be reopened from PIM."}
+{"action":{"type":"click","target":"e31"},"explanation":"I applied the employee filter again before reopening Ava Patel."}
+{"action":{"type":"click","target":"e18"},"explanation":"I reopened Ava Patel's record from PIM to verify the saved middle name before applying the second mutation."}
+{"action":{"type":"click","target":"e25"},"explanation":"I switched to Contact Details so the second mutation can be saved from the reopened employee record."}
+{"action":{"type":"type","target":"e52","text":"ava.patel+monster@example.test"},"explanation":"I entered the bounded Other Email value for Ava Patel."}
+{"action":{"type":"click","target":"e53"},"explanation":"I saved the contact-details update so it can be reverified after another return through PIM."}
+{"action":{"type":"click","target":"e18"},"explanation":"I returned to the employee list again so both saved mutations can be reverified from a fresh PIM navigation."}
+{"action":{"type":"type","target":"e23","text":"Ava"},"explanation":"I searched for Ava Patel a third time so the final verification starts from the employee list again."}
+{"action":{"type":"click","target":"e31"},"explanation":"I applied the employee filter a third time before reopening the record for final verification."}
+{"action":{"type":"click","target":"e33"},"explanation":"I reopened Ava Patel's record from PIM again so I can confirm the first mutation still persisted before verifying the second one."}
+{"action":{"type":"click","target":"e25"},"explanation":"I switched back to Contact Details so the final state proves the second saved mutation persisted too."}
+{"action":{"type":"finish","summary":"I saved both Ava Patel profile updates, returned through PIM twice, and reverified the middle name and Other Email from reopened employee views."},"explanation":"The reopened Contact Details view still shows the saved Other Email after the second return through PIM, and the trace already reverified the middle name too, so I am ending the task."}

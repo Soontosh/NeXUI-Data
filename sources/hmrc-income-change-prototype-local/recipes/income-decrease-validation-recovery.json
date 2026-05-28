@@ -1,0 +1,258 @@
+{
+  "task_id": "hmrc-income-decrease-validation-recovery-001",
+  "title": "Recover From Inconsistent Decrease Amount",
+  "goal": "Report a decreased employment income, recover from an inconsistent higher new amount, and stop on the check-answers page after the corrected details appear.",
+  "instruction": "Complete the income change prototype for a decreased employment income. If the new amount is inconsistent with a decrease, correct it and continue until the review page shows the corrected answers.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "validation-recovery",
+    "numeric-consistency",
+    "hard"
+  ],
+  "review_notes": "Harder validation task that requires semantic reasoning about a decrease route, not just missing-field recovery.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Employment pay"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Decreased"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "1800.00"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "caseworker@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2025 to 2026"
+      },
+      "explanation": "I selected the tax year for the income change."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is selected, so I am moving to the income-source question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Employment pay"
+      },
+      "explanation": "I chose the employment-pay route for this update."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income source is set, so I am moving to how the income changed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It decreased"
+      },
+      "explanation": "I selected decreased income, which means the new amount should be lower than before."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is selected, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "2400"
+      },
+      "explanation": "I entered the previous monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "3000"
+      },
+      "explanation": "I entered an initial new amount, which I will verify against the decrease rule."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The service should validate whether the new amount matches a decrease.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "New monthly amount must be lower than the previous amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "1800"
+      },
+      "explanation": "I corrected the new monthly amount so it is lower than the previous amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The corrected amount should allow the journey to continue to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Email"
+      },
+      "explanation": "I chose email as the follow-up contact method."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "caseworker@example.com"
+      },
+      "explanation": "I entered the email address for follow-up questions."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The contact details are complete, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Reduced working hours from April."
+      },
+      "explanation": "I added a short note to explain the change."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The answers are complete now, so I am moving to the review page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "1800.00"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I recovered from the inconsistent new amount, completed the remaining fields, and reached the review page with the corrected decreased-income details."
+      },
+      "explanation": "The corrected values are visible on the review page, so I am ending the task."
+    }
+  ]
+}

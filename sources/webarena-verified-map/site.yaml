@@ -1,0 +1,207 @@
+{
+  "schema_version": "0.0",
+  "site_id": "webarena-verified-map",
+  "site_name": "WebArena Verified Map",
+  "base_url": "http://localhost:3030/",
+  "source_track": "sandboxed_benchmark_env",
+  "category": "other",
+  "hosting_mode": "benchmark_env",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "docker_reset",
+  "determinism_level": "high",
+  "legal_review_status": "documented",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "Map tasks should follow the benchmark-environment contract rather than a user-account login flow."
+  },
+  "task_families": [
+    "map_search",
+    "route_planning",
+    "search_disambiguation",
+    "cross_view_route_verification"
+  ],
+  "difficulty_bands": [
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use the official WebArena Verified map environment contract. The required map data path is now initialized locally, the single-container runtime is reachable on localhost:3030, and the first surveyed captures are recorded."
+  },
+  "runtime": {
+    "local_checkout_path": "../../external/webarena-verified",
+    "healthcheck_url": "http://localhost:3030/",
+    "bootstrap_commands": [
+      "git clone https://github.com/ServiceNow/webarena-verified external/webarena-verified",
+      "export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock",
+      "./scripts/setup_webarena_map_data.sh downloads/webarena-verified-map routing",
+      "./scripts/setup_webarena_map_data.sh downloads/webarena-verified-map geocoder",
+      "docker pull am1n3e/webarena-verified-map"
+    ],
+    "start_command": "export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock && docker rm -f webarena-verified-map >/dev/null 2>&1 || true && while docker ps -a --format '{{.Names}}' | grep -qx webarena-verified-map; do sleep 1; done && docker run -d --name webarena-verified-map -p 3030:8080 -p 3031:8877 -v \"$(pwd)/sources/webarena-verified-map/settings.local.yml:/app/config/settings.local.yml:ro\" -v webarena-verified-map-tile-db:/data/database -v webarena-verified-map-routing-car:/data/routing/car -v webarena-verified-map-routing-bike:/data/routing/bike -v webarena-verified-map-routing-foot:/data/routing/foot -v webarena-verified-map-nominatim-db:/data/nominatim/postgres -v webarena-verified-map-nominatim-flatnode:/data/nominatim/flatnode -v webarena-verified-map-website-db:/var/lib/postgresql/14/main -v webarena-verified-map-tiles:/data/tiles -v webarena-verified-map-style:/data/style am1n3e/webarena-verified-map >/dev/null && ./scripts/patch_webarena_map_assets.sh webarena-verified-map http://localhost:3030",
+    "reseed_command": "export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock && docker rm -f webarena-verified-map >/dev/null 2>&1 || true && while docker ps -a --format '{{.Names}}' | grep -qx webarena-verified-map; do sleep 1; done && docker run -d --name webarena-verified-map -p 3030:8080 -p 3031:8877 -v \"$(pwd)/sources/webarena-verified-map/settings.local.yml:/app/config/settings.local.yml:ro\" -v webarena-verified-map-tile-db:/data/database -v webarena-verified-map-routing-car:/data/routing/car -v webarena-verified-map-routing-bike:/data/routing/bike -v webarena-verified-map-routing-foot:/data/routing/foot -v webarena-verified-map-nominatim-db:/data/nominatim/postgres -v webarena-verified-map-nominatim-flatnode:/data/nominatim/flatnode -v webarena-verified-map-website-db:/var/lib/postgresql/14/main -v webarena-verified-map-tiles:/data/tiles -v webarena-verified-map-style:/data/style am1n3e/webarena-verified-map >/dev/null && ./scripts/patch_webarena_map_assets.sh webarena-verified-map http://localhost:3030",
+    "readiness_command": "./scripts/check_webarena_map_readiness.sh http://localhost:3030 'Carnegie Mellon University' '-79.9436,40.4435;-79.9959,40.4406' routing",
+    "notes": "Official WebArena Verified docs describe a single-container map image plus a required setup-init step for map data. This repo now includes source-specific setup and readiness scripts for the Docker volumes it uses. The public runtime must be served through the container's Apache layer on localhost:3030 so same-origin /osrm and /nominatim routes work from the browser. Start and reseed now also patch the compiled frontend asset so browser-visible service URLs target localhost:3030 after each fresh container boot. Routing and geocoder bootstraps are both working now, which enables recorder-backed route tasks plus the first home-page search tasks; deeper result-detail and disambiguation tasks still need more stable second states."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 3000,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "map-home",
+      "label": "Map Home",
+      "url": "http://localhost:3030/",
+      "goal_hint": "Survey the top-level map surface and identify stable search and routing controls.",
+      "notes": "Validated surveyed entry point with 36 candidates on the shared map surface."
+    },
+    {
+      "entry_id": "map-search",
+      "label": "Search Surface",
+      "url": "http://localhost:3030/",
+      "goal_hint": "Survey search and search-result disambiguation affordances on the main map surface.",
+      "notes": "Surveyed entry point sharing the main map surface, suitable for first search and disambiguation tasks."
+    },
+    {
+      "entry_id": "map-route",
+      "label": "Route Planning Surface",
+      "url": "http://localhost:3030/",
+      "goal_hint": "Survey route-building controls and route-result verification states.",
+      "notes": "Surveyed entry point sharing the main map surface, suitable for first route-planning tasks."
+    },
+    {
+      "entry_id": "map-monaco-route-car",
+      "label": "Seeded Monaco Route",
+      "url": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7384,7.4246;43.7308,7.4189&from=Avenue%20de%20l%27Hermitage&to=Monaco-Ville",
+      "goal_hint": "Survey a deterministic route-result state that bypasses the still-blocked geocoder by using explicit coordinates.",
+      "notes": "Primary seeded route-result surface for the first recorder-backed route-planning tasks."
+    },
+    {
+      "entry_id": "map-search-cmu-results",
+      "label": "CMU Search Results",
+      "url": "http://localhost:3030/search?query=Carnegie%20Mellon%20University",
+      "goal_hint": "Survey a deterministic geocoder-backed results page for a high-confidence place query.",
+      "notes": "Primary result-list surface for the first home-page map search task."
+    },
+    {
+      "entry_id": "map-search-union-square-results",
+      "label": "Union Square Search Results",
+      "url": "http://localhost:3030/search?query=Union%20Square",
+      "goal_hint": "Survey an ambiguous geocoder-backed result list for expansion and disambiguation-style tasks.",
+      "notes": "Primary ambiguous result-list surface for the first map search-expansion task."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "webarena-map-open-directions",
+      "summary": "Open the directions surface and stop once the route-planning controls are visible.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-open-directions-001."
+    },
+    {
+      "idea_id": "webarena-map-open-layers-panel",
+      "summary": "Open the layers panel and stop once the layer and overlay options are visible.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-open-layers-panel-001."
+    },
+    {
+      "idea_id": "webarena-map-open-share-panel",
+      "summary": "Open the share panel and stop once the Geo URI and share options are visible.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-open-share-panel-001."
+    },
+    {
+      "idea_id": "webarena-map-reverse-monaco-route",
+      "summary": "Open the seeded Monaco route and reverse it so the route result updates to the opposite direction.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-reverse-monaco-route-001."
+    },
+    {
+      "idea_id": "webarena-map-switch-monaco-route-to-bike",
+      "summary": "Open the seeded Monaco route and switch the routing engine from car to bicycle.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-switch-monaco-route-to-bike-001."
+    },
+    {
+      "idea_id": "webarena-map-switch-monaco-route-to-foot",
+      "summary": "Open the seeded Monaco route and switch the routing engine from car to foot.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-switch-monaco-route-to-foot-001."
+    },
+    {
+      "idea_id": "webarena-map-search-place",
+      "summary": "Search for a place from the map home page and stop on the resulting search-results page.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-search-cmu-from-home-001 and webarena-map-search-schenley-plaza-from-home-001."
+    },
+    {
+      "idea_id": "webarena-map-reverse-monaco-route-to-bike",
+      "summary": "Reverse the seeded Monaco route and then switch the reversed route from car to bicycle.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-reverse-monaco-route-to-bike-001."
+    },
+    {
+      "idea_id": "webarena-map-reverse-monaco-route-to-foot",
+      "summary": "Reverse the seeded Monaco route and then switch the reversed route from car to foot.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-reverse-monaco-route-to-foot-001."
+    },
+    {
+      "idea_id": "webarena-map-reverse-monaco-route-to-bike-share",
+      "summary": "Reverse the seeded Monaco route, switch the reversed route to bicycle, and open the Share panel.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as webarena-map-reverse-monaco-route-to-bike-share-001."
+    },
+    {
+      "idea_id": "webarena-map-build-simple-route",
+      "summary": "Plan a simple route and stop on the route-result state.",
+      "status": "blocked",
+      "risk_level": "safe",
+      "notes": "Blocked until ./scripts/check_webarena_map_readiness.sh ... routing confirms the OSRM routing proxy is healthy."
+    },
+    {
+      "idea_id": "webarena-map-disambiguate-search-result",
+      "summary": "Open an ambiguous search-results page and expand it so lower-ranked results become visible.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Ready now that ambiguous geocoder-backed result pages are stable."
+    },
+    {
+      "idea_id": "webarena-map-verify-route-second-state",
+      "summary": "Build a route and verify it from a second route or map state.",
+      "status": "blocked",
+      "risk_level": "safe",
+      "notes": "Blocked until routing readiness is green and route generation is stable enough to support second-state verification."
+    },
+    {
+      "idea_id": "webarena-map-long-route-disambiguation",
+      "summary": "Resolve a harder route or place-disambiguation workflow across multiple map states.",
+      "status": "blocked",
+      "risk_level": "safe",
+      "notes": "Blocked until both search and route generation become stable on the local runtime."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Validated source package for recorder-backed route interactions on the seeded Monaco surface and geocoder-backed home-search/result-list interactions. The repo now has source-specific backend setup and readiness probes, with routing and geocoder split into separate bootstrap modes, plus a second route tranche that composes reverse, engine-switch, and share-panel states on the seeded Monaco surface."
+  }
+}

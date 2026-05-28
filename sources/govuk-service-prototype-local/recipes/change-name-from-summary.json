@@ -1,0 +1,183 @@
+{
+  "task_id": "govuk-service-change-name-from-summary-001",
+  "title": "Change Name From Check Answers",
+  "goal": "Reach the check-answers page, change the full name, and stop after the summary shows the new value while keeping the email answer intact.",
+  "instruction": "Complete the travel support prototype, then use the check-answers page to change the full name and verify the updated summary value.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "check-answers",
+    "edit-loop",
+    "harder-task"
+  ],
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Amina Khan"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Amina Patel"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "amina@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Amina Patel"
+      },
+      "explanation": "I entered the applicant name to start the service journey."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The name is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes",
+        "target_text": "Yes"
+      },
+      "explanation": "I selected email updates, which reveals the email-address field."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "amina@example.com"
+      },
+      "explanation": "I entered the email address for the initial review state."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial answers are complete, so I am moving to the check-answers page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Change full name"
+      },
+      "explanation": "I followed the change link for the full name so I can update that earlier answer.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/name"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Full name"
+          },
+          "value": "Amina Patel"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Amina Khan"
+      },
+      "explanation": "I replaced the earlier name with the corrected value."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The updated name is entered, so I am moving back through the remaining question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Email address"
+          },
+          "value": "amina@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The later answer is still present, so I am returning to the review page to confirm the summary updated.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Amina Khan"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the full name from the check-answers flow and confirmed the summary now shows the updated value."
+      },
+      "explanation": "The check-answers page now shows the corrected name, so I am ending the task."
+    }
+  ]
+}

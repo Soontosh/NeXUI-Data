@@ -1,0 +1,61 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Nora"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Nora\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e4",
+      "text": "Reed"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Reed\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - candidate exists for {\"role\":\"radio\",\"name\":\"Female\",\"states\":{\"checked\":true}}"
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e9",
+      "text": "7015550101"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - field value equals \"7015550101\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e18"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - modal state is \"dialog_open\"",
+      "postcondition 2: passed - text present \"Thanks for submitting the form\""
+    ]
+  }
+]

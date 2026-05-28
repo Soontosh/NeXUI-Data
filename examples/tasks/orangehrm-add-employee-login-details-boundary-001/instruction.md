@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, open Add Employee from PIM, enter Iris Nolan as the new employee, enable Create Login Details, set username iris.nolan with password NExUIUser!2026, keep Enabled selected, and ask for confirmation before clicking Save.

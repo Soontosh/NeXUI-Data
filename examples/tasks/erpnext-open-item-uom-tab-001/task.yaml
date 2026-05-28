@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "erpnext-open-item-uom-tab-001",
+  "title": "Open The Seeded ERPNext Item UOM Tab",
+  "goal": "Sign in to ERPNext, open the seeded item record, and switch to the UOM tab.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "url": "http://localhost:8090/desk/item/NEXUI-ITEM-001#uom_tab",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-02T00:34:30.391Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "erpnext-self-hosted",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "requires_source_reset": false,
+  "success_assertions": [
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "tab",
+        "name": "UOM"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "item-detail",
+    "uom-tab",
+    "hard"
+  ],
+  "review_notes": "Fixture-backed ERPNext item task that switches to the UOM tab on the seeded item record."
+}

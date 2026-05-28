@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open the seeded admin user, change the first name to Benchmark, enter your current password admin1234, save the form, reopen the seeded admin user, and stop once the persisted edit state still shows the updated first name.

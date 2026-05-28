@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "erpnext-open-seeded-supplier-detail-001",
+  "title": "Open The Seeded ERPNext Supplier Detail Page",
+  "goal": "Sign in to ERPNext and open the seeded supplier detail page.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "url": "http://localhost:8090/desk/supplier/NExUI%20Test%20Supplier",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-01T05:13:22.500Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "erpnext-self-hosted",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "requires_source_reset": false,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/supplier/NExUI%20Test%20Supplier"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Test Supplier"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "supplier-detail",
+    "hard"
+  ],
+  "review_notes": "Fixture-backed ERPNext detail task that opens the seeded supplier directly after login."
+}

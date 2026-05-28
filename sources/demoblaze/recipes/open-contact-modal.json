@@ -1,0 +1,56 @@
+{
+  "task_id": "demoblaze-open-contact-modal-001",
+  "title": "Open Contact Modal",
+  "goal": "Open the contact modal from the Demoblaze storefront and stop with the dialog visible.",
+  "instruction": "On the Demoblaze storefront, open the Contact dialog and stop when it is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "modal",
+    "dialog"
+  ],
+  "review_notes": "Adds a dialog interaction to the Demoblaze retail slice without requiring checkout flow state.",
+  "success_assertions": [
+    {
+      "type": "modal_state_is",
+      "value": "dialog_open"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Contact"
+      },
+      "explanation": "I opened the storefront contact dialog.",
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "dialog_open"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the contact dialog and stopped with it visible."
+      },
+      "explanation": "The requested dialog is open now, so I am ending the task."
+    }
+  ]
+}

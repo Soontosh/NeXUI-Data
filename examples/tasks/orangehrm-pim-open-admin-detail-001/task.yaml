@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "orangehrm-pim-open-admin-detail-001",
+  "title": "Open The Seeded Admin Personal Details View",
+  "goal": "Log in to OrangeHRM, open the seeded admin personal-details page, and stop on the authenticated employee profile view.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "orangehrm-self-hosted",
+    "site_name": "OrangeHRM Self-Hosted",
+    "url": "http://localhost:8080/web/index.php/pim/viewPersonalDetails/empNumber/1",
+    "category": "hr_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T17:20:54.211Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "orangehrm-self-hosted",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewPersonalDetails/empNumber/1"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: NExUI Admin"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: Personal Details"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "NExUI"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Last Name"
+      },
+      "value": "Admin"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "employee-detail",
+    "personal-details",
+    "hard"
+  ],
+  "review_notes": "First enterprise employee-detail workflow on the self-hosted OrangeHRM track."
+}

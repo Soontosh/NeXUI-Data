@@ -1,0 +1,134 @@
+- img "au123456789.gif"
+- navigation "Demo site menu":
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: index.html
+    - listitem:
+      - link "Before":
+        - /url: before.html
+    - listitem:
+      - link "After":
+        - /url: after.html
+    - listitem:
+      - link "Info":
+        - /url: info.html
+- list:
+  - listitem:
+    - link "About":
+      - /url: "#"
+  - listitem:
+    - link "Academics":
+      - /url: "#"
+  - listitem:
+    - link "Admissions":
+      - /url: "#"
+  - listitem:
+    - link "Visitors":
+      - /url: "#"
+- img
+- text: A modern shool
+- list:
+  - listitem
+  - listitem
+  - listitem
+  - listitem
+- text: Welcome!
+- paragraph: Accessible University (AU) is a fictional university, and this is its fictional home page. This page is designed to demonstrate a variety of common web design problems that result in visitors with disabilities being unable to access the content or features of a web page. Although the heading at the top of this section of the page suggests that AU may be a welcoming institution, the inaccessible design of this page sends the opposite message.
+- img "horizontal line graphic"
+- text: Bienvenido!
+- paragraph: Accesible Universidad (UA) es una universidad ficticia, y esta es su página de ficción. Esta página está diseñada para demostrar una variedad de común de diseño web que se traducen en problemas de los visitantes con discapacidad no poder acceder al contenido o las características de una página web. Aunque el título en la parte superior de esta sección de la página sugiere que AU puede ser una institución de bienvenida, el diseño inaccesible de esta página envía el mensaje opuesto.
+- img "horizontal line graphic"
+- text: Can you spot the barriers?
+- paragraph:
+  - text: There are at least 22 accessibility issues on this page. To see a list of all known issues,
+  - link "click here":
+    - /url: info.html
+  - text: . To see a more accessible version of this same page,
+  - link "click here":
+    - /url: after.html
+  - text: . For a cheat sheet of accessibility issues,
+  - link "click here":
+    - /url: cheatsheet.html
+  - text: .
+- img "horizontal line graphic"
+- text: AU Enrollment Trends
+- table:
+  - rowgroup:
+    - row "Last Year This Year":
+      - cell
+      - cell "Last Year"
+      - cell "This Year"
+    - row "CS Eng Eco Phy Psy CS Eng Eco Phy Psy":
+      - cell "CS"
+      - cell "Eng"
+      - cell "Eco"
+      - cell "Phy"
+      - cell "Psy"
+      - cell "CS"
+      - cell "Eng"
+      - cell "Eco"
+      - cell "Phy"
+      - cell "Psy"
+    - row "Undergraduate 1481 400 727 747 1006 1500 340 777 787 1112":
+      - cell "Undergraduate"
+      - cell "1481"
+      - cell "400"
+      - cell "727"
+      - cell "747"
+      - cell "1006"
+      - cell "1500"
+      - cell "340"
+      - cell "777"
+      - cell "787"
+      - cell "1112"
+    - row "Graduate 310 84 273 69 312 350 64 341 72 325":
+      - cell "Graduate"
+      - cell "310"
+      - cell "84"
+      - cell "273"
+      - cell "69"
+      - cell "312"
+      - cell "350"
+      - cell "64"
+      - cell "341"
+      - cell "72"
+      - cell "325"
+- img "horizontal line graphic"
+- text: AU Video Apply Now!
+- paragraph: (required fields are in blue)
+- text: "Name:"
+- textbox
+- text: "Email:"
+- textbox
+- text: "Country:"
+- textbox
+- text: "Desired major(s): Computer Science"
+- checkbox
+- text: Engineering
+- checkbox
+- text: Economics
+- checkbox
+- text: Physics
+- checkbox
+- text: Psychology
+- checkbox
+- text: Spanish
+- checkbox
+- text: Security Test
+- paragraph: Please enter the two words you see below, separated by a space
+- textbox
+- img
+- button "Submit"
+- contentinfo:
+  - link "Creative Commons License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    - img "Creative Commons License"
+  - text: Accessible University by
+  - link "University of Washington":
+    - /url: http://washington.edu/accesscomputing/AU
+  - text: is licensed under a
+  - link "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+  - text: .
+  - paragraph: "This product was originally developed with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and has been subsequently updated and maintained with support from the National Science Foundation (grants #CNS-0540615, CNS-0837508, CNS-1042260, CNS-1539179, and CNS-2137312). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement."

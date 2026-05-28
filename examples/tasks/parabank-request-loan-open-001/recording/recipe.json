@@ -1,0 +1,106 @@
+{
+  "task_id": "parabank-request-loan-open-001",
+  "title": "Open ParaBank Request Loan",
+  "goal": "Log in to the ParaBank demo account, open the Request Loan page, and stop there.",
+  "instruction": "Use the ParaBank demo account to log in, open the Request Loan page from the account-services menu, and stop when it is visible.",
+  "url": "https://parabank.parasoft.com/parabank/",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "finance-demo",
+    "auth",
+    "request-loan"
+  ],
+  "review_notes": "Adds another bounded authenticated navigation task to a realistic finance surface without submitting a loan request.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/requestloan.htm"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Apply for a Loan"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "john"
+      },
+      "explanation": "I entered the demo username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "demo"
+      },
+      "explanation": "I entered the demo password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log In"
+      },
+      "explanation": "I logged in to the demo account and will wait for the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/overview.htm"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Request Loan"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Request Loan"
+      },
+      "explanation": "I opened the loan-request page from the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/requestloan.htm"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Apply for a Loan"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I logged in to ParaBank, opened the Request Loan page, and stopped there."
+      },
+      "explanation": "The loan-request page is visible now, so I am ending the task."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/residency"
+- main:
+  - region "How many children need childcare?":
+    - heading "How many children need childcare?" [level=1]
+    - paragraph: Choose the closest answer for the children covered by this application.
+    - group "How many children need childcare?":
+      - text: How many children need childcare?
+      - radio "1 child"
+      - text: 1 child
+      - radio "2 children"
+      - text: 2 children
+      - radio "3 or more children"
+      - text: 3 or more children
+    - button "Continue"

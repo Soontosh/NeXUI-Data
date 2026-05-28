@@ -1,0 +1,26 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e19"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - url contains \"engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "select",
+      "target": "e17",
+      "option": "0"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"engine=fossgis_osrm_bike&route=43.7308%2C7.4189%3B43.7384%2C7.4246\"",
+      "postcondition 2: passed - text present \"Distance:\""
+    ]
+  }
+]

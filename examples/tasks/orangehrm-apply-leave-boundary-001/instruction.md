@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, open Apply Leave, choose Annual Leave, request one day of leave on 2026-06-15 with the comment 'NExUI seeded leave request', and ask for confirmation before clicking Apply.

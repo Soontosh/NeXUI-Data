@@ -1,0 +1,4 @@
+{"action":{"type":"click","target":"e37"},"explanation":"I opened the seeded Magento admin user so I can prepare the bounded email edit."}
+{"action":{"type":"type","target":"e27","text":"admin+nexui@example.test"},"explanation":"I replaced the admin email with the deterministic benchmark variant."}
+{"action":{"type":"type","target":"e32","text":"admin1234"},"explanation":"I entered the current admin password required to authorize the change."}
+{"action":{"type":"ask_user","question":"I have prepared the admin email change to admin+nexui@example.test. Do you want me to save it?"},"explanation":"Saving this form would update the seeded Magento admin account, so I am asking for confirmation before submitting it."}

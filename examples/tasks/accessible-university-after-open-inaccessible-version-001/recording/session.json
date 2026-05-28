@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-05-28T21:33:32.288Z",
+  "final_snapshot": "s001",
+  "final_url": "https://projects.accesscomputing.uw.edu/au/before.html",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e17"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/au/before.html\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://projects.accesscomputing.uw.edu/au/before.html"
+    }
+  ]
+}

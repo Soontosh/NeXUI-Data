@@ -1,0 +1,17 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "select",
+      "target": "e17",
+      "option": "2"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - url contains \"engine=fossgis_osrm_foot\"",
+      "postcondition 2: passed - field value equals \"43.738, 7.425\"",
+      "postcondition 3: passed - field value equals \"43.731, 7.419\"",
+      "postcondition 4: passed - text present \"Distance: 1.4km. Time: 0:17.\""
+    ]
+  }
+]

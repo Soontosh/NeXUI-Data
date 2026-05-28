@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e1","text":"Administrator"},"explanation":"I entered the seeded ERPNext administrator login."}
+{"action":{"type":"type","target":"e2","text":"admin"},"explanation":"I entered the seeded ERPNext password."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so ERPNext can redirect back to a fresh new customer form."}
+{"action":{"type":"type","target":"e14","text":"NExUI Save Verify Customer"},"explanation":"I entered the deterministic customer name."}
+{"action":{"type":"click","target":"e5"},"explanation":"I re-focused the details tab so ERPNext commits the typed customer name before saving."}
+{"action":{"type":"click","target":"e4"},"explanation":"I saved the new customer so I can verify it from the customer list."}
+{"action":{"type":"click","target":"e2"},"explanation":"I returned to the customer list so I can verify the saved customer from a second view."}
+{"action":{"type":"type","target":"e8","text":"NExUI Save Verify Customer"},"explanation":"I entered the saved customer name into the customer-list filter."}
+{"action":{"type":"click","target":"e11"},"explanation":"I applied the filter so the saved customer row is isolated for cross-view verification."}

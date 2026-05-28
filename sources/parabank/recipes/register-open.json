@@ -1,0 +1,34 @@
+{
+  "task_id": "parabank-register-open-001",
+  "title": "Open ParaBank Registration",
+  "goal": "Open the registration page from the ParaBank homepage and stop there.",
+  "instruction": "Open the Register page and stop when the registration form is visible.",
+  "url": "https://parabank.parasoft.com/parabank/",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["click", "finish"],
+  "tags": ["recorded", "finance-demo", "navigation"],
+  "review_notes": "Introduces a more realistic finance-style site without crossing into account creation or money movement.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Register"
+      },
+      "explanation": "I opened the registration page from the home screen."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the ParaBank registration page and stopped there."
+      },
+      "explanation": "The registration form is available now, so I am ending the task."
+    }
+  ]
+}

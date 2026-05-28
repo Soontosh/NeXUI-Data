@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the next question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected email updates, which reveals the email-address field for this route."}
+{"action":{"type":"type","target":"e5","text":"old-address@example.com"},"explanation":"I entered an initial email address so it can be edited later from the review page."}
+{"action":{"type":"click","target":"e6"},"explanation":"The initial answers are complete, so I am moving to the check-answers page."}
+{"action":{"type":"click","target":"e5"},"explanation":"I followed the change link for the email address, which should return me to the previous question with the earlier answer preserved."}
+{"action":{"type":"type","target":"e5","text":"amina.patel@example.com"},"explanation":"I replaced the earlier email address with the corrected value."}
+{"action":{"type":"click","target":"e6"},"explanation":"The corrected answer is entered, so I am returning to the review page to confirm the summary updated."}
+{"action":{"type":"finish","summary":"I updated the email address from the check-answers flow and confirmed the summary now shows the corrected value."},"explanation":"The check-answers page now shows the updated email address, so I am ending the task."}

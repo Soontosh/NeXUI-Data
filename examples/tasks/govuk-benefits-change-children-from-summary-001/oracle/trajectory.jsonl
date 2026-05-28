@@ -1,0 +1,17 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected one child for the initial route."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Employed as the work status."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"type","target":"e3","text":"2100"},"explanation":"I entered the monthly income for the initial route."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates so the initial route stays simple."}
+{"action":{"type":"click","target":"e5"},"explanation":"The answers are complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the change link for the childcare count so I can update that earlier answer."}
+{"action":{"type":"click","target":"e5"},"explanation":"I changed the childcare-count answer to the largest branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The updated childcare count is set, so I am moving forward through the preserved later answers."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work-status answer remained intact, so I am moving to income."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income answer remained intact, so I am moving to updates."}
+{"action":{"type":"click","target":"e5"},"explanation":"The later route choices are still preserved, so I am returning to check answers to verify the updated childcare count."}
+{"action":{"type":"finish","summary":"I changed the childcare-count answer from check answers and confirmed the final review page now shows the updated value while preserving the later route details."},"explanation":"The updated childcare count is visible on the review page and the later route details are still intact, so I am ending the task."}

@@ -1,0 +1,105 @@
+- banner:
+  - link:
+    - /url: https://demoqa.com
+    - img
+- img
+- text: Elements
+- img
+- img
+- text: Forms
+- img
+- list:
+  - listitem:
+    - link "Practice Form":
+      - /url: /automation-practice-form
+      - img
+      - text: Practice Form
+- img
+- text: Alerts, Frame & Windows
+- img
+- img
+- text: Widgets
+- img
+- img
+- text: Interactions
+- img
+- img
+- text: Book Store Application
+- img
+- heading "Practice Form" [level=1]
+- heading "Student Registration Form" [level=5]
+- text: Name
+- textbox "First Name": Nora
+- textbox "Last Name": Reed
+- text: Email
+- textbox "name@example.com"
+- text: Gender
+- radio "Male"
+- text: Male
+- radio "Female" [checked]
+- text: Female
+- radio "Other"
+- text: Other Mobile(10 Digits)
+- textbox "Mobile Number": "7015550101"
+- text: Date of Birth
+- textbox: 27 May 2026
+- text: Subjects
+- log
+- combobox
+- text: Hobbies
+- checkbox "Sports"
+- text: Sports
+- checkbox "Reading"
+- text: Reading
+- checkbox "Music"
+- text: Music Picture
+- button "Choose File"
+- text: Current Address
+- textbox "Current Address"
+- text: State and City
+- log
+- text: Select State
+- combobox
+- log
+- text: Select City
+- button "Submit"
+- contentinfo: © 2013-2026 TOOLSQA.COM | ALL RIGHTS RESERVED.
+- dialog "Thanks for submitting the form":
+  - text: Thanks for submitting the form
+  - table:
+    - rowgroup:
+      - row "Label Values":
+        - columnheader "Label"
+        - columnheader "Values"
+    - rowgroup:
+      - row "Student Name Nora Reed":
+        - cell "Student Name"
+        - cell "Nora Reed"
+      - row "Student Email":
+        - cell "Student Email"
+        - cell
+      - row "Gender Female":
+        - cell "Gender"
+        - cell "Female"
+      - row "Mobile 7015550101":
+        - cell "Mobile"
+        - cell "7015550101"
+      - row "Date of Birth 27 May,2026":
+        - cell "Date of Birth"
+        - cell "27 May,2026"
+      - row "Subjects":
+        - cell "Subjects"
+        - cell
+      - row "Hobbies":
+        - cell "Hobbies"
+        - cell
+      - row "Picture":
+        - cell "Picture"
+        - cell
+      - row "Address":
+        - cell "Address"
+        - cell
+      - row "State and City":
+        - cell "State and City"
+        - cell
+  - button "Close"

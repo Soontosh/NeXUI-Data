@@ -1,0 +1,162 @@
+{
+  "task_id": "govuk-service-double-validation-to-summary-001",
+  "title": "Recover From Two Validation Errors And Reach Check Answers",
+  "goal": "Trigger the missing-name and missing-email validation errors in one run, recover from both, and stop on the final check-answers page.",
+  "instruction": "Complete the travel support prototype by recovering from a missing full-name error and then a missing-email error before stopping on check answers.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-service-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 5,
+  "tags": [
+    "recorded",
+    "service-form",
+    "validation-recovery",
+    "check-answers",
+    "multi-error",
+    "very-hard"
+  ],
+  "review_notes": "Very-hard validation task on the travel-support prototype. It forces two separate validation recoveries in one run before reaching check answers.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Leah Morgan"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "leah.morgan@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "I tried to continue immediately so the page would show the required-name validation.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter your full name"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Leah Morgan"
+      },
+      "explanation": "I entered the missing full name so the journey can continue."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The full name is present now, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected Yes for email updates, which makes an email address required."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "I continued without an email so the page would show the required-email validation.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter your email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "leah.morgan@example.com"
+      },
+      "explanation": "I entered the required email address so the email branch is complete."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "Both validation issues are resolved now, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "leah.morgan@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I recovered from the missing full-name and missing-email validation errors and reached check answers with the completed email branch."
+      },
+      "explanation": "The summary shows the completed route after both corrections, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+}

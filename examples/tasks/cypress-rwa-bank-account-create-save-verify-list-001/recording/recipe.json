@@ -1,0 +1,163 @@
+{
+  "task_id": "cypress-rwa-bank-account-create-save-verify-list-001",
+  "title": "Create A Bank Account And Verify It In The List",
+  "goal": "Sign in, create a new bank account, and verify the saved account from the bank-account list.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, open Bank Accounts, create a new account for NExUI Savings Bank with routing number 987654321 and account number 123456789012, save it, and stop once the saved account is visible in the bank-account list.",
+  "url": "http://localhost:3000/signin",
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "bank-accounts",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware bank-account task that creates a new account and verifies the saved entry from the list.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/bankaccounts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Savings Bank"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated bank-account tools can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='sidenav-bankaccounts']"
+      },
+      "explanation": "I opened Bank Accounts from the side navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='bankaccount-new']"
+      },
+      "explanation": "I opened the create-bank-account form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts/new"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='bankaccount-bankName-input'] input",
+        "text": "NExUI Savings Bank"
+      },
+      "explanation": "I entered the bank name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='bankaccount-routingNumber-input'] input",
+        "text": "987654321"
+      },
+      "explanation": "I entered the routing number."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='bankaccount-accountNumber-input'] input",
+        "text": "123456789012"
+      },
+      "explanation": "I entered the account number so the new bank account is ready to save."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='bankaccount-submit']"
+      },
+      "explanation": "I saved the new bank account and returned to the list so I can verify the saved entry.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Savings Bank"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I created the new bank account and verified it from the bank-account list."
+      },
+      "explanation": "The saved bank account is visible in the list now, so I am ending the task."
+    }
+  ]
+}

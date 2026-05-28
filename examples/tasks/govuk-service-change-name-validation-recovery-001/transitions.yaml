@@ -1,0 +1,120 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Amina Patel"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "amina@example.com"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/name\"",
+      "postcondition 2: passed - field value equals \"Amina Patel\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": ""
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your full name\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "Amina Khan"
+    },
+    "to": "s009",
+    "notes": []
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\"",
+      "postcondition 2: passed - field value equals \"amina@example.com\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Amina Khan\""
+    ]
+  }
+]

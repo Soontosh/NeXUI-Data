@@ -1,0 +1,63 @@
+{
+  "recorded_at": "2026-06-02T23:58:52.315Z",
+  "final_snapshot": "s002",
+  "final_url": "http://localhost:3030/directions?engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246",
+  "snapshot_count": 3,
+  "transition_count": 2,
+  "oracle_step_count": 3,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e19"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "select",
+        "target": "e17",
+        "option": "2"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Distance:\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 9,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/directions?engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+    }
+  ]
+}

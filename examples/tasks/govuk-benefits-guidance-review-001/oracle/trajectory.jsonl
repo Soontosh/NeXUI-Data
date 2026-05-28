@@ -1,0 +1,11 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected two children for the childcare count."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare count is set, so I am moving to the work-status question."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected Not working, which reveals the route-specific guidance."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work-status route is set, so I am moving to the income question."}
+{"action":{"type":"type","target":"e3","text":"1650"},"explanation":"I entered the monthly income for the eligibility estimate."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates, so no email address is required."}
+{"action":{"type":"click","target":"e5"},"explanation":"The answers are complete, so I am moving to the check-answers page."}
+{"action":{"type":"finish","summary":"I reached the check-answers page on the Not working route and verified the final review state."},"explanation":"The review page is open with the expected branch answers, so I am ending the task."}

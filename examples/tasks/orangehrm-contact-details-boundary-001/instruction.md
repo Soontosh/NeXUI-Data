@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, open Contact Details for the seeded admin employee, enter 123 Benchmark Ave for Street 1 and nexui-admin+alt@example.test for Other Email, and ask for confirmation before clicking Save.

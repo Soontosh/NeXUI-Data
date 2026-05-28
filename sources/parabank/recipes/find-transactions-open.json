@@ -1,0 +1,106 @@
+{
+  "task_id": "parabank-find-transactions-open-001",
+  "title": "Open ParaBank Find Transactions",
+  "goal": "Log in to the ParaBank demo account, open the Find Transactions page, and stop there.",
+  "instruction": "Use the ParaBank demo account to log in, open the Find Transactions page, and stop when that page is visible.",
+  "url": "https://parabank.parasoft.com/parabank/",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "finance-demo",
+    "auth",
+    "find-transactions"
+  ],
+  "review_notes": "Adds a bounded authenticated navigation task to a more functional banking search surface.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/findtrans.htm"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Find Transactions"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "john"
+      },
+      "explanation": "I entered the demo username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "demo"
+      },
+      "explanation": "I entered the demo password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log In"
+      },
+      "explanation": "I logged in to the demo account and will wait for the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/overview.htm"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Find Transactions"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Find Transactions"
+      },
+      "explanation": "I opened the transaction-search page from the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/findtrans.htm"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Find Transactions"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I logged in to ParaBank, opened the Find Transactions page, and stopped there."
+      },
+      "explanation": "The transaction-search page is visible now, so I am ending the task."
+    }
+  ]
+}

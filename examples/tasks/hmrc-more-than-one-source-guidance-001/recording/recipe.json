@@ -1,0 +1,243 @@
+{
+  "task_id": "hmrc-more-than-one-source-guidance-001",
+  "title": "Continue From Multi-Source Guidance To Review",
+  "goal": "Choose the more-than-one-source route, verify the guidance inset appears, and continue through the main flow until the review page shows the selected source.",
+  "instruction": "On the income change prototype, choose More than one source, confirm the guidance text appears, and complete the route until the review page reflects that income source.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "guidance",
+    "branching",
+    "hard"
+  ],
+  "review_notes": "Harder service-form task that requires the agent to acknowledge guidance shown only on one route before continuing through the rest of the journey.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "More than one source"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Text message"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "07700900123"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2025 to 2026"
+      },
+      "explanation": "I selected the tax year for the update."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is set, so I am moving to the income source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "More than one source"
+      },
+      "explanation": "I selected the route for multiple income sources.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "You may need to report one change now and come back for the other income source later."
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The guidance is visible, so I am continuing to describe how the income changed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It increased"
+      },
+      "explanation": "I chose an increase so the later amount should be higher."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is selected, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "1100"
+      },
+      "explanation": "I entered the previous monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "1450"
+      },
+      "explanation": "I entered the increased new amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The new amount is complete, so I am moving to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Text message"
+      },
+      "explanation": "I chose text message as the follow-up contact method.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Mobile number"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#contact-detail",
+        "text": "07700900123"
+      },
+      "explanation": "I entered the mobile number for follow-up contact."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The contact details are complete, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Two income streams changed this month."
+      },
+      "explanation": "I added a short note about the multi-source update."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The route is complete, so I am moving to the review page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "More than one source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I followed the more-than-one-source route, confirmed the guidance appeared, and reached the review page with the selected source and contact details."
+      },
+      "explanation": "The review page reflects the selected route and contact details, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html"
+}

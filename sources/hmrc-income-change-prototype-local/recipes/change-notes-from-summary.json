@@ -1,0 +1,297 @@
+{
+  "task_id": "hmrc-change-notes-from-summary-001",
+  "title": "Change Supporting Notes From Check Answers",
+  "goal": "Reach the review page, change the supporting notes from the summary, and stop after the final review page shows the updated note while preserving the rest of the route.",
+  "instruction": "Complete the income change prototype to check answers, then change the supporting notes from the summary and verify the updated review state.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "hmrc-income-change-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 17,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task that changes the supporting notes while preserving the rest of the HMRC route.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Updated after revised payroll letter."
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Annual pension adjustment."
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Pension"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "first@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2025 to 2026"
+      },
+      "explanation": "I selected the tax year for the report."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is selected, so I am moving to the income source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Pension"
+      },
+      "explanation": "I chose Pension as the income source for this route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income source is selected, so I am moving to the change type.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It increased"
+      },
+      "explanation": "I selected an increase so the new amount should be higher than before."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is selected, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "1200"
+      },
+      "explanation": "I entered the previous monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "1500"
+      },
+      "explanation": "I entered the higher new monthly amount for the increase route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The amount is complete, so I am moving to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Email"
+      },
+      "explanation": "I chose email as the contact method."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "first@example.com"
+      },
+      "explanation": "I entered the initial email address for contact."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The email contact details are complete, so I am moving to notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Annual pension adjustment."
+      },
+      "explanation": "I added the initial supporting note before reaching review."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial route is complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Annual pension adjustment."
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-notes"
+      },
+      "explanation": "I followed the change link for supporting notes so I can update that free-text explanation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Supporting notes"
+          },
+          "value": "Annual pension adjustment."
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Updated after revised payroll letter."
+      },
+      "explanation": "I replaced the supporting note with the corrected explanation."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The updated note is complete, so I am returning to the review page to verify the new summary text.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Updated after revised payroll letter."
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the supporting notes from check answers and confirmed the review page now shows the updated note."
+      },
+      "explanation": "The updated note is visible on the review page, so I am ending the task."
+    }
+  ]
+}

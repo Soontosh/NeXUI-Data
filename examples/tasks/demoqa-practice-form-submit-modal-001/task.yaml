@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoqa-practice-form-submit-modal-001",
+  "title": "Submit DemoQA Practice Form To Confirmation Modal",
+  "goal": "Fill the required fields in the practice form, submit it, and stop when the confirmation dialog appears.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "url": "https://demoqa.com/automation-practice-form",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-27T21:19:21.613Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/automation-practice-form"
+    },
+    {
+      "type": "modal_state_is",
+      "value": "dialog_open"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "Nora"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Last Name"
+      },
+      "value": "Reed"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Mobile Number"
+      },
+      "value": "7015550101"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Thanks for submitting the form"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Student Name Nora Reed"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Gender Female"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "form",
+    "modal",
+    "confirmation",
+    "multi-step"
+  ],
+  "review_notes": "First DemoQA form task that ends in a confirmation dialog and exercises multi-control form completion.",
+  "source_surface": "demoqa",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

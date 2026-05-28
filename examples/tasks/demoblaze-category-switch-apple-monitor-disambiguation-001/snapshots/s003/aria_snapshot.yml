@@ -1,0 +1,71 @@
+- navigation:
+  - link "PRODUCT STORE":
+    - /url: index.html
+    - img
+    - text: PRODUCT STORE
+  - list:
+    - listitem:
+      - link "Home (current)":
+        - /url: index.html
+    - listitem:
+      - link "Contact":
+        - /url: "#"
+    - listitem:
+      - link "About us":
+        - /url: "#"
+    - listitem:
+      - link "Cart":
+        - /url: cart.html
+    - listitem:
+      - link "Log in":
+        - /url: "#"
+    - listitem
+    - listitem
+    - listitem:
+      - link "Sign up":
+        - /url: "#"
+  - list:
+    - listitem
+    - listitem
+    - listitem
+  - img "Second slide"
+  - button "Previous"
+  - button "Next"
+- link "CATEGORIES":
+  - /url: ""
+- link "Phones":
+  - /url: "#"
+- link "Laptops":
+  - /url: "#"
+- link "Monitors":
+  - /url: "#"
+- link:
+  - /url: prod.html?idp_=10
+- heading "Apple monitor 24" [level=4]:
+  - link "Apple monitor 24":
+    - /url: prod.html?idp_=10
+- heading "$400" [level=5]
+- paragraph: LED Cinema Display features a 27-inch glossy LED-backlit TFT active-matrix LCD display with IPS technology and an optimum resolution of 2560x1440. It has a 178 degree horizontal and vertical viewing angle, a "typical" brightness of 375 cd/m2, contrast ratio of 1000:1, and a 12 ms response time.
+- link:
+  - /url: prod.html?idp_=14
+- heading "ASUS Full HD" [level=4]:
+  - link "ASUS Full HD":
+    - /url: prod.html?idp_=14
+- heading "$230" [level=5]
+- paragraph: ASUS VS247H-P 23.6- Inch Full HD
+- list:
+  - listitem:
+    - button "Previous"
+  - listitem:
+    - button "Next"
+- heading "About Us" [level=4]
+- paragraph: We believe performance needs to be validated at every stage of the software development cycle and our open source compatible, massively scalable platform makes that a reality.
+- heading "Get in Touch" [level=4]
+- paragraph: "Address: 2390 El Camino Real"
+- paragraph: "Phone: +440 123456"
+- paragraph: "Email: demo@blazemeter.com"
+- heading "PRODUCT STORE" [level=4]:
+  - img
+  - text: PRODUCT STORE
+- contentinfo:
+  - paragraph: Copyright © Product Store

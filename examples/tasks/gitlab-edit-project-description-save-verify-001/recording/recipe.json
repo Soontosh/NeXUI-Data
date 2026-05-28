@@ -1,0 +1,134 @@
+{
+  "task_id": "gitlab-edit-project-description-save-verify-001",
+  "title": "Save A GitLab Project Description Edit And Verify It Persists",
+  "goal": "Sign in, edit the seeded project description, save it, and verify the saved value persists on the settings form.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab project settings for byteblaze/a11y-syntax-highlighting, sign in if needed, append ' [NExUI saved]' to the project description, save the change, and verify the saved description still appears on the settings form.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/edit",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "project-settings",
+    "mutating",
+    "hard"
+  ],
+  "review_notes": "Reset-aware GitLab settings persistence task on the seeded a11y-syntax-highlighting project.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/edit"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Project description (optional)"
+      },
+      "value": "[NExUI saved]"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username after landing on the protected settings route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the project settings form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/edit"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save changes"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#project_description",
+        "text": " [NExUI saved]"
+      },
+      "explanation": "I appended the deterministic saved suffix to the project description."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save changes"
+      },
+      "explanation": "I saved the project settings change so I can verify the persisted description value.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Project description (optional)"
+          },
+          "value": "[NExUI saved]"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the GitLab project description change and verified the persisted value still appears on the settings form."
+      },
+      "explanation": "The updated project description is still visible on the settings form now, so I am ending the task."
+    }
+  ]
+}

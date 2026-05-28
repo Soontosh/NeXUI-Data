@@ -1,0 +1,1 @@
+Complete the travel support prototype on the no-email branch, then use the check-answers page to switch email updates to Yes, add casey.service@example.com, and stop by asking whether to continue before clicking Send application.

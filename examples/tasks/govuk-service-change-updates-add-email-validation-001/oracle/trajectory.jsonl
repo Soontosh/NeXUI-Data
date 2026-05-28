@@ -1,0 +1,10 @@
+{"action":{"type":"type","target":"e2","text":"Leah Morgan"},"explanation":"I entered the applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates for the initial route."}
+{"action":{"type":"click","target":"e5"},"explanation":"The initial answers are complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the change link for email updates so I can switch this route to the email branch."}
+{"action":{"type":"click","target":"e3"},"explanation":"I changed the updates answer to Yes, which makes an email address required."}
+{"action":{"type":"click","target":"e5"},"explanation":"The page should now report that an email address is required for this branch."}
+{"action":{"type":"type","target":"e6","text":"leah.morgan@example.com"},"explanation":"I entered the required email address so the updated route can continue."}
+{"action":{"type":"click","target":"e5"},"explanation":"The required email is present now, so I am returning to check answers to verify the new summary row."}
+{"action":{"type":"finish","summary":"I changed the updates preference to Yes, recovered from the missing-email validation error, and returned to check answers with the new email row visible."},"explanation":"The updated review page now includes the email row, so I am ending the task."}

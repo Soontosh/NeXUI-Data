@@ -1,0 +1,68 @@
+{
+  "recorded_at": "2026-06-02T03:34:05.185Z",
+  "final_snapshot": "s002",
+  "final_url": "http://localhost:3030/search?query=Schenley%20Plaza#map=5/51.495/7.603",
+  "snapshot_count": 3,
+  "transition_count": 2,
+  "oracle_step_count": 3,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e15",
+        "text": "Schenley Plaza"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/#map=5/51.500/-0.100"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"search?query=Schenley%20Plaza\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "field value equals \"Schenley Plaza\"",
+          "label": "postcondition",
+          "index": 2
+        },
+        {
+          "passed": true,
+          "message": "text present \"Search Results\"",
+          "label": "postcondition",
+          "index": 3
+        },
+        {
+          "passed": true,
+          "message": "text present \"Schenley Plaza | OpenStreetMap\"",
+          "label": "postcondition",
+          "index": 4
+        }
+      ],
+      "postcondition_attempts": 36,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/search?query=Schenley%20Plaza#map=5/51.495/7.603"
+    }
+  ]
+}

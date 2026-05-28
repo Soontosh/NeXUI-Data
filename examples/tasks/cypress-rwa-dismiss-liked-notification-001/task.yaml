@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-dismiss-liked-notification-001",
+  "title": "Dismiss A Specific Notification",
+  "goal": "Sign in, open the notifications page, dismiss the seeded Kristian Bradtke liked-a-transaction notification, and stop once it disappears from the list.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/notifications",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T18:31:58.872Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/notifications"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Kristian Bradtke liked a transaction."
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted Parisian commented on a transaction."
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "notifications",
+    "state-change",
+    "hard"
+  ],
+  "review_notes": "Authenticated notification-state task that dismisses one specific seeded notification and verifies it disappears from the list."
+}

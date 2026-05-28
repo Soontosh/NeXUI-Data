@@ -1,0 +1,128 @@
+{
+  "task_id": "orangehrm-pim-search-ava-patel-001",
+  "title": "Search For Ava Patel In OrangeHRM PIM",
+  "goal": "Log in to OrangeHRM, search for the seeded employee Ava Patel in PIM, and stop on the filtered employee-list state.",
+  "instruction": "Sign in to the local OrangeHRM admin account, search for Ava Patel in the PIM employee list, and stop when the filtered result is visible.",
+  "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-search",
+    "hard"
+  ],
+  "review_notes": "Enterprise list-filter task using the seeded Ava Patel employee record.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewEmployeeList"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Type for hints..."
+      },
+      "value": "Ava"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Marcus Lee"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned to the employee list so I can search the seeded enterprise records.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Employee Information"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for the seeded employee by name so the PIM list can be narrowed to the intended row.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the employee-name filter and stopped on the filtered PIM results.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "Marcus Lee"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

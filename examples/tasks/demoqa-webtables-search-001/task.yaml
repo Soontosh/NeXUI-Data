@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoqa-webtables-search-001",
+  "title": "Filter DemoQA Web Tables",
+  "goal": "Search for the row containing Cierra and stop on the filtered table state.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "url": "https://demoqa.com/webtables",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-27T18:29:59.929Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/webtables"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Type to search"
+      },
+      "value": "Cierra"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Cierra Vega 39 cierra@example.com 10000 Insurance"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "aria_snapshot",
+      "value": "Alden Cantrell 45 alden@example.com 12000 Compliance"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "table",
+    "filter",
+    "search"
+  ],
+  "review_notes": "First table-filtering task with semantic verification against the accessibility snapshot.",
+  "source_surface": "demoqa",
+  "split": "validation",
+  "stability_runs_passed": 1,
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  }
+}

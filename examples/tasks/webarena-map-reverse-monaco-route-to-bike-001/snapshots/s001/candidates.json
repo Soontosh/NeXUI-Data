@@ -1,0 +1,860 @@
+[
+  {
+    "ref": "e1",
+    "role": "link",
+    "name": "OpenStreetMap",
+    "description": "http://localhost:3030/#map=16/43.7341/7.4206",
+    "text": "OpenStreetMap",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 10,
+      "y": 14.91,
+      "width": 176.75,
+      "height": 24
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "link",
+    "name": "Edit",
+    "description": "http://localhost:3030/edit#map=16/43.7341/7.4206",
+    "text": "Edit",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 206.75,
+      "y": 10,
+      "width": 51.06,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "button",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 256.81,
+      "y": 10,
+      "width": 28,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "link",
+    "name": "History",
+    "description": "http://localhost:3030/history#map=16/43.7341/7.4206",
+    "text": "History",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 283.81,
+      "y": 10,
+      "width": 73.14,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "link",
+    "name": "Export",
+    "description": "http://localhost:3030/export#map=16/43.7341/7.4206",
+    "text": "Export",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 355.95,
+      "y": 10,
+      "width": 69.11,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "link",
+    "name": "GPS Traces",
+    "description": "http://localhost:3030/traces",
+    "text": "GPS Traces",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 848.27,
+      "y": 12.06,
+      "width": 78.13,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "link",
+    "name": "User Diaries",
+    "description": "http://localhost:3030/diary",
+    "text": "User Diaries",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 930.03,
+      "y": 12.06,
+      "width": 86.33,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "link",
+    "name": "Communities",
+    "description": "http://localhost:3030/communities",
+    "text": "Communities",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1020,
+      "y": 12.06,
+      "width": 94.06,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "link",
+    "name": "Copyright",
+    "description": "http://localhost:3030/copyright",
+    "text": "Copyright",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1117.7,
+      "y": 12.06,
+      "width": 70.88,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "link",
+    "name": "Help",
+    "description": "http://localhost:3030/help",
+    "text": "Help",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1192.22,
+      "y": 12.06,
+      "width": 36.88,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e11",
+    "role": "link",
+    "name": "About",
+    "description": "http://localhost:3030/about",
+    "text": "About",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1232.73,
+      "y": 12.06,
+      "width": 46.11,
+      "height": 27.38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e12",
+    "role": "link",
+    "name": "Log In",
+    "description": "http://localhost:3030/login?referer=%2Fdirections%3Fengine%3Dfossgis_osrm_car%26route%3D43.7384%2C7.4246%3B43.7308%2C7.4189%26from%3DAvenue%2520de%2520l%2527Hermitage%26to%3DMonaco-Ville#map=16/43.7341/7.4206",
+    "text": "Log In",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1286.48,
+      "y": 10,
+      "width": 67.47,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e13",
+    "role": "link",
+    "name": "Sign Up",
+    "description": "http://localhost:3030/user/new",
+    "text": "Sign Up",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1352.95,
+      "y": 10,
+      "width": 77.05,
+      "height": 35
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e14",
+    "role": "button",
+    "name": "Close",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 313,
+      "y": 71,
+      "width": 21,
+      "height": 21
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e15",
+    "role": "textbox",
+    "name": "From",
+    "description": "",
+    "text": "43.7308, 7.4189",
+    "tag": "input",
+    "value": "43.7308, 7.4189",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 36.5,
+      "y": 112,
+      "width": 305.5,
+      "height": 31
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e16",
+    "role": "textbox",
+    "name": "To",
+    "description": "",
+    "text": "43.7384, 7.4246",
+    "tag": "input",
+    "value": "43.7384, 7.4246",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 36.5,
+      "y": 147,
+      "width": 305.5,
+      "height": 31
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e17",
+    "role": "combobox",
+    "name": "Bicycle (OSRM) Car (OSRM) Foot (OSRM)",
+    "description": "",
+    "text": "Bicycle (OSRM) Car (OSRM) Foot (OSRM)",
+    "tag": "select",
+    "value": "1",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 36.5,
+      "y": 182,
+      "width": 260.83,
+      "height": 31
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e18",
+    "role": "button",
+    "name": "Go",
+    "description": "",
+    "text": "Go",
+    "tag": "input",
+    "value": "Go",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 305.33,
+      "y": 182,
+      "width": 36.67,
+      "height": 31
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e19",
+    "role": "button",
+    "name": "Reverse Directions",
+    "description": "",
+    "text": "Reverse Directions",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 36.5,
+      "y": 217,
+      "width": 139.81,
+      "height": 31
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": true,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e22",
+    "role": "div",
+    "name": "100 m 500 ft © OpenStreetMap contributors ♥ Make a Donation. Website and API terms",
+    "description": "",
+    "text": "100 m 500 ft © OpenStreetMap contributors ♥ Make a Donation. Website and API terms",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 350,
+      "y": 55,
+      "width": 1090,
+      "height": 845
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e20",
+    "role": "button",
+    "name": "Marker",
+    "description": "",
+    "text": "",
+    "tag": "img",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 802,
+      "y": 650,
+      "width": 25,
+      "height": 41
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e21",
+    "role": "button",
+    "name": "Marker",
+    "description": "",
+    "text": "",
+    "tag": "img",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1067,
+      "y": 159,
+      "width": 25,
+      "height": 41
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e25",
+    "role": "link",
+    "name": "Zoom In",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 65,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e26",
+    "role": "link",
+    "name": "Zoom Out",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 105,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e27",
+    "role": "button",
+    "name": "Show My Location",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 145,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e28",
+    "role": "link",
+    "name": "Layers",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 195,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e29",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 235,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e30",
+    "role": "link",
+    "name": "Share",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 275,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e31",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 325,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e32",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:3030/directions?engine=fossgis_osrm_car&route=43.7308%2C7.4189%3B43.7384%2C7.4246#",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1400,
+      "y": 375,
+      "width": 40,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e33",
+    "role": "link",
+    "name": "OpenStreetMap contributors",
+    "description": "http://localhost:3030/copyright",
+    "text": "OpenStreetMap contributors",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1051.2,
+      "y": 884.2,
+      "width": 150.75,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e34",
+    "role": "link",
+    "name": "Make a Donation",
+    "description": "https://donate.openstreetmap.org/",
+    "text": "Make a Donation",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1215.75,
+      "y": 884.2,
+      "width": 90.73,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e35",
+    "role": "link",
+    "name": "Website and API terms",
+    "description": "https://wiki.osmfoundation.org/wiki/Terms_of_Use",
+    "text": "Website and API terms",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1313.16,
+      "y": 884.2,
+      "width": 121.84,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

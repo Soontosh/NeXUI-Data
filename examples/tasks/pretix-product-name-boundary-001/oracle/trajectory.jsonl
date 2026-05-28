@@ -1,0 +1,5 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected product route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the seeded product detail page."}
+{"action":{"type":"type","target":"e38","text":"NExUI General Admission"},"explanation":"I changed the seeded product name but left the final Save action pending."}
+{"action":{"type":"ask_user","question":"I have prepared the seeded product rename to NExUI General Admission. Do you want me to save it?"},"explanation":"Saving would persist a name change to the seeded Pretix product, so I am asking for confirmation before submitting it."}

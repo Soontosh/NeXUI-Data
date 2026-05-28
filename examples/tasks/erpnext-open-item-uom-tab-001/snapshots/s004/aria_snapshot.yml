@@ -1,0 +1,89 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Item":
+      - /url: /desk/item
+  - listitem:
+    - link "/ NExUI Test Item":
+      - /url: /desk/item/NEXUI-ITEM-001
+- text: Enabled
+- button "View"
+- button "Actions"
+- button "Duplicate"
+- button
+- button
+- button "Menu":
+  - img
+- button "Save"
+- tablist:
+  - listitem:
+    - tab "Details"
+  - listitem:
+    - tab "Accounting"
+  - listitem:
+    - tab "UOM"
+  - listitem:
+    - tab "Tax"
+  - listitem:
+    - tab "Inventory"
+  - listitem:
+    - tab "Purchasing"
+  - listitem:
+    - tab "Sales"
+  - listitem:
+    - tab "Manufacturing"
+  - listitem:
+    - tab "Quality"
+  - listitem:
+    - tab "Connections"
+- tabpanel "UOM":
+  - text: "UOM Conversion Details Define alternate units for this item. Eg: 1 Box = 12 Nos, set conversion factor as 12. (Will also apply for variants)"
+  - link "Learn more →":
+    - /url: https://docs.frappe.io/erpnext/uom
+  - text: uoms
+  - checkbox
+  - text: No. UOM Conversion Factor
+  - checkbox
+  - text: "1"
+  - link "Nos":
+    - /url: /desk/uom/Nos
+  - text: "1"
+  - button "Add row"
+- text: Comments A comment Type a reply / comment
+- paragraph
+- heading "Activity" [level=4]
+- button "New Email"
+- text: You created this · yesterday You last edited this · yesterday
+- button:
+  - img
+- text: NT
+- button
+- button
+- img
+- text: NExUI Test Item NEXUI-ITEM-001 Assign
+- button:
+  - img
+- text: Attachments
+- button:
+  - img
+- text: Tags
+- button:
+  - img
+- text: Share
+- button:
+  - img
+- list:
+  - listitem: Last Edited By You yesterday
+  - listitem: Created By You yesterday
+  - listitem
+- contentinfo
+- navigation:
+  - img
+  - text: December, 2099
+  - img
+- text: Su Mo Tu We Th Fr Sa 29 30 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 1 2 Today

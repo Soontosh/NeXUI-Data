@@ -1,0 +1,135 @@
+- complementary:
+  - navigation "Sidepanel":
+    - link "client brand banner":
+      - /url: https://www.orangehrm.com/
+      - img "client brand banner"
+    - textbox "Search"
+    - button ""
+    - separator
+    - list:
+      - listitem:
+        - link "Admin":
+          - /url: /web/index.php/admin/viewAdminModule
+      - listitem:
+        - link "PIM":
+          - /url: /web/index.php/pim/viewPimModule
+      - listitem:
+        - link "Leave":
+          - /url: /web/index.php/leave/viewLeaveModule
+      - listitem:
+        - link "Time":
+          - /url: /web/index.php/time/viewTimeModule
+      - listitem:
+        - link "Recruitment":
+          - /url: /web/index.php/recruitment/viewRecruitmentModule
+      - listitem:
+        - link "My Info":
+          - /url: /web/index.php/pim/viewMyDetails
+      - listitem:
+        - link "Performance":
+          - /url: /web/index.php/performance/viewPerformanceModule
+      - listitem:
+        - link "Dashboard":
+          - /url: /web/index.php/dashboard/index
+      - listitem:
+        - link "Directory":
+          - /url: /web/index.php/directory/viewDirectory
+      - listitem:
+        - link "Maintenance":
+          - /url: /web/index.php/maintenance/viewMaintenanceModule
+      - listitem:
+        - link "Claim":
+          - /url: /web/index.php/claim/viewClaimModule
+          - img
+          - text: Claim
+      - listitem:
+        - link "Buzz":
+          - /url: /web/index.php/buzz/viewBuzz
+- banner:
+  - heading "PIM" [level=6]
+  - link "Upgrade":
+    - /url: https://orangehrm.com/open-source/upgrade-to-advanced
+    - button "Upgrade"
+  - list:
+    - listitem:
+      - img "profile picture"
+      - paragraph: NExUI Admin
+      - text: 
+  - navigation "Topbar Menu":
+    - list:
+      - button ""
+- heading [level=6]
+- img "profile picture"
+- tablist:
+  - tab "Personal Details":
+    - link "Personal Details":
+      - /url: /web/index.php/pim/viewPersonalDetails/empNumber/1
+  - tab "Contact Details":
+    - link "Contact Details":
+      - /url: /web/index.php/pim/contactDetails/empNumber/1
+  - tab "Emergency Contacts":
+    - link "Emergency Contacts":
+      - /url: /web/index.php/pim/viewEmergencyContacts/empNumber/1
+  - tab "Dependents":
+    - link "Dependents":
+      - /url: /web/index.php/pim/viewDependents/empNumber/1
+  - tab "Immigration":
+    - link "Immigration":
+      - /url: /web/index.php/pim/viewImmigration/empNumber/1
+  - tab "Job":
+    - link "Job":
+      - /url: /web/index.php/pim/viewJobDetails/empNumber/1
+  - tab "Salary":
+    - link "Salary":
+      - /url: /web/index.php/pim/viewSalaryList/empNumber/1
+  - tab "Report-to":
+    - link "Report-to":
+      - /url: /web/index.php/pim/viewReportToDetails/empNumber/1
+  - tab "Qualifications":
+    - link "Qualifications":
+      - /url: /web/index.php/pim/viewQualifications/empNumber/1
+  - tab "Memberships":
+    - link "Memberships":
+      - /url: /web/index.php/pim/viewMemberships/empNumber/1
+- heading "Contact Details" [level=6]
+- separator
+- heading "Address" [level=6]
+- separator
+- text: Street 1
+- textbox
+- text: Street 2
+- textbox
+- text: City
+- textbox
+- text: State/Province
+- textbox
+- text: Zip/Postal Code
+- textbox
+- text: Country -- Select -- 
+- heading "Telephone" [level=6]
+- separator
+- text: Home
+- textbox
+- text: Mobile
+- textbox
+- text: Work
+- textbox
+- heading "Email" [level=6]
+- separator
+- text: Work Email
+- textbox
+- text: Other Email
+- textbox
+- separator
+- paragraph: "* Required"
+- button "Save"
+- separator
+- heading "Attachments" [level=6]
+- button " Add"
+- table
+- paragraph: OrangeHRM OS 5.8.1
+- paragraph:
+  - text: © 2005 - 2026
+  - link "OrangeHRM, Inc":
+    - /url: http://www.orangehrm.com
+  - text: . All rights reserved.

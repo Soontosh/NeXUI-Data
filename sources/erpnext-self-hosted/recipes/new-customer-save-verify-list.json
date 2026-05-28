@@ -1,0 +1,204 @@
+{
+  "task_id": "erpnext-new-customer-save-verify-list-001",
+  "title": "Create A New ERPNext Customer And Verify It From The List",
+  "goal": "Sign in to ERPNext, create a new customer, return to the customer list, and verify the saved customer from that second view.",
+  "instruction": "Open the ERPNext new customer route, sign in as Administrator with password admin, create a new customer named NExUI Save Verify Customer, return to the customer list, filter the list to that customer name, and verify the new customer appears.",
+  "url": "http://localhost:8090/app/customer/new-customer-1",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 5,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "customer-form",
+    "customer-list",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "First reseed-required mutating ERPNext task. It saves a customer and verifies it from the customer list on a second view.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/customer?customer_name="
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Customer Name"
+      },
+      "value": "NExUI Save Verify Customer"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Save Verify Customer"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "url contains \"/desk/customer?customer_name=\""
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so ERPNext can redirect back to a fresh new customer form.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/new-customer-"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[data-fieldname=\"customer_name\"]",
+        "text": "NExUI Save Verify Customer"
+      },
+      "explanation": "I entered the deterministic customer name."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Details"
+      },
+      "explanation": "I re-focused the details tab so ERPNext commits the typed customer name before saving."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the new customer so I can verify it from the customer list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/NExUI%20Save%20Verify%20Customer"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/desk/customer']"
+      },
+      "explanation": "I returned to the customer list so I can verify the saved customer from a second view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "Customer Name"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Customer Name",
+        "text": "NExUI Save Verify Customer"
+      },
+      "explanation": "I entered the saved customer name into the customer-list filter."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Filter"
+      },
+      "explanation": "I applied the filter so the saved customer row is isolated for cross-view verification.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer?customer_name="
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Customer Name"
+          },
+          "value": "NExUI Save Verify Customer"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Save Verify Customer"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

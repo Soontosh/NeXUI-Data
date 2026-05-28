@@ -1,0 +1,10 @@
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected email updates, which reveals the email-address field."}
+{"action":{"type":"type","target":"e5","text":"amina@example.com"},"explanation":"I entered the email address for the initial review state."}
+{"action":{"type":"click","target":"e6"},"explanation":"The initial answers are complete, so I am moving to the check-answers page."}
+{"action":{"type":"click","target":"e3"},"explanation":"I followed the change link for the full name so I can update that earlier answer."}
+{"action":{"type":"type","target":"e2","text":"Amina Khan"},"explanation":"I replaced the earlier name with the corrected value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The updated name is entered, so I am moving back through the remaining question."}
+{"action":{"type":"click","target":"e6"},"explanation":"The later answer is still present, so I am returning to the review page to confirm the summary updated."}
+{"action":{"type":"finish","summary":"I changed the full name from the check-answers flow and confirmed the summary now shows the updated value."},"explanation":"The check-answers page now shows the corrected name, so I am ending the task."}

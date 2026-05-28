@@ -1,0 +1,16 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I selected the tax year for the report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e4"},"explanation":"I chose self-employment as the income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to how the income changed."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected stopped income, which means the new amount should be zero."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"950"},"explanation":"I entered the previous monthly amount before the income stopped."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"0"},"explanation":"I entered zero because the income stopped."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount change is complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose post as the follow-up contact method."}
+{"action":{"type":"type","target":"e6","text":"23 Market Street, Leeds"},"explanation":"I entered the postal address for follow-up contact."}
+{"action":{"type":"click","target":"e7"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Business closed at the end of the tax year."},"explanation":"I added a short note that explains why the income stopped."}
+{"action":{"type":"click","target":"e4"},"explanation":"The answers are complete, so I am moving to the review page."}
+{"action":{"type":"ask_user","question":"The income update is ready to send. Do you want me to continue and submit it?"},"explanation":"The review page is ready, and the next action would submit the update, so I am asking for confirmation."}

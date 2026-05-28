@@ -1,0 +1,26 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e15",
+      "text": "Carnegie Mellon University"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "press",
+      "key": "Enter"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"search?query=Carnegie%20Mellon%20University\"",
+      "postcondition 2: passed - field value equals \"Carnegie Mellon University\"",
+      "postcondition 3: passed - text present \"Search Results\"",
+      "postcondition 4: passed - text present \"Carnegie Mellon University, Schenley Drive Extension, North Oakland, Pittsburgh, Allegheny County, 15213, United States\""
+    ]
+  }
+]

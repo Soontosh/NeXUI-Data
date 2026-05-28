@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-06-01T21:26:30.869Z",
+  "final_snapshot": "s001",
+  "final_url": "http://localhost:3030/directions",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e17"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/directions\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"textbox\",\"name\":\"From\"}",
+          "label": "postcondition",
+          "index": 2
+        },
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"textbox\",\"name\":\"To\"}",
+          "label": "postcondition",
+          "index": 3
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:3030/directions"
+    }
+  ]
+}

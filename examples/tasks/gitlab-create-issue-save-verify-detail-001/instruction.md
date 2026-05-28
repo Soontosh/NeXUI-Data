@@ -1,0 +1,1 @@
+Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, create an issue titled 'NExUI issue save verify' with a short description, and verify the resulting issue-detail page.

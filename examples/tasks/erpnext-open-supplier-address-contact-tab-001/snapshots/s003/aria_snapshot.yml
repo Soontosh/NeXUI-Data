@@ -1,0 +1,44 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Supplier":
+      - /url: /desk/supplier
+- button "List View"
+- button "Saved Filters"
+- button
+- button "Menu":
+  - img
+- button "Add Supplier"
+- textbox "ID"
+- button
+- text: name
+- textbox "Supplier Name": "%NExUI Test Supplier%"
+- button
+- text: supplier_name
+- combobox "Supplier Group"
+- status: Begin typing for results.
+- text: supplier_group
+- button "Filter"
+- button "Clear all filters"
+- button "ascending":
+  - img
+- button "Created On"
+- banner:
+  - checkbox "Select All"
+  - text: Supplier Name Status Supplier Type Supplier Group Billing Currency ID 1 of 1
+  - img
+- checkbox
+- link "NExUI Test Supplier":
+  - /url: /desk/supplier/NExUI%20Test%20Supplier
+- text: Enabled Company NExUI Test Supplier 1 d 0 ·
+- img
+- button "20" [disabled]
+- button "100"
+- button "500"
+- button "2500"
+- contentinfo

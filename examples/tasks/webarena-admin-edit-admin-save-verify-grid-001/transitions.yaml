@@ -1,0 +1,44 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e37"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - url contains \"/admin/admin/user/edit/user_id/1/\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e29",
+      "text": "admin+nexui-saved@example.test"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "type",
+      "target": "e34",
+      "text": "admin1234"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e19"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - text present \"admin+nexui-saved@example.test\""
+    ]
+  }
+]

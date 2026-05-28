@@ -1,0 +1,66 @@
+{
+  "task_id": "w3c-bad-after-template-001",
+  "title": "Open Accessible Template Page",
+  "goal": "Open the accessible Template page from the BAD overview and stop there.",
+  "instruction": "Open the accessible Template page from the overview and stop when it is visible.",
+  "url": "https://www.w3.org/WAI/demos/bad/",
+  "source": {
+    "site_id": "w3c-bad",
+    "site_name": "W3C Before and After Demo",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "w3c-bad",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "easy",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility",
+    "before-after"
+  ],
+  "review_notes": "Extends the W3C BAD before/after navigation set with the accessible Template target.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/bad/after/template.html"
+    },
+    {
+      "type": "text_present",
+      "artifact": "any_text",
+      "value": "Accessible Template Page"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e19"
+      },
+      "explanation": "I opened the accessible Template page from the overview comparison list."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the accessible Template page and stopped there."
+      },
+      "explanation": "The requested comparison page is open now, so I am ending the task."
+    }
+  ]
+}

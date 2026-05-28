@@ -1,0 +1,48 @@
+{
+  "task_id": "govuk-benefits-employed-change-updates-result-001",
+  "title": "Take The Employed Route, Add Email Updates, And Reach The Result",
+  "goal": "Follow the employed route to check answers on the no-email branch, add email updates from the summary, and continue to the result page.",
+  "instruction": "Complete the childcare-support eligibility prototype on the employed route without email updates, then change updates to Yes, add casey.benefits@example.com, and stop on the final eligibility result page.",
+  "path": "../../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": ["click","type","finish"],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 14,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": ["recorded","service-form","eligibility-prototype","result-page","branch-change","hard"],
+  "review_notes": "Hard end-to-end benefits task that adds the email branch from check answers and continues through to the result page.",
+  "success_assertions": [
+    {"type":"url_contains","value":"#/result"},
+    {"type":"text_present","artifact":"reader_view","value":"Eligibility result"},
+    {"type":"text_present","artifact":"reader_view","value":"You may be able to continue with a full childcare-support application."}
+  ],
+  "steps": [
+    {"action":{"type":"click","target_role":"radio","target_name":"Yes"},"explanation":"I selected Yes because the user usually lives in the UK."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The residency answer is complete, so I am moving to the childcare question.","postconditions":[{"type":"url_contains","value":"#/children"}]},
+    {"action":{"type":"click","target_role":"radio","target_name":"1 child"},"explanation":"I selected one child for the childcare count."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The childcare answer is complete, so I am moving to work status.","postconditions":[{"type":"url_contains","value":"#/work-status"}]},
+    {"action":{"type":"click","target_role":"radio","target_name":"Employed"},"explanation":"I selected Employed as the current work status."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The work status is complete, so I am moving to income.","postconditions":[{"type":"url_contains","value":"#/income"}]},
+    {"action":{"type":"type","target_role":"textbox","target_name":"Monthly income","text":"2100"},"explanation":"I entered the monthly income for the eligibility estimate."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The income is complete, so I am moving to updates.","postconditions":[{"type":"url_contains","value":"#/updates"}]},
+    {"action":{"type":"click","target_role":"radio","target_name":"No"},"explanation":"I started on the no-email branch so the summary initially has no email row."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The initial branch is complete, so I am moving to check answers.","postconditions":[{"type":"url_contains","value":"#/check-answers"},{"type":"text_absent","artifact":"reader_view","value":"Email address"}]},
+    {"action":{"type":"click","target_selector":"#change-updates"},"explanation":"I followed the updates change link so I can add the email branch before continuing to the result.","postconditions":[{"type":"url_contains","value":"#/updates"}]},
+    {"action":{"type":"click","target_role":"radio","target_name":"Yes"},"explanation":"I switched the updates answer to Yes, which reveals the email field.","postconditions":[{"type":"text_present","artifact":"reader_view","value":"Email address"}]},
+    {"action":{"type":"type","target_role":"textbox","target_name":"Email address","text":"casey.benefits@example.com"},"explanation":"I entered the email address for updates."},
+    {"action":{"type":"click","target_role":"button","target_name":"Continue"},"explanation":"The added email branch is complete, so I am returning to review before the result page.","postconditions":[{"type":"url_contains","value":"#/check-answers"},{"type":"text_present","artifact":"reader_view","value":"casey.benefits@example.com"}]},
+    {"action":{"type":"click","target_selector":"#continue-check-answers"},"explanation":"I continued from the review page to the final eligibility result with the added email branch.","postconditions":[{"type":"url_contains","value":"#/result"},{"type":"text_present","artifact":"reader_view","value":"You may be able to continue with a full childcare-support application."}]},
+    {"action":{"type":"finish","summary":"I completed the employed route, added email updates from check answers, and reached the positive eligibility result page."},"explanation":"The final result page is visible with the expected employed-route wording and retained email state, so I am ending the task."}
+  ]
+}

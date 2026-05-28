@@ -1,0 +1,144 @@
+- link:
+  - /url: admin.htm
+  - img
+- link "ParaBank":
+  - /url: index.htm
+  - img "ParaBank"
+- paragraph: Experience the difference
+- list:
+  - listitem: Solutions
+  - listitem:
+    - link "About Us":
+      - /url: about.htm
+  - listitem:
+    - link "Services":
+      - /url: services.htm
+  - listitem:
+    - link "Products":
+      - /url: http://www.parasoft.com/jsp/products.jsp
+  - listitem:
+    - link "Locations":
+      - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+  - listitem:
+    - link "Admin Page":
+      - /url: admin.htm
+- list:
+  - listitem:
+    - link "home":
+      - /url: index.htm
+  - listitem:
+    - link "about":
+      - /url: about.htm
+  - listitem:
+    - link "contact":
+      - /url: contact.htm
+- paragraph: Welcome John Smith
+- heading "Account Services" [level=2]
+- list:
+  - listitem:
+    - link "Open New Account":
+      - /url: openaccount.htm
+  - listitem:
+    - link "Accounts Overview":
+      - /url: overview.htm
+  - listitem:
+    - link "Transfer Funds":
+      - /url: transfer.htm
+  - listitem:
+    - link "Bill Pay":
+      - /url: billpay.htm
+  - listitem:
+    - link "Find Transactions":
+      - /url: findtrans.htm
+  - listitem:
+    - link "Update Contact Info":
+      - /url: updateprofile.htm
+  - listitem:
+    - link "Request Loan":
+      - /url: requestloan.htm
+  - listitem:
+    - link "Log Out":
+      - /url: logout.htm
+- heading "Accounts Overview" [level=1]
+- table:
+  - rowgroup:
+    - row "Account Balance* Available Amount":
+      - columnheader "Account"
+      - columnheader "Balance*"
+      - columnheader "Available Amount"
+  - rowgroup:
+    - row "13344 $100000104831.93 $100000104831.93":
+      - cell "13344":
+        - link "13344":
+          - /url: activity.htm?id=13344
+      - cell "$100000104831.93"
+      - cell "$100000104831.93"
+    - row "13455 -$99999999989.00 $0.00":
+      - cell "13455":
+        - link "13455":
+          - /url: activity.htm?id=13455
+      - cell "-$99999999989.00"
+      - cell "$0.00"
+    - row "17007 $5090.00 $5090.00":
+      - cell "17007":
+        - link "17007":
+          - /url: activity.htm?id=17007
+      - cell "$5090.00"
+      - cell "$5090.00"
+    - row "17118 -$100000.00 $0.00":
+      - cell "17118":
+        - link "17118":
+          - /url: activity.htm?id=17118
+      - cell "-$100000.00"
+      - cell "$0.00"
+    - row "17229 -$4910.00 $0.00":
+      - cell "17229":
+        - link "17229":
+          - /url: activity.htm?id=17229
+      - cell "-$4910.00"
+      - cell "$0.00"
+    - row "Total $5022.93":
+      - cell "Total"
+      - cell "$5022.93"
+      - cell
+  - rowgroup:
+    - row "*Balance includes deposits that may be subject to holds":
+      - cell "*Balance includes deposits that may be subject to holds"
+- list:
+  - listitem:
+    - link "Home":
+      - /url: index.htm
+    - text: "|"
+  - listitem:
+    - link "About Us":
+      - /url: about.htm
+    - text: "|"
+  - listitem:
+    - link "Services":
+      - /url: services.htm
+    - text: "|"
+  - listitem:
+    - link "Products":
+      - /url: http://www.parasoft.com/jsp/products.jsp
+    - text: "|"
+  - listitem:
+    - link "Locations":
+      - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+    - text: "|"
+  - listitem:
+    - link "Forum":
+      - /url: http://forums.parasoft.com/
+    - text: "|"
+  - listitem:
+    - link "Site Map":
+      - /url: sitemap.htm
+    - text: "|"
+  - listitem:
+    - link "Contact Us":
+      - /url: contact.htm
+- paragraph: © Parasoft. All rights reserved.
+- list:
+  - listitem: "Visit us at:"
+  - listitem:
+    - link "www.parasoft.com":
+      - /url: http://www.parasoft.com/

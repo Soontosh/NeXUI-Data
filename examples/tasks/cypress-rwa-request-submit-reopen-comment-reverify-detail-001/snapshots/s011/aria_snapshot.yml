@@ -1,0 +1,134 @@
+- banner:
+  - button "open drawer"
+  - heading [level=1]:
+    - link:
+      - /url: /
+      - img
+  - link "New":
+    - /url: /transaction/new
+  - link "8":
+    - /url: /notifications
+  - tablist:
+    - tab "Everyone"
+    - tab "Friends"
+    - tab "Mine" [selected]
+- img "Ted Parisian"
+- heading "Ted P" [level=6]
+- heading "@Heath93" [level=6]
+- heading "$1,509.53" [level=6]
+- heading "Account Balance" [level=6]
+- separator
+- list:
+  - link "Home":
+    - /url: /
+  - link "My Account":
+    - /url: /user/settings
+  - link "Bank Accounts":
+    - /url: /bankaccounts
+  - link "Notifications":
+    - /url: /notifications
+- separator
+- list:
+  - button "Logout"
+- main:
+  - 'button "Date: ALL"'
+  - 'button "Amount: $0 - $1,000"'
+  - text: Personal
+  - grid "grid":
+    - rowgroup:
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Darrel Ortiz
+        - paragraph: NExUI monstrous Darrel request
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: +$24.00
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Lia Rosenbaum
+        - paragraph: "Request: WHjJ4qR2R2 to uBmeaz5pX"
+        - paragraph: "1"
+        - paragraph: "0"
+        - text: +$42.36
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian paid Kristian Bradtke
+        - paragraph: "Payment: uBmeaz5pX to GjWovtg2hr"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$370.77"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Kristian Bradtke paid Ted Parisian
+        - paragraph: "Payment: GjWovtg2hr to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$250.66"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Kristian Bradtke paid Ted Parisian
+        - paragraph: "Payment: GjWovtg2hr to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$66.32"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Kristian Bradtke paid Ted Parisian
+        - paragraph: "Payment: GjWovtg2hr to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$395.32"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian paid Ruthie Prosacco
+        - paragraph: "Payment: uBmeaz5pX to M1ty1gR8B3"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$424.08"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian paid Ruthie Prosacco
+        - paragraph: "Payment: uBmeaz5pX to M1ty1gR8B3"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$204.12"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Kristian Bradtke
+        - paragraph: "Request: GjWovtg2hr to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: +$36.56
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Ruthie Prosacco
+        - paragraph: "Request: M1ty1gR8B3 to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: +$440.36
+      - separator
+  - paragraph:
+    - text: Built by
+    - link:
+      - /url: https://cypress.io
+      - img
+- alert: Transaction Submitted!

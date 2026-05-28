@@ -1,0 +1,19 @@
+{"action":{"type":"type","target":"e1","text":"Administrator"},"explanation":"I entered the seeded ERPNext administrator login."}
+{"action":{"type":"type","target":"e2","text":"admin"},"explanation":"I entered the seeded ERPNext password."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so ERPNext can redirect back to a fresh new customer form."}
+{"action":{"type":"type","target":"e14","text":"NExUI Monster Customer"},"explanation":"I entered the deterministic first customer name."}
+{"action":{"type":"click","target":"e5"},"explanation":"I re-focused the Details tab so ERPNext commits the typed customer name before the first save."}
+{"action":{"type":"click","target":"e4"},"explanation":"I saved the new customer so I can verify it from the customer list before applying a second mutation."}
+{"action":{"type":"click","target":"e2"},"explanation":"I returned to the customer list so I can verify the saved customer from a second view."}
+{"action":{"type":"type","target":"e10","text":"NExUI Monster Customer"},"explanation":"I entered the first saved customer name into the customer-list filter."}
+{"action":{"type":"click","target":"e14"},"explanation":"I applied the filter so the first saved customer row is isolated."}
+{"action":{"type":"click","target":"e21"},"explanation":"I reopened the saved customer from the filtered list so I can apply a second mutation from the persisted detail state."}
+{"action":{"type":"type","target":"e14","text":"NExUI Monster Customer Prime"},"explanation":"I renamed the reopened customer record to the deterministic revised name."}
+{"action":{"type":"click","target":"e5"},"explanation":"I re-focused the Details tab so ERPNext commits the revised name before the second save."}
+{"action":{"type":"click","target":"e4"},"explanation":"I saved the renamed customer so I can verify the revised row from the list and then reopen the updated record again."}
+{"action":{"type":"click","target":"e2"},"explanation":"I returned to the customer list again so I can verify the revised customer row from a second post-save view."}
+{"action":{"type":"type","target":"e10","text":"NExUI Monster Customer Prime"},"explanation":"I entered the revised customer name into the customer-list filter."}
+{"action":{"type":"click","target":"e14"},"explanation":"I applied the revised-name filter so the renamed customer row is isolated for post-mutation verification."}
+{"action":{"type":"click","target":"e21"},"explanation":"I reopened the renamed customer from the list so I can verify the final persisted record on another detail surface."}
+{"action":{"type":"click","target":"e6"},"explanation":"I switched to the Address & Contact tab so the final verification happens on a distinct detail state of the renamed customer record."}
+{"action":{"type":"finish","summary":"I created the customer, verified it from the list, renamed it, re-verified the revised row from the list, reopened it again, and confirmed the renamed record on the Address & Contact tab."},"explanation":"The renamed customer persisted across both list and detail surfaces, and the Address & Contact tab is visible now, so I am ending the task."}

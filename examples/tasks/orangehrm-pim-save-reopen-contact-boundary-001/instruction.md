@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, open PIM, search for Ava Patel, open her employee record, enter Quinn as the middle name, save the change, return to Employee List, search for Ava Patel again, reopen her record to verify Quinn persisted, switch to Contact Details, enter ava.patel+review@example.test as Other Email, and ask for confirmation before clicking Save.

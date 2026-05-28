@@ -1,0 +1,41 @@
+{
+  "task_id": "internet-key-presses-enter-001",
+  "title": "Press Enter In Key Presses",
+  "goal": "Focus the key input area, press Enter, and stop when the result text updates.",
+  "instruction": "Press Enter on the key presses page and stop when the page reports the pressed key.",
+  "url": "https://the-internet.herokuapp.com/key_presses",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["focus", "press", "finish"],
+  "tags": ["recorded", "keyboard", "focus"],
+  "review_notes": "Exercises explicit focus and keyboard interaction before stopping on the updated result text.",
+  "steps": [
+    {
+      "action": {
+        "type": "focus",
+        "target_selector": "#target"
+      },
+      "explanation": "I focused the key input area so the page will receive the next keyboard action."
+    },
+    {
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "explanation": "I pressed Enter. The result message should now report which key was received.",
+      "post_delay_ms": 500
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I pressed Enter on the key presses page and stopped when the result updated."
+      },
+      "explanation": "The page has reported the key press, so I am ending the task."
+    }
+  ]
+}

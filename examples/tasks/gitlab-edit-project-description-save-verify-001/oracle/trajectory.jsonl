@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"byteblaze"},"explanation":"I entered the seeded GitLab username after landing on the protected settings route."}
+{"action":{"type":"type","target":"e3","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e6"},"explanation":"I signed in so GitLab can redirect back to the project settings form."}
+{"action":{"type":"type","target":"e46","text":" [NExUI saved]"},"explanation":"I appended the deterministic saved suffix to the project description."}
+{"action":{"type":"click","target":"e50"},"explanation":"I saved the project settings change so I can verify the persisted description value."}
+{"action":{"type":"finish","summary":"I saved the GitLab project description change and verified the persisted value still appears on the settings form."},"explanation":"The updated project description is still visible on the settings form now, so I am ending the task."}

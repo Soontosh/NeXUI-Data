@@ -1,0 +1,198 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Administrator"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer/new-customer-\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"button\",\"name\":\"Save\"}"
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e14",
+      "text": "NExUI Monster Customer"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer/NExUI%20Monster%20Customer\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e2"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"name\":\"Customer Name\"}"
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e10",
+      "text": "NExUI Monster Customer"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer?customer_name=\"",
+      "postcondition 2: passed - text present \"NExUI Monster Customer\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e21"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer/NExUI%20Monster%20Customer\"",
+      "postcondition 2: passed - text present \"NExUI Monster Customer\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "type",
+      "target": "e14",
+      "text": "NExUI Monster Customer Prime"
+    },
+    "to": "s011",
+    "notes": []
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s012",
+    "notes": []
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s013",
+    "notes": [
+      "postcondition 1: passed - text present \"NExUI Monster Customer Prime\""
+    ]
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "click",
+      "target": "e2"
+    },
+    "to": "s014",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"name\":\"Customer Name\"}"
+    ]
+  },
+  {
+    "from": "s014",
+    "action": {
+      "type": "type",
+      "target": "e10",
+      "text": "NExUI Monster Customer Prime"
+    },
+    "to": "s015",
+    "notes": []
+  },
+  {
+    "from": "s015",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s016",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer?customer_name=\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"link\",\"name\":\"NExUI Monster Customer Prime\"}"
+    ]
+  },
+  {
+    "from": "s016",
+    "action": {
+      "type": "click",
+      "target": "e21"
+    },
+    "to": "s017",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer/\"",
+      "postcondition 2: passed - text present \"NExUI Monster Customer Prime\""
+    ]
+  },
+  {
+    "from": "s017",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s018",
+    "notes": [
+      "postcondition 1: passed - url contains \"#contact_and_address_tab\"",
+      "postcondition 2: passed - text present \"New Address\""
+    ]
+  }
+]

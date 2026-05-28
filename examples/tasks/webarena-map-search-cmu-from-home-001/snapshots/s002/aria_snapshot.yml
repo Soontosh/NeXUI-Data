@@ -1,0 +1,88 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=16/40.4445/-79.9447
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=16/40.4445/-79.9447
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=16/40.4445/-79.9447
+    - link "Export":
+      - /url: http://localhost:3030/export#map=16/40.4445/-79.9447
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2F#map=16/40.4445/-79.9447
+    - link "Sign Up":
+      - /url: /user/new
+- textbox "Search": Carnegie Mellon University
+- button "Go"
+- link "Find directions between two points":
+  - /url: /directions
+  - img
+- heading "Search Results" [level=2]
+- button "Close"
+- heading "Results from OpenStreetMap Nominatim" [level=4]:
+  - text: Results from
+  - link "OpenStreetMap Nominatim":
+    - /url: https://nominatim.openstreetmap.org/
+- list:
+  - listitem:
+    - text: University
+    - link "Carnegie Mellon University, Schenley Drive Extension, North Oakland, Pittsburgh, Allegheny County, 15213, United States":
+      - /url: /relation/2279034
+  - listitem:
+    - text: University
+    - link "Carnegie Mellon University, Pittsburgh, Allegheny County, 15213, United States":
+      - /url: /way/25795401
+  - listitem:
+    - text: University Building
+    - link "Carnegie Mellon University, 407, South Craig Street, Bellefield, Pittsburgh, Allegheny County, 15213, United States":
+      - /url: /way/44157443
+- link "More results":
+  - /url: /geocoder/search_osm_nominatim?exclude=13476618%2C6537706%2C6860727&maxlat=61.64816245852389&maxlon=31.552734375000004&minlat=38.44498466889473&minlon=-16.347656250000004&query=Carnegie+Mellon+University
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 100 m 500 ft ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

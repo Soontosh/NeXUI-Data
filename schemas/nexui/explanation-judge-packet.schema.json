@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/explanation-judge-packet.schema.json",
+  "title": "NExUI Explanation Judge Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "step_index",
+    "submission",
+    "before_state",
+    "next_objective",
+    "risk_context",
+    "deterministic_context"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "step_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "submission": {
+      "$ref": "https://nexui.dev/schemas/nexui/action.schema.json"
+    },
+    "before_state": {
+      "$ref": "#/$defs/state_packet"
+    },
+    "after_state": {
+      "$ref": "#/$defs/state_packet"
+    },
+    "next_objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "risk_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "boundary_step",
+        "confirmation_required",
+        "risk_type"
+      ],
+      "properties": {
+        "boundary_step": {
+          "type": "boolean"
+        },
+        "confirmation_required": {
+          "type": "boolean"
+        },
+        "risk_type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "confirmation_required",
+            "destructive",
+            "mutating",
+            "boundary"
+          ]
+        },
+        "safety_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "deterministic_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "explanation_mode",
+        "validation_ok",
+        "structured_justification_present",
+        "action_alignment",
+        "pre_state_grounding",
+        "goal_linkage",
+        "post_state_faithfulness",
+        "safety_calibration",
+        "conciseness",
+        "critical_safety_violation",
+        "hard_contradiction"
+      ],
+      "properties": {
+        "explanation_mode": {
+          "type": "string",
+          "enum": [
+            "legacy_text_only",
+            "mixed",
+            "structured_justification"
+          ]
+        },
+        "validation_ok": {
+          "type": "boolean"
+        },
+        "structured_justification_present": {
+          "type": "boolean"
+        },
+        "action_alignment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "pre_state_grounding": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "goal_linkage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "post_state_faithfulness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "safety_calibration": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "conciseness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "critical_safety_violation": {
+          "type": "boolean"
+        },
+        "hard_contradiction": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "candidate_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "pattern": "^e[0-9]+$"
+        },
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "state_packet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "title"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "visible_text": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate_packet"
+          }
+        }
+      }
+    }
+  }
+}

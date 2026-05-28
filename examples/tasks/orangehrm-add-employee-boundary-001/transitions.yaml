@@ -1,0 +1,76 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "nexui_admin"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "NExUIAdmin!2026"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/dashboard/index\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewEmployeeList\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e32"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/addEmployee\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"button\",\"name\":\"Save\"}"
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e23",
+      "text": "Jordan"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e25",
+      "text": "Benchmark"
+    },
+    "to": "s007",
+    "notes": []
+  }
+]

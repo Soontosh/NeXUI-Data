@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoqa-webtables-add-row-search-001",
+  "title": "Add And Filter A DemoQA Web Table Row",
+  "goal": "Add a new row to the DemoQA web table, then filter the table to that row and stop on the filtered result state.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "url": "https://demoqa.com/webtables",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T14:33:58.609Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/webtables"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Type to search"
+      },
+      "value": "Nexui"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "aria_snapshot",
+      "value": "Cierra Vega 39 cierra@example.com 10000 Insurance"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "table",
+    "modal",
+    "filter",
+    "row-add"
+  ],
+  "review_notes": "Combines row creation with table filtering to make the state verification less trivial than add-only.",
+  "source_surface": "demoqa",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  }
+}

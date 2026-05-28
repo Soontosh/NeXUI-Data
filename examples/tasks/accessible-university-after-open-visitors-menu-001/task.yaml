@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "accessible-university-after-open-visitors-menu-001",
+  "title": "Open Visitors Menu On Accessible AU Page",
+  "goal": "Open the Visitors menu on the accessible AU home page and stop after its submenu items become visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "url": "https://projects.accesscomputing.uw.edu/au/after.html",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T22:02:18.329Z"
+  },
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "accessible-university",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/after.html"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Visitors",
+        "states": {
+          "expanded": true
+        }
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "accessibility",
+    "navigation",
+    "menu",
+    "structure"
+  ],
+  "review_notes": "Accessibility-first menu-expansion task on the corrected AU page. It verifies that an expandable navigation region exposes the Visitors submenu items."
+}

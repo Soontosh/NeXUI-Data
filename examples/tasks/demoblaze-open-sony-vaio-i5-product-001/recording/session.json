@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-05-28T15:02:57.930Z",
+  "final_snapshot": "s002",
+  "final_url": "https://demoblaze.com/prod.html?idp_=8",
+  "snapshot_count": 3,
+  "transition_count": 2,
+  "oracle_step_count": 3,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "wait"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e29"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"prod.html?idp_=8\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Add to cart\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoblaze.com/prod.html?idp_=8"
+    }
+  ]
+}

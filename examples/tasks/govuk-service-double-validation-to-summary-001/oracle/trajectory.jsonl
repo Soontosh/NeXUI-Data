@@ -1,0 +1,8 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I tried to continue immediately so the page would show the required-name validation."}
+{"action":{"type":"type","target":"e2","text":"Leah Morgan"},"explanation":"I entered the missing full name so the journey can continue."}
+{"action":{"type":"click","target":"e3"},"explanation":"The full name is present now, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Yes for email updates, which makes an email address required."}
+{"action":{"type":"click","target":"e5"},"explanation":"I continued without an email so the page would show the required-email validation."}
+{"action":{"type":"type","target":"e6","text":"leah.morgan@example.com"},"explanation":"I entered the required email address so the email branch is complete."}
+{"action":{"type":"click","target":"e5"},"explanation":"Both validation issues are resolved now, so I am moving to check answers."}
+{"action":{"type":"finish","summary":"I recovered from the missing full-name and missing-email validation errors and reached check answers with the completed email branch."},"explanation":"The summary shows the completed route after both corrections, so I am ending the task."}

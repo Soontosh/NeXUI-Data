@@ -1,0 +1,10 @@
+{"action":{"type":"type","target":"e1","text":"nexui_admin"},"explanation":"I entered the seeded OrangeHRM admin username."}
+{"action":{"type":"type","target":"e2","text":"NExUIAdmin!2026"},"explanation":"I entered the seeded OrangeHRM admin password."}
+{"action":{"type":"click","target":"e3"},"explanation":"I signed in and returned to the Add Employee workflow so I can prepare the new employee and login account."}
+{"action":{"type":"type","target":"e23","text":"Iris"},"explanation":"I entered the new employee first name."}
+{"action":{"type":"type","target":"e25","text":"Nolan"},"explanation":"I entered the new employee last name."}
+{"action":{"type":"click","target":"e31"},"explanation":"I enabled Create Login Details so the new employee will also get a system login."}
+{"action":{"type":"type","target":"e32","text":"iris.nolan"},"explanation":"I entered the new system username."}
+{"action":{"type":"type","target":"e35","text":"NExUIUser!2026"},"explanation":"I entered the new system password."}
+{"action":{"type":"type","target":"e36","text":"NExUIUser!2026"},"explanation":"I confirmed the new system password and left the full account ready for confirmation."}
+{"action":{"type":"ask_user","question":"I have prepared a new employee and login account for Iris Nolan. Do you want me to save it?"},"explanation":"Saving this form would create both a new employee record and a new OrangeHRM login, so I am asking for confirmation before submitting it."}

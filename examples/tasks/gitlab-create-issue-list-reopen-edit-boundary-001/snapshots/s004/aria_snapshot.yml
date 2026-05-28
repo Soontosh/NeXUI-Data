@@ -1,0 +1,288 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-syntax-highlighting":
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+        - text: A a11y-syntax-highlighting
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-syntax-highlighting/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: Issues 1
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: Merge requests 0
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - img
+        - text: CI/CD
+      - list:
+        - listitem:
+          - link "Pipelines":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - listitem:
+          - link "Editor":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/ci/editor?branch_name=main
+        - listitem:
+          - link "Jobs":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/jobs
+        - listitem:
+          - link "Schedules":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/pipeline_schedules
+    - listitem:
+      - link "Security & Compliance":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/security/configuration
+        - img
+        - text: Security & Compliance
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Infrastructure":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Infrastructure
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/metrics
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/snippets
+        - img
+        - text: Snippets
+    - listitem:
+      - link "Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - img
+        - text: Settings
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- alert:
+  - img
+  - button "Dismiss":
+    - img
+  - alert:
+    - text: You can't push or pull repositories using SSH until you add an SSH key to your profile.
+    - link "Add SSH key":
+      - /url: /-/profile/keys
+    - button "Don't show again"
+- alert:
+  - img
+  - button "Dismiss":
+    - img
+  - alert:
+    - text: The Auto DevOps pipeline has been enabled and will be used if no alternative CI configuration file is found. Container registry is not enabled on this GitLab instance. Ask an administrator to enable it in order for Auto DevOps to work.
+    - link "Settings":
+      - /url: /byteblaze/a11y-syntax-highlighting/-/settings/ci_cd
+    - link "More information":
+      - /url: /help/topics/autodevops/index.md
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+- main:
+  - text: A
+  - heading "a11y-syntax-highlighting" [level=1]:
+    - text: a11y-syntax-highlighting
+    - img
+  - text: "Project ID: 186"
+  - button "Copy project ID":
+    - img
+  - button
+  - button "Star":
+    - img
+    - text: Star
+  - link "1":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/starrers
+  - link "Fork":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/forks/new
+    - img
+    - text: Fork
+  - link "0":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/forks
+  - navigation:
+    - list:
+      - listitem:
+        - link "48 Commits":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/commits/main
+          - img
+          - strong: "48"
+          - text: Commits
+      - listitem:
+        - link "1 Branch":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/branches
+          - img
+          - strong: "1"
+          - text: Branch
+      - listitem:
+        - link "0 Tags":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/tags
+          - img
+          - strong: "0"
+          - text: Tags
+      - listitem:
+        - link "2 MB Project Storage":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/usage_quotas
+          - img
+          - strong: 2 MB
+          - text: Project Storage
+  - paragraph: 💄 Accessible light and dark syntax highlighting themes
+  - img "user avatar"
+  - link "Update README.md":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/commit/62820763d9b5f3b25720596f542aaf89d917fb17
+  - text: Eric Bailey authored
+  - time: 3 years ago
+  - button "Unverified"
+  - group:
+    - text: "62820763"
+    - button "Copy commit SHA"
+  - button "main"
+  - navigation "Files breadcrumb":
+    - list:
+      - listitem:
+        - link "a11y-syntax-highlighting":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main/
+      - listitem:
+        - text: /
+        - button "Add to tree"
+  - link "Find file":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/find_file/main
+  - link "Web IDE":
+    - /url: /-/ide/project/byteblaze/a11y-syntax-highlighting/edit/main/-/
+  - button "Download":
+    - img
+    - text: Select Archive Format
+    - img
+  - link "Clone":
+    - /url: "#"
+    - text: Clone
+    - img
+  - list:
+    - listitem:
+      - link "README":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/README.md
+        - img
+        - text: README
+    - listitem:
+      - link "MIT License":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/LICENSE
+        - img
+        - text: MIT License
+    - listitem:
+      - link "Auto DevOps enabled":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/settings/ci_cd#autodevops-settings
+        - img
+        - text: Auto DevOps enabled
+    - listitem:
+      - link "Add CHANGELOG":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/new/main?commit_message=Add+CHANGELOG&file_name=CHANGELOG
+        - img
+        - text: Add CHANGELOG
+    - listitem:
+      - link "Add CONTRIBUTING":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/new/main?commit_message=Add+CONTRIBUTING&file_name=CONTRIBUTING.md
+        - img
+        - text: Add CONTRIBUTING
+    - listitem:
+      - link "Add Kubernetes cluster":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Add Kubernetes cluster
+    - listitem:
+      - link "Configure Integrations":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/settings/integrations
+        - img
+        - text: Configure Integrations
+  - table "Loading files, directories, and submodules in the path / for commit reference main":
+    - rowgroup:
+      - row "Name Last commit Last update":
+        - columnheader "Name"
+        - columnheader "Last commit"
+        - columnheader "Last update"
+    - rowgroup

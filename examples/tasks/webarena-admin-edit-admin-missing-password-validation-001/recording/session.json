@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-05-29T20:06:10.593Z",
+  "final_snapshot": "s003",
+  "final_url": "http://localhost:7780/admin/admin/user/edit/user_id/1/",
+  "snapshot_count": 4,
+  "transition_count": 3,
+  "oracle_step_count": 4,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e37"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/admin/admin/user/edit/user_id/1/\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e29",
+        "text": "admin+needs-password@example.test"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e19"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"This is a required field.\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/edit/user_id/1/"
+    }
+  ]
+}

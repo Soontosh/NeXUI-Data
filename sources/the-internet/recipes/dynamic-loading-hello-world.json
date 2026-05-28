@@ -1,0 +1,42 @@
+{
+  "task_id": "internet-dynamic-loading-001",
+  "title": "Wait For Dynamic Content",
+  "goal": "Start the dynamic loading example and stop when Hello World appears.",
+  "instruction": "Click Start, wait for the hidden content to appear, and stop when Hello World is visible.",
+  "url": "https://the-internet.herokuapp.com/dynamic_loading/1",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "dynamic-content",
+    "wait"
+  ],
+  "review_notes": "Exercises delayed visibility and truthful state-change explanation.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Start"
+      },
+      "explanation": "I started the loading sequence. The hidden content should appear after the page finishes loading it.",
+      "post_delay_ms": 6000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "Hello World appeared, and I stopped there."
+      },
+      "explanation": "The requested content is visible now, so I am ending the task."
+    }
+  ]
+}

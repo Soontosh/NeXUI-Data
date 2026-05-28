@@ -1,0 +1,234 @@
+{
+  "schema_version": "0.0",
+  "site_id": "pretix-self-hosted",
+  "site_name": "pretix Self-Hosted",
+  "base_url": "http://localhost:8100/",
+  "source_track": "modern_authenticated_app",
+  "category": "other",
+  "hosting_mode": "self_hosted",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "reseed_command",
+  "determinism_level": "high",
+  "legal_review_status": "documented",
+  "auth": {
+    "auth_type": "seeded_local_account",
+    "credentials_env_vars": [],
+    "notes": "Use the deterministic control login created by the standalone bootstrap: admin@localhost / admin. The first recorded task batch keeps login steps inside every recipe."
+  },
+  "task_families": [
+    "organizer_navigation",
+    "event_navigation",
+    "product_configuration",
+    "orders_and_attendees",
+    "cross_view_event_workflows"
+  ],
+  "difficulty_bands": [
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use official pretix self-hosting guidance and the official pretix repository as the source of truth. The current local runtime uses the official pretix standalone image on localhost:8100 plus a deterministic reseed script that recreates one organizer, one event, and one ticket product."
+  },
+  "runtime": {
+    "local_checkout_path": "../../external/pretix",
+    "healthcheck_url": "http://localhost:8100/control/",
+    "bootstrap_commands": [
+      "git clone https://github.com/pretix/pretix external/pretix",
+      "export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock",
+      "docker pull pretix/standalone:stable",
+      "./scripts/reseed_pretix.sh"
+    ],
+    "start_command": "export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock && docker rm -f pretix-nexui >/dev/null 2>&1 || true && docker run -d --name pretix-nexui -p 8100:80 -v pretix-nexui-data:/var/pretix/data -v pretix-nexui-public:/public pretix/standalone:stable",
+    "reseed_command": "./scripts/reseed_pretix.sh",
+    "notes": "The standalone runtime boots on localhost:8100 and the repo-managed reseed script wipes the named volumes, recreates the container, logs into the control panel, enables admin mode, creates the seeded organizer/event, and saves a single General Admission product. The bundled task/cron workers still log AMQP warnings, but the Pretix control-panel batch now includes product detail, a bounded add-product flow, and a reseed-required save-and-verify workflow."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 3000,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "login",
+      "label": "Control Login",
+      "url": "http://localhost:8100/control/",
+      "goal_hint": "Survey the pretix organizer login page and determine stable selectors for deterministic first-batch login steps.",
+      "notes": "The first recorded task batch should log in explicitly rather than depending on stored session state."
+    },
+    {
+      "entry_id": "events",
+      "label": "Events List",
+      "url": "http://localhost:8100/control/events/",
+      "goal_hint": "Inspect the organizer events list after logging in and use it for event navigation, list filtering, and list-to-detail task planning.",
+      "notes": "This route is auth-gated but deterministic once logged in with the standalone bootstrap account."
+    },
+    {
+      "entry_id": "event-settings",
+      "label": "Seeded Event Settings",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/settings/",
+      "goal_hint": "Inspect a seeded event administration surface for event-detail and organizer-workflow tasks after authenticating.",
+      "notes": "This route is auth-gated and depends on the seeded organizer/event created by the reseed script."
+    },
+    {
+      "entry_id": "products",
+      "label": "Products List",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/",
+      "goal_hint": "Inspect product configuration and list-to-form workflows after authenticating into the seeded event.",
+      "notes": "This is the preferred first mutable domain now that the reseed script seeds a General Admission product."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "pretix-login-open-organizer-dashboard",
+      "summary": "Log in to pretix and stop on the organizer dashboard or main control landing page.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-login-open-organizer-dashboard-001."
+    },
+    {
+      "idea_id": "pretix-open-events-list",
+      "summary": "Log in and stop on the events list for the seeded organizer.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-events-list-001."
+    },
+    {
+      "idea_id": "pretix-open-seeded-event-detail",
+      "summary": "Open the seeded event and stop on its settings or overview page.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-seeded-event-detail-001."
+    },
+    {
+      "idea_id": "pretix-open-product-list",
+      "summary": "Open the seeded event product list and stop on the items table.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-product-list-001."
+    },
+    {
+      "idea_id": "pretix-open-add-product-form",
+      "summary": "Open the add-product form for the seeded event and stop on the creation surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-add-product-form-001."
+    },
+    {
+      "idea_id": "pretix-open-seeded-product-detail",
+      "summary": "Open the seeded General Admission product and stop on the product detail page.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-seeded-product-detail-001."
+    },
+    {
+      "idea_id": "pretix-open-product-price-tab",
+      "summary": "Open the seeded General Admission product Price tab and stop on the pricing panel.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-product-price-tab-001."
+    },
+    {
+      "idea_id": "pretix-open-product-availability-tab",
+      "summary": "Open the seeded General Admission product Availability tab and stop on the purchase-limit panel.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-open-product-availability-tab-001."
+    },
+    {
+      "idea_id": "pretix-add-product-boundary",
+      "summary": "Fill a new product form and ask for confirmation before saving it.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as pretix-add-product-boundary-001."
+    },
+    {
+      "idea_id": "pretix-product-original-price-boundary",
+      "summary": "Edit the seeded product Original price on the Price tab and ask for confirmation before saving it.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as pretix-product-original-price-boundary-001."
+    },
+    {
+      "idea_id": "pretix-product-name-boundary",
+      "summary": "Edit the seeded product name on the General tab and ask for confirmation before saving it.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as pretix-product-name-boundary-001."
+    },
+    {
+      "idea_id": "pretix-product-max-per-order-boundary",
+      "summary": "Edit the seeded product purchase limit on the Availability tab and ask for confirmation before saving it.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as pretix-product-max-per-order-boundary-001."
+    },
+    {
+      "idea_id": "pretix-create-product-save-verify-list",
+      "summary": "Create a new product and verify it from the product list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-create-product-save-verify-list-001."
+    },
+    {
+      "idea_id": "pretix-product-name-save-verify-list",
+      "summary": "Save a seeded product name edit and verify the renamed product from the products list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-product-name-save-verify-list-001. This is a reseed-required product mutation."
+    },
+    {
+      "idea_id": "pretix-product-original-price-save-verify",
+      "summary": "Save a seeded product Original price edit and verify the persisted value on the Price tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-product-original-price-save-verify-001. This is a reseed-required product mutation."
+    },
+    {
+      "idea_id": "pretix-product-max-per-order-save-verify",
+      "summary": "Save a seeded product purchase-limit edit and verify the persisted value on the Availability tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-product-max-per-order-save-verify-001. This is a reseed-required product mutation."
+    },
+    {
+      "idea_id": "pretix-product-default-price-save-verify-list",
+      "summary": "Save a seeded product Default price edit and verify the updated price from the products list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-product-default-price-save-verify-list-001. This is a reseed-required product mutation."
+    },
+    {
+      "idea_id": "pretix-event-contact-email-save-verify",
+      "summary": "Save a seeded event Contact address edit and verify the persisted value on the settings form.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-event-contact-email-save-verify-001. This is a reseed-required event-settings mutation."
+    },
+    {
+      "idea_id": "pretix-product-multi-tab-save-list-open-verify",
+      "summary": "Edit the seeded product across General, Price, and Availability, save once, verify the updated values from the products list, reopen the product, and verify the saved values again across multiple tabs.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as pretix-product-multi-tab-save-list-open-verify-001. This is the first Pretix task tagged for the monstrous difficulty cohort."
+    },
+    {
+      "idea_id": "pretix-open-orders-or-attendees-list",
+      "summary": "Open the seeded orders or attendees list and stop on the table view.",
+      "status": "deferred",
+      "risk_level": "safe",
+      "notes": "Deferred for now because the current orders surface returns an Internal Server Error on the local standalone runtime."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Validated source package. Pretix now has a tested local standalone bootstrap with deterministic organizer/event/product seeding and a recorder-backed control UI batch covering login, events, event detail, product list navigation, seeded product detail, Price and Availability tab navigation, add-product and seeded-product boundaries, seven reseed-aware save-and-verify workflows across product creation, naming, pricing, purchase limits, multi-tab persistence, and event settings, including one monstrous-difficulty product mutation."
+  }
+}

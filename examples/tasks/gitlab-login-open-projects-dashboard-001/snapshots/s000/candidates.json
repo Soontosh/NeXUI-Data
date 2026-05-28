@@ -1,0 +1,262 @@
+[
+  {
+    "ref": "e1",
+    "role": "textbox",
+    "name": "Username or email",
+    "description": "This field is required.",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 503.5,
+      "y": 281.3,
+      "width": 433,
+      "height": 34
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": true,
+      "required": true
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "textbox",
+    "name": "Password",
+    "description": "This field is required.",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 503.5,
+      "y": 377.3,
+      "width": 433,
+      "height": 34
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": true,
+      "required": true
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "checkbox",
+    "name": "Remember me",
+    "description": "",
+    "text": "1",
+    "tag": "input",
+    "value": "1",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 503.5,
+      "y": 452.8,
+      "width": 16,
+      "height": 20
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "link",
+    "name": "Forgot your password?",
+    "description": "http://localhost:8023/users/password/new",
+    "text": "Forgot your password?",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 796.86,
+      "y": 451.8,
+      "width": 139.64,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "button",
+    "name": "Sign in",
+    "description": "",
+    "text": "Sign in",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 503.5,
+      "y": 492.8,
+      "width": 433,
+      "height": 32
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "link",
+    "name": "Register now",
+    "description": "http://localhost:8023/users/sign_up",
+    "text": "Register now",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 763.72,
+      "y": 548.8,
+      "width": 79.64,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "link",
+    "name": "Explore",
+    "description": "http://localhost:8023/explore",
+    "text": "Explore",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 255,
+      "y": 861,
+      "width": 49.28,
+      "height": 19
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "link",
+    "name": "Help",
+    "description": "http://localhost:8023/help",
+    "text": "Help",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 322.92,
+      "y": 861,
+      "width": 30.5,
+      "height": 19
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "link",
+    "name": "About GitLab",
+    "description": "https://about.gitlab.com/",
+    "text": "About GitLab",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 372.06,
+      "y": 861,
+      "width": 86.03,
+      "height": 19
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "link",
+    "name": "Community forum",
+    "description": "https://forum.gitlab.com/",
+    "text": "Community forum",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 476.73,
+      "y": 861,
+      "width": 121.06,
+      "height": 19
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

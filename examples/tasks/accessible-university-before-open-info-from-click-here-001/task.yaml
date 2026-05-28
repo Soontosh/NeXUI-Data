@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "accessible-university-before-open-info-from-click-here-001",
+  "title": "Open AU Info Page From Ambiguous Click Here Link",
+  "goal": "From the inaccessible AU home page, choose the correct repeated \"click here\" link that opens the Info page and stop there.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "url": "https://projects.accesscomputing.uw.edu/au/info.html",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T16:19:57.940Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/info.html"
+    },
+    {
+      "type": "text_present",
+      "value": "Accessible University Info Page"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "accessibility",
+    "navigation",
+    "confusing-links",
+    "disambiguation"
+  ],
+  "review_notes": "Accessibility-first disambiguation task using repeated uninformative link text on the inaccessible AU page.",
+  "source_surface": "accessible-university",
+  "split": "validation",
+  "stability_runs_passed": 1,
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  }
+}

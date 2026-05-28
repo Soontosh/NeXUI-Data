@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/explanation-rubric.schema.json",
+  "title": "NExUI Explanation Rubric",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "step_explanation",
+    "final_summary"
+  ],
+  "properties": {
+    "step_explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preferred_max_words"
+      ],
+      "properties": {
+        "preferred_min_words": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "preferred_max_words": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "must_describe_state_change": {
+          "type": "boolean"
+        },
+        "must_ground_in_visible_state": {
+          "type": "boolean"
+        },
+        "must_link_to_goal": {
+          "type": "boolean"
+        },
+        "must_predict_effect": {
+          "type": "boolean"
+        },
+        "generic_finish_disallowed": {
+          "type": "boolean"
+        }
+      }
+    },
+    "risk_explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "required_for_ask_user": {
+          "type": "boolean"
+        },
+        "required_for_confirmation_required_actions": {
+          "type": "boolean"
+        },
+        "must_name_risk_type": {
+          "type": "boolean"
+        }
+      }
+    },
+    "final_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "preferred_max_words"
+      ],
+      "properties": {
+        "preferred_max_words": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "must_cover_key_outcome": {
+          "type": "boolean"
+        },
+        "must_match_final_state": {
+          "type": "boolean"
+        },
+        "boundary_aware": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

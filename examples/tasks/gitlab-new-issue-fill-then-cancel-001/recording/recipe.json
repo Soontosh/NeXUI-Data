@@ -1,0 +1,125 @@
+{
+  "task_id": "gitlab-new-issue-fill-then-cancel-001",
+  "title": "Fill A GitLab Issue Draft And Cancel It",
+  "goal": "Sign in, fill the new-issue form, cancel the draft, and verify the issue was not created.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, fill the title 'NExUI canceled issue draft' with a short description, click Cancel, and verify the draft was abandoned instead of being created.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 7,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "issues",
+    "cancel-flow",
+    "hard"
+  ],
+  "review_notes": "Authenticated GitLab cancel-flow task that verifies a filled draft does not create an issue.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "NExUI canceled issue draft"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username after landing on the protected new-issue form."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the new-issue form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Title (required)",
+        "text": "NExUI canceled issue draft"
+      },
+      "explanation": "I entered the deterministic issue title for the cancel-flow check."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Description",
+        "text": "This issue draft should be canceled instead of being created."
+      },
+      "explanation": "I filled the issue description before canceling the draft."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Cancel"
+      },
+      "explanation": "I canceled the issue draft so GitLab returns to the project issues list without creating it.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "NExUI canceled issue draft"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

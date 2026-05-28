@@ -1,0 +1,69 @@
+{
+  "task_id": "demoqa-alerts-simple-alert-001",
+  "title": "Trigger The Immediate Alert",
+  "goal": "Trigger the immediate alert on the DemoQA alerts page and stop after the alert has been observed.",
+  "instruction": "Open the DemoQA alerts page, trigger the immediate alert, and stop after it appears.",
+  "url": "https://demoqa.com/alerts",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "demoqa",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "alerts",
+    "dialog",
+    "trace-driven"
+  ],
+  "review_notes": "Immediate-alert task on DemoQA. Uses trace-note scoring because the alert itself is transient browser UI.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/alerts"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "dialog: alert - You clicked a button"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#alertButton"
+      },
+      "dialog": {
+        "action": "accept"
+      },
+      "post_delay_ms": 250,
+      "explanation": "I triggered the immediate alert so the browser can show the message for this control."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I triggered the immediate alert and stopped after it appeared."
+      },
+      "explanation": "The alert has already appeared, so I am ending the task."
+    }
+  ]
+}

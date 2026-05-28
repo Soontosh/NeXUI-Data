@@ -1,0 +1,168 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list:
+    - listitem:
+      - link " Go to shop":
+        - /url: /nexui/nexui-event/
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  NExUI Benchmark Event Mon, June 15, 2026":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " TEST MODE":
+          - /url: /control/event/nexui/nexui-event/live/
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/event/nexui/nexui-event/
+      - listitem:
+        - link " Settings":
+          - /url: /control/event/nexui/nexui-event/settings/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Products":
+          - /url: /control/event/nexui/nexui-event/items/
+        - link "":
+          - /url: "#"
+        - list:
+          - listitem:
+            - link "Products":
+              - /url: /control/event/nexui/nexui-event/items/
+          - listitem:
+            - link "Quotas":
+              - /url: /control/event/nexui/nexui-event/quotas/
+          - listitem:
+            - link "Categories":
+              - /url: /control/event/nexui/nexui-event/categories/
+          - listitem:
+            - link "Questions":
+              - /url: /control/event/nexui/nexui-event/questions/
+          - listitem:
+            - link "Discounts":
+              - /url: /control/event/nexui/nexui-event/discounts/
+      - listitem:
+        - link " Orders":
+          - /url: /control/event/nexui/nexui-event/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Vouchers":
+          - /url: /control/event/nexui/nexui-event/vouchers/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Check-in":
+          - /url: /control/event/nexui/nexui-event/checkinlists/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Send out emails":
+          - /url: /control/event/nexui/nexui-event/sendmail/
+        - link "":
+          - /url: "#"
+- text: Your changes have been saved.
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- 'heading "Modify product: General Admission" [level=1]'
+- list:
+  - listitem:
+    - tab "General"
+  - listitem:
+    - tab "Price"
+  - listitem:
+    - tab "Availability" [expanded]
+  - listitem:
+    - tab "Add-ons"
+  - listitem:
+    - tab "Bundled products"
+  - listitem:
+    - tab "Program times"
+  - listitem:
+    - tab "Tickets & Badges"
+  - listitem:
+    - tab "Check-in & Validity"
+  - listitem:
+    - tab "Additional settings"
+- group:
+  - checkbox "Sell on all sales channels" [checked]
+  - text: Sell on all sales channels
+  - group "Restrict to specific sales channels Optional":
+    - text: Restrict to specific sales channels Optional
+    - checkbox " Online shop" [disabled]
+    - text:  Online shop Only sell tickets for this product on the selected sales channels.
+  - group "Available from Optional":
+    - text: Available from Optional
+    - textbox "Date":
+      - /placeholder: 2000-12-31
+    - textbox "Time":
+      - /placeholder: 00:00:00
+    - text: This product will not be sold before the given date.
+    - radio "" [checked]
+    - text: 
+    - radio ""
+    - text: 
+  - group "Available until Optional":
+    - text: Available until Optional
+    - textbox "Date":
+      - /placeholder: 2000-12-31
+    - textbox "Time":
+      - /placeholder: 00:00:00
+    - text: This product will not be sold after the given date.
+    - radio "" [checked]
+    - text: 
+    - radio ""
+    - text: 
+  - text: Maximum amount per order Optional
+  - spinbutton "Maximum amount per order Optional": "4"
+  - text: This product can only be bought at most this many times within one order. If you keep the field empty or set it to 0, there is no special limit for this product. The limit for the maximum number of items in the whole order applies regardless. Minimum amount per order Optional
+  - spinbutton "Minimum amount per order Optional"
+  - text: This product can only be bought if it is added to the cart at least this many times. If you keep the field empty or set it to 0, there is no special limit for this product.
+  - checkbox "This product can only be bought using a voucher."
+  - text: This product can only be bought using a voucher. To buy this product, the user needs a voucher that applies to this product either directly or via a quota.
+  - radio "" [disabled]
+  - text: 
+  - radio "" [disabled]
+  - text: 
+  - checkbox "Only sell this product as part of a bundle"
+  - text: Only sell this product as part of a bundle If this option is set, the product will only be sold as part of bundle products. Do
+  - strong: not
+  - text: check this option if you want to use this product as an add-on product, but only for fixed bundles!
+  - checkbox "Allow product to be canceled or changed" [checked]
+  - text: Allow product to be canceled or changed If this is checked, the usual cancellation and order change settings of this event apply. If this is unchecked, orders containing this product can not be canceled by users but only by you.
+  - checkbox "Show a waiting list for this ticket" [checked]
+  - text: Show a waiting list for this ticket This will only work if waiting lists are enabled for this event. Only show after sellout of Optional
+  - combobox "Shown independently of other products":
+    - textbox
+  - text: If you select a product here, this product will only be shown when that product is no longer available. This will happen either because the other product has sold out or because the time is outside of the sales window for the other product. If combined with the option to hide sold-out products, this allows you to swap out products for more expensive ones once the cheaper option is sold out. There might be a short period in which both products are visible while all tickets of the referenced product are reserved, but not yet sold.
+  - radio "" [checked]
+  - text: 
+  - radio ""
+  - text: 
+- button "Save"
+- heading "Product history" [level=3]
+- list:
+  - listitem:
+    - paragraph:  2026-06-01 23:08  admin@localhost
+    - paragraph: The product has been changed.
+  - listitem:
+    - paragraph:  2026-06-01 23:08  admin@localhost
+    - paragraph: The product has been created.
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3Aa-4W_NyrcPBW2s22gUtDvyZ-H_i-qJFovOJudrmGMB0

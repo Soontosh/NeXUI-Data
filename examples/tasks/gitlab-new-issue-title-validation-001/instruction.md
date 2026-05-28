@@ -1,0 +1,1 @@
+Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, enter only a description, try to create the issue, and stop when the missing-title validation is visible.

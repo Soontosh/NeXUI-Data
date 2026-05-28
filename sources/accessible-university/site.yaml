@@ -1,0 +1,153 @@
+{
+  "schema_version": "0.0",
+  "site_id": "accessible-university",
+  "site_name": "Accessible University Demo Site",
+  "base_url": "https://projects.accesscomputing.uw.edu/au/",
+  "source_track": "accessibility_first_demo",
+  "category": "accessibility_demo",
+  "hosting_mode": "live_demo",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "none",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "No authentication is required. The public demo site is maintained by AccessComputing at the University of Washington and links to a public GitHub repository plus a Creative Commons BY-NC-SA 4.0 license."
+  },
+  "task_families": [
+    "accessibility_structure",
+    "before_after_navigation",
+    "screen_reader_oriented_explanations",
+    "form_understanding",
+    "confusing_link_disambiguation"
+  ],
+  "difficulty_bands": [
+    "easy",
+    "medium"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use this accessibility-first source for explanation-heavy navigation and before/after comparisons on a stable public demo site."
+  },
+  "runtime": {
+    "notes": "Live demo source. No local bootstrap is required unless we later mirror the upstream GitHub repository for offline inspection."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "overview",
+      "label": "Overview",
+      "url": "https://projects.accesscomputing.uw.edu/au/",
+      "goal_hint": "Survey the Accessible University landing page and the top-level before, after, and info links.",
+      "notes": "The overview page indexes the Before, After, and Info variants and also exposes downloadable document-accessibility samples."
+    },
+    {
+      "entry_id": "before",
+      "label": "Before Page",
+      "url": "https://projects.accesscomputing.uw.edu/au/before.html",
+      "goal_hint": "Survey the inaccessible AU home page used for before/after accessibility comparisons.",
+      "notes": "This page intentionally contains structural, keyboard, and link-text accessibility issues."
+    },
+    {
+      "entry_id": "after",
+      "label": "After Page",
+      "url": "https://projects.accesscomputing.uw.edu/au/after.html",
+      "goal_hint": "Survey the accessible AU home page used for before/after accessibility comparisons.",
+      "notes": "This page provides the corrected accessible variant of the AU home page."
+    },
+    {
+      "entry_id": "info",
+      "label": "Info Page",
+      "url": "https://projects.accesscomputing.uw.edu/au/info.html",
+      "goal_hint": "Survey the explanatory page that documents the accessibility issues and solutions shown on the AU home page.",
+      "notes": "Useful for explanation-grounded tasks that reference landmarks, headings, keyboard issues, and descriptive links."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "au-open-after-page",
+      "summary": "Open the accessible version of the AU home page from the overview page and stop there.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-open-after-001."
+    },
+    {
+      "idea_id": "au-open-before-page",
+      "summary": "Open the inaccessible version of the AU home page from the overview page and stop there.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-open-before-001."
+    },
+    {
+      "idea_id": "au-open-info-page",
+      "summary": "Navigate from the overview page to the Info page and explain that it documents the accessibility problems and fixes.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-open-info-001."
+    },
+    {
+      "idea_id": "au-before-open-accessible-version",
+      "summary": "From the inaccessible AU page, choose the correct repeated \"click here\" link that opens the accessible version.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-before-open-accessible-version-001."
+    },
+    {
+      "idea_id": "au-info-open-before-accessibility",
+      "summary": "From the AU Info page, open the linked Before accessibility page and stop there.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-info-open-before-accessibility-001."
+    },
+    {
+      "idea_id": "au-after-open-short-list-dialog",
+      "summary": "Open the short list of accessibility issues dialog from the accessible AU page and stop with the dialog open.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-after-open-short-list-dialog-001."
+    },
+    {
+      "idea_id": "au-before-open-info-from-click-here",
+      "summary": "From the inaccessible AU page, choose the correct repeated \"click here\" link that opens the Info page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-before-open-info-from-click-here-001."
+    },
+    {
+      "idea_id": "au-after-open-inaccessible-version",
+      "summary": "From the accessible AU page, open the Inaccessible version link and stop on the destination page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-after-open-inaccessible-version-001."
+    },
+    {
+      "idea_id": "au-compare-before-after-home",
+      "summary": "Open either the Before or After AU home page and stop on the requested variant for a later structure-comparison evaluation.",
+      "status": "proposed",
+      "risk_level": "safe",
+      "notes": "Supports paired tasks where models must differentiate accessible and inaccessible variants accurately."
+    },
+    {
+      "idea_id": "au-find-admissions-or-contact-area",
+      "summary": "Navigate within the AU home page to a specific content area such as admissions or contact information and explain the surrounding structure.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as accessible-university-after-open-admissions-menu-001 and accessible-university-after-open-visitors-menu-001."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Second validated accessibility-first source after W3C BAD. Now includes ten validated tasks aligned to the dataset matrix's easy/medium accessibility-first slice: overview-based before/after/info navigation, ambiguous-link disambiguation on the inaccessible page, mirror-navigation between accessible and inaccessible variants, Info-page cross-link navigation, an accessible modal-dialog task, and two expandable-menu structure tasks on the corrected AU page."
+  }
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your full name\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Amina Patel"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - text present \"Select whether you want email updates\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e7",
+      "text": "old-address@example.com"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s009",
+    "notes": []
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"No\"",
+      "postcondition 3: passed - text absent \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/name\"",
+      "postcondition 2: passed - field value equals \"Amina Patel\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "Jordan Reed"
+    },
+    "to": "s012",
+    "notes": []
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s013",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s014",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Jordan Reed\"",
+      "postcondition 3: passed - text present \"No\"",
+      "postcondition 4: passed - text absent \"old-address@example.com\""
+    ]
+  },
+  {
+    "from": "s014",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s015",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s015",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s016",
+    "notes": []
+  },
+  {
+    "from": "s016",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s017",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your email address\""
+    ]
+  },
+  {
+    "from": "s017",
+    "action": {
+      "type": "type",
+      "target": "e7",
+      "text": "jordan.reed@example.com"
+    },
+    "to": "s018",
+    "notes": []
+  },
+  {
+    "from": "s018",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s019",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Jordan Reed\"",
+      "postcondition 3: passed - text present \"Yes\"",
+      "postcondition 4: passed - text present \"jordan.reed@example.com\"",
+      "postcondition 5: passed - text absent \"old-address@example.com\""
+    ]
+  }
+]

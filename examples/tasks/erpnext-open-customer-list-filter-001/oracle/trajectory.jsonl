@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e1","text":"Administrator"},"explanation":"I entered the seeded ERPNext administrator login."}
+{"action":{"type":"type","target":"e2","text":"admin"},"explanation":"I entered the seeded ERPNext password."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so ERPNext can redirect back to the customer list."}
+{"action":{"type":"type","target":"e10","text":"NExUI Test Customer"},"explanation":"I entered the seeded customer name into the list filter."}
+{"action":{"type":"click","target":"e14"},"explanation":"I applied the customer-name filter so the seeded row is isolated."}
+{"action":{"type":"finish","summary":"I signed in, filtered the customer list, and confirmed the seeded customer is shown."},"explanation":"The customer list is filtered to the seeded customer now, so I am ending the task."}

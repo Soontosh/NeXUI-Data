@@ -1,0 +1,57 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Administrator"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"name\":\"Customer Name\"}"
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e10",
+      "text": "NExUI Test Customer"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"/desk/customer?customer_name=\"",
+      "postcondition 2: passed - field value equals \"NExUI Test Customer\"",
+      "postcondition 3: passed - text present \"NExUI Test Customer\""
+    ]
+  }
+]

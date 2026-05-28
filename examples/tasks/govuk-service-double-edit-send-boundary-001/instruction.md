@@ -1,0 +1,1 @@
+Complete the travel support prototype on the email branch, then use the check-answers page to remove the email branch, change the applicant name, and stop by asking whether to continue before clicking Send application.

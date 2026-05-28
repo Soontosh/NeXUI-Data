@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "internet-dynamic-controls-enable-type-001",
+  "title": "Enable Dynamic Input And Type",
+  "goal": "Enable the disabled input, type short text, and stop there.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "url": "https://the-internet.herokuapp.com/dynamic_controls",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-27T17:57:08.911Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/dynamic_controls"
+    },
+    {
+      "type": "field_enabled",
+      "match": {
+        "role": "textbox",
+        "tag": "input"
+      }
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "tag": "input"
+      },
+      "value": "NExUI"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "dynamic-controls",
+    "async",
+    "postconditions"
+  ],
+  "review_notes": "Representative Stage 2 task for async state change plus postcondition-based verification.",
+  "source_surface": "the-internet",
+  "split": "validation",
+  "stability_runs_passed": 1,
+  "difficulty_band": "easy",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 2,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

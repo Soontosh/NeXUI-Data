@@ -1,0 +1,46 @@
+{% extends "pretixcontrol/organizers/base.html" %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% block inner %}
+    <h1>{% trans "Gates" %}</h1>
+    <p>
+        {% trans "The list below shows gates that you can use to group check-in devices." %}
+    </p>
+    {% if "organizer.devices:write" in request.orgapermset %}
+        <a href="{% url "control:organizer.gate.add" organizer=request.organizer.slug %}" class="btn btn-default">
+            <span class="fa fa-plus"></span>
+            {% trans "Create a new gate" %}
+        </a>
+    {% endif %}
+    <table class="table table-condensed table-hover">
+        <thead>
+        <tr>
+            <th>{% trans "Gate" %}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for g in gates %}
+            <tr>
+                <td><strong>
+                    {% if "organizer.devices:write" in request.orgapermset %}
+                        <a href="{% url "control:organizer.gate.edit" organizer=request.organizer.slug gate=g.id %}">
+                            {{ g.name }}
+                        </a>
+                    {% else %}
+                        {{ g.name }}
+                    {% endif %}
+                </strong></td>
+                <td class="text-right flip">
+                    {% if "organizer.devices:write" in request.orgapermset %}
+                        <a href="{% url "control:organizer.gate.edit" organizer=request.organizer.slug gate=g.id %}"
+                                class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
+                        <a href="{% url "control:organizer.gate.delete" organizer=request.organizer.slug gate=g.id %}"
+                                class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

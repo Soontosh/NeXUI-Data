@@ -1,0 +1,548 @@
+[
+  {
+    "ref": "e1",
+    "role": "button",
+    "name": "Search",
+    "description": "",
+    "text": "Search Ctrl+K",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 549,
+      "y": 9.5,
+      "width": 300,
+      "height": 32
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "button",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1346,
+      "y": 14.41,
+      "width": 20,
+      "height": 22.17
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "link",
+    "name": "Organization",
+    "description": "http://localhost:8090/desk/company?sidebar=Organization",
+    "text": "Organization",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 437,
+      "y": 132,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/invoicing?sidebar=Invoicing",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 623.5,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/dashboard-view/Payments?sidebar=Payments",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 643.59,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/query-report/Balance%20Sheet",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 663.69,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/account?sidebar=Accounts%20Setup",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 683.78,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/sales-taxes-and-charges-template?sidebar=Taxes",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 703.88,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/bank-clearance/Bank%20Clearance?sidebar=Banking",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 723.97,
+      "y": 153,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/budget?sidebar=Budget",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 623.5,
+      "y": 173.09,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e11",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/shareholder?sidebar=Share%20Management",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 643.59,
+      "y": 173.09,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e12",
+    "role": "link",
+    "name": "",
+    "description": "http://localhost:8090/desk/subscription?sidebar=Subscription",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 663.69,
+      "y": 173.09,
+      "width": 18,
+      "height": 18
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e13",
+    "role": "link",
+    "name": "Assets",
+    "description": "http://localhost:8090/desk/assets?sidebar=Assets",
+    "text": "Assets",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 723,
+      "y": 132,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e14",
+    "role": "link",
+    "name": "Buying",
+    "description": "http://localhost:8090/desk/buying?sidebar=Buying",
+    "text": "Buying",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 866,
+      "y": 132,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e15",
+    "role": "link",
+    "name": "Manufacturing",
+    "description": "http://localhost:8090/desk/manufacturing?sidebar=Manufacturing",
+    "text": "Manufacturing",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1009,
+      "y": 132,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e16",
+    "role": "link",
+    "name": "Projects",
+    "description": "http://localhost:8090/desk/projects?sidebar=Projects",
+    "text": "Projects",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 294,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e17",
+    "role": "link",
+    "name": "Quality",
+    "description": "http://localhost:8090/desk/quality?sidebar=Quality",
+    "text": "Quality",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 437,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e18",
+    "role": "link",
+    "name": "Selling",
+    "description": "http://localhost:8090/desk/selling?sidebar=Selling",
+    "text": "Selling",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 580,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e19",
+    "role": "link",
+    "name": "Stock",
+    "description": "http://localhost:8090/desk/stock?sidebar=Stock",
+    "text": "Stock",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 723,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e20",
+    "role": "link",
+    "name": "Subcontracting",
+    "description": "http://localhost:8090/desk/subcontracting?sidebar=Subcontracting",
+    "text": "Subcontracting",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 866,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e21",
+    "role": "link",
+    "name": "ERPNext Settings",
+    "description": "http://localhost:8090/desk/global-defaults/Global%20Defaults?sidebar=ERPNext%20Settings",
+    "text": "ERPNext Settings",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1009,
+      "y": 274,
+      "width": 127,
+      "height": 126
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

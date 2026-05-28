@@ -1,0 +1,148 @@
+{
+  "schema_version": "0.0",
+  "site_id": "demoblaze",
+  "site_name": "Demoblaze Store",
+  "base_url": "https://demoblaze.com/",
+  "source_track": "modern_authenticated_app",
+  "category": "ecommerce_demo",
+  "hosting_mode": "live_demo",
+  "redistribution_class": "live_only_academic_source",
+  "authoring_status": "validated",
+  "reset_strategy": "manual_reset",
+  "determinism_level": "medium",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "The public Demoblaze storefront does not require login for browse, category, product, cart, or contact-modal tasks."
+  },
+  "task_families": [
+    "category_navigation",
+    "product_detail_navigation",
+    "cart_state_changes",
+    "checkout_boundary",
+    "contact_modal",
+    "about_modal"
+  ],
+  "difficulty_bands": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use this live retail demo for category navigation, product-detail, cart, and stop-before-purchase tasks in the modern-app slice."
+  },
+  "runtime": {
+    "notes": "Live demo source. Basic HEAD checks and interactive capture both appear usable for storefront pages."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 3000,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "home",
+      "label": "Home",
+      "url": "https://demoblaze.com/",
+      "goal_hint": "Survey the main storefront, category tabs, product cards, and cart or modal entry points.",
+      "notes": "Primary entry point for category browsing and product-opening tasks."
+    },
+    {
+      "entry_id": "cart",
+      "label": "Cart",
+      "url": "https://demoblaze.com/cart.html",
+      "goal_hint": "Survey the cart page and the controls that lead toward order placement.",
+      "notes": "Useful for add-to-cart verification and stop-before-purchase tasks."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "demoblaze-open-category",
+      "summary": "Open a named category such as Laptops or Monitors from the storefront and stop on the filtered listing.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-laptops-category-001."
+    },
+    {
+      "idea_id": "demoblaze-open-product-detail",
+      "summary": "Open a specific product detail page from the storefront and stop there.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-sony-vaio-i5-product-001."
+    },
+    {
+      "idea_id": "demoblaze-open-monitors-category",
+      "summary": "Open the Monitors category from the storefront and stop on the filtered listing.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-monitors-category-001."
+    },
+    {
+      "idea_id": "demoblaze-open-apple-monitor-from-monitors",
+      "summary": "Filter the storefront to Monitors, then open Apple monitor 24 and stop on the product detail page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-apple-monitor-24-from-monitors-001."
+    },
+    {
+      "idea_id": "demoblaze-add-to-cart-boundary",
+      "summary": "Add an item to the cart, open the cart page, and stop before placing the order.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as demoblaze-monitors-to-cart-boundary-001."
+    },
+    {
+      "idea_id": "demoblaze-remove-from-cart",
+      "summary": "Remove an item from the cart and verify the resulting state.",
+      "status": "proposed",
+      "risk_level": "safe",
+      "notes": "Candidate for a second-wave cart-state task."
+    },
+    {
+      "idea_id": "demoblaze-contact-modal",
+      "summary": "Open the contact modal and stop with the dialog visible.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-contact-modal-001."
+    },
+    {
+      "idea_id": "demoblaze-contact-fill-no-send",
+      "summary": "Open the contact dialog, fill its fields, and stop before sending the message.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-contact-fill-no-send-001."
+    },
+    {
+      "idea_id": "demoblaze-open-about-modal",
+      "summary": "Open the About us dialog from the storefront navigation and stop with the distinctive dialog content visible.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-open-about-modal-001."
+    },
+    {
+      "idea_id": "demoblaze-category-switch-disambiguation",
+      "summary": "Open Laptops, switch to Monitors, then open Apple monitor 24 and stop on the product detail page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoblaze-category-switch-apple-monitor-disambiguation-001."
+    },
+    {
+      "idea_id": "demoblaze-place-order-modal-boundary",
+      "summary": "Open Apple monitor 24, add it to the cart, open the cart, open the Place Order dialog, and ask for confirmation before Purchase.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as demoblaze-product-detail-to-place-order-modal-boundary-001."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Validated retail e-commerce source after nopCommerce proved unreliable under automated capture. Now includes ten tasks spanning category filtering, multi-step category-to-product navigation, product-detail opening, contact and about modal interaction, bounded dialog-form entry, and confirmation-boundary purchase flows."
+  }
+}

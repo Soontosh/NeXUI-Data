@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e1","text":"nexui_admin"},"explanation":"I entered the seeded OrangeHRM admin username."}
+{"action":{"type":"type","target":"e2","text":"NExUIAdmin!2026"},"explanation":"I entered the seeded OrangeHRM admin password."}
+{"action":{"type":"click","target":"e3"},"explanation":"I signed in and returned directly to the seeded admin Contact Details form."}
+{"action":{"type":"type","target":"e49","text":"nexui.admin+alt@example.test"},"explanation":"I entered the new Other Email value."}
+{"action":{"type":"click","target":"e50"},"explanation":"I saved the contact-details update and left the view on the persisted profile state."}
+{"action":{"type":"finish","summary":"I saved the alternate contact email and verified the new value remains visible."},"explanation":"The updated email value is still visible now, so I am ending the task."}

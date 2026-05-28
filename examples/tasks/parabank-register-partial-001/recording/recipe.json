@@ -1,0 +1,155 @@
+{
+  "task_id": "parabank-register-partial-001",
+  "title": "Fill ParaBank Registration Partially",
+  "goal": "Fill the registration form with provided details and stop before submission.",
+  "instruction": "Complete the visible ParaBank registration fields with the provided details, but stop before submitting the form.",
+  "url": "https://parabank.parasoft.com/parabank/register.htm",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "finance-demo",
+    "long-form"
+  ],
+  "review_notes": "Longer realistic form task that increases state-tracking burden without crossing into account creation.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/register.htm"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "name": "customer.firstName"
+      },
+      "value": "Nora"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "name": "customer.lastName"
+      },
+      "value": "Reed"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "name": "customer.username"
+      },
+      "value": "nexui-demo-user"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "name": "repeatedPassword"
+      },
+      "value": "NExUI-pass-001"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.firstName\"]",
+        "text": "Nora"
+      },
+      "explanation": "I entered the first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.lastName\"]",
+        "text": "Reed"
+      },
+      "explanation": "I entered the last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.address.street\"]",
+        "text": "42 Cedar Street"
+      },
+      "explanation": "I entered the street address."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.address.city\"]",
+        "text": "Fargo"
+      },
+      "explanation": "I entered the city."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.address.state\"]",
+        "text": "North Dakota"
+      },
+      "explanation": "I entered the state."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.address.zipCode\"]",
+        "text": "58102"
+      },
+      "explanation": "I entered the ZIP code."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.phoneNumber\"]",
+        "text": "7015550101"
+      },
+      "explanation": "I entered the phone number."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.ssn\"]",
+        "text": "123456789"
+      },
+      "explanation": "I entered the SSN placeholder value."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.username\"]",
+        "text": "nexui-demo-user"
+      },
+      "explanation": "I entered the requested username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"customer.password\"]",
+        "text": "NExUI-pass-001"
+      },
+      "explanation": "I entered the password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"repeatedPassword\"]",
+        "text": "NExUI-pass-001"
+      },
+      "explanation": "I confirmed the password and will stop before submitting the form."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I filled the ParaBank registration form and stopped before submission."
+      },
+      "explanation": "The requested fields are filled and no submission has been made, so I am ending the task."
+    }
+  ]
+}

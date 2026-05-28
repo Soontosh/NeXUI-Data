@@ -1,0 +1,19 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style service patterns.
+- link "Back":
+  - /url: "#/name"
+- main:
+  - alert "There is a problem":
+    - heading "There is a problem" [level=2]
+    - list:
+      - listitem:
+        - link "Select whether you want email updates":
+          - /url: "#updates"
+  - region "Do you want email updates about your application?":
+    - heading "Do you want email updates about your application?" [level=1]
+    - group "Do you want email updates about your application?":
+      - text: Do you want email updates about your application? Select whether you want email updates
+      - radio "Yes"
+      - text: "Yes"
+      - radio "No"
+      - text: "No"
+    - button "Continue"

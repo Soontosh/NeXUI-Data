@@ -1,0 +1,41 @@
+{
+  "task_id": "w3c-bad-before-tickets-001",
+  "title": "Open Inaccessible Tickets Page",
+  "goal": "Open the inaccessible Tickets page from the BAD overview and stop there.",
+  "instruction": "Open the inaccessible Tickets page and stop when that page is visible.",
+  "url": "https://www.w3.org/WAI/demos/bad/",
+  "source": {
+    "site_id": "w3c-bad",
+    "site_name": "W3C Before and After Demo",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility",
+    "before-after"
+  ],
+  "review_notes": "Pairs with the accessible tickets task to create a before/after accessibility contrast.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e12"
+      },
+      "explanation": "I opened the inaccessible Tickets page from the overview comparison list."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the inaccessible Tickets page and stopped there."
+      },
+      "explanation": "The requested comparison page is open, so I am ending the task."
+    }
+  ]
+}

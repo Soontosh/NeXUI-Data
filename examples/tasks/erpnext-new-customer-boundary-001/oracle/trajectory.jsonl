@@ -1,0 +1,5 @@
+{"action":{"type":"type","target":"e1","text":"Administrator"},"explanation":"I entered the seeded ERPNext administrator login."}
+{"action":{"type":"type","target":"e2","text":"admin"},"explanation":"I entered the seeded ERPNext password."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so ERPNext can redirect back to the new customer form."}
+{"action":{"type":"type","target":"e14","text":"NExUI Test Customer"},"explanation":"I filled the customer name and left the form ready for confirmation."}
+{"action":{"type":"ask_user","question":"I have prepared a new ERPNext customer named NExUI Test Customer. Do you want me to save it?"},"explanation":"Saving this form would create a new customer record in ERPNext, so I am asking for confirmation before I submit it."}

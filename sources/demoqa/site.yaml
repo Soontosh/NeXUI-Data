@@ -1,0 +1,151 @@
+{
+  "schema_version": "0.0",
+  "site_id": "demoqa",
+  "site_name": "DemoQA",
+  "base_url": "https://demoqa.com/",
+  "source_track": "ui_automation_demo",
+  "category": "ui_automation_demo",
+  "hosting_mode": "live_demo",
+  "redistribution_class": "live_only_academic_source",
+  "authoring_status": "validated",
+  "reset_strategy": "manual_reset",
+  "determinism_level": "medium",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": ""
+  },
+  "task_families": [
+    "forms",
+    "validation_recovery",
+    "modal_confirmation",
+    "tables_and_filters",
+    "timing_sensitive_interactions"
+  ],
+  "difficulty_bands": [
+    "easy",
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Live demo source. Prefer bounded tasks and verify ad or analytics overlays do not affect candidate extraction."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "forms",
+      "label": "Practice Form",
+      "url": "https://demoqa.com/automation-practice-form",
+      "goal_hint": "Survey the student registration form for validation and structured input tasks.",
+      "notes": "The form page exposes text inputs, radios, date selection, and submit."
+    },
+    {
+      "entry_id": "webtables",
+      "label": "Web Tables",
+      "url": "https://demoqa.com/webtables",
+      "goal_hint": "Survey table search, filter, and row-state tasks.",
+      "notes": "Good source for deterministic table filtering and result verification."
+    },
+    {
+      "entry_id": "alerts",
+      "label": "Alerts",
+      "url": "https://demoqa.com/alerts",
+      "goal_hint": "Survey alert and delayed-alert interactions.",
+      "notes": "Useful for timing-sensitive and modal-style tasks."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "demoqa-webtables-search",
+      "summary": "Filter the web table for an existing row and stop on the filtered result state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-webtables-search-001."
+    },
+    {
+      "idea_id": "demoqa-practice-form-submit-modal",
+      "summary": "Fill the required practice-form fields, submit, and stop when the confirmation dialog appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-practice-form-submit-modal-001."
+    },
+    {
+      "idea_id": "demoqa-practice-form-validation-last-name",
+      "summary": "Submit the practice form with the last name missing and stop on the rejected form state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-practice-form-validation-last-name-001."
+    },
+    {
+      "idea_id": "demoqa-webtables-add-row",
+      "summary": "Open the add-row modal, create a new table row, and stop when the row appears in the web table.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-webtables-add-row-001."
+    },
+    {
+      "idea_id": "demoqa-webtables-add-row-search",
+      "summary": "Add a new table row, then filter the web table so only the added row remains visible.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-webtables-add-row-search-001."
+    },
+    {
+      "idea_id": "demoqa-alerts-simple-alert",
+      "summary": "Trigger the immediate browser alert and stop after it has been observed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-simple-alert-001. Uses trace-note scoring for transient browser UI."
+    },
+    {
+      "idea_id": "demoqa-alerts-timer-alert",
+      "summary": "Trigger the delayed alert, wait for it to appear, and stop after it has been observed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-timer-alert-001. Uses trace-note scoring for the delayed alert event."
+    },
+    {
+      "idea_id": "demoqa-alerts-confirm-ok",
+      "summary": "Trigger the confirm alert, accept it, and stop after the page shows the resulting Ok state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-confirm-ok-001."
+    },
+    {
+      "idea_id": "demoqa-alerts-prompt-enter-name",
+      "summary": "Trigger the prompt alert, enter a name, and stop after the page shows the entered value.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-prompt-enter-name-001."
+    },
+    {
+      "idea_id": "demoqa-alerts-confirm-cancel",
+      "summary": "Trigger the confirm alert, dismiss it, and stop after the page shows that Cancel was selected.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-confirm-cancel-001."
+    },
+    {
+      "idea_id": "demoqa-alerts-prompt-cancel",
+      "summary": "Trigger the prompt alert, dismiss it without entering text, and stop after the prompt event occurs with no entered-text result on the page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as demoqa-alerts-prompt-cancel-001. Uses trace-note scoring plus a negative page-state assertion."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Strong source for forms, alerts, and widgets. It now includes validated table filtering, row-addition modal flows, modal-confirmation form submission, validation-boundary form tasks, and alert-dialog tasks spanning accept and dismiss paths with both trace-driven and DOM-visible verification."
+  }
+}

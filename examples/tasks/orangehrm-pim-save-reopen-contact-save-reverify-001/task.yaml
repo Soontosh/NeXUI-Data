@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "orangehrm-pim-save-reopen-contact-save-reverify-001",
+  "title": "Save Ava Patel Twice, Reopen Her Record Twice, And Reverify Both Changes",
+  "goal": "Log in to OrangeHRM, save a middle-name update for Ava Patel, return through PIM to verify the saved value from a reopened employee record, save a second contact-details update, then return through PIM again and reverify both changes on the reopened employee record.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011",
+    "s012",
+    "s013",
+    "s014",
+    "s015",
+    "s016",
+    "s017",
+    "s018",
+    "s019",
+    "s020"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "orangehrm-self-hosted",
+    "site_name": "OrangeHRM Self-Hosted",
+    "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/2",
+    "category": "hr_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-02T22:52:05.504Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 20,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "orangehrm-self-hosted",
+  "split": "challenge",
+  "stability_runs_passed": 7,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "trace_note_contains",
+      "value": "field value equals \"Quinn\""
+    },
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/2"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "field value equals \"ava.patel+monster@example.test\""
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-detail",
+    "contact-details",
+    "mutating",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Second monstrous OrangeHRM task. It stacks two successful profile mutations for Ava Patel, two returns through PIM, a reopened personal-details verification after each mutation chain, and a final reopened contact-details verification."
+}

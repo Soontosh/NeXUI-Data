@@ -1,0 +1,7 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected product route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the seeded product detail page."}
+{"action":{"type":"click","target":"e30"},"explanation":"I switched to the Availability tab so the purchase-limit controls become visible."}
+{"action":{"type":"type","target":"e47","text":"4"},"explanation":"I entered the deterministic purchase limit."}
+{"action":{"type":"click","target":"e52"},"explanation":"I saved the purchase-limit change so I can verify the persisted value on the same Availability tab."}
+{"action":{"type":"finish","summary":"I saved the Pretix product purchase-limit change and verified the persisted value on the Availability tab."},"explanation":"The saved maximum amount per order is still visible on the Availability tab now, so I am ending the task."}

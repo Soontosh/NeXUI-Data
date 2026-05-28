@@ -1,0 +1,158 @@
+[
+  {
+    "ref": "e1",
+    "role": "textbox",
+    "name": "Username",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 522,
+      "y": 149.02,
+      "width": 396,
+      "height": 33.13
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": true,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "textbox",
+    "name": "Password",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 522,
+      "y": 206.14,
+      "width": 396,
+      "height": 33.13
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "checkbox",
+    "name": "on",
+    "description": "",
+    "text": "on",
+    "tag": "input",
+    "value": "on",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 511,
+      "y": 247.27,
+      "width": 39,
+      "height": 39
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "button",
+    "name": "SIGN IN",
+    "description": "",
+    "text": "SIGN IN",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 522,
+      "y": 310.27,
+      "width": 396,
+      "height": 33.44
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "link",
+    "name": "Don't have an account? Sign Up",
+    "description": "http://localhost:3000/signup",
+    "text": "Don't have an account? Sign Up",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 713.14,
+      "y": 361.7,
+      "width": 204.86,
+      "height": 16
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "link",
+    "name": "",
+    "description": "https://cypress.io/",
+    "text": "",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 710.61,
+      "y": 444.95,
+      "width": 60,
+      "height": 14
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

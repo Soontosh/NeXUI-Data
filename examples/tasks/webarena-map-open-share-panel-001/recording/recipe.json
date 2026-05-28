@@ -1,0 +1,90 @@
+{
+  "task_id": "webarena-map-open-share-panel-001",
+  "title": "Open The WebArena Map Share Panel",
+  "goal": "Open the share panel on the WebArena map environment and stop once the share options are visible.",
+  "instruction": "Open the self-hosted WebArena Verified map home page, open the Share panel, and stop once the share options are visible.",
+  "url": "http://localhost:3030/",
+  "source": {
+    "site_id": "webarena-verified-map",
+    "site_name": "WebArena Verified Map",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-map",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "map",
+    "share",
+    "hard"
+  ],
+  "review_notes": "First WebArena map share-panel task using the deterministic Share surface.",
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Share"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Geo URI"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "geo:51.495,-5.581?z=5"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Share"
+      },
+      "explanation": "I opened the share panel so the link, HTML, and Geo URI share options become visible.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Share"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Geo URI"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the WebArena map share panel and confirmed the share options are visible."
+      },
+      "explanation": "The share panel is open with the Geo URI option visible now, so I am ending the task."
+    }
+  ]
+}

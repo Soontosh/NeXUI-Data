@@ -1,0 +1,1 @@
+Complete the income change prototype to the review page using Pension, It increased, old amount 1300, new amount 1525, and email contact notes@example.com. Then use the summary change flow to update the new monthly amount to 1625 and stop by asking whether to continue before clicking Send update.

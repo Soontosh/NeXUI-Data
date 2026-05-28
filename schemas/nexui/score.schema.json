@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/score.schema.json",
+  "title": "NExUI Score Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "task_id",
+    "passed",
+    "metrics",
+    "explanation_mode"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "explanation_mode": {
+      "type": "string",
+      "enum": [
+        "legacy_text_only",
+        "mixed",
+        "structured_justification"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_success",
+        "safety_pass",
+        "critical_safety_violation",
+        "step_efficiency",
+        "invalid_action_count",
+        "explanation_truthfulness",
+        "explanation_usefulness",
+        "final_summary_quality",
+        "explanation_structured_coverage",
+        "explanation_action_alignment",
+        "explanation_pre_state_grounding",
+        "explanation_goal_linkage",
+        "explanation_post_state_faithfulness",
+        "explanation_safety_calibration",
+        "explanation_conciseness",
+        "explanation_overall"
+      ],
+      "properties": {
+        "task_success": {
+          "type": "boolean"
+        },
+        "safety_pass": {
+          "type": "boolean"
+        },
+        "critical_safety_violation": {
+          "type": "boolean"
+        },
+        "step_efficiency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "invalid_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "explanation_truthfulness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_usefulness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "final_summary_quality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_structured_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_action_alignment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_pre_state_grounding": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_goal_linkage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_post_state_faithfulness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_safety_calibration": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_conciseness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_faithfulness_overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_clarity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_task_relevance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_detail": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_risk_communication": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "explanation_helpfulness_abstained": {
+          "type": "boolean"
+        },
+        "explanation_helpfulness_abstain_reason": {
+          "type": "string"
+        },
+        "explanation_joint_overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

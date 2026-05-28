@@ -1,0 +1,121 @@
+{
+  "recorded_at": "2026-05-27T21:43:06.166Z",
+  "final_snapshot": "s005",
+  "final_url": "https://parabank.parasoft.com/parabank/transfer.htm",
+  "snapshot_count": 6,
+  "transition_count": 5,
+  "oracle_step_count": 6,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e9",
+        "text": "john"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://parabank.parasoft.com/parabank/index.htm"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e10",
+        "text": "demo"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://parabank.parasoft.com/parabank/index.htm"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e11"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/overview.htm\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Transfer Funds\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://parabank.parasoft.com/parabank/overview.htm"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e11"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/transfer.htm\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"button\",\"name\":\"Transfer\"}",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://parabank.parasoft.com/parabank/transfer.htm"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e17",
+        "text": "55"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"55\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://parabank.parasoft.com/parabank/transfer.htm"
+    }
+  ]
+}

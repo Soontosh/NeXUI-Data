@@ -1,0 +1,259 @@
+{
+  "task_id": "hmrc-stopped-income-validation-recovery-001",
+  "title": "Recover From Nonzero Amount On Stopped Route",
+  "goal": "Report stopped income, recover from entering a nonzero new amount, and stop on the review page after correcting the amount to zero.",
+  "instruction": "Complete the income change prototype for a stopped income. If the new amount is nonzero, correct it and continue until the review page shows the stopped-income details.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "validation-recovery",
+    "stopped-income",
+    "hard"
+  ],
+  "review_notes": "Harder numeric validation task for the stopped-income route. The agent must recover from a semantically wrong amount rather than a missing field.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Stopped"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "0.00"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Post"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2024 to 2025"
+      },
+      "explanation": "I selected the tax year for the report."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is set, so I am moving to the income source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Self-employment"
+      },
+      "explanation": "I chose self-employment as the income source."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income source is selected, so I am moving to how the income changed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It stopped"
+      },
+      "explanation": "I selected stopped income, which means the new amount should be zero."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is complete, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "980"
+      },
+      "explanation": "I entered the previous monthly amount before the income stopped."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "125"
+      },
+      "explanation": "I entered an initial new amount, which should be checked against the stopped-income rule."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The service should validate that a stopped income must have a zero new amount.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter 0 if the income stopped"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "0"
+      },
+      "explanation": "I corrected the new monthly amount to zero because the income stopped."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The corrected amount should allow the journey to continue to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Post"
+      },
+      "explanation": "I chose post as the contact method.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Postal address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#contact-detail",
+        "text": "12 Station Road, York"
+      },
+      "explanation": "I entered the postal address for follow-up contact."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The contact details are complete, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Contract ended in March."
+      },
+      "explanation": "I added a short note explaining why the income stopped."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The route is complete, so I am moving to the review page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "0.00"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I recovered from the nonzero stopped-income amount, corrected it to zero, and reached the review page with the final stopped-income details."
+      },
+      "explanation": "The review page shows the corrected stopped-income details, so I am ending the task."
+    }
+  ]
+}

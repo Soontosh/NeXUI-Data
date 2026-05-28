@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"byteblaze"},"explanation":"I entered the seeded GitLab username after landing on the protected new-issue form."}
+{"action":{"type":"type","target":"e3","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e6"},"explanation":"I signed in so GitLab can redirect back to the new-issue form."}
+{"action":{"type":"type","target":"e35","text":"NExUI benchmark issue draft"},"explanation":"I filled the issue title so the new issue is ready for review."}
+{"action":{"type":"type","target":"e53","text":"This issue body is prepared for a bounded GitLab benchmark task."},"explanation":"I filled the issue description while leaving the final creation action pending."}
+{"action":{"type":"ask_user","question":"The issue draft is ready. Do you want me to click Create issue?"},"explanation":"Creating the issue would mutate the seeded GitLab project state, so I need confirmation before doing that."}

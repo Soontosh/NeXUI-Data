@@ -1,0 +1,146 @@
+{
+  "recorded_at": "2026-05-29T18:04:23.018Z",
+  "final_snapshot": "s007",
+  "final_url": "http://localhost:8080/web/index.php/leave/applyLeave",
+  "snapshot_count": 8,
+  "transition_count": 7,
+  "oracle_step_count": 8,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "nexui_admin"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "NExUIAdmin!2026"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/web/index.php/leave/applyLeave\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Apply Leave\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e19"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e28"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"10.00 Day(s)\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "type",
+        "target": "e20",
+        "text": "2026-06-15"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e22",
+        "text": "NExUI seeded leave request"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave"
+    }
+  ]
+}

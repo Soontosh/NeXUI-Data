@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoblaze-category-switch-apple-monitor-disambiguation-001",
+  "title": "Switch Categories And Open Apple Monitor 24",
+  "goal": "Open the Laptops category, switch to Monitors, then open Apple monitor 24 and stop on the product detail page.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "url": "https://demoblaze.com/prod.html?idp_=10",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T15:50:25.317Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "prod.html?idp_=10"
+    },
+    {
+      "type": "text_present",
+      "value": "Apple monitor 24"
+    },
+    {
+      "type": "text_present",
+      "value": "Add to cart"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "retail",
+    "hard",
+    "multi-step",
+    "category-switch",
+    "product-disambiguation"
+  ],
+  "review_notes": "First hard Demoblaze task. It forces category switching and dynamic-list disambiguation before the correct product can be opened.",
+  "source_surface": "demoblaze",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  }
+}

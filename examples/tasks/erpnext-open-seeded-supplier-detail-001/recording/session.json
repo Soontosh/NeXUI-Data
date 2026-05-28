@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-06-01T05:13:22.501Z",
+  "final_snapshot": "s003",
+  "final_url": "http://localhost:8090/desk/supplier/NExUI%20Test%20Supplier",
+  "snapshot_count": 4,
+  "transition_count": 3,
+  "oracle_step_count": 4,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "Administrator"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fsupplier%2FNExUI+Test+Supplier"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "admin"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fsupplier%2FNExUI+Test+Supplier"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/desk/supplier/NExUI%20Test%20Supplier\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI Test Supplier\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/desk/supplier/NExUI%20Test%20Supplier"
+    }
+  ]
+}

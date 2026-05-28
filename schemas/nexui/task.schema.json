@@ -1,0 +1,523 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/task.schema.json",
+  "title": "NExUI Task Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "benchmark",
+    "task_id",
+    "title",
+    "goal",
+    "source",
+    "start_snapshot",
+    "instruction_file",
+    "user_profile_file",
+    "snapshots",
+    "transitions_file",
+    "oracle_file",
+    "eval",
+    "allowed_actions",
+    "risk_level"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "benchmark": {
+      "type": "string",
+      "const": "nexui-core"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instruction_file": {
+      "type": "string",
+      "const": "instruction.md"
+    },
+    "user_profile_file": {
+      "type": "string",
+      "const": "user_profile.json"
+    },
+    "start_snapshot": {
+      "type": "string",
+      "pattern": "^s[0-9]{3}$"
+    },
+    "snapshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^s[0-9]{3}$"
+      },
+      "uniqueItems": true
+    },
+    "transitions_file": {
+      "type": "string",
+      "const": "transitions.yaml"
+    },
+    "oracle_file": {
+      "type": "string",
+      "const": "oracle/trajectory.jsonl"
+    },
+    "eval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "success_checker",
+        "safety_rules",
+        "explanation_rubric"
+      ],
+      "properties": {
+        "success_checker": {
+          "type": "string",
+          "const": "eval/check_success.py"
+        },
+        "safety_rules": {
+          "type": "string",
+          "const": "eval/safety_rules.yaml"
+        },
+        "explanation_rubric": {
+          "type": "string",
+          "const": "eval/explanation_rubric.yaml"
+        }
+      }
+    },
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "click",
+          "click_xy",
+          "type",
+          "press",
+          "select",
+          "scroll",
+          "focus",
+          "back",
+          "wait",
+          "ask_user",
+          "finish"
+        ]
+      }
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "safe",
+        "confirmation_required",
+        "forbidden"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "site_id",
+        "site_name",
+        "url",
+        "category",
+        "redistribution_class"
+      ],
+      "properties": {
+        "site_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "site_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "accessibility_demo",
+            "ui_automation_demo",
+            "education_demo",
+            "finance_demo",
+            "hr_demo",
+            "ecommerce_demo",
+            "government_pattern",
+            "health_pattern",
+            "other"
+          ]
+        },
+        "redistribution_class": {
+          "type": "string",
+          "enum": [
+            "redistributable_source",
+            "live_only_academic_source",
+            "inspiration_only_source",
+            "permission_required_source"
+          ]
+        },
+        "locale": {
+          "type": "string"
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "review_notes": {
+      "type": "string"
+    },
+    "difficulty_band": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard",
+        "very_hard"
+      ]
+    },
+    "difficulty_dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "authentication_required": {
+          "type": "boolean"
+        },
+        "meaningful_action_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cross_view_verification": {
+          "type": "boolean"
+        },
+        "summary_edit_propagation": {
+          "type": "boolean"
+        },
+        "conditional_ui": {
+          "type": "boolean"
+        },
+        "async_or_modal": {
+          "type": "boolean"
+        },
+        "dense_controls": {
+          "type": "boolean"
+        },
+        "safety_boundary": {
+          "type": "boolean"
+        }
+      }
+    },
+    "source_surface": {
+      "type": "string",
+      "minLength": 1
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "dev",
+        "validation",
+        "test",
+        "challenge",
+        "unassigned"
+      ]
+    },
+    "stability_runs_passed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "requires_source_reset": {
+      "type": "boolean"
+    },
+    "success_assertions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/success_assertion"
+      }
+    },
+    "success_any_of": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/$defs/success_assertion"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "candidate_matcher": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "ref": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "states": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "expanded": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "selected": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "checked": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "pressed": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "focused": {
+              "type": "boolean"
+            },
+            "invalid": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "required": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "success_assertion": {
+      "type": "object",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "trace_note_contains"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "trace_status_is"
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "completed",
+                "stopped",
+                "failed",
+                "timeout"
+              ]
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "last_action_type_is"
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "click",
+                "click_xy",
+                "type",
+                "press",
+                "select",
+                "scroll",
+                "focus",
+                "back",
+                "wait",
+                "ask_user",
+                "finish"
+              ]
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "url_contains"
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "modal_state_is"
+            },
+            "value": {
+              "type": "string",
+              "enum": [
+                "none",
+                "dialog_open",
+                "menu_open"
+              ]
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "text_present",
+                "text_absent"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "artifact": {
+              "type": "string",
+              "enum": [
+                "reader_view",
+                "aria_snapshot",
+                "dom",
+                "any_text"
+              ]
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "match"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "candidate_exists",
+                "candidate_missing",
+                "field_enabled",
+                "field_disabled"
+              ]
+            },
+            "match": {
+              "$ref": "#/$defs/candidate_matcher"
+            }
+          }
+        },
+        {
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "match",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "field_value_equals"
+            },
+            "match": {
+              "$ref": "#/$defs/candidate_matcher"
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

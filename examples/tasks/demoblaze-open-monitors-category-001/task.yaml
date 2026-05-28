@@ -1,0 +1,73 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoblaze-open-monitors-category-001",
+  "title": "Open Monitors Category",
+  "goal": "Open the Monitors category from the Demoblaze storefront and stop on the filtered listing.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "url": "https://demoblaze.com/#",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T15:09:06.435Z"
+  },
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "value": "Apple monitor 24"
+    },
+    {
+      "type": "text_present",
+      "value": "ASUS Full HD"
+    },
+    {
+      "type": "text_absent",
+      "value": "Samsung galaxy s6"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "retail",
+    "navigation",
+    "category-filter"
+  ],
+  "review_notes": "Second Demoblaze category task. It expands the retail slice beyond laptops while staying deterministic.",
+  "source_surface": "demoblaze",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "easy",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

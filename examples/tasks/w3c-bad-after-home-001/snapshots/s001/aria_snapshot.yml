@@ -1,0 +1,236 @@
+- paragraph:
+  - link "Skip to accessible demo page":
+    - /url: "#page"
+- paragraph:
+  - link "W3C logo":
+    - /url: https://www.w3.org/
+    - img "W3C logo"
+  - link "Web Accessibility Initiative (WAI) logo":
+    - /url: https://www.w3.org/WAI/
+    - img "Web Accessibility Initiative (WAI) logo"
+- heading "Accessible Home Page - Before and After Demonstration" [level=1]
+- paragraph: Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0
+- list:
+  - listitem:
+    - link "Overview":
+      - /url: ../Overview.html
+  - listitem:
+    - text: "Current location: Home"
+    - list:
+      - listitem:
+        - strong: "Inaccessible:"
+        - link "Inaccessible Home Page":
+          - /url: ../before/home.html
+        - link "Inaccessible Home Page Report":
+          - /url: ../before/reports/home.html
+      - listitem:
+        - strong: "Accessible:"
+        - text: Accessible Home Page
+        - link "Accessible Home Page Report":
+          - /url: ./reports/home.html
+    - link "Show Annotations":
+      - /url: ./annotated/home.html
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem:
+    - link "Tickets":
+      - /url: tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+  - listitem:
+    - link "Template":
+      - /url: template.html
+- paragraph: Demo starts here
+- list:
+  - listitem:
+    - link "Skip to content (within demo page)":
+      - /url: "#content"
+  - listitem:
+    - link "Skip to navigation (within demo page)":
+      - /url: "#navtarget"
+- 'img "Citylights: your access to the city."'
+- img "Sunny Spells"
+- text: "Explore Site by Topic:"
+- combobox "Explore Site by Topic:":
+  - option "Quick Menu" [selected]
+  - option "Broadcasting"
+  - option "Education"
+  - option "Electricity"
+  - option "Fire service"
+  - option "Gas service"
+  - option "Health care"
+  - option "Police service"
+  - option "Public Libraries"
+  - option "Social services"
+  - option "Social housing"
+  - option "Telecommunications"
+  - option "Town planning"
+  - option "Transportation"
+  - option "Waste management"
+  - option "Water services"
+- button "Go"
+- paragraph:
+  - strong: "Traffic:"
+  - text: Construction work on Main Road
+- paragraph:
+  - strong: "Today:"
+  - text: Wednesday 27 May 2026, Sunny Spells, 23°C
+- heading "Navigation menu:" [level=2]
+- list:
+  - listitem: Home
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem:
+    - link "Tickets":
+      - /url: tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+- heading "Welcome to CityLights" [level=1]
+- paragraph: Citylights is the new portal for visitors and residents. Find out what's on, book tickets, and get the latest news.
+- heading "Heat wave linked to temperatures" [level=2]:
+  - link "Heat wave linked to temperatures":
+    - /url: news.html#story1
+- paragraph
+- paragraph:
+  - text: After three years of effort city scientists now agree that the primary cause of the 2003 heatwave was hot air from...
+  - link "Heat wave - full story":
+    - /url: news.html#story1
+- heading "Man Gets Nine Months in Violin Case" [level=2]:
+  - link "Man Gets Nine Months in Violin Case":
+    - /url: news.html#story2
+- paragraph
+- paragraph:
+  - text: "Mayor: These kinds of crimes need more creative, effective punishments. For example, we could require..."
+  - link "Violin case - full story":
+    - /url: news.html#story2
+- heading "Lack of brains hinders research" [level=2]:
+  - link "Lack of brains hinders research":
+    - /url: news.html#story3
+- paragraph
+- paragraph:
+  - text: "Brain donations: huge drop off in brain donations due to the great 'success' of 'Slow Traffic, Safe..."
+  - link "Brain donations - full story":
+    - /url: news.html#story3
+- heading "Elsewhere on the Web" [level=2]
+- paragraph: Please see the following websites for important information. Citylights take no responsibility for their content. For artichoke advice, call the number below.
+- list:
+  - listitem:
+    - link "Killer Bees":
+      - /url: ../offsite.html
+  - listitem:
+    - link "Onions":
+      - /url: ../offsite.html
+- paragraph:
+  - strong: "Artichoke advice telephone hotline: (1) 269 24653 / (1) 269 C-H-O-K-E"
+- heading "Citylights Concert" [level=2]
+- img "Free Penguins playing on stage"
+- paragraph:
+  - text: Free penguins slogan at zoo benefit concert causes confusion among city rockers. Adjective or verb?
+  - link "Buy Tickets":
+    - /url: tickets.html
+- heading "Citylights Survey" [level=2]
+- img "Anemone-Snowdrop flower blooming"
+- paragraph:
+  - text: More parks and more green space throughout the city at the price of already rare car parking spaces; how will this affect you?
+  - link "Take Survey":
+    - /url: survey.html
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: )
+- separator
+- paragraph:
+  - strong: "Status:"
+  - text: 20 February 2012 (see
+  - link "changelog":
+    - /url: ../changelog.html
+  - text: ") Editors:"
+  - link "Shadi Abou-Zahra":
+    - /url: https://www.w3.org/People/shadi/
+  - text: and the
+  - link "Education and Outreach Working Group (EOWG)":
+    - /url: https://www.w3.org/WAI/EO/
+  - text: . Developed with support from
+  - link "WAI-TIES":
+    - /url: https://www.w3.org/WAI/TIES/
+  - text: and
+  - link "WAI-AGE":
+    - /url: https://www.w3.org/WAI/WAI-AGE/
+  - text: projects, co-funded by the European Commission IST Programme. [see
+  - link "Acknowledgements":
+    - /url: ../acks.html
+  - text: "]"
+- paragraph:
+  - text: "["
+  - link "WAI Site Map":
+    - /url: https://www.w3.org/WAI/sitemap.html
+  - text: "] ["
+  - link "Help with WAI Website":
+    - /url: https://www.w3.org/WAI/sitehelp.html
+  - text: "] ["
+  - link "Search":
+    - /url: https://www.w3.org/WAI/search.php
+  - text: "] ["
+  - link "Contacting WAI":
+    - /url: https://www.w3.org/WAI/contacts
+  - text: "]"
+  - strong:
+    - text: Feedback welcome to
+    - link "wai-eo-editors@w3.org":
+      - /url: mailto:wai-eo-editors@w3.org
+  - text: (a publicly archived list) or
+  - link "wai@w3.org":
+    - /url: mailto:wai@w3.org
+  - text: (a WAI staff-only list).
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: ), All Rights Reserved. W3C
+  - link "liability":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer
+  - text: ","
+  - link "trademark":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks
+  - text: ","
+  - link "document use":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-documents
+  - text: and
+  - link "software licensing":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-software
+  - text: rules apply. Your interactions with this site are in accordance with our
+  - link "public":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Public
+  - text: and
+  - link "Member":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Members
+  - text: privacy statements.

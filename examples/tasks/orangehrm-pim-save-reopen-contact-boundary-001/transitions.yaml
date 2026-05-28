@@ -1,0 +1,153 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "nexui_admin"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "NExUIAdmin!2026"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewEmployeeList\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e23",
+      "text": "Ava"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e31"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Ava\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e33"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewPersonalDetails/empNumber/2\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e43",
+      "text": "Quinn"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e54"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - text present \"Successfully Updated\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e18"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewEmployeeList\"",
+      "postcondition 2: passed - text present \"Heading level 5: Employee Information\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "type",
+      "target": "e23",
+      "text": "Ava"
+    },
+    "to": "s010",
+    "notes": []
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e31"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Ava\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e33"
+    },
+    "to": "s012",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewPersonalDetails/empNumber/2\"",
+      "postcondition 2: passed - field value equals \"Quinn\""
+    ]
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "click",
+      "target": "e25"
+    },
+    "to": "s013",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/contactDetails/empNumber/2\"",
+      "postcondition 2: passed - text present \"Heading level 6: Contact Details\""
+    ]
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "type",
+      "target": "e52",
+      "text": "ava.patel+review@example.test"
+    },
+    "to": "s014",
+    "notes": []
+  }
+]

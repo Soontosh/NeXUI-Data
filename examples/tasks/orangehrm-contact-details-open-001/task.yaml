@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "orangehrm-contact-details-open-001",
+  "title": "Open The Seeded Admin Contact Details View",
+  "goal": "Log in to OrangeHRM and stop on the seeded admin Contact Details view.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "orangehrm-self-hosted",
+    "site_name": "OrangeHRM Self-Hosted",
+    "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+    "category": "hr_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T17:57:51.932Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "orangehrm-self-hosted",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: Contact Details"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "contact-details",
+    "hard"
+  ],
+  "review_notes": "Enterprise profile-subsection task using the seeded admin employee's contact-details route."
+}

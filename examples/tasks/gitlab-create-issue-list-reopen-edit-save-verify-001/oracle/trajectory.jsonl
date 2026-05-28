@@ -1,0 +1,18 @@
+{"action":{"type":"type","target":"e1","text":"byteblaze"},"explanation":"I entered the seeded GitLab username."}
+{"action":{"type":"type","target":"e2","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so the authenticated projects dashboard can load."}
+{"action":{"type":"click","target":"e20"},"explanation":"I opened the seeded a11y-syntax-highlighting project from the projects dashboard."}
+{"action":{"type":"click","target":"e14"},"explanation":"I opened the project issues list."}
+{"action":{"type":"click","target":"e42"},"explanation":"I opened the new-issue form through the authenticated project issues surface."}
+{"action":{"type":"type","target":"e35","text":"NExUI monstrous GitLab issue"},"explanation":"I entered the deterministic issue title."}
+{"action":{"type":"type","target":"e53","text":"Created for the NExUI monstrous GitLab benchmark path."},"explanation":"I entered the deterministic issue description."}
+{"action":{"type":"click","target":"e62"},"explanation":"I created the issue so I can verify it from the detail page and issues list before preparing and saving a second edit."}
+{"action":{"type":"click","target":"e14"},"explanation":"I went back to the issues list to verify the created issue from a second project view."}
+{"action":{"type":"click","target":"e52"},"explanation":"I reopened the created issue from the list so the follow-up edit starts from a verified saved detail state."}
+{"action":{"type":"click","target":"e38"},"explanation":"I opened the inline edit surface so I can apply a second mutation on the same saved issue."}
+{"action":{"type":"type","target":"e38","text":"NExUI monstrous GitLab issue revised"},"explanation":"I revised the issue title inside the inline edit surface."}
+{"action":{"type":"type","target":"e105","text":"Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."},"explanation":"I rewrote the description with the original text plus the second-stage suffix."}
+{"action":{"type":"click","target":"e108"},"explanation":"I saved the reopened issue edit so I can verify the revised state persisted across both the detail and list surfaces."}
+{"action":{"type":"click","target":"e14"},"explanation":"I went back to the issues list again so I can verify the revised issue row from a second post-save surface."}
+{"action":{"type":"click","target":"e52"},"explanation":"I reopened the revised issue from the list so I can verify the second mutation persisted after another navigation hop."}
+{"action":{"type":"finish","summary":"I created the issue, verified it from both views, saved the reopened edit, verified the revised row from the issues list, and reopened it again to confirm the revised title and description persisted."},"explanation":"The revised issue title and description persisted after the second save and another list-to-detail round trip, so I am ending the task."}

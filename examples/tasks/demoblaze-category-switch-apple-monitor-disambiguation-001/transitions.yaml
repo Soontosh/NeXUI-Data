@@ -1,0 +1,46 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "wait"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e12"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - text present \"MacBook air\"",
+      "postcondition 2: passed - text absent \"Samsung galaxy s6\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e13"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Apple monitor 24\"",
+      "postcondition 2: passed - text absent \"MacBook air\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e15"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"prod.html?idp_=10\"",
+      "postcondition 2: passed - text present \"Add to cart\""
+    ]
+  }
+]

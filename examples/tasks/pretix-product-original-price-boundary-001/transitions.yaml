@@ -1,0 +1,55 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin@localhost"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/1/\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e29"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"#tab-0-1-open\"",
+      "postcondition 2: passed - text present \"Original price\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e40",
+      "text": "30.00"
+    },
+    "to": "s005",
+    "notes": []
+  }
+]

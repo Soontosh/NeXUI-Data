@@ -1,0 +1,18 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the income change."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income-source question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose the employment-pay route for this update."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to how the income changed."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected decreased income, which means the new amount should be lower than before."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"2400"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"3000"},"explanation":"I entered an initial new amount, which I will verify against the decrease rule."}
+{"action":{"type":"click","target":"e4"},"explanation":"The service should validate whether the new amount matches a decrease."}
+{"action":{"type":"type","target":"e4","text":"1800"},"explanation":"I corrected the new monthly amount so it is lower than the previous amount."}
+{"action":{"type":"click","target":"e5"},"explanation":"The corrected amount should allow the journey to continue to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the follow-up contact method."}
+{"action":{"type":"type","target":"e6","text":"caseworker@example.com"},"explanation":"I entered the email address for follow-up questions."}
+{"action":{"type":"click","target":"e7"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Reduced working hours from April."},"explanation":"I added a short note to explain the change."}
+{"action":{"type":"click","target":"e4"},"explanation":"The answers are complete now, so I am moving to the review page."}
+{"action":{"type":"finish","summary":"I recovered from the inconsistent new amount, completed the remaining fields, and reached the review page with the corrected decreased-income details."},"explanation":"The corrected values are visible on the review page, so I am ending the task."}

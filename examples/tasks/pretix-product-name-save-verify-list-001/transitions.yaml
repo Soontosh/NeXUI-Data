@@ -1,0 +1,67 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin@localhost"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/1/\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e38",
+      "text": "NExUI General Admission"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e52"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - text present \"Your changes have been saved.\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"value\":\"NExUI General Admission\"}"
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e11"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/\"",
+      "postcondition 2: passed - text present \"NExUI General Admission\""
+    ]
+  }
+]

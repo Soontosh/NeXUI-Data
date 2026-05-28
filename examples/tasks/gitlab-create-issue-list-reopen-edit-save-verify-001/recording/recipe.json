@@ -1,0 +1,362 @@
+{
+  "task_id": "gitlab-create-issue-list-reopen-edit-save-verify-001",
+  "title": "Create A GitLab Issue, Save A Reopened Edit, And Reverify It Across The List And Detail Views",
+  "goal": "Sign in to GitLab, create a new issue through the project UI, verify it from the detail page and issues list, reopen it, save a follow-up edit, verify the updated issue detail, re-verify the revised row from the issues list, reopen it again, and verify the updated state persisted.",
+  "instruction": "Sign in to the self-hosted WebArena Verified GitLab instance as byteblaze, open the byteblaze/a11y-syntax-highlighting project, go to Issues, open New issue, create an issue titled 'NExUI monstrous GitLab issue' with the description 'Created for the NExUI monstrous GitLab benchmark path.', verify the created issue from the detail page, go back to the project issues list, reopen the created issue, click Edit title and description, change the title to 'NExUI monstrous GitLab issue revised', replace the description with 'Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation.', save the change, verify the updated detail page, go back to the project issues list, verify the revised issue row there, reopen it again, and verify the updated title and description persisted.",
+  "url": "http://localhost:8023/users/sign_in",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 20,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "mutating",
+    "issue-detail",
+    "issues-list",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous GitLab save-and-reverify task that creates an issue, verifies it from detail and list views, reopens it, saves a second edit, and then re-verifies the persisted revised state from both the list and the reopened detail page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI monstrous GitLab issue revised"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "candidate exists for {'role': 'link', 'name': 'NExUI monstrous GitLab issue revised'}"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so the authenticated projects dashboard can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Projects"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting']"
+      },
+      "explanation": "I opened the seeded a11y-syntax-highlighting project from the projects dashboard.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting/-/issues']"
+      },
+      "explanation": "I opened the project issues list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "New issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "New issue"
+      },
+      "explanation": "I opened the new-issue form through the authenticated project issues surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Create issue"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Title (required)",
+        "text": "NExUI monstrous GitLab issue"
+      },
+      "explanation": "I entered the deterministic issue title."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Description",
+        "text": "Created for the NExUI monstrous GitLab benchmark path."
+      },
+      "explanation": "I entered the deterministic issue description."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Create issue"
+      },
+      "explanation": "I created the issue so I can verify it from the detail page and issues list before preparing and saving a second edit.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous GitLab issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting/-/issues']"
+      },
+      "explanation": "I went back to the issues list to verify the created issue from a second project view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous GitLab issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "NExUI monstrous GitLab issue"
+      },
+      "explanation": "I reopened the created issue from the list so the follow-up edit starts from a verified saved detail state.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous GitLab issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Edit title and description"
+      },
+      "explanation": "I opened the inline edit surface so I can apply a second mutation on the same saved issue.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save changes"
+          }
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Title"
+          },
+          "value": "NExUI monstrous GitLab issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Title",
+        "text": "NExUI monstrous GitLab issue revised"
+      },
+      "explanation": "I revised the issue title inside the inline edit surface."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Description",
+        "text": "Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."
+      },
+      "explanation": "I rewrote the description with the original text plus the second-stage suffix."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save changes"
+      },
+      "explanation": "I saved the reopened issue edit so I can verify the revised state persisted across both the detail and list surfaces.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous GitLab issue revised"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting/-/issues']"
+      },
+      "explanation": "I went back to the issues list again so I can verify the revised issue row from a second post-save surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "NExUI monstrous GitLab issue revised"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "NExUI monstrous GitLab issue revised"
+      },
+      "explanation": "I reopened the revised issue from the list so I can verify the second mutation persisted after another navigation hop.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous GitLab issue revised"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I created the issue, verified it from both views, saved the reopened edit, verified the revised row from the issues list, and reopened it again to confirm the revised title and description persisted."
+      },
+      "explanation": "The revised issue title and description persisted after the second save and another list-to-detail round trip, so I am ending the task."
+    }
+  ]
+}

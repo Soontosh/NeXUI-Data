@@ -1,0 +1,158 @@
+{
+  "recorded_at": "2026-05-29T20:06:03.165Z",
+  "final_snapshot": "s008",
+  "final_url": "http://localhost:7780/admin/admin/user/new/",
+  "snapshot_count": 9,
+  "transition_count": 8,
+  "oracle_step_count": 9,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e15"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/admin/admin/user/new/\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e24",
+        "text": "ari.validation"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "type",
+        "target": "e25",
+        "text": "Ari"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e26",
+        "text": "Validation"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e28",
+        "text": "NExUIUser!2026"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "type",
+        "target": "e29",
+        "text": "NExUIUser!2026"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e33",
+        "text": "admin1234"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e17"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"This is a required field.\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "menu_open",
+      "url": "http://localhost:7780/admin/admin/user/new/"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "task_id": "cypress-rwa-open-bank-account-create-form-001",
+  "title": "Open The New Bank Account Form",
+  "goal": "Sign in to the self-hosted Cypress Real World App, open Bank Accounts, open the create-bank-account form, and stop when the form is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the seeded account, open Bank Accounts, open the Create flow, and stop when the new bank account form is visible.",
+  "url": "http://localhost:3000/signin",
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "bank-accounts",
+    "hard"
+  ],
+  "review_notes": "Authenticated bank-account task that opens the create-bank-account form from the Bank Accounts page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/bankaccounts/new"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "Bank Name"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated bank-account tools can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='sidenav-bankaccounts']"
+      },
+      "explanation": "I opened Bank Accounts from the side navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='bankaccount-new']"
+      },
+      "explanation": "I opened the create-bank-account form from the Bank Accounts page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/bankaccounts/new"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "Bank Name"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, opened Bank Accounts, and opened the create-bank-account form."
+      },
+      "explanation": "The new bank account form is visible now, so I am ending the task."
+    }
+  ]
+}

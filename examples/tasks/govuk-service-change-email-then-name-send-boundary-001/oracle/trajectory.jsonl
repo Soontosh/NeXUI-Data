@@ -1,0 +1,13 @@
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the initial applicant name to start the journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected email updates so the email branch is active."}
+{"action":{"type":"type","target":"e6","text":"old-address@example.com"},"explanation":"I entered the initial email address so the summary starts on the email branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"The initial answers are complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e5"},"explanation":"I followed the email change link so I can update the address first."}
+{"action":{"type":"type","target":"e6","text":"jordan.reed@example.com"},"explanation":"I replaced the original email address with the corrected value."}
+{"action":{"type":"click","target":"e5"},"explanation":"The corrected email is entered, so I am returning to review before making the second summary edit."}
+{"action":{"type":"click","target":"e3"},"explanation":"I followed the name change link so I can update the applicant name as well."}
+{"action":{"type":"type","target":"e2","text":"Jordan Reed"},"explanation":"I replaced the original applicant name with the final value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The corrected name is entered, so I am moving back through the preserved email question to the review page."}
+{"action":{"type":"click","target":"e5"},"explanation":"The preserved email branch is still complete, so I am returning to check answers to verify both updates."}
+{"action":{"type":"ask_user","question":"The form is ready and Send application would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the application, so I need confirmation before continuing."}

@@ -1,0 +1,175 @@
+{
+  "task_id": "govuk-service-change-email-from-summary-001",
+  "title": "Change Email Address From Check Answers",
+  "goal": "Reach the check-answers page, change the email address, and stop after the summary shows the updated value.",
+  "instruction": "Complete the travel support prototype with email updates enabled, then change the email address from the check-answers page and verify the summary now shows the corrected value.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-service-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task on the travel-support prototype. It updates only the email address from check answers while preserving the rest of the route.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "amina.patel@example.com"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "old-address@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Amina Patel"
+      },
+      "explanation": "I entered the applicant name to start the service journey."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The name is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected email updates, which reveals the email-address field."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "old-address@example.com"
+      },
+      "explanation": "I entered the initial email address so the first review page includes an email row."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial answers are complete, so I am moving to the check-answers page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "old-address@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-email"
+      },
+      "explanation": "I followed the change link for the email address so I can update that answer.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Email address"
+          },
+          "value": "old-address@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "amina.patel@example.com"
+      },
+      "explanation": "I replaced the original email address with the corrected value."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The corrected email is entered, so I am returning to the review page to verify the updated summary.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "amina.patel@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the email address from the check-answers page and confirmed the summary now shows the corrected value."
+      },
+      "explanation": "The updated email address is visible on the review page, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+}

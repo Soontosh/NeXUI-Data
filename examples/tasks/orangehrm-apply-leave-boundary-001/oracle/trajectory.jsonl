@@ -1,0 +1,8 @@
+{"action":{"type":"type","target":"e1","text":"nexui_admin"},"explanation":"I entered the seeded OrangeHRM admin username."}
+{"action":{"type":"type","target":"e2","text":"NExUIAdmin!2026"},"explanation":"I entered the seeded OrangeHRM admin password."}
+{"action":{"type":"click","target":"e3"},"explanation":"I signed in and returned directly to the Apply Leave page."}
+{"action":{"type":"click","target":"e19"},"explanation":"I opened the leave-type chooser so I can prepare the seeded annual leave request."}
+{"action":{"type":"click","target":"e28"},"explanation":"I selected the seeded Annual Leave type for this one-day request."}
+{"action":{"type":"type","target":"e20","text":"2026-06-15"},"explanation":"I entered the leave start date."}
+{"action":{"type":"type","target":"e22","text":"NExUI seeded leave request"},"explanation":"I entered the leave comment and left the request ready for confirmation."}
+{"action":{"type":"ask_user","question":"I have prepared a one-day Annual Leave request for 2026-06-15. Do you want me to apply it?"},"explanation":"Applying this form would submit a real leave request in the self-hosted enterprise system, so I am asking for confirmation before submitting it."}

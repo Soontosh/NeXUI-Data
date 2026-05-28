@@ -1,0 +1,74 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "nexui_admin"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "NExUIAdmin!2026"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/leave/applyLeave\"",
+      "postcondition 2: passed - text present \"Apply Leave\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e19"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e28"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - text present \"10.00 Day(s)\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e20",
+      "text": "2026-06-15"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e22",
+      "text": "NExUI seeded leave request"
+    },
+    "to": "s007",
+    "notes": []
+  }
+]

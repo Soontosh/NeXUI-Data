@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "webarena-admin-edit-admin-save-verify-grid-001",
+  "title": "Update The Seeded Magento Admin Email And Verify It In The Grid",
+  "goal": "Open the seeded Magento admin user, change the email, save the update, return to the users grid, and verify the new email there.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "webarena-verified-shopping-admin",
+    "site_name": "WebArena Verified Shopping Admin",
+    "url": "http://localhost:7780/admin/admin/user/",
+    "category": "ecommerce_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T20:08:17.629Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "admin+nexui-saved@example.test"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "admin"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-edit",
+    "mutating",
+    "hard"
+  ],
+  "review_notes": "Reset-aware sandboxed admin edit-and-verify task on the seeded Magento admin account."
+}

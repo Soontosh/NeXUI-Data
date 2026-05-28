@@ -1,0 +1,128 @@
+- link "Magento Admin Panel":
+  - /url: http://localhost:7780/admin/admin/
+  - img "Magento Admin Panel"
+- navigation:
+  - menubar:
+    - listitem:
+      - link " Dashboard":
+        - /url: http://localhost:7780/admin/admin/dashboard/
+    - listitem:
+      - link " Sales":
+        - /url: "#"
+    - listitem:
+      - link " Catalog":
+        - /url: "#"
+    - listitem:
+      - link " Customers":
+        - /url: "#"
+    - listitem:
+      - link " Marketing":
+        - /url: "#"
+    - listitem:
+      - link " Content":
+        - /url: "#"
+    - listitem:
+      - link " Reports":
+        - /url: "#"
+    - listitem:
+      - link " Stores":
+        - /url: "#"
+    - listitem:
+      - link " System":
+        - /url: "#"
+    - listitem:
+      - link " Find Partners & Extensions":
+        - /url: http://localhost:7780/admin/marketplace/index/
+- banner:
+  - heading "Users" [level=1]
+  - link " admin":
+    - /url: http://localhost:7780/admin/admin/system_account/index/
+  - link "":
+    - /url: http://localhost:7780/admin/admin/notification/index/
+  - text: 
+  - textbox ""
+- main:
+  - button "Add New User"
+  - text:  You saved the user.
+  - button "Search"
+  - button "Reset Filter"
+  - text: 2 records found
+  - combobox "per page":
+    - option "20" [selected]
+    - option "30"
+    - option "50"
+    - option "100"
+    - option "200"
+  - text: per page
+  - button ""
+  - textbox "of 1": "1"
+  - text: of 1
+  - button ""
+  - table:
+    - rowgroup:
+      - row "ID ↓ User Name First Name Last Name Email Last Logged in Role Status":
+        - columnheader "ID"
+        - columnheader "↓ User Name"
+        - columnheader "First Name"
+        - columnheader "Last Name"
+        - columnheader "Email"
+        - columnheader "Last Logged in"
+        - columnheader "Role"
+        - columnheader "Status"
+      - row "undefined  undefined ":
+        - cell:
+          - textbox
+        - cell:
+          - textbox
+        - cell:
+          - textbox
+        - cell:
+          - textbox
+        - cell:
+          - textbox
+        - cell "undefined  undefined ":
+          - textbox "From"
+          - button "undefined "
+          - textbox "To"
+          - button "undefined "
+        - cell:
+          - textbox
+        - cell:
+          - combobox:
+            - option "Active"
+            - option "Inactive"
+    - rowgroup:
+      - row "1 admin Admin User admin@your-domain.com Jun 2, 2026, 11:23:41 AM Administrators Active":
+        - cell "1"
+        - cell "admin"
+        - cell "Admin"
+        - cell "User"
+        - cell "admin@your-domain.com"
+        - cell "Jun 2, 2026, 11:23:41 AM"
+        - cell "Administrators"
+        - cell "Active"
+      - row "2 selene.voss Selene Voss selene.voss@example.test Administrators Active":
+        - cell "2"
+        - cell "selene.voss"
+        - cell "Selene"
+        - cell "Voss"
+        - cell "selene.voss@example.test"
+        - cell
+        - cell "Administrators"
+        - cell "Active"
+- contentinfo:
+  - paragraph:
+    - link "":
+      - /url: http://magento.com
+    - text: Copyright © 2026 Magento Commerce Inc. All rights reserved.
+  - paragraph:
+    - strong: Magento
+    - text: ver. 2.4.6
+  - link "Privacy Policy":
+    - /url: https://www.adobe.com/privacy/policy.html
+  - text: "|"
+  - link "Account Activity":
+    - /url: http://localhost:7780/admin/security/session/activity/
+  - text: "|"
+  - link "Report an Issue":
+    - /url: https://github.com/magento/magento2/issues

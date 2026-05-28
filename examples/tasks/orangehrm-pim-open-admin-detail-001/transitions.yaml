@@ -1,0 +1,45 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "nexui_admin"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "NExUIAdmin!2026"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/dashboard/index\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e9"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewPersonalDetails/empNumber/1\"",
+      "postcondition 2: passed - field value equals \"NExUI\""
+    ]
+  }
+]

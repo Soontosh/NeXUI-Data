@@ -1,0 +1,124 @@
+{
+  "task_id": "cypress-rwa-open-friends-feed-001",
+  "title": "Sign In And Open The Friends Feed",
+  "goal": "Sign in with a seeded example user, switch to the Friends feed, and stop when the contacts-only transaction feed is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the seeded account, open the Friends feed, and stop when the contacts transaction list is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "feed-navigation",
+    "friends-feed",
+    "hard"
+  ],
+  "review_notes": "Authenticated feed-navigation task on the Cypress RWA source. It verifies the route change from the default feed into the contacts-only Friends feed.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/contacts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Darrel Ortiz"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Lia Rosenbaum"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "requested"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated home view can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-contacts-tab']"
+      },
+      "explanation": "I switched to the Friends feed so only contact transactions are shown.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/contacts"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Darrel Ortiz"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and switched to the Friends feed, where contact transactions are visible."
+      },
+      "explanation": "The contacts-only feed is visible now, so I am ending the task."
+    }
+  ]
+}

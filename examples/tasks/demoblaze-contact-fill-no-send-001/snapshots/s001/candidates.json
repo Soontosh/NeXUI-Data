@@ -1,0 +1,574 @@
+[
+  {
+    "ref": "e1",
+    "role": "dialog",
+    "name": "New message",
+    "description": "",
+    "text": "New message × Contact Email: Contact Name: Message: Close Send message",
+    "tag": "div",
+    "value": null,
+    "keyboard_reachable": false,
+    "bounds": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "button",
+    "name": "Close",
+    "description": "",
+    "text": "×",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 939.98,
+      "y": 5.25,
+      "width": 14.02,
+      "height": 24
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "textbox",
+    "name": "",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 486,
+      "y": 108.25,
+      "width": 468,
+      "height": 38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "textbox",
+    "name": "Contact Email:",
+    "description": "",
+    "text": "",
+    "tag": "input",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 486,
+      "y": 207.25,
+      "width": 468,
+      "height": 38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "textbox",
+    "name": "Message:",
+    "description": "",
+    "text": "",
+    "tag": "textarea",
+    "value": "",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 486,
+      "y": 291.25,
+      "width": 468,
+      "height": 58
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "button",
+    "name": "Close",
+    "description": "",
+    "text": "Close",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 730.36,
+      "y": 396.25,
+      "width": 74.91,
+      "height": 38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e7",
+    "role": "button",
+    "name": "Send message",
+    "description": "",
+    "text": "Send message",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 813.27,
+      "y": 396.25,
+      "width": 140.73,
+      "height": 38
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e8",
+    "role": "link",
+    "name": "PRODUCT STORE",
+    "description": "https://demoblaze.com/index.html",
+    "text": "PRODUCT STORE",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 16,
+      "y": 8,
+      "width": 228,
+      "height": 58
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e9",
+    "role": "link",
+    "name": "Home (current)",
+    "description": "https://demoblaze.com/index.html",
+    "text": "Home (current)",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 800.52,
+      "y": 17.06,
+      "width": 58,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e10",
+    "role": "link",
+    "name": "Contact",
+    "description": "https://demoblaze.com/#",
+    "text": "Contact",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 858.52,
+      "y": 17.06,
+      "width": 73,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": true,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e11",
+    "role": "link",
+    "name": "About us",
+    "description": "https://demoblaze.com/#",
+    "text": "About us",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 931.52,
+      "y": 17.06,
+      "width": 80,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e12",
+    "role": "link",
+    "name": "Cart",
+    "description": "https://demoblaze.com/cart.html",
+    "text": "Cart",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1011.52,
+      "y": 17.06,
+      "width": 47,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e13",
+    "role": "link",
+    "name": "Log in",
+    "description": "https://demoblaze.com/#",
+    "text": "Log in",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1058.52,
+      "y": 17.06,
+      "width": 57,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e14",
+    "role": "link",
+    "name": "Sign up",
+    "description": "https://demoblaze.com/#",
+    "text": "Sign up",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1115.52,
+      "y": 17.06,
+      "width": 68,
+      "height": 40
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e15",
+    "role": "button",
+    "name": "Previous",
+    "description": "https://demoblaze.com/#carouselExampleIndicators",
+    "text": "Previous",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 257.61,
+      "y": 77,
+      "width": 117.59,
+      "height": 304.88
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e16",
+    "role": "button",
+    "name": "Next",
+    "description": "https://demoblaze.com/#carouselExampleIndicators",
+    "text": "Next",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1080.8,
+      "y": 77,
+      "width": 117.59,
+      "height": 304.88
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e17",
+    "role": "link",
+    "name": "CATEGORIES",
+    "description": "https://demoblaze.com/",
+    "text": "CATEGORIES",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 165,
+      "y": 436.39,
+      "width": 255,
+      "height": 63.5
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e18",
+    "role": "link",
+    "name": "Phones",
+    "description": "https://demoblaze.com/#",
+    "text": "Phones",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 165,
+      "y": 498.89,
+      "width": 255,
+      "height": 56
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e19",
+    "role": "link",
+    "name": "Laptops",
+    "description": "https://demoblaze.com/#",
+    "text": "Laptops",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 165,
+      "y": 553.89,
+      "width": 255,
+      "height": 56
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e20",
+    "role": "link",
+    "name": "Monitors",
+    "description": "https://demoblaze.com/#",
+    "text": "Monitors",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 165,
+      "y": 608.89,
+      "width": 255,
+      "height": 56
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e21",
+    "role": "button",
+    "name": "Previous",
+    "description": "",
+    "text": "Previous",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1136.83,
+      "y": 436.39,
+      "width": 83.03,
+      "height": 36.33
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e22",
+    "role": "button",
+    "name": "Next",
+    "description": "",
+    "text": "Next",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 1218.86,
+      "y": 436.39,
+      "width": 56.14,
+      "height": 36.33
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

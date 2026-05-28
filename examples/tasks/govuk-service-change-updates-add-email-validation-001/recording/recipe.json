@@ -1,0 +1,182 @@
+{
+  "task_id": "govuk-service-change-updates-add-email-validation-001",
+  "title": "Change Updates Preference And Recover From Missing Email",
+  "goal": "Reach check answers on the no-email branch, change the updates answer to Yes, recover from the missing-email validation error, and stop after the summary shows the new email row.",
+  "instruction": "Complete the travel support prototype to check answers on the no-email branch. Change the updates answer to Yes, recover from the missing-email validation error, and verify the summary now includes the email address.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-service-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 10,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "validation-recovery",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task on the travel-support prototype. It changes a no-email route to the email branch and recovers from the new required-field validation before returning to check answers.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "leah.morgan@example.com"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Not provided"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Leah Morgan"
+      },
+      "explanation": "I entered the applicant name to start the service journey."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The name is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No"
+      },
+      "explanation": "I selected no email updates for the initial route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial answers are complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-updates"
+      },
+      "explanation": "I followed the change link for email updates so I can switch this route to the email branch.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I changed the updates answer to Yes, which makes an email address required."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The page should now report that an email address is required for this branch.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter your email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "leah.morgan@example.com"
+      },
+      "explanation": "I entered the required email address so the updated route can continue."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The required email is present now, so I am returning to check answers to verify the new summary row.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "leah.morgan@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the updates preference to Yes, recovered from the missing-email validation error, and returned to check answers with the new email row visible."
+      },
+      "explanation": "The updated review page now includes the email row, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+}

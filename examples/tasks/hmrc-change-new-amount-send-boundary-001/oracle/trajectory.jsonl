@@ -1,0 +1,21 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is set, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose pension as the income source for this route."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase for this route."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is complete, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1300"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e8","text":"1525"},"explanation":"I entered the increased new monthly amount."}
+{"action":{"type":"click","target":"e3"},"explanation":"The amount details are complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the contact method."}
+{"action":{"type":"type","target":"e7","text":"notes@example.com"},"explanation":"I entered the follow-up email address."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Benchmark HMRC amount-change route."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The first route is complete, so I am moving to the review page."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the new-amount change link so I can correct the amount from the summary."}
+{"action":{"type":"type","target":"e8","text":"1625"},"explanation":"I replaced the new monthly amount with the corrected value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The corrected amount is set, so I am moving back through the remaining pages."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact details are unchanged, so I am moving to supporting notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The preserved note is still suitable, so I am returning to the review page to verify the corrected amount and stop before sending."}
+{"action":{"type":"ask_user","question":"The form is ready and Send update would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the update, so I need confirmation before continuing."}

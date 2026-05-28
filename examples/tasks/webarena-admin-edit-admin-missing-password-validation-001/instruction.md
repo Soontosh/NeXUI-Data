@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open the seeded admin user, change the email to admin+needs-password@example.test, try to save without entering the current password, and stop when the missing-password validation is visible.

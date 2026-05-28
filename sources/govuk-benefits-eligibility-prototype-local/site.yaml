@@ -1,0 +1,158 @@
+{
+  "schema_version": "0.0",
+  "site_id": "govuk-benefits-eligibility-prototype-local",
+  "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+  "base_url": "local-fixture://govuk-benefits-eligibility-prototype/",
+  "source_track": "service_form_pattern",
+  "category": "government_pattern",
+  "hosting_mode": "local_fixture",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "fixture_reload",
+  "determinism_level": "high",
+  "legal_review_status": "documented",
+  "reset_verified": true,
+  "source_priority": 2,
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "This is a local fixture derived from GOV.UK-style eligibility and review patterns. It stores all state in browser memory only."
+  },
+  "task_families": [
+    "eligibility_branching",
+    "multi_page_forms",
+    "check_answers_loops",
+    "conditional_fields",
+    "validation_recovery"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use this local GOV.UK-style eligibility fixture for branching, route-specific guidance, and summary-edit tasks that are distinct from the existing travel-support and HMRC income-change prototypes."
+  },
+  "runtime": {
+    "runtime_recipe": "bundled_local_fixture",
+    "notes": "Bundled local fixture. No external service startup is required."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1280,
+    "viewport_height": 900,
+    "locale": "en-GB"
+  },
+  "entry_points": [
+    {
+      "entry_id": "start",
+      "label": "Benefits Eligibility Start",
+      "path": "../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+      "goal_hint": "Survey the GOV.UK-style eligibility prototype used for branching, summary edits, and confirmation-boundary tasks.",
+      "notes": "The fixture starts on the first residency question and exposes route-specific guidance for certain answers."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "eligibility-guidance-and-review",
+      "summary": "Choose the Not working route, verify the guidance inset appears, and continue to the check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-guidance-review-001."
+    },
+    {
+      "idea_id": "change-updates-add-email-row",
+      "summary": "Reach check answers on the no-email branch, then change the updates answer to Yes and verify the email row appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-change-updates-add-email-001."
+    },
+    {
+      "idea_id": "change-updates-remove-email-row",
+      "summary": "Reach check answers on the email branch, then change the updates answer to No and verify the email row disappears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-change-updates-remove-email-001."
+    },
+    {
+      "idea_id": "income-validation-recovery",
+      "summary": "Trigger the monthly-income validation error, recover, and stop on the corrected check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-income-validation-recovery-001."
+    },
+    {
+      "idea_id": "multi-edit-check-answers",
+      "summary": "Reach check answers, make two earlier edits, and verify both propagate to the final summary.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-multi-edit-check-answers-001."
+    },
+    {
+      "idea_id": "eligibility-result-boundary",
+      "summary": "Reach check answers and ask for confirmation before continuing to the eligibility result page.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-benefits-result-boundary-001."
+    },
+    {
+      "idea_id": "eligibility-employed-result",
+      "summary": "Follow an employed route through the review page and stop on the positive eligibility result.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-employed-result-001."
+    },
+    {
+      "idea_id": "change-children-from-summary",
+      "summary": "Reach check answers, change the childcare-count answer, and verify the updated review state preserves later work-status and income answers.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-change-children-from-summary-001."
+    },
+    {
+      "idea_id": "eligibility-not-working-result",
+      "summary": "Follow a not-working route through the review page and stop on the extra-checks eligibility result.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-not-working-result-001."
+    },
+    {
+      "idea_id": "invalid-email-format-recovery",
+      "summary": "Reach the updates step, trigger the invalid-email-format validation error, recover, and stop on the corrected check-answers page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-invalid-email-format-recovery-001."
+    },
+    {
+      "idea_id": "eligibility-self-employed-review",
+      "summary": "Follow a self-employed route through the review page and stop on check answers with the self-employed branch visible in the final summary.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-self-employed-result-001."
+    },
+    {
+      "idea_id": "eligibility-employed-change-updates-result",
+      "summary": "Take the employed route, add the email-updates branch from check answers, and continue to the eligibility result page.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as govuk-benefits-employed-change-updates-result-001."
+    },
+    {
+      "idea_id": "double-validation-branch-flip-email-readd-boundary",
+      "summary": "Recover from income and email validation errors, change work status and children from check answers, remove the email branch, add it back with a missing-email recovery, and stop at the final eligibility-result boundary.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as govuk-benefits-double-validation-branch-flip-email-readd-boundary-001 as the first monstrous benefits workflow."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Second deterministic GOV.UK-style local prototype intended to broaden the service-form track beyond the existing travel-support and HMRC income-change fixtures. Validated tasks now cover branching guidance, summary-edit propagation in both directions, validation recovery for both income and email format, direct result-page completion on multiple work-status branches, a self-employed review route, an employed branch-change result flow, a confirmation boundary, and the first monstrous benefits workflow with double validation recovery, multi-edit branch propagation, email-row removal and re-addition, and a final confirmation stop."
+  }
+}

@@ -1,0 +1,17 @@
+- main:
+  - img
+  - heading "Sign in" [level=1]
+  - text: Username
+  - textbox "Username": Heath93
+  - text: Password
+  - textbox "Password"
+  - checkbox "Remember me"
+  - text: Remember me
+  - button "Sign In" [disabled]
+  - link "Don't have an account? Sign Up":
+    - /url: /signup
+  - paragraph:
+    - text: Built by
+    - link:
+      - /url: https://cypress.io
+      - img

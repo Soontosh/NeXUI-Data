@@ -1,0 +1,52 @@
+{
+  "task_id": "internet-shifting-content-portfolio-001",
+  "title": "Open Portfolio From Shifting Menu",
+  "goal": "Open the Portfolio page from the shifting menu and stop there.",
+  "instruction": "Use the shifting menu to open Portfolio and stop when the destination page is loaded.",
+  "url": "https://the-internet.herokuapp.com/shifting_content/menu",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["click", "finish"],
+  "tags": ["recorded", "layout-shift", "navigation"],
+  "review_notes": "Tests semantic targeting under visual instability rather than fixed screen position.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/portfolio"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Not Found"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Portfolio"
+      },
+      "explanation": "I selected Portfolio from the shifting menu. The page should now change to the Portfolio destination.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/portfolio"
+        }
+      ],
+      "postcondition_timeout_ms": 5000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Portfolio destination from the shifting menu and stopped there."
+      },
+      "explanation": "The destination page is loaded now, so I am ending the task."
+    }
+  ]
+}

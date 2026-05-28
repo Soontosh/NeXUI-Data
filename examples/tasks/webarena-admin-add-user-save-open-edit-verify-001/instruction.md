@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open Add New User, create Nova Hart with username nova.hart and email nova.hart@example.test, keep the Administrators role selected, save the user, and stop once the resulting page still shows the saved user details.

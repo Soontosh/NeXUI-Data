@@ -1,0 +1,12 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected two children for the childcare count."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected Not working, which takes the route that needs extra checks."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"type","target":"e3","text":"850"},"explanation":"I entered the monthly income for the route."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates for this route."}
+{"action":{"type":"click","target":"e5"},"explanation":"The answers are complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e8"},"explanation":"I continued from the review page to the final eligibility result."}
+{"action":{"type":"finish","summary":"I completed the not-working route and reached the eligibility result page with the extra-checks wording."},"explanation":"The result page is visible with the expected route-specific wording, so I am ending the task."}

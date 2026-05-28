@@ -1,0 +1,1 @@
+Open the self-hosted pretix add-product form for the seeded event, sign in as admin@localhost with password admin, enter NExUI Workshop Pass with default price 40.00, and ask for confirmation before clicking Save and continue with more settings.

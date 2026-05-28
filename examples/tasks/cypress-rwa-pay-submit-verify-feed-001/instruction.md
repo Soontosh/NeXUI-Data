@@ -1,0 +1,1 @@
+Sign in to the self-hosted Cypress Real World App, create a payment to Kristian Bradtke for a seeded amount and note, return to the transaction feeds, open the personal feed, and stop once the new payment is visible there.

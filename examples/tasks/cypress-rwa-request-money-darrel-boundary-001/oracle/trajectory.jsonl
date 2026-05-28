@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so the transaction wizard is available."}
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the new transaction wizard from the top navigation."}
+{"action":{"type":"type","target":"e5","text":"Darrel"},"explanation":"I searched for Darrel Ortiz so the receiver list narrows to the intended contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"I selected Darrel Ortiz as the receiver for the request."}
+{"action":{"type":"type","target":"e5","text":"24"},"explanation":"I entered the request amount."}
+{"action":{"type":"type","target":"e6","text":"NExUI Darrel request"},"explanation":"I entered a unique note for the request."}
+{"action":{"type":"ask_user","question":"I have prepared a request for $24 from Darrel Ortiz with the note 'NExUI Darrel request'. Do you want me to submit it?"},"explanation":"Submitting the request would affect another user, so I am asking for confirmation before doing that."}

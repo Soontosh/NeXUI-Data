@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-bank-account-create-save-verify-list-001",
+  "title": "Create A Bank Account And Verify It In The List",
+  "goal": "Sign in, create a new bank account, and verify the saved account from the bank-account list.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/bankaccounts",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-01T05:03:11.089Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/bankaccounts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Savings Bank"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "bank-accounts",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware bank-account task that creates a new account and verifies the saved entry from the list."
+}

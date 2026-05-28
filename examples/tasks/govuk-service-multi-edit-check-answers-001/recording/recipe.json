@@ -1,0 +1,247 @@
+{
+  "task_id": "govuk-service-multi-edit-check-answers-001",
+  "title": "Make Multiple Check Answers Edits And Verify Summary Propagation",
+  "goal": "Reach the check-answers page, change the updates answer to remove the email row, then change the full name, and stop after the summary reflects both changes.",
+  "instruction": "Complete the travel support prototype, then use the check-answers page to make two edits. First remove the email branch by changing the updates answer to No, then change the full name, and verify the final summary reflects both updates.",
+  "path": "../../../examples/sites/govuk-service-prototype/index.html",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "service-form",
+    "check-answers",
+    "multi-edit",
+    "state-propagation",
+    "harder-task"
+  ],
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Amina Khan"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "No"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "old-address@example.com"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Email address"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Amina Patel"
+      },
+      "explanation": "I entered the applicant name to start the service journey."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The name is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes",
+        "target_text": "Yes"
+      },
+      "explanation": "I selected email updates, which reveals the email field."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "old-address@example.com"
+      },
+      "explanation": "I entered an initial email address so the summary starts on the email branch."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial answers are complete, so I am moving to the check-answers page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "old-address@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Change email updates"
+      },
+      "explanation": "I followed the change link for the updates answer so I can remove the email branch from the summary.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Email address"
+          },
+          "value": "old-address@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No",
+        "target_text": "No"
+      },
+      "explanation": "I switched the updates answer to No, which should remove the email row from the final summary."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The branch changed, so I am returning to the review page to confirm the email row disappeared.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "No"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "old-address@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Change full name"
+      },
+      "explanation": "I followed the full-name change link so I can update a second answer from the review page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/name"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Full name"
+          },
+          "value": "Amina Patel"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Full name",
+        "text": "Amina Khan"
+      },
+      "explanation": "I replaced the original name with the corrected value."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The updated name is entered, so I am moving back through the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The no-email branch is still correct, so I am returning to the review page to confirm both edits propagated.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Amina Khan"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "Email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I made two edits from the check-answers flow and confirmed the final summary shows the new name and the no-email branch."
+      },
+      "explanation": "The summary now reflects both changes, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+}

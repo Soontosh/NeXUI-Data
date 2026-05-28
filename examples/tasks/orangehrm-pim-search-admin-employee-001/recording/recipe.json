@@ -1,0 +1,137 @@
+{
+  "task_id": "orangehrm-pim-search-admin-employee-001",
+  "title": "Search For The Seeded Admin Employee In PIM",
+  "goal": "Log in to OrangeHRM, open the PIM employee list, search for the seeded admin employee, and stop on the filtered employee-list state.",
+  "instruction": "Sign in to the local OrangeHRM admin account, open PIM, search for employee id 0001, and stop on the employee-list results.",
+  "url": "http://localhost:8080/",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-search",
+    "hard"
+  ],
+  "review_notes": "First enterprise search workflow on the self-hosted OrangeHRM track.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewEmployeeList"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 5: Employee Information"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Admin"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so I can access the enterprise workflow surfaces.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/dashboard/index"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Dashboard"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "PIM"
+      },
+      "explanation": "I opened the PIM module so I can work from the employee list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Employee Information"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "xpath=//label[normalize-space()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input",
+        "text": "0001"
+      },
+      "explanation": "I entered the seeded employee id so the employee list narrows to the benchmark admin employee."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I ran the employee search and stopped on the filtered PIM results.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Admin"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

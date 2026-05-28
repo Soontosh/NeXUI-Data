@@ -1,0 +1,117 @@
+{
+  "task_id": "webarena-map-search-schenley-plaza-from-home-001",
+  "title": "Search For Schenley Plaza From The Map Home Page",
+  "goal": "Search for Schenley Plaza from the WebArena map home page and stop on the resulting search-results view.",
+  "instruction": "Open the self-hosted WebArena map home page, search for Schenley Plaza, and stop once the search results are visible.",
+  "url": "http://localhost:3030/",
+  "source": {
+    "site_id": "webarena-verified-map",
+    "site_name": "WebArena Verified Map",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-map",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "press",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 2,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": true,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "map",
+    "search",
+    "hard"
+  ],
+  "review_notes": "Second geocoder-backed home-page search task using a stable single-place query whose result surface is verified by the search panel plus the resulting page title.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "search?query=Schenley%20Plaza"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Search"
+      },
+      "value": "Schenley Plaza"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Search Results"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "Schenley Plaza | OpenStreetMap"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Search",
+        "text": "Schenley Plaza"
+      },
+      "explanation": "I entered the Schenley Plaza query into the map search box."
+    },
+    {
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "explanation": "I submitted the search so the geocoder results page loads for Schenley Plaza.",
+      "post_delay_ms": 10000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "search?query=Schenley%20Plaza"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Search"
+          },
+          "value": "Schenley Plaza"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Search Results"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Schenley Plaza | OpenStreetMap"
+        }
+      ],
+      "postcondition_timeout_ms": 25000,
+      "postcondition_poll_interval_ms": 500
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I searched for Schenley Plaza from the map home page and confirmed the search results are visible."
+      },
+      "explanation": "The Schenley Plaza result is visible now, so I am ending the task."
+    }
+  ]
+}

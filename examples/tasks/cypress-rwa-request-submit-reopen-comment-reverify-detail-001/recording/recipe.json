@@ -1,0 +1,352 @@
+{
+  "task_id": "cypress-rwa-request-submit-reopen-comment-reverify-detail-001",
+  "title": "Create A Request, Reopen It, Add A Comment, And Reverify It Across Feed And Detail Views",
+  "goal": "Sign in, create a request to Darrel Ortiz, verify it from the personal feed, reopen it, add a comment, reverify the updated social state from the feed, and reopen it again to confirm the comment persisted on detail.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, create a request to Darrel Ortiz for $24 with the note 'NExUI monstrous Darrel request', return to transactions, open the personal feed, verify the new request row, reopen it, add the comment 'NExUI monstrous Darrel follow-up', return to the personal feed, verify the same row now shows 0 1, reopen it again, and stop once the detail view shows both the request note and the saved follow-up comment.",
+  "url": "http://localhost:3000/signin",
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "press",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 18,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 0,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "new-transaction",
+    "transaction-detail",
+    "cross-view",
+    "mutating",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous Cypress RWA workflow that creates a new request, verifies it from the feed, reopens it, adds a second mutation via comment, re-verifies the updated feed row, and reopens it again to confirm the saved comment persisted on detail.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/transaction/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Transaction Detail"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI monstrous Darrel request"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI monstrous Darrel follow-up"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "text present \"+$24.00\""
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "text present \"0 1\""
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated transaction tools can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-new-transaction']"
+      },
+      "explanation": "I opened the new transaction wizard from the top navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/new"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='user-list-search-input']",
+        "text": "Darrel"
+      },
+      "explanation": "I searched for Darrel Ortiz so the receiver list narrows to the intended person.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='user-list-item-_XblMqbuoP']"
+      },
+      "explanation": "I selected Darrel Ortiz as the receiver for the request.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Darrel Ortiz"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Request"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-amount-input'] input",
+        "text": "24"
+      },
+      "explanation": "I entered the request amount."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-description-input'] input",
+        "text": "NExUI monstrous Darrel request"
+      },
+      "explanation": "I entered a unique request note so the new row can be tracked across the feed and detail views."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='transaction-create-submit-request']"
+      },
+      "explanation": "I submitted the request so the newly created transaction can be verified and reopened.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Return To Transactions"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='new-transaction-return-to-transactions']"
+      },
+      "explanation": "I returned to the transaction feeds so I can verify the created request from the personal feed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched to the personal feed to verify the new request row from a second surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous Darrel request"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Darrel Ortiz"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "+$24.00"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=(//li[contains(@data-test,'transaction-item-')][.//*[normalize-space()='NExUI monstrous Darrel request'] and .//*[normalize-space()='Darrel Ortiz']])[1]"
+      },
+      "explanation": "I reopened the request from the personal feed so the second mutation starts from the newly created transaction.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Transaction Detail"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous Darrel request"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[placeholder='Write a comment...']",
+        "text": "NExUI monstrous Darrel follow-up"
+      },
+      "explanation": "I entered the follow-up comment as the second mutation on the reopened request."
+    },
+    {
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "explanation": "I submitted the follow-up comment from the transaction detail view.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous Darrel follow-up"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Home"
+      },
+      "explanation": "I returned to the transaction feeds so the updated social state can be verified from the feed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched back to the personal feed to verify that the same request row now shows the updated comment count.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous Darrel request"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "0 1"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=(//li[contains(@data-test,'transaction-item-')][.//*[normalize-space()='NExUI monstrous Darrel request'] and .//*[normalize-space()='Darrel Ortiz']])[1]"
+      },
+      "explanation": "I reopened the updated request a second time so the saved follow-up comment is reverified from the detail surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Transaction Detail"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI monstrous Darrel follow-up"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I created a Darrel Ortiz request, verified it from the personal feed, reopened it, added a follow-up comment, reverified the updated feed row, and reopened it again to confirm the saved comment persisted."
+      },
+      "explanation": "The created request and the saved follow-up comment have both been reverified now, so I am ending the task."
+    }
+  ]
+}

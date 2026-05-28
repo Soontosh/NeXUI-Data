@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "orangehrm-pim-search-admin-employee-001",
+  "title": "Search For The Seeded Admin Employee In PIM",
+  "goal": "Log in to OrangeHRM, open the PIM employee list, search for the seeded admin employee, and stop on the filtered employee-list state.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "orangehrm-self-hosted",
+    "site_name": "OrangeHRM Self-Hosted",
+    "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+    "category": "hr_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T17:19:31.581Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "orangehrm-self-hosted",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewEmployeeList"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 5: Employee Information"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Admin"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-search",
+    "hard"
+  ],
+  "review_notes": "First enterprise search workflow on the self-hosted OrangeHRM track."
+}

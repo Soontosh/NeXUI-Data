@@ -1,0 +1,172 @@
+{
+  "recorded_at": "2026-05-28T14:33:56.770Z",
+  "final_snapshot": "s008",
+  "final_url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers",
+  "snapshot_count": 9,
+  "transition_count": 8,
+  "oracle_step_count": 9,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "Amina Patel"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/updates\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/check-answers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"No\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/updates\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e5",
+        "text": "changed@example.com"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/check-answers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"changed@example.com\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/tax-year"
+- main:
+  - region "What income source changed?":
+    - heading "What income source changed?" [level=1]
+    - paragraph: This helps us ask the right follow-up questions.
+    - group "What income source changed?":
+      - text: What income source changed?
+      - radio "Employment pay"
+      - text: Employment pay
+      - radio "Self-employment"
+      - text: Self-employment
+      - radio "Pension"
+      - text: Pension
+      - radio "More than one source"
+      - text: More than one source
+    - button "Continue"

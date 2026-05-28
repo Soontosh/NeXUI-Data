@@ -1,0 +1,44 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "byteblaze"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "hello1234"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/edit\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"button\",\"name\":\"Save changes\"}"
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e46",
+      "text": " [NExUI draft]"
+    },
+    "to": "s004",
+    "notes": []
+  }
+]

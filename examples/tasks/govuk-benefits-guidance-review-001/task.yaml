@@ -1,0 +1,97 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "govuk-benefits-guidance-review-001",
+  "title": "Follow The Not Working Route To Check Answers",
+  "goal": "Choose the Not working route, verify the guidance appears, and continue to the check-answers page.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/check-answers",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T20:58:30.428Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 9,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "split": "validation",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Not working"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "£1650.00"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "No"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Continue to eligibility result"
+      }
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "guidance",
+    "branching",
+    "hard"
+  ],
+  "review_notes": "Hard branching task on the second GOV.UK-style prototype. It exercises the Not working route and ends on the review page."
+}

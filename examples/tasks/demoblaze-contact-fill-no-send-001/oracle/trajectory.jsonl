@@ -1,0 +1,5 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the storefront contact dialog."}
+{"action":{"type":"type","target":"e3","text":"nexui@example.com"},"explanation":"I entered the contact email address."}
+{"action":{"type":"type","target":"e4","text":"NExUI"},"explanation":"I entered the contact name."}
+{"action":{"type":"type","target":"e5","text":"Testing the contact dialog"},"explanation":"I entered the message text but did not send it."}
+{"action":{"type":"finish","summary":"I opened the contact dialog, filled the fields, and stopped before sending the message."},"explanation":"The dialog is filled out and still open, so I am ending the task without sending anything."}

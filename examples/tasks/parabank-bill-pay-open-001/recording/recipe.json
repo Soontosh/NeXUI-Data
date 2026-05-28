@@ -1,0 +1,106 @@
+{
+  "task_id": "parabank-bill-pay-open-001",
+  "title": "Open ParaBank Bill Pay",
+  "goal": "Log in to the ParaBank demo account, open the Bill Pay page, and stop there.",
+  "instruction": "Use the ParaBank demo account to log in, open the Bill Pay page from the account-services menu, and stop when it is visible.",
+  "url": "https://parabank.parasoft.com/parabank/",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "finance-demo",
+    "auth",
+    "bill-pay"
+  ],
+  "review_notes": "Adds a bounded authenticated navigation task to a realistic payment surface without crossing into submission.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/billpay.htm"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Bill Payment Service"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "john"
+      },
+      "explanation": "I entered the demo username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "demo"
+      },
+      "explanation": "I entered the demo password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log In"
+      },
+      "explanation": "I logged in to the demo account and will wait for the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/overview.htm"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Bill Pay"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Bill Pay"
+      },
+      "explanation": "I opened the bill-pay page from the account-services menu.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/billpay.htm"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Bill Payment Service"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I logged in to ParaBank, opened the Bill Pay page, and stopped there."
+      },
+      "explanation": "The bill-pay page is visible now, so I am ending the task."
+    }
+  ]
+}

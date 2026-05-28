@@ -1,0 +1,12 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- main:
+  - region "Do you usually live in the UK?":
+    - heading "Do you usually live in the UK?" [level=1]
+    - paragraph: You must usually live in the UK to apply for this support.
+    - group "Do you usually live in the UK?":
+      - text: Do you usually live in the UK?
+      - radio "Yes"
+      - text: "Yes"
+      - radio "No"
+      - text: "No"
+    - button "Continue"

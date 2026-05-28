@@ -1,0 +1,92 @@
+{
+  "task_id": "orangehrm-contact-details-open-001",
+  "title": "Open The Seeded Admin Contact Details View",
+  "goal": "Log in to OrangeHRM and stop on the seeded admin Contact Details view.",
+  "instruction": "Sign in to the local OrangeHRM admin account and stop when the Contact Details page for the seeded admin employee is visible.",
+  "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "contact-details",
+    "hard"
+  ],
+  "review_notes": "Enterprise profile-subsection task using the seeded admin employee's contact-details route.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: Contact Details"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned directly to the seeded admin contact-details route.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/contactDetails/empNumber/1"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 6: Contact Details"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

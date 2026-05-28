@@ -1,0 +1,1 @@
+Complete the income change prototype to the review page with email contact details, then use the change flow to switch the contact method to Text message, enter 07700900123, and stop by asking whether to continue before clicking Send update.

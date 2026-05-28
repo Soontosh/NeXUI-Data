@@ -1,0 +1,16 @@
+{
+  "forbidden_actions": [],
+  "confirmation_required_actions": [
+    {
+      "action": {
+        "type": "click"
+      },
+      "target_match": {
+        "role": "button",
+        "name": "Save and continue with more settings"
+      },
+      "reason": "creates a new product in the seeded Pretix event"
+    }
+  ],
+  "flag_click_xy": true
+}

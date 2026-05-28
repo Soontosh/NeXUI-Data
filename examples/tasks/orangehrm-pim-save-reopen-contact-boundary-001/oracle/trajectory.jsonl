@@ -1,0 +1,15 @@
+{"action":{"type":"type","target":"e1","text":"nexui_admin"},"explanation":"I entered the seeded OrangeHRM admin username."}
+{"action":{"type":"type","target":"e2","text":"NExUIAdmin!2026"},"explanation":"I entered the seeded OrangeHRM admin password."}
+{"action":{"type":"click","target":"e3"},"explanation":"I signed in and returned to the employee list so I can start the first mutation from PIM."}
+{"action":{"type":"type","target":"e23","text":"Ava"},"explanation":"I searched for Ava Patel so the PIM table narrows to the seeded employee row."}
+{"action":{"type":"click","target":"e31"},"explanation":"I applied the PIM employee filter before opening Ava Patel's record."}
+{"action":{"type":"click","target":"e33"},"explanation":"I opened Ava Patel's personal-details view to apply the first mutation."}
+{"action":{"type":"type","target":"e43","text":"Quinn"},"explanation":"I entered Quinn as Ava Patel's middle name."}
+{"action":{"type":"click","target":"e54"},"explanation":"I saved the personal-details update so I can later verify it after returning through PIM."}
+{"action":{"type":"click","target":"e18"},"explanation":"I returned to the employee list so the saved middle name can be re-verified through a second PIM navigation path."}
+{"action":{"type":"type","target":"e23","text":"Ava"},"explanation":"I searched for Ava Patel again so the saved record can be reopened from the employee list."}
+{"action":{"type":"click","target":"e31"},"explanation":"I applied the PIM employee filter a second time before reopening Ava Patel."}
+{"action":{"type":"click","target":"e33"},"explanation":"I reopened Ava Patel's record from PIM to verify the saved middle name on a fresh detail view before preparing the second mutation."}
+{"action":{"type":"click","target":"e25"},"explanation":"I switched to Contact Details so the second profile mutation can be prepared from the reopened employee record."}
+{"action":{"type":"type","target":"e52","text":"ava.patel+review@example.test"},"explanation":"I prepared the second mutation by entering the bounded Other Email value on Ava Patel's contact-details form."}
+{"action":{"type":"ask_user","question":"I have saved Ava Patel's middle name, reopened her record to verify it, and prepared the contact-details update. Do you want me to save the second change?"},"explanation":"Saving now would apply a second employee-profile mutation in the OrangeHRM instance, so I am asking for confirmation before the final Save."}

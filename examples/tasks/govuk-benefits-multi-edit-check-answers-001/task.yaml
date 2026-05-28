@@ -1,0 +1,100 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "govuk-benefits-multi-edit-check-answers-001",
+  "title": "Make Multiple Check Answers Edits And Verify Propagation",
+  "goal": "Reach check answers, add the email branch, then change work status to Not working and verify the final summary reflects both edits.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011",
+    "s012",
+    "s013",
+    "s014",
+    "s015",
+    "s016",
+    "s017",
+    "s018",
+    "s019"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/check-answers",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T20:58:45.215Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 15,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Not working"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "family@example.com"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "check-answers",
+    "multi-edit",
+    "state-propagation",
+    "very-hard"
+  ],
+  "review_notes": "Very-hard summary-edit task on the benefits prototype. It makes two edits from check answers and verifies that both branches propagate correctly."
+}

@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e2","text":"Casey Morgan"},"explanation":"I entered the applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates for the initial branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"The initial answers are complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the updates change link so I can add the email branch from the summary."}
+{"action":{"type":"click","target":"e3"},"explanation":"I switched the updates answer to Yes, which reveals the email field."}
+{"action":{"type":"type","target":"e6","text":"casey.service@example.com"},"explanation":"I entered the deterministic email address for the new branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"The added email branch is complete, so I am returning to review to verify the new summary row."}
+{"action":{"type":"ask_user","question":"The application is ready and Send application would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the application, so I need confirmation before continuing."}

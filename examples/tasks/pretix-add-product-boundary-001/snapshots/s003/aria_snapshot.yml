@@ -1,0 +1,140 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list:
+    - listitem:
+      - link " Go to shop":
+        - /url: /nexui/nexui-event/
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  NExUI Benchmark Event Mon, June 15, 2026":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " TEST MODE":
+          - /url: /control/event/nexui/nexui-event/live/
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/event/nexui/nexui-event/
+      - listitem:
+        - link " Settings":
+          - /url: /control/event/nexui/nexui-event/settings/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Products":
+          - /url: /control/event/nexui/nexui-event/items/
+        - link "":
+          - /url: "#"
+        - list:
+          - listitem:
+            - link "Products":
+              - /url: /control/event/nexui/nexui-event/items/
+          - listitem:
+            - link "Quotas":
+              - /url: /control/event/nexui/nexui-event/quotas/
+          - listitem:
+            - link "Categories":
+              - /url: /control/event/nexui/nexui-event/categories/
+          - listitem:
+            - link "Questions":
+              - /url: /control/event/nexui/nexui-event/questions/
+          - listitem:
+            - link "Discounts":
+              - /url: /control/event/nexui/nexui-event/discounts/
+      - listitem:
+        - link " Orders":
+          - /url: /control/event/nexui/nexui-event/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Vouchers":
+          - /url: /control/event/nexui/nexui-event/vouchers/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Check-in":
+          - /url: /control/event/nexui/nexui-event/checkinlists/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Send out emails":
+          - /url: /control/event/nexui/nexui-event/sendmail/
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "Create product" [level=1]
+- paragraph: You will be able to adjust further settings in the next step.
+- group "General information":
+  - text: General information
+  - group "Item name":
+    - text: Item name
+    - textbox "English"
+  - link "Use a different name internally":
+    - /url: "#"
+  - text: Copy product information Optional
+  - combobox "Copy product information Optional":
+    - option "Do not copy" [selected]
+    - option "General Admission"
+  - text: Product type
+  - radio " Admission product Every purchase of this product represents one person who is allowed to enter your event. By default, we will only offer ticket downloads for these products. Only purchases of such products will be considered \"attendees\" for most statistical purposes or within some plugins. This option should be set for most things that you would call a \"ticket\". For product add-ons or bundles, this should be set on the main ticket, except if the add-on products or bundled products represent additional people (e.g. group bundles)." [checked]
+  - text: 
+  - strong: Admission product
+  - text: Every purchase of this product represents one person who is allowed to enter your event. By default, we will only offer ticket downloads for these products. Only purchases of such products will be considered "attendees" for most statistical purposes or within some plugins. This option should be set for most things that you would call a "ticket". For product add-ons or bundles, this should be set on the main ticket, except if the add-on products or bundled products represent additional people (e.g. group bundles).
+  - 'radio " Non-admission product A product that does not represent a person. By default, we will not offer ticket downloads (but you can still enable ticket downloads in event settings or product settings). Examples: Merchandise, donations, gift cards, add-ons to a main ticket."'
+  - text: 
+  - strong: Non-admission product
+  - text: "A product that does not represent a person. By default, we will not offer ticket downloads (but you can still enable ticket downloads in event settings or product settings). Examples: Merchandise, donations, gift cards, add-ons to a main ticket. Personalization"
+  - radio " Personalized ticket When this ticket is purchased, the system will ask for a name or other details according to your event settings." [checked]
+  - text: 
+  - strong: Personalized ticket
+  - text: When this ticket is purchased, the system will ask for a name or other details according to your event settings.
+  - radio " Non-personalized ticket The system will not ask for a name or other attendee details. This only affects system-provided fields, you can still add your own questions."
+  - text: 
+  - strong: Non-personalized ticket
+  - text: The system will not ask for a name or other attendee details. This only affects system-provided fields, you can still add your own questions. Category Optional
+  - combobox "No category":
+    - textbox
+  - text: If you have many products, you can optionally sort them into categories to keep things organized. Product variations
+  - radio " Product without variations" [checked]
+  - text: 
+  - strong: Product without variations
+  - 'radio " Product with multiple variations This product exists in multiple variations which are different in either their name, price, quota, or description. All other settings need to be the same. Examples: Ticket category with variations for \"full price\" and \"reduced\", merchandise with variations for different sizes, workshop add-on with variations for simultaneous workshops."'
+  - text: 
+  - strong: Product with multiple variations
+  - text: "This product exists in multiple variations which are different in either their name, price, quota, or description. All other settings need to be the same. Examples: Ticket category with variations for \"full price\" and \"reduced\", merchandise with variations for different sizes, workshop add-on with variations for simultaneous workshops."
+- group "Quota settings":
+  - text: Quota settings
+  - group "Quota options Optional":
+    - text: Quota options Optional
+    - radio "Do not add to a quota now" [checked]
+    - text: Do not add to a quota now
+    - radio "Add product to an existing quota"
+    - text: Add product to an existing quota
+    - radio "Create a new quota for this product"
+    - text: Create a new quota for this product
+- group "Price settings":
+  - text: Price settings Default price
+  - textbox "Default price"
+  - text: If this product has multiple variations, you can set different prices for each of the variations. If a variation does not have a special price or if you do not have variations, this price will be used. Sales tax Optional
+  - combobox "Sales tax Optional":
+    - option "No taxation" [selected]
+- button "Save and continue with more settings"
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3AeuTro54DJwl5DGiV43laun1tVVNUnqO6hGViSZAJ4T0

@@ -1,0 +1,95 @@
+{
+  "task_id": "gitlab-login-open-project-settings-001",
+  "title": "Log In To GitLab And Stop On The Project Settings Form",
+  "goal": "Sign in with the seeded GitLab account and stop on the a11y-syntax-highlighting project settings form.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab project settings for byteblaze/a11y-syntax-highlighting, sign in as byteblaze, and stop once the authenticated settings form is visible.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/edit",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "project-settings",
+    "authenticated",
+    "hard"
+  ],
+  "review_notes": "Authenticated GitLab navigation task that lands directly on the seeded project settings form.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/edit"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save changes"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the project settings form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/edit"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save changes"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

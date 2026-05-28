@@ -1,0 +1,123 @@
+{
+  "task_id": "cypress-rwa-open-mine-feed-001",
+  "title": "Sign In And Open The Mine Feed",
+  "goal": "Sign in with a seeded example user, switch to the Mine feed, and stop once the personal transaction feed is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the seeded account, open the Mine feed, and stop when the personal transaction list is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "feed-navigation",
+    "hard"
+  ],
+  "review_notes": "Authenticated feed-navigation task on the Cypress RWA source. It verifies a post-login route change from the public feed to the user's personal feed.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/personal"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted Parisian"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Kristian Bradtke"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "requested"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated home view can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched from the public feed to the Mine feed so only the signed-in user's transactions are shown.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Ted Parisian"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and switched to the Mine feed, where the personal transaction list is visible."
+      },
+      "explanation": "The personal feed is visible now, so I am ending the task."
+    }
+  ]
+}

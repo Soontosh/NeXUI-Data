@@ -1,0 +1,158 @@
+[
+  {
+    "ref": "e1",
+    "role": "link",
+    "name": "Back",
+    "description": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/income-source",
+    "text": "Back",
+    "tag": "a",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 306,
+      "y": 78,
+      "width": 35.58,
+      "height": 24
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e2",
+    "role": "main",
+    "name": "How did the income change? Tell us whether your employment pay went up, went down, or stopped. How did the income change? It increased It decreased It stopped Continue",
+    "description": "",
+    "text": "How did the income change? Tell us whether your employment pay went up, went down, or stopped. How did the income change? It increased It decreased It stopped Continue",
+    "tag": "main",
+    "value": null,
+    "keyboard_reachable": false,
+    "bounds": {
+      "x": 306,
+      "y": 122,
+      "width": 700,
+      "height": 268.8
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  },
+  {
+    "ref": "e3",
+    "role": "radio",
+    "name": "It increased",
+    "description": "",
+    "text": "Increased",
+    "tag": "input",
+    "value": "Increased",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 311,
+      "y": 216.8,
+      "width": 13,
+      "height": 13
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e4",
+    "role": "radio",
+    "name": "It decreased",
+    "description": "",
+    "text": "Decreased",
+    "tag": "input",
+    "value": "Decreased",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 311,
+      "y": 255.8,
+      "width": 13,
+      "height": 13
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": true,
+      "pressed": null,
+      "focused": true,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e5",
+    "role": "radio",
+    "name": "It stopped",
+    "description": "",
+    "text": "Stopped",
+    "tag": "input",
+    "value": "Stopped",
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 311,
+      "y": 294.8,
+      "width": 13,
+      "height": 13
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": false,
+      "pressed": null,
+      "focused": false,
+      "invalid": false,
+      "required": false
+    }
+  },
+  {
+    "ref": "e6",
+    "role": "button",
+    "name": "Continue",
+    "description": "",
+    "text": "Continue",
+    "tag": "button",
+    "value": null,
+    "keyboard_reachable": true,
+    "bounds": {
+      "x": 306,
+      "y": 342.8,
+      "width": 105.33,
+      "height": 48
+    },
+    "states": {
+      "enabled": true,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "pressed": null,
+      "focused": false,
+      "invalid": null,
+      "required": null
+    }
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.0",
+  "site_id": "govuk-design-patterns",
+  "site_name": "GOV.UK Design Patterns",
+  "base_url": "https://design-system.service.gov.uk/patterns/",
+  "source_track": "service_form_pattern",
+  "category": "government_pattern",
+  "hosting_mode": "pattern_proto",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "intake",
+  "reset_strategy": "fixture_reload",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "Use these official patterns to derive local prototypes or fixtures rather than benchmarking the pattern pages directly."
+  },
+  "task_families": [
+    "multi_page_forms",
+    "validation_recovery",
+    "check_answers_loops",
+    "conditional_routing"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Author tasks by deriving local prototypes from the official pattern guidance. Do not treat the documentation pages themselves as the benchmark task surface."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "validation",
+      "label": "Validation Pattern",
+      "url": "https://design-system.service.gov.uk/patterns/validation/",
+      "goal_hint": "Design local prototypes for validation error recovery and correction loops.",
+      "notes": "Useful for error-summary navigation and form correction tasks."
+    },
+    {
+      "entry_id": "check-answers",
+      "label": "Check Answers Pattern",
+      "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+      "goal_hint": "Design local prototypes for review, edit, and downstream-branch change tasks.",
+      "notes": "Useful for multi-step answer review and change propagation."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "govuk-check-answers-edit-loop",
+      "summary": "Reach a check-answers page, change one previous answer, and verify that downstream summary content updates correctly.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Prototype-derived task, not a direct live-doc task."
+    },
+    {
+      "idea_id": "govuk-validation-recovery",
+      "summary": "Submit an invalid multi-page form, recover via the error summary, and continue without losing prior answers.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Strong service-form benchmark scenario."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Pattern-source track for branching service forms. Use it to drive local prototype creation rather than direct capture."
+  }
+}

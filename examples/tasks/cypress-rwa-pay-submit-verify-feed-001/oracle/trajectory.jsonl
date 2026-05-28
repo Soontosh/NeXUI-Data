@@ -1,0 +1,12 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so the authenticated transaction tools can load."}
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the new transaction wizard from the top navigation."}
+{"action":{"type":"type","target":"e5","text":"Kristian"},"explanation":"I searched for the seeded contact so the receiver list narrows to the intended person."}
+{"action":{"type":"click","target":"e6"},"explanation":"I selected Kristian Bradtke as the receiver for the payment."}
+{"action":{"type":"type","target":"e5","text":"41"},"explanation":"I entered the seeded payment amount."}
+{"action":{"type":"type","target":"e6","text":"NExUI seeded payment"},"explanation":"I entered a unique note so the new payment can be verified later in the feed."}
+{"action":{"type":"click","target":"e13"},"explanation":"I submitted the payment for the seeded receiver."}
+{"action":{"type":"click","target":"e5"},"explanation":"I returned from the transaction wizard to the main transaction feeds so I can verify the new payment."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched to the personal feed to verify that the newly created payment appears in the signed-in user's feed."}
+{"action":{"type":"finish","summary":"I signed in, created a payment to Kristian Bradtke, returned to the transaction feeds, and verified the new payment in the personal feed."},"explanation":"The newly created payment is visible in the personal feed now, so I am ending the task."}

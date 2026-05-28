@@ -1,0 +1,112 @@
+{
+  "task_id": "gitlab-new-issue-title-validation-001",
+  "title": "Trigger Missing Title Validation On A GitLab Issue",
+  "goal": "Sign in, leave the issue title empty, attempt to create a new issue, and stop on the validation state.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, enter only a description, try to create the issue, and stop when the missing-title validation is visible.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "validation",
+    "issues",
+    "hard"
+  ],
+  "review_notes": "First GitLab validation task on the new-issue form.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "This field is required."
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username after landing on the protected new-issue form."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the new-issue form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Description",
+        "text": "Validation-only issue body for the NExUI benchmark."
+      },
+      "explanation": "I entered only the description so the title validation can be surfaced."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Create issue"
+      },
+      "explanation": "I attempted to create the issue without a title so GitLab shows the validation state.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "This field is required."
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"action":{"type":"click","target":"e10"},"explanation":"I opened the add-row form so I can create the row I will filter for next."}
+{"action":{"type":"type","target":"e21","text":"Nexui"},"explanation":"I entered the first name."}
+{"action":{"type":"type","target":"e22","text":"Row"},"explanation":"I entered the last name."}
+{"action":{"type":"type","target":"e23","text":"nexui.row@example.com"},"explanation":"I entered the email address."}
+{"action":{"type":"type","target":"e24","text":"29"},"explanation":"I entered the age."}
+{"action":{"type":"type","target":"e25","text":"12345"},"explanation":"I entered the salary."}
+{"action":{"type":"type","target":"e26","text":"QA"},"explanation":"I entered the department."}
+{"action":{"type":"click","target":"e27"},"explanation":"I submitted the row details and will wait for the new row to appear before filtering it."}
+{"action":{"type":"type","target":"e12","text":"Nexui"},"explanation":"I filtered the table for the row I just added so the new entry is isolated."}
+{"action":{"type":"finish","summary":"I added a new web-table row, filtered the table to that row, and stopped on the filtered result."},"explanation":"The filtered result is visible now, so I am ending the task."}

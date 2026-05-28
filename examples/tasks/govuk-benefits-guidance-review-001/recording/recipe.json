@@ -1,0 +1,203 @@
+{
+  "task_id": "govuk-benefits-guidance-review-001",
+  "title": "Follow The Not Working Route To Check Answers",
+  "goal": "Choose the Not working route, verify the guidance appears, and continue to the check-answers page.",
+  "instruction": "Complete the childcare-support eligibility prototype using the Not working branch and stop on the check-answers page after the guidance route has been followed.",
+  "path": "../../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 9,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "guidance",
+    "branching",
+    "hard"
+  ],
+  "review_notes": "Hard branching task on the second GOV.UK-style prototype. It exercises the Not working route and ends on the review page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Not working"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "£1650.00"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "No"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Continue to eligibility result"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected Yes because the user usually lives in the UK."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The residency answer is complete, so I am moving to the childcare question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2 children"
+      },
+      "explanation": "I selected two children for the childcare count."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The childcare count is set, so I am moving to the work-status question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/work-status"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Not working"
+      },
+      "explanation": "I selected Not working, which reveals the route-specific guidance.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "You may still be eligible if you are about to start work"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The work-status route is set, so I am moving to the income question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Monthly income",
+        "text": "1650"
+      },
+      "explanation": "I entered the monthly income for the eligibility estimate."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income is complete, so I am moving to the updates question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No"
+      },
+      "explanation": "I selected no email updates, so no email address is required."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The answers are complete, so I am moving to the check-answers page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Not working"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the check-answers page on the Not working route and verified the final review state."
+      },
+      "explanation": "The review page is open with the expected branch answers, so I am ending the task."
+    }
+  ],
+  "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html"
+}

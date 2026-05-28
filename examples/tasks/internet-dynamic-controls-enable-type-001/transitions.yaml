@@ -1,0 +1,25 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - field is enabled"
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "NExUI"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - field value equals \"NExUI\""
+    ]
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "task_id": "pretix-product-original-price-save-verify-001",
+  "title": "Save A pretix Product Original Price Edit And Verify It Persists",
+  "goal": "Sign in to pretix, open the seeded product Price tab, save an original price change, and verify the saved value persists on the same form.",
+  "instruction": "Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Price tab, enter 30.00 as the Original price, save the change, and verify the saved value still appears on the product form.",
+  "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/",
+  "source": {
+    "site_id": "pretix-self-hosted",
+    "site_name": "pretix Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "pretix-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "pretix",
+    "authenticated",
+    "mutating",
+    "product-price",
+    "hard"
+  ],
+  "review_notes": "Reset-aware Pretix product-edit task that saves an original price change and verifies the persisted value on the same Price tab.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#tab-0-1-open"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "Your changes have been saved."
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "value": "30.00"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_email",
+        "text": "admin@localhost"
+      },
+      "explanation": "I entered the seeded Pretix administrator email after landing on the protected product route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded Pretix administrator password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log in"
+      },
+      "explanation": "I signed in so Pretix can return to the seeded product detail page.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Price"
+      },
+      "explanation": "I switched to the product Price tab so the pricing controls become visible.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-1-open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Original price"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_original_price",
+        "text": "30.00"
+      },
+      "explanation": "I entered the deterministic original price."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the original price change so I can verify the persisted value on the same Price tab.",
+      "wait_until": "load",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Your changes have been saved."
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "value": "30.00"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the Pretix product original price change and verified the persisted value on the Price tab."
+      },
+      "explanation": "The saved Original price value is still visible on the Price tab now, so I am ending the task."
+    }
+  ]
+}

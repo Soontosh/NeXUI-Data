@@ -1,0 +1,391 @@
+{
+  "task_id": "orangehrm-pim-save-reopen-contact-save-reverify-001",
+  "title": "Save Ava Patel Twice, Reopen Her Record Twice, And Reverify Both Changes",
+  "goal": "Log in to OrangeHRM, save a middle-name update for Ava Patel, return through PIM to verify the saved value from a reopened employee record, save a second contact-details update, then return through PIM again and reverify both changes on the reopened employee record.",
+  "instruction": "Sign in to the local OrangeHRM admin account, open PIM, search for Ava Patel, open her employee record, enter Quinn as the middle name, save the change, return to Employee List, search for Ava Patel again, reopen her record to verify Quinn persisted, switch to Contact Details, enter ava.patel+monster@example.test as Other Email, save that change, return to Employee List again, search for Ava Patel again, reopen her record to verify Quinn still persisted, switch to Contact Details, verify ava.patel+monster@example.test is still saved, and finish there.",
+  "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 20,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-detail",
+    "contact-details",
+    "mutating",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Second monstrous OrangeHRM task. It stacks two successful profile mutations for Ava Patel, two returns through PIM, a reopened personal-details verification after each mutation chain, and a final reopened contact-details verification.",
+  "success_assertions": [
+    {
+      "type": "trace_note_contains",
+      "value": "field value equals \"Quinn\""
+    },
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/2"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "field value equals \"ava.patel+monster@example.test\""
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned to the employee list so I can start the first mutation from PIM.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for Ava Patel so the PIM table narrows to the seeded employee row.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the PIM employee filter before opening Ava Patel's record.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "(//div[contains(@class,'oxd-table-row--clickable')][.//div[normalize-space()='0002'] and .//div[normalize-space()='Patel']]//button)[1]"
+      },
+      "explanation": "I opened Ava Patel's personal-details view to apply the first mutation.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"middleName\"]",
+        "text": "Quinn"
+      },
+      "explanation": "I entered Quinn as Ava Patel's middle name."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the personal-details update so I can later verify it after returning through PIM.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Successfully Updated"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Employee List"
+      },
+      "explanation": "I returned to the employee list so the saved middle name can be reverified through a second PIM navigation path.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for Ava Patel again so the saved record can be reopened from PIM.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the employee filter again before reopening Ava Patel.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "(//div[contains(@class,'oxd-table-row--clickable')][.//div[normalize-space()='0002'] and .//div[normalize-space()='Patel']]//button)[1]"
+      },
+      "explanation": "I reopened Ava Patel's record from PIM to verify the saved middle name before applying the second mutation.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Middle Name"
+          },
+          "value": "Quinn"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Contact Details"
+      },
+      "explanation": "I switched to Contact Details so the second mutation can be saved from the reopened employee record.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/contactDetails/empNumber/2"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 6: Contact Details"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "xpath=//label[normalize-space()='Other Email']/ancestor::div[contains(@class,'oxd-input-group')]//input[contains(@class,'oxd-input')]",
+        "text": "ava.patel+monster@example.test"
+      },
+      "explanation": "I entered the bounded Other Email value for Ava Patel."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the contact-details update so it can be reverified after another return through PIM.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Successfully Updated"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Employee List"
+      },
+      "explanation": "I returned to the employee list again so both saved mutations can be reverified from a fresh PIM navigation.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for Ava Patel a third time so the final verification starts from the employee list again.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the employee filter a third time before reopening the record for final verification.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "(//div[contains(@class,'oxd-table-row--clickable')][.//div[normalize-space()='0002'] and .//div[normalize-space()='Patel']]//button)[1]"
+      },
+      "explanation": "I reopened Ava Patel's record from PIM again so I can confirm the first mutation still persisted before verifying the second one.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Middle Name"
+          },
+          "value": "Quinn"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Contact Details"
+      },
+      "explanation": "I switched back to Contact Details so the final state proves the second saved mutation persisted too.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/contactDetails/empNumber/2"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "ava.patel+monster@example.test"
+          },
+          "value": "ava.patel+monster@example.test"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved both Ava Patel profile updates, returned through PIM twice, and reverified the middle name and Other Email from reopened employee views."
+      },
+      "explanation": "The reopened Contact Details view still shows the saved Other Email after the second return through PIM, and the trace already reverified the middle name too, so I am ending the task."
+    }
+  ]
+}

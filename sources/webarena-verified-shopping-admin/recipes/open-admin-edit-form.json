@@ -1,0 +1,94 @@
+{
+  "task_id": "webarena-admin-open-admin-edit-form-001",
+  "title": "Open The Seeded Magento Admin User Edit Form",
+  "goal": "Open the authenticated Magento admin users grid, navigate to the seeded admin user edit form, and stop on the prefilled edit page.",
+  "instruction": "From the authenticated Magento admin users grid, open the seeded admin user record and stop on the edit form.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 1,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "list-to-detail",
+    "hard"
+  ],
+  "review_notes": "First sandboxed list-to-detail task on the Magento admin users grid.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/edit/user_id/1/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 1: Admin User"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "User Name"
+      },
+      "value": "admin"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Email"
+      },
+      "value": "admin@your-domain.com"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save User"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//tr[@data-role='row' and contains(@title,'/admin/admin/user/edit/user_id/1/')]"
+      },
+      "explanation": "I opened the seeded admin user record from the Magento users grid and stopped on the prefilled edit form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/edit/user_id/1/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 1: Admin User"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

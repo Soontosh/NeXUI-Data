@@ -1,0 +1,159 @@
+{
+  "task_id": "orangehrm-pim-open-ava-detail-001",
+  "title": "Open Ava Patel From The OrangeHRM Employee List",
+  "goal": "Log in to OrangeHRM, search for the seeded employee Ava Patel, open the employee detail page, and stop on the personal-details view.",
+  "instruction": "Sign in to the local OrangeHRM admin account, search for Ava Patel in PIM, open the employee detail page, and stop on the Personal Details view.",
+  "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-detail",
+    "hard"
+  ],
+  "review_notes": "Enterprise list-to-detail task for the seeded Ava Patel employee record.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: Ava Patel"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "Ava"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Last Name"
+      },
+      "value": "Patel"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "0002"
+      },
+      "value": "0002"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned to the employee list so I can open the intended employee profile.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for Ava Patel so the employee table focuses on the seeded employee row.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the employee-name filter before opening the matching record.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "Marcus Lee"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "(//div[contains(@class,'oxd-table-row--clickable')][.//div[normalize-space()='0002'] and .//div[normalize-space()='Patel']]//button)[1]"
+      },
+      "explanation": "I opened the seeded employee record and stopped on the personal-details view for Ava Patel.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 6: Personal Details"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

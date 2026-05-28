@@ -1,0 +1,116 @@
+{
+  "task_id": "pretix-open-product-availability-tab-001",
+  "title": "Open The Seeded pretix Product Availability Tab",
+  "goal": "Sign in to pretix, open the seeded product, switch to the Availability tab, and stop there.",
+  "instruction": "Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Availability tab, and stop once the availability controls are visible.",
+  "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/",
+  "source": {
+    "site_id": "pretix-self-hosted",
+    "site_name": "pretix Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "pretix-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "pretix",
+    "authenticated",
+    "product-availability",
+    "hard"
+  ],
+  "review_notes": "Pretix availability-tab navigation task on the seeded product.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#tab-0-2-open"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Maximum amount per order"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Minimum amount per order"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_email",
+        "text": "admin@localhost"
+      },
+      "explanation": "I entered the seeded Pretix administrator email after landing on the protected product route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded Pretix administrator password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log in"
+      },
+      "explanation": "I signed in so Pretix can return to the seeded product detail page.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Availability"
+      },
+      "explanation": "I switched to the Availability tab so the purchase-limit controls become visible.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-2-open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Maximum amount per order"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "task_id": "hmrc-change-contact-method-to-post-001",
+  "title": "Change Contact Method To Post From Check Answers",
+  "goal": "Reach the review page on the email branch, change the contact method to Post, and stop after the summary shows the postal-address label and value.",
+  "instruction": "Complete the income change prototype to the review page, then use the change flow to switch the contact method from Email to Post and verify the updated summary.",
+  "path": "../../../examples/sites/hmrc-income-change-prototype/index.html",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "hmrc-income-change-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 18,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "check-answers",
+    "edit-loop",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task that changes both the contact-method answer and the contact-detail label/value from the check-answers page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Post"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Postal address"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "42 River Lane, Bristol"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "first@example.com"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "2025 to 2026"
+      },
+      "explanation": "I selected the tax year for the income report."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The tax year is selected, so I am moving to the income source.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income-source"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Pension"
+      },
+      "explanation": "I chose Pension as the income source for this route."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income source is selected, so I am moving to the change type.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/change-kind"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "It increased"
+      },
+      "explanation": "I selected an increase so the new amount should be higher than before."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The change type is selected, so I am moving to the previous amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/old-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Previous monthly amount",
+        "text": "1200"
+      },
+      "explanation": "I entered the previous monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The previous amount is complete, so I am moving to the new amount.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/new-amount"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "New monthly amount",
+        "text": "1500"
+      },
+      "explanation": "I entered the higher new monthly amount."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The amount is complete, so I am moving to contact details.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Email"
+      },
+      "explanation": "I chose Email as the initial contact method."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#contact-detail",
+        "text": "first@example.com"
+      },
+      "explanation": "I entered the initial email address for contact."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The email contact details are complete, so I am moving to supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Supporting notes",
+        "text": "Annual pension adjustment."
+      },
+      "explanation": "I added a short note before reaching review."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial route is complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "first@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-contact-method"
+      },
+      "explanation": "I followed the contact-method change link so I can update how follow-up contact should work.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/contact-method"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Post"
+      },
+      "explanation": "I changed the contact method to Post, which switches the detail field to a postal address.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Postal address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#contact-detail",
+        "text": "42 River Lane, Bristol"
+      },
+      "explanation": "I entered the postal address for follow-up contact."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The updated contact details are complete, so I am moving back through supporting notes.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/notes"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The notes were preserved, so I am returning to the review page to verify the updated contact method and address.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Postal address"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "42 River Lane, Bristol"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I changed the contact method from Email to Post and confirmed the review page now shows the postal-address label and value."
+      },
+      "explanation": "The updated contact method and postal address are visible on the review page, so I am ending the task."
+    }
+  ]
+}

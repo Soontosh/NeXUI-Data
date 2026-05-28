@@ -1,0 +1,214 @@
+{
+  "task_id": "cypress-rwa-pay-submit-darrel-verify-feed-001",
+  "title": "Submit A Payment To Darrel Ortiz And Verify It In The Personal Feed",
+  "goal": "Sign in, create a payment to Darrel Ortiz, return to the transaction feeds, and verify the new payment appears in the personal feed.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, create a payment to Darrel Ortiz for $19 with the note 'NExUI Darrel payment', return to the transaction feeds, open the personal feed, and stop once the new payment is visible there.",
+  "url": "http://localhost:3000/signin",
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 11,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "new-transaction",
+    "cross-view-verification",
+    "very_hard"
+  ],
+  "review_notes": "Long-horizon authenticated task that creates a payment to Darrel Ortiz and verifies it later from the personal feed.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/personal"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Darrel payment"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Darrel Ortiz"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "-$19.00"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I signed in so the authenticated transaction tools can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-new-transaction']"
+      },
+      "explanation": "I opened the new transaction wizard from the top navigation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/new"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='user-list-search-input']",
+        "text": "Darrel"
+      },
+      "explanation": "I searched for Darrel Ortiz so the receiver list narrows to the intended person."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='user-list-item-_XblMqbuoP']"
+      },
+      "explanation": "I selected Darrel Ortiz as the receiver for the payment.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Darrel Ortiz"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Pay"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-amount-input'] input",
+        "text": "19"
+      },
+      "explanation": "I entered the seeded payment amount."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-create-description-input'] input",
+        "text": "NExUI Darrel payment"
+      },
+      "explanation": "I entered a unique note so the new payment can be verified later in the feed."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='transaction-create-submit-payment']"
+      },
+      "explanation": "I submitted the payment for Darrel Ortiz.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "Return To Transactions"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='new-transaction-return-to-transactions']"
+      },
+      "explanation": "I returned from the transaction wizard to the main transaction feeds so I can verify the new payment.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched to the personal feed to verify that the newly created payment appears in the signed-in user's feed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Darrel payment"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, created a payment to Darrel Ortiz, returned to the transaction feeds, and verified the new payment in the personal feed."
+      },
+      "explanation": "The newly created payment is visible in the personal feed now, so I am ending the task."
+    }
+  ]
+}

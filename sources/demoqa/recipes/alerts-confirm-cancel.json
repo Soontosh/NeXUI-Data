@@ -1,0 +1,77 @@
+{
+  "task_id": "demoqa-alerts-confirm-cancel-001",
+  "title": "Dismiss The Confirm Alert",
+  "goal": "Trigger the confirm alert on the DemoQA alerts page, dismiss it, and stop after the page shows that Cancel was selected.",
+  "instruction": "Open the DemoQA alerts page, trigger the confirm alert, dismiss it, and stop after the page shows the cancel result.",
+  "url": "https://demoqa.com/alerts",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "demoqa",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "alerts",
+    "dialog",
+    "confirm"
+  ],
+  "review_notes": "Confirm-alert task on DemoQA using explicit dialog dismissal and DOM-visible cancel-result verification.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/alerts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "any_text",
+      "value": "You selected Cancel"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#confirmButton"
+      },
+      "dialog": {
+        "action": "dismiss"
+      },
+      "post_delay_ms": 500,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "any_text",
+          "value": "You selected Cancel"
+        }
+      ],
+      "explanation": "I triggered the confirm alert and dismissed it so the page can show the cancel result."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I dismissed the confirm alert and the page now shows that Cancel was selected."
+      },
+      "explanation": "The cancel result is visible on the page, so I am ending the task."
+    }
+  ]
+}

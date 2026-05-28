@@ -1,0 +1,84 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e10"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - text present \"Registration Form\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e21",
+      "text": "Nexui"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "type",
+      "target": "e22",
+      "text": "Row"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e23",
+      "text": "nexui.row@example.com"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e24",
+      "text": "29"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e25",
+      "text": "12345"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e26",
+      "text": "QA"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e27"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - text present \"Nexui Row 29 nexui.row@example.com 12345 QA\""
+    ]
+  }
+]

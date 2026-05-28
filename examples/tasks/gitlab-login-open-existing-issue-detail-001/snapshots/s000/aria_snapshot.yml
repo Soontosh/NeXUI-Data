@@ -1,0 +1,235 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - link:
+        - /url: "#"
+        - img
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Sign in / Register":
+        - /url: /users/sign_in?redirect_to_referer=yes
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-webring.club":
+      - link "a11y-webring.club":
+        - /url: /byteblaze/a11y-webring.club
+        - text: A a11y-webring.club
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-webring.club/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-webring.club/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-webring.club/-/issues
+        - img
+        - text: Issues 4
+      - list:
+        - listitem:
+          - link "Issues":
+            - /url: /byteblaze/a11y-webring.club/-/issues
+            - text: List
+        - listitem:
+          - link "Boards":
+            - /url: /byteblaze/a11y-webring.club/-/boards
+        - listitem:
+          - link "Service Desk":
+            - /url: /byteblaze/a11y-webring.club/-/issues/service_desk
+        - listitem:
+          - link "Milestones":
+            - /url: /byteblaze/a11y-webring.club/-/milestones
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-webring.club/-/merge_requests
+        - img
+        - text: Merge requests 1
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-webring.club/-/pipelines
+        - img
+        - text: CI/CD
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-webring.club/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-webring.club/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-webring.club/-/incidents
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-webring.club/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-webring.club/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-webring.club/-/snippets
+        - img
+        - text: Snippets
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-webring.club":
+        - /url: /byteblaze/a11y-webring.club
+      - img
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-webring.club/-/issues
+      - img
+    - listitem:
+      - link "#21":
+        - /url: /byteblaze/a11y-webring.club/-/issues/21
+- main:
+  - img
+  - text: Open Issue created
+  - time: 3 years ago
+  - text: by
+  - strong:
+    - link "Byte Blaze":
+      - /url: /byteblaze
+  - text: Owner 1 of 3 checklist items completed
+  - button "Issue actions"
+  - heading "[Feature suggestion] Color theme slider" [level=1]
+  - heading "Feature suggestion" [level=3]
+  - paragraph:
+    - text: The color of the site is determined by three custom properties,
+    - code: theme-h
+    - text: ","
+    - code: theme-s
+    - text: ", and"
+    - code: theme-l
+    - text: ", which are used to create a"
+    - code: hsl()
+    - text: color declaration.
+  - paragraph:
+    - text: Modifying the
+    - code: theme-h
+    - text: custom property in the
+    - code: :root
+    - text: selector allows the entire site to adjusts its theme color. I think it would be fun to have a little input range slider that allows a visitor to tweak the color from 1 to 360°, and then store the value to local storage.
+  - heading "Who would you like to work on this feature?" [level=3]
+  - list:
+    - listitem:
+      - checkbox [disabled]
+      - text: I would like to work on this feature
+    - listitem:
+      - checkbox [disabled]
+      - text: I would like the site maintainers to work on this feature
+  - heading "Code of conduct" [level=3]
+  - list:
+    - listitem:
+      - checkbox [checked] [disabled]
+      - text: I agree to follow this project's code of conduct
+  - button "👍 0"
+  - button "👎 0"
+  - list:
+    - listitem:
+      - button "Drag your designs here or click to upload.":
+        - paragraph:
+          - text: Drag your designs here or
+          - link "click to upload":
+            - /url: "#"
+          - text: .
+  - heading "Tasks" [level=5]
+  - text: "0"
+  - button "Collapse tasks"
+  - paragraph: No tasks are currently assigned. Use tasks to break down this issue into smaller parts.
+  - heading "Linked items 0" [level=3]
+  - button "Collapse"
+  - paragraph:
+    - text: Link issues together to show that they're related.
+    - link "Learn more about linking issues":
+      - /url: /help/user/project/issues/related_issues
+      - text: Learn more.
+  - heading "Activity" [level=2]
+  - button "Sort or filter"
+  - list:
+    - listitem:
+      - img
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - text: assigned to
+      - link "@ericwbailey":
+        - /url: /ericwbailey
+      - link "3 years ago":
+        - /url: "#note_306353"
+        - time: 3 years ago
+    - listitem:
+      - img
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - text: added
+      - link "feature":
+        - /url: /byteblaze/a11y-webring.club/-/issues?label_name=feature
+      - link "help wanted":
+        - /url: /byteblaze/a11y-webring.club/-/issues?label_name=help+wanted
+      - text: labels
+      - link "3 years ago":
+        - /url: "#note_c5aaaab2ea423c651cba2eb539c0ba41993e7577"
+        - time: 3 years ago
+  - text: Please
+  - link "register":
+    - /url: /users/sign_in?redirect_to_referer=yes#register-pane
+  - text: or
+  - link "sign in":
+    - /url: /users/sign_in?redirect_to_referer=yes
+  - text: to reply
+  - complementary "issue":
+    - text: Assignee
+    - button "Toggle sidebar"
+    - link "Byte Blaze's avatar Byte Blaze":
+      - /url: http://localhost:8023/byteblaze
+      - img "Byte Blaze's avatar"
+      - text: Byte Blaze
+    - text: Labels
+    - link "feature":
+      - /url: /byteblaze/a11y-webring.club/-/issues?label_name[]=feature
+    - link "help wanted":
+      - /url: /byteblaze/a11y-webring.club/-/issues?label_name[]=help%20wanted
+    - text: Milestone None Due date None Time tracking No estimate or time spent Confidentiality Not confidential Lock issue Unlocked 1 participant
+    - link "Byte Blaze":
+      - /url: http://localhost:8023/byteblaze
+      - img "Byte Blaze"
+    - text: "Reference: byteblaze/a11y-webring.club#21"
+    - button "Copy Reference"

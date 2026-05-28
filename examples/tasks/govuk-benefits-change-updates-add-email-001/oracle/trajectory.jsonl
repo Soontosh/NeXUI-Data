@@ -1,0 +1,15 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected one child for the childcare count."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Employed as the current work status."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"type","target":"e3","text":"2100"},"explanation":"I entered the monthly income for the first pass through the form."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e4"},"explanation":"I started on the no-email branch so the summary initially has no email row."}
+{"action":{"type":"click","target":"e5"},"explanation":"The initial branch is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the change link for email updates so I can add the email branch."}
+{"action":{"type":"click","target":"e3"},"explanation":"I switched the updates answer to Yes, which reveals the email field."}
+{"action":{"type":"type","target":"e5","text":"childcare@example.com"},"explanation":"I entered the email address for updates."}
+{"action":{"type":"click","target":"e6"},"explanation":"The branch change is complete, so I am returning to check answers to verify the new row."}
+{"action":{"type":"finish","summary":"I returned to check answers after switching updates to Yes and the email row is now present."},"explanation":"The summary reflects the new updates branch, so I am ending the task."}

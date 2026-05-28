@@ -1,0 +1,1 @@
+Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Availability tab, set Maximum amount per order to 4, save the change, and verify that the saved value still appears on the Availability form.

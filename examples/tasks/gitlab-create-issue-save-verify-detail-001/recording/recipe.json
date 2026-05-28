@@ -1,0 +1,167 @@
+{
+  "task_id": "gitlab-create-issue-save-verify-detail-001",
+  "title": "Create A GitLab Issue And Verify The Resulting Detail Page",
+  "goal": "Sign in, create a new issue, and verify the resulting issue-detail state.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, create an issue titled 'NExUI issue save verify' with a short description, and verify the resulting issue-detail page.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 9,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "mutating",
+    "issue-detail",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware first mutating GitLab task that creates a seeded issue and verifies the resulting detail state.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI issue save verify"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username after landing on the protected new-issue form."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the new-issue form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Title (required)",
+        "text": "NExUI issue save verify"
+      },
+      "explanation": "I entered the deterministic issue title."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Description",
+        "text": "This issue was created by the NExUI GitLab save-and-verify benchmark task."
+      },
+      "explanation": "I entered the deterministic issue description."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Create issue"
+      },
+      "explanation": "I created the issue so I can verify the resulting issue-detail page.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI issue save verify"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting/-/issues']"
+      },
+      "explanation": "I navigated back to the project issues list so I can verify the created issue from a second authenticated view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI issue save verify"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "NExUI issue save verify"
+      },
+      "explanation": "I reopened the created issue from the list so I can verify the saved detail state after the cross-view check.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI issue save verify"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "w3c-bad-after-tickets-001",
+  "title": "Open Accessible Tickets Page",
+  "goal": "Open the accessible Tickets page from the BAD overview and stop there.",
+  "instruction": "Open the accessible Tickets page and stop when that page is visible.",
+  "url": "https://www.w3.org/WAI/demos/bad/",
+  "source": {
+    "site_id": "w3c-bad",
+    "site_name": "W3C Before and After Demo",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility"
+  ],
+  "review_notes": "First real-source task recorded from the W3C BAD overview page.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Tickets"
+      },
+      "explanation": "I opened the accessible Tickets page from the overview navigation."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the accessible Tickets page and stopped there."
+      },
+      "explanation": "The target page is open, so I am ending the task."
+    }
+  ]
+}

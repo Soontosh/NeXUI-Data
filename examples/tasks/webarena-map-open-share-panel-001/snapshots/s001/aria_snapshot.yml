@@ -1,0 +1,117 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=5/51.495/-5.581
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=5/51.495/-5.581
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=5/51.495/-5.581
+    - link "Export":
+      - /url: http://localhost:3030/export#map=5/51.495/-5.581
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2F#map=5/51.495/-5.581
+    - link "Sign Up":
+      - /url: /user/new
+- link "Where is this?":
+  - /url: "#"
+- textbox "Search"
+- button "Go"
+- link "Find directions between two points":
+  - /url: /directions
+  - img
+- heading "Welcome to OpenStreetMap!" [level=2]
+- button "Close"
+- paragraph: OpenStreetMap is a map of the world, created by people like you and free to use under an open license.
+- paragraph:
+  - text: Hosting is supported by
+  - link "UCL":
+    - /url: https://www.ucl.ac.uk
+  - text: ","
+  - link "Fastly":
+    - /url: https://www.fastly.com/
+  - text: ","
+  - link "Bytemark Hosting":
+    - /url: https://www.bytemark.co.uk
+  - text: ", and other"
+  - link "partners":
+    - /url: https://hardware.openstreetmap.org/thanks/
+  - text: .
+- link "Learn More":
+  - /url: /about
+- link "Start Mapping":
+  - /url: /user/new
+- heading "Share" [level=4]
+- button "Close"
+- heading "Link or HTML" [level=4]
+- checkbox "Include marker"
+- text: Include marker
+- link "Link":
+  - /url: http://openstreetmap.example.com/#map=5/51.495/-5.581
+- link "Short Link":
+  - /url: http://localhost/go/euEF0-
+- link "HTML":
+  - /url: "#"
+- textbox: http://openstreetmap.example.com/#map=5/51.495/-5.581
+- heading "Geo URI" [level=4]
+- link "geo:51.495,-5.581?z=5":
+  - /url: geo:51.495,-5.581?z=5
+- heading "Image" [level=4]
+- checkbox "Set custom dimensions"
+- text: "Set custom dimensions Format:"
+- combobox "Format:":
+  - option "PNG" [selected]
+  - option "JPEG"
+  - option "SVG"
+  - option "PDF"
+- text: "Scale: 1 :"
+- textbox "Scale:": "11378488"
+- paragraph: Image will show standard layer at 1827 x 1297
+- button "Download"
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 300 km 100 mi ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

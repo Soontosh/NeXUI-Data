@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-05-28T22:02:18.331Z",
+  "final_snapshot": "s001",
+  "final_url": "https://projects.accesscomputing.uw.edu/au/after.html",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e9"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"button\",\"name\":\"Visitors\",\"states\":{\"expanded\":true}}",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://projects.accesscomputing.uw.edu/au/after.html"
+    }
+  ]
+}

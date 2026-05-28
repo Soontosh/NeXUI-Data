@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "erpnext-new-customer-save-rename-reverify-detail-001",
+  "title": "Create An ERPNext Customer, Rename It, And Reverify The Revised Record Across List And Detail Views",
+  "goal": "Sign in to ERPNext, create a new customer, verify it from the customer list, reopen it, rename it, save again, verify the revised row from the customer list, reopen it again, and finish on the Address & Contact tab of the renamed record.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011",
+    "s012",
+    "s013",
+    "s014",
+    "s015",
+    "s016",
+    "s017",
+    "s018"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "url": "http://localhost:8090/desk/customer/NExUI%20Monster%20Customer#contact_and_address_tab",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-02T20:12:01.263Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 17,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "erpnext-self-hosted",
+  "split": "challenge",
+  "stability_runs_passed": 7,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/customer/"
+    },
+    {
+      "type": "url_contains",
+      "value": "#contact_and_address_tab"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Monster Customer Prime"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "New Address"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "candidate exists for {\"role\":\"link\",\"name\":\"NExUI Monster Customer Prime\"}"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "customer-form",
+    "customer-list",
+    "customer-detail",
+    "mutating",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous ERPNext customer workflow that creates a customer, verifies it from the list, reopens it, renames it, saves again, re-verifies the revised row from the list, and finishes on a second detail-tab surface for the renamed record."
+}

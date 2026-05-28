@@ -1,0 +1,70 @@
+{
+  "task_id": "demoqa-alerts-timer-alert-001",
+  "title": "Wait For The Delayed Alert",
+  "goal": "Trigger the delayed alert on the DemoQA alerts page and stop after the alert appears five seconds later.",
+  "instruction": "Open the DemoQA alerts page, trigger the delayed alert, wait for it to appear, and stop after it has been observed.",
+  "url": "https://demoqa.com/alerts",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "demoqa",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "alerts",
+    "dialog",
+    "async",
+    "trace-driven"
+  ],
+  "review_notes": "Delayed-alert task on DemoQA. The agent must wait for a transient browser alert and the benchmark verifies it through trace notes.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/alerts"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "dialog: alert - This alert appeared after 5 seconds"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#timerAlertButton"
+      },
+      "dialog": {
+        "action": "accept"
+      },
+      "post_delay_ms": 5500,
+      "explanation": "I triggered the delayed alert and waited for it to appear."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I triggered the delayed alert and stopped after it appeared."
+      },
+      "explanation": "The delayed alert has already appeared, so I am ending the task."
+    }
+  ]
+}

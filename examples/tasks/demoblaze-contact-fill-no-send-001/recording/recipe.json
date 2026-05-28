@@ -1,0 +1,145 @@
+{
+  "task_id": "demoblaze-contact-fill-no-send-001",
+  "title": "Fill Contact Dialog Without Sending",
+  "goal": "Open the contact dialog, fill the fields, and stop before sending the message.",
+  "instruction": "On the Demoblaze storefront, open the Contact dialog, fill in the email, name, and message fields, and stop with the dialog still open before sending.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "modal",
+    "form",
+    "bounded"
+  ],
+  "review_notes": "Adds a bounded form-in-dialog task to Demoblaze without triggering message-send behavior.",
+  "success_assertions": [
+    {
+      "type": "modal_state_is",
+      "value": "dialog_open"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "nexui@example.com",
+        "tag": "input"
+      },
+      "value": "nexui@example.com"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Contact Email:",
+        "tag": "input"
+      },
+      "value": "NExUI"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Message:",
+        "tag": "textarea"
+      },
+      "value": "Testing the contact dialog"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Contact"
+      },
+      "explanation": "I opened the storefront contact dialog.",
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "dialog_open"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#recipient-email",
+        "text": "nexui@example.com"
+      },
+      "explanation": "I entered the contact email address.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "nexui@example.com",
+            "tag": "input"
+          },
+          "value": "nexui@example.com"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#recipient-name",
+        "text": "NExUI"
+      },
+      "explanation": "I entered the contact name.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Contact Email:",
+            "tag": "input"
+          },
+          "value": "NExUI"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#message-text",
+        "text": "Testing the contact dialog"
+      },
+      "explanation": "I entered the message text but did not send it.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Message:",
+            "tag": "textarea"
+          },
+          "value": "Testing the contact dialog"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the contact dialog, filled the fields, and stopped before sending the message."
+      },
+      "explanation": "The dialog is filled out and still open, so I am ending the task without sending anything."
+    }
+  ]
+}

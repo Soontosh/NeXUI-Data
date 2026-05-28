@@ -1,0 +1,158 @@
+{
+  "recorded_at": "2026-05-29T00:48:56.472Z",
+  "final_snapshot": "s007",
+  "final_url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers",
+  "snapshot_count": 8,
+  "transition_count": 7,
+  "oracle_step_count": 8,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Enter your full name\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "Leah Morgan"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/updates\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Enter your email address\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "type",
+        "target": "e6",
+        "text": "leah.morgan@example.com"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/check-answers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"leah.morgan@example.com\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"action":{"type":"type","target":"e1","text":"invalid-user"},"explanation":"I entered an invalid username as part of the login attempt."}
+{"action":{"type":"type","target":"e2","text":"invalid-password"},"explanation":"I entered an invalid password to trigger the error state safely."}
+{"action":{"type":"click","target":"e3"},"explanation":"I submitted the invalid credentials. The page should now show a login error message."}
+{"action":{"type":"finish","summary":"I submitted invalid credentials and stopped when the login error appeared."},"explanation":"The login error is visible now, so I am ending the task."}

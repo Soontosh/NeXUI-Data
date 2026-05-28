@@ -1,0 +1,159 @@
+{
+  "task_id": "cypress-rwa-comment-on-pending-request-001",
+  "title": "Comment On A Pending Request Transaction",
+  "goal": "Sign in, open a seeded pending request transaction detail, add a comment, and stop once the new comment is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App, open the seeded pending request transaction detail, add a comment, and stop when the new comment is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "press",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "transaction-detail",
+    "comments",
+    "hard"
+  ],
+  "review_notes": "Authenticated transaction-detail task that adds a new comment to a seeded pending request and verifies the comment appears in the detail view.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/transaction/gGF4nSbm3q4"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Transaction Detail"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI seeded comment"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated transaction feeds can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-personal-tab']"
+      },
+      "explanation": "I switched to the personal feed so the signed-in user's transactions are visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/personal"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='transaction-item-gGF4nSbm3q4']"
+      },
+      "explanation": "I opened the seeded pending request transaction so I can add a comment in its detail view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/transaction/gGF4nSbm3q4"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Transaction Detail"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='transaction-comment-input-gGF4nSbm3q4']",
+        "text": "NExUI seeded comment"
+      },
+      "explanation": "I entered a unique comment so the new detail-view state can be verified."
+    },
+    {
+      "action": {
+        "type": "press",
+        "key": "Enter"
+      },
+      "explanation": "I submitted the new comment from the transaction detail form.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI seeded comment"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in, opened the seeded pending request detail page, and added a new comment."
+      },
+      "explanation": "The new comment is visible now, so I am ending the task."
+    }
+  ]
+}

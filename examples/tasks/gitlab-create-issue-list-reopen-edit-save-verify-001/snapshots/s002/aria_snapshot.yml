@@ -1,0 +1,27 @@
+- img "GitLab Community Edition"
+- heading "GitLab Community Edition" [level=1]
+- tabpanel:
+  - text: Username or email
+  - textbox "Username or email": byteblaze
+  - paragraph: This field is required.
+  - text: Password
+  - textbox "Password": hello1234
+  - paragraph: This field is required.
+  - checkbox "Remember me"
+  - text: Remember me
+  - link "Forgot your password?":
+    - /url: /users/password/new
+  - button "Sign in"
+- paragraph:
+  - text: Don't have an account yet?
+  - link "Register now":
+    - /url: /users/sign_up
+- separator
+- link "Explore":
+  - /url: /explore
+- link "Help":
+  - /url: /help
+- link "About GitLab":
+  - /url: https://about.gitlab.com
+- link "Community forum":
+  - /url: https://forum.gitlab.com

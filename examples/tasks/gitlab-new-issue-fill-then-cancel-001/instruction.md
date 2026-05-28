@@ -1,0 +1,1 @@
+Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, fill the title 'NExUI canceled issue draft' with a short description, click Cancel, and verify the draft was abandoned instead of being created.

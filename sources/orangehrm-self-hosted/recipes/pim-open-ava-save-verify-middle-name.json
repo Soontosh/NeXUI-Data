@@ -1,0 +1,168 @@
+{
+  "task_id": "orangehrm-pim-open-ava-save-verify-middle-name-001",
+  "title": "Save A Middle Name Update For Ava Patel",
+  "goal": "Log in to OrangeHRM, open the seeded Ava Patel employee record, save a middle-name update, and verify the saved value remains visible.",
+  "instruction": "Sign in to the local OrangeHRM admin account, search for Ava Patel in PIM, open the employee detail page, enter Quinn as the middle name, save the change, and stop once the saved value is still visible.",
+  "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "pim",
+    "employee-detail",
+    "mutating",
+    "hard"
+  ],
+  "review_notes": "Reset-aware enterprise save-and-verify task on the seeded Ava Patel employee record.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Middle Name"
+      },
+      "value": "Quinn"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned to the employee list so I can open the seeded employee profile.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewEmployeeList"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "(//input[@placeholder=\"Type for hints...\"])[1]",
+        "text": "Ava"
+      },
+      "explanation": "I searched for Ava Patel so the employee table focuses on the intended seeded row.",
+      "post_delay_ms": 1500
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Search"
+      },
+      "explanation": "I applied the employee-name filter before opening the matching record.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type for hints..."
+          },
+          "value": "Ava"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "(//div[contains(@class,'oxd-table-row--clickable')][.//div[normalize-space()='0002'] and .//div[normalize-space()='Patel']]//button)[1]"
+      },
+      "explanation": "I opened the seeded Ava Patel record so I can save the middle-name update.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/2"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"middleName\"]",
+        "text": "Quinn"
+      },
+      "explanation": "I entered the updated middle name."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the personal-details update and left the seeded record on the persisted state.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Successfully Updated"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the middle-name update for Ava Patel and verified the saved value remains visible."
+      },
+      "explanation": "The saved middle name is still visible now, so I am ending the task."
+    }
+  ]
+}

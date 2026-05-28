@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected event settings route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the seeded event settings page."}
+{"action":{"type":"type","target":"e55","text":"contact@example.test"},"explanation":"I changed the seeded event contact email on the settings form."}
+{"action":{"type":"click","target":"e60"},"explanation":"I saved the event contact email change so I can verify the persisted value on the same settings page."}
+{"action":{"type":"finish","summary":"I saved the Pretix event contact email change and verified the persisted value on the settings form."},"explanation":"The saved contact email is still visible on the event settings page now, so I am ending the task."}

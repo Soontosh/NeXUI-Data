@@ -1,0 +1,16 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/old-amount"
+- main:
+  - alert "There is a problem":
+    - heading "There is a problem" [level=2]
+    - list:
+      - listitem:
+        - link "Enter 0 if the income stopped":
+          - /url: "#new-amount"
+  - region "What is the new monthly amount?":
+    - heading "What is the new monthly amount?" [level=1]
+    - paragraph: Enter 0 if the income stopped completely.
+    - text: New monthly amount Enter 0 if the income stopped
+    - textbox "New monthly amount": "125"
+    - button "Continue"

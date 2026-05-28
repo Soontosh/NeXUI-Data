@@ -1,0 +1,95 @@
+{
+  "task_id": "webarena-admin-open-user-role-grid-001",
+  "title": "Open The Magento User Role Grid",
+  "goal": "From the authenticated Magento admin users grid, open Add New User, switch to the User Role tab, and stop when the role grid is visible.",
+  "instruction": "From the authenticated Magento admin users grid, open Add New User, switch to the User Role tab, and stop when the Administrators role grid is visible.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "role-grid",
+    "hard"
+  ],
+  "review_notes": "Sandboxed admin task that opens the Magento user-role grid from the Add New User flow.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/admin/admin/user/new/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "Administrators"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add New User"
+      },
+      "explanation": "I opened the Add New User form so I can reach the role-selection surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/new/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 1: New User"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-roles-section']"
+      },
+      "explanation": "I switched to the User Role tab so the role grid becomes visible.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Administrators"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened Add New User and switched to the User Role grid."
+      },
+      "explanation": "The Administrators role grid is visible now, so I am ending the task."
+    }
+  ]
+}

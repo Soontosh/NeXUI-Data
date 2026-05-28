@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "internet-shifting-content-portfolio-001",
+  "title": "Open Portfolio From Shifting Menu",
+  "goal": "Open the Portfolio page from the shifting menu and stop there.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "url": "https://the-internet.herokuapp.com/portfolio/",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-27T18:29:59.326Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/portfolio"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Not Found"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "layout-shift",
+    "navigation"
+  ],
+  "review_notes": "Tests semantic targeting under visual instability rather than fixed screen position.",
+  "source_surface": "the-internet",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "easy",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

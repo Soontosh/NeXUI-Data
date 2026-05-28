@@ -1,0 +1,103 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "hmrc-change-income-source-from-summary-001",
+  "title": "Change Income Source From Check Answers",
+  "goal": "Reach the review page on the pension route, change the income source to employment pay from the summary, and stop after the updated review page reflects the new source.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011",
+    "s012",
+    "s013",
+    "s014",
+    "s015",
+    "s016",
+    "s017",
+    "s018",
+    "s019",
+    "s020",
+    "s021",
+    "s022",
+    "s023"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "hmrc-income-change-prototype-local",
+    "site_name": "Local HMRC Income Change Prototype",
+    "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/check-answers",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-28T17:14:33.093Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Employment pay"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Income source Pension"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "notes@example.com"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "service-form",
+    "hmrc-prototype",
+    "check-answers",
+    "state-propagation",
+    "hard"
+  ],
+  "review_notes": "Harder summary-edit task that changes an earlier route choice and then carries the user back through the remaining pages with preserved data.",
+  "source_surface": "hmrc-income-change-prototype-local",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 23,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

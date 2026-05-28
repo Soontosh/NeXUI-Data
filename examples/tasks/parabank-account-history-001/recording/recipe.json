@@ -1,0 +1,110 @@
+{
+  "task_id": "parabank-account-history-001",
+  "title": "Open ParaBank Account History",
+  "goal": "Log in to the ParaBank demo account, open the first listed account, and stop on its account activity page.",
+  "instruction": "Use the ParaBank demo account to log in, open the first listed account from the overview, and stop when its account activity page is visible.",
+  "url": "https://parabank.parasoft.com/parabank/index.htm",
+  "source": {
+    "site_id": "parabank",
+    "site_name": "ParaBank",
+    "category": "finance_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "finance-demo",
+    "auth",
+    "account-history"
+  ],
+  "review_notes": "Adds a bounded authenticated account-history flow without crossing into money movement.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/activity.htm"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Account Details"
+    },
+    {
+      "type": "url_contains",
+      "value": "id=13344"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "john"
+      },
+      "explanation": "I entered the demo username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "demo"
+      },
+      "explanation": "I entered the demo password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log In"
+      },
+      "explanation": "I logged in to the demo account and will wait for the accounts overview.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/overview.htm"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "13344"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "13344"
+      },
+      "explanation": "I opened the first listed account so its activity history becomes visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/activity.htm"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Account Details"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I logged in to ParaBank, opened the first listed account, and stopped on its activity page."
+      },
+      "explanation": "The account activity page is visible now, so I am ending the task."
+    }
+  ]
+}

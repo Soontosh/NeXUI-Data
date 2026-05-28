@@ -1,0 +1,242 @@
+{
+  "schema_version": "0.0",
+  "site_id": "cypress-realworld-app",
+  "site_name": "Cypress Real World App",
+  "base_url": "http://localhost:3000/",
+  "source_track": "modern_authenticated_app",
+  "category": "finance_demo",
+  "hosting_mode": "self_hosted",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "reseed_command",
+  "determinism_level": "high",
+  "legal_review_status": "documented",
+  "reset_verified": true,
+  "source_priority": 1,
+  "auth": {
+    "auth_type": "seeded_local_account",
+    "credentials_env_vars": [],
+    "notes": "Use seeded local accounts from the application fixture data. The upstream project documents a default password of s3cret for example users."
+  },
+  "task_families": [
+    "authenticated_navigation",
+    "account_activity_verification",
+    "payment_request_flows",
+    "cross_view_state_checks",
+    "safety_bounded_money_actions"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Preferred source for modern authenticated workflows. Keep it self-hosted and reseeded so entity-level verification remains deterministic."
+  },
+  "runtime": {
+    "local_checkout_path": "../../external/cypress-realworld-app",
+    "healthcheck_url": "http://localhost:3000/signin",
+    "bootstrap_commands": [
+      "git clone https://github.com/cypress-io/cypress-realworld-app external/cypress-realworld-app",
+      "cd external/cypress-realworld-app && corepack yarn install"
+    ],
+    "start_command": "cd external/cypress-realworld-app && corepack yarn dev",
+    "reseed_command": "cd external/cypress-realworld-app && corepack yarn db:seed:dev",
+    "notes": "Validated locally with Corepack Yarn Classic and the upstream local-auth seeded stack. The unauthenticated root redirects to /signin, so authenticated tasks should either start from the sign-in page or use an explicit auth bootstrap."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "signin",
+      "label": "Sign In",
+      "url": "http://localhost:3000/signin",
+      "goal_hint": "Survey the sign-in surface and seeded-user workflows.",
+      "notes": "Use only seeded example accounts and fixture data documented in the self-hosted setup. This entry point is the stable starting surface for the first authenticated tasks."
+    },
+    {
+      "entry_id": "personal",
+      "label": "Personal Dashboard",
+      "url": "http://localhost:3000/",
+      "goal_hint": "Survey account activity, transaction feeds, and request/payment flows after login.",
+      "notes": "Unauthenticated visits redirect to /signin. Use this as the post-login destination for authenticated navigation, filters, and cross-view verification tasks."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "rwa-login-and-open-activity",
+      "summary": "Sign in with a seeded example user, open a specific account activity view, and explain the resulting feed state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-login-open-personal-feed-001 using the seeded Heath93 account."
+    },
+    {
+      "idea_id": "rwa-open-friends-feed",
+      "summary": "Sign in and switch to the Friends feed so the contact-only transaction list is visible.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-friends-feed-001."
+    },
+    {
+      "idea_id": "rwa-open-notifications",
+      "summary": "Sign in and open the notifications center to verify the alert list state.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-notifications-001."
+    },
+    {
+      "idea_id": "rwa-open-bank-accounts",
+      "summary": "Sign in and open the bank-account management page from the authenticated navigation.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-bank-accounts-001."
+    },
+    {
+      "idea_id": "rwa-open-new-transaction-contact-step",
+      "summary": "Sign in, open the new transaction flow, search for a seeded contact, and stop once the contact-specific request/pay step is visible.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-new-transaction-contact-step-001 using Kristian Bradtke as the selected seeded contact."
+    },
+    {
+      "idea_id": "rwa-open-request-detail",
+      "summary": "Sign in, open the personal feed, and navigate to a seeded request transaction detail view.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-pending-request-detail-001."
+    },
+    {
+      "idea_id": "rwa-comment-on-request-detail",
+      "summary": "Sign in, open a seeded request transaction detail, add a comment, and verify the new comment appears.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-comment-on-pending-request-001."
+    },
+    {
+      "idea_id": "rwa-payment-request-boundary",
+      "summary": "Prepare a payment or request flow and stop for confirmation before the final irreversible action.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as cypress-rwa-request-money-boundary-001 using a seeded request flow to Kristian Bradtke with an ask_user confirmation stop."
+    },
+    {
+      "idea_id": "rwa-pay-money-confirmation-boundary",
+      "summary": "Prepare a payment flow and stop for confirmation before clicking Pay.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as cypress-rwa-pay-money-boundary-001."
+    },
+    {
+      "idea_id": "rwa-cross-view-transaction-verify",
+      "summary": "Trigger a state change in one view and verify it from a separate activity or detail view.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-request-submit-verify-feed-001 using a seeded request submission followed by personal-feed verification."
+    },
+    {
+      "idea_id": "rwa-pay-submit-verify-feed",
+      "summary": "Trigger a seeded payment in the transaction wizard, return to the transaction feeds, and verify the resulting payment appears in the personal feed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-pay-submit-verify-feed-001."
+    },
+    {
+      "idea_id": "rwa-open-friends-payment-detail",
+      "summary": "Open the Friends feed, select a seeded payment transaction, and verify the resulting transaction-detail view.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-friends-payment-detail-001."
+    },
+    {
+      "idea_id": "rwa-dismiss-liked-notification",
+      "summary": "Open the notifications list, dismiss the seeded Kristian Bradtke liked-notification, and verify it disappears from the list.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-dismiss-liked-notification-001."
+    },
+    {
+      "idea_id": "rwa-open-bank-account-create-form",
+      "summary": "Sign in, open Bank Accounts, open the create-bank-account form, and stop on the new account surface.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-bank-account-create-form-001."
+    },
+    {
+      "idea_id": "rwa-bank-account-create-boundary",
+      "summary": "Open the create-bank-account form, fill the bank details, and stop by asking for confirmation before saving the new account.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as cypress-rwa-bank-account-create-boundary-001."
+    },
+    {
+      "idea_id": "rwa-bank-account-delete-boundary",
+      "summary": "Open Bank Accounts, identify the seeded account, and stop by asking for confirmation before deleting it.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as cypress-rwa-bank-account-delete-boundary-001."
+    },
+    {
+      "idea_id": "rwa-comment-cross-view-verify-feed",
+      "summary": "Add a comment in transaction detail and verify the updated social-count state from the personal feed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-comment-cross-view-verify-feed-001."
+    },
+    {
+      "idea_id": "rwa-new-transaction-filter-verify",
+      "summary": "Sign in, create or prepare a new transaction or request, then verify it appears in the personal activity feed using a filter or search path.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Good first cross-view persistence task once the local app is running."
+    },
+    {
+      "idea_id": "rwa-request-money-confirmation-boundary",
+      "summary": "Reach the final send or request boundary in a money-request flow and ask for confirmation before submitting it.",
+      "status": "validated",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as cypress-rwa-request-money-darrel-boundary-001 using Darrel Ortiz as the second seeded contact."
+    },
+    {
+      "idea_id": "rwa-open-darrel-contact-step",
+      "summary": "Sign in, open the new transaction flow, search for Darrel Ortiz, and stop on the contact-specific request or pay step.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-open-darrel-contact-step-001."
+    },
+    {
+      "idea_id": "rwa-request-submit-darrel-verify-feed",
+      "summary": "Create a request to Darrel Ortiz and verify the resulting activity row from the personal feed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-request-submit-darrel-verify-feed-001 as a reset-aware cross-view task."
+    },
+    {
+      "idea_id": "rwa-pay-submit-darrel-verify-feed",
+      "summary": "Create a payment to Darrel Ortiz and verify the resulting activity row from the personal feed.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-pay-submit-darrel-verify-feed-001 as a reset-aware cross-view task."
+    },
+    {
+      "idea_id": "rwa-request-submit-reopen-comment-reverify-detail",
+      "summary": "Create a new request, verify it from the personal feed, reopen it, add a comment, reverify the updated social state from the feed, and reopen it again to confirm the comment persisted on detail.",
+      "status": "validated",
+      "risk_level": "safe",
+      "notes": "Recorded as cypress-rwa-request-submit-reopen-comment-reverify-detail-001 as the first monstrous Cypress workflow."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Primary self-hosted track for modern authenticated UI workflows. The source is now online, surveyable, and validated with authenticated feed navigation, contact-step navigation for multiple seeded users, notification state changes, bank-account navigation, bank-account creation and deletion boundaries, cross-view comment verification, cross-view request and payment verification, multiple confirmation-boundary money flows, and a monstrous reset-aware request-create, feed-reopen, comment-mutate, and final detail-reverification workflow."
+  }
+}

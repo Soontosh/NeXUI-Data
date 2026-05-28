@@ -1,0 +1,278 @@
+- paragraph:
+  - link "Skip to accessible demo page":
+    - /url: "#page"
+- paragraph:
+  - link "W3C logo":
+    - /url: https://www.w3.org/
+    - img "W3C logo"
+  - link "Web Accessibility Initiative (WAI) logo":
+    - /url: https://www.w3.org/WAI/
+    - img "Web Accessibility Initiative (WAI) logo"
+- heading "Accessible Tickets Page - Before and After Demonstration" [level=1]
+- paragraph: Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0
+- list:
+  - listitem:
+    - link "Overview":
+      - /url: ../Overview.html
+  - listitem:
+    - link "Home":
+      - /url: home.html
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem:
+    - text: "Current location: Tickets"
+    - list:
+      - listitem:
+        - strong: "Inaccessible:"
+        - link "Inaccessible Tickets Page":
+          - /url: ../before/tickets.html
+        - link "Inaccessible Tickets Page Report":
+          - /url: ../before/reports/tickets.html
+      - listitem:
+        - strong: "Accessible:"
+        - text: Accessible Tickets Page
+        - link "Accessible Tickets Page Report":
+          - /url: ./reports/tickets.html
+    - link "Show Annotations":
+      - /url: ./annotated/tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+  - listitem:
+    - link "Template":
+      - /url: template.html
+- paragraph: Demo starts here
+- list:
+  - listitem:
+    - link "Skip to content (within demo page)":
+      - /url: "#content"
+  - listitem:
+    - link "Skip to navigation (within demo page)":
+      - /url: "#navtarget"
+- 'link "Citylights: your access to the city."':
+  - /url: home.html
+  - 'img "Citylights: your access to the city."'
+- img "Sunny Spells"
+- text: "Explore Site by Topic:"
+- combobox "Explore Site by Topic:":
+  - option "Quick Menu" [selected]
+  - option "Broadcasting"
+  - option "Education"
+  - option "Electricity"
+  - option "Fire service"
+  - option "Gas service"
+  - option "Health care"
+  - option "Police service"
+  - option "Public Libraries"
+  - option "Social services"
+  - option "Social housing"
+  - option "Telecommunications"
+  - option "Town planning"
+  - option "Transportation"
+  - option "Waste management"
+  - option "Water services"
+- button "Go"
+- paragraph:
+  - strong: "Traffic:"
+  - text: Construction work on Main Road
+- paragraph:
+  - strong: "Today:"
+  - text: Wednesday 27 May 2026, Sunny Spells, 23°C
+- heading "Navigation menu:" [level=2]
+- list:
+  - listitem:
+    - link "Home":
+      - /url: home.html
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem: Tickets
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+- heading "Citylights Ticket Offers" [level=1]
+- paragraph:
+  - text: Citylights in partnership with globo enterprises are proud to offer specially priced tickets to see these great artists -
+  - emphasis:
+    - strong: Les Garçons & The Obelisks
+- paragraph:
+  - text: These
+  - strong: special deals
+  - text: are exclusive to Citylights and can only be purchased by calling the ticket hotline.
+- table "Concert Dates":
+  - caption: Concert Dates
+  - rowgroup:
+    - row "Date Event":
+      - columnheader "Date"
+      - columnheader "Event"
+    - row "12 Feb 09 Les Garçons":
+      - cell "12 Feb 09"
+      - cell "Les Garçons"
+    - row "24 Mar 09 The Obelisks":
+      - cell "24 Mar 09"
+      - cell "The Obelisks"
+- paragraph:
+  - text: "Buy tickets by phoning the Music line -- get your tickets now!:"
+  - strong: (1) 269 68742 / (1) 269 M-U-S-I-C
+- table "Ticket prices for the Les Garçons and The Obelisks concerts":
+  - caption: Ticket prices for the Les Garçons and The Obelisks concerts
+  - rowgroup:
+    - row "Adult Front Seats Rear Seats Dress Circle Special Tables":
+      - columnheader "Adult"
+      - columnheader "Front Seats"
+      - columnheader "Rear Seats"
+      - columnheader "Dress Circle"
+      - columnheader "Special Tables"
+    - row "Obelisks - Monkey, Monkey $20.90 $20.90 $20.90 $20.90":
+      - rowheader "Obelisks - Monkey, Monkey"
+      - cell "$20.90"
+      - cell "$20.90"
+      - cell "$20.90"
+      - cell "$20.90"
+    - row "Les Garçons de la Plage $20.90 $27.90 $30.90 $33.90":
+      - rowheader "Les Garçons de la Plage"
+      - cell "$20.90"
+      - cell "$27.90"
+      - cell "$30.90"
+      - cell "$33.90"
+    - row "Concession":
+      - columnheader "Concession"
+      - cell
+      - cell
+      - cell
+      - cell
+    - row "Obelisks - Monkey, Monkey $20.90 $20.90 $20.90 $20.90":
+      - rowheader "Obelisks - Monkey, Monkey"
+      - cell "$20.90"
+      - cell "$20.90"
+      - cell "$20.90"
+      - cell "$20.90"
+    - row "Les Garçons de la Plage $20.90 $27.90 $30.90 $33.90":
+      - rowheader "Les Garçons de la Plage"
+      - cell "$20.90"
+      - cell "$27.90"
+      - cell "$30.90"
+      - cell "$33.90"
+    - row "Group (5 or more)":
+      - columnheader "Group (5 or more)"
+      - cell
+      - cell
+      - cell
+      - cell
+    - row "Obelisks - Monkey, Monkey $14.90 $14.90 $14.90 $14.90":
+      - rowheader "Obelisks - Monkey, Monkey"
+      - cell "$14.90"
+      - cell "$14.90"
+      - cell "$14.90"
+      - cell "$14.90"
+    - row "Les Garçons de la Plage $14.90 $20.90 $22.90 $23.90":
+      - rowheader "Les Garçons de la Plage"
+      - cell "$14.90"
+      - cell "$20.90"
+      - cell "$22.90"
+      - cell "$23.90"
+- paragraph:
+  - text: "Buy tickets by phoning the Music line -- get your tickets now!:"
+  - strong: (1) 269 68742 / (1) 269 M-U-S-I-C
+- heading "Citylights Terms and Conditions" [level=2]
+- list:
+  - listitem: You agree through the act of calling the M-U-S-I-C Line or by reading any part of these terms and conditions that you will not, now or ever, (a) transmit any material to any person, living or dead, that may be deemed by that person to be defamatory, harmful, unlawful, argumentative or confusing, and that furthermore (b) any resemblance between yourself or your family and any persons, vegetables or musical instruments living, dead or other featured on the Citylights website is entirely unintentional and that where such a resemblance may occur that you will take immediate action to prevent such resemblance reoccurring.
+  - listitem: Citylights shall not be liable to you for any damages or loss of revenue, goodwill, enthusiasm or skin tone arising out of or in connection with any use or other interaction with (a) the Citylights websites, (b) reviews of the Citylights website, (c) any employees or potential employees of Citylights past or present or (d) any website linking to or linked from the Citylights website, whether directly or through other websites.
+  - listitem: "Remedies: Since Citylights would be irreparably damaged to an unforeseeable degree if Sections [1] and [2] were not specifically enforced, Citylights will be entitled without bond, other security or proof of damages, to appropriate equitable remedies with respect to breaches of such sections, in addition to any other available remedies."
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: )
+- separator
+- paragraph:
+  - strong: "Status:"
+  - text: 20 February 2012 (see
+  - link "changelog":
+    - /url: ../changelog.html
+  - text: ") Editors:"
+  - link "Shadi Abou-Zahra":
+    - /url: https://www.w3.org/People/shadi/
+  - text: and the
+  - link "Education and Outreach Working Group (EOWG)":
+    - /url: https://www.w3.org/WAI/EO/
+  - text: . Developed with support from
+  - link "WAI-TIES":
+    - /url: https://www.w3.org/WAI/TIES/
+  - text: and
+  - link "WAI-AGE":
+    - /url: https://www.w3.org/WAI/WAI-AGE/
+  - text: projects, co-funded by the European Commission IST Programme. [see
+  - link "Acknowledgements":
+    - /url: ../acks.html
+  - text: "]"
+- paragraph:
+  - text: "["
+  - link "WAI Site Map":
+    - /url: https://www.w3.org/WAI/sitemap.html
+  - text: "] ["
+  - link "Help with WAI Website":
+    - /url: https://www.w3.org/WAI/sitehelp.html
+  - text: "] ["
+  - link "Search":
+    - /url: https://www.w3.org/WAI/search.php
+  - text: "] ["
+  - link "Contacting WAI":
+    - /url: https://www.w3.org/WAI/contacts
+  - text: "]"
+  - strong:
+    - text: Feedback welcome to
+    - link "wai-eo-editors@w3.org":
+      - /url: mailto:wai-eo-editors@w3.org
+  - text: (a publicly archived list) or
+  - link "wai@w3.org":
+    - /url: mailto:wai@w3.org
+  - text: (a WAI staff-only list).
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: ), All Rights Reserved. W3C
+  - link "liability":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer
+  - text: ","
+  - link "trademark":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks
+  - text: ","
+  - link "document use":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-documents
+  - text: and
+  - link "software licensing":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-software
+  - text: rules apply. Your interactions with this site are in accordance with our
+  - link "public":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Public
+  - text: and
+  - link "Member":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Members
+  - text: privacy statements.

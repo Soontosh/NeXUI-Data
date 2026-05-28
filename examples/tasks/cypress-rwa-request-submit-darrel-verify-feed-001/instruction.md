@@ -1,0 +1,1 @@
+Sign in to the self-hosted Cypress Real World App, create a request to Darrel Ortiz for $24 with the note 'NExUI Darrel request', return to the transaction feeds, open the personal feed, and stop once the new request is visible there.

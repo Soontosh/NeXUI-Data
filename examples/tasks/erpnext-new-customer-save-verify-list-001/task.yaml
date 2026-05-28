@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "erpnext-new-customer-save-verify-list-001",
+  "title": "Create A New ERPNext Customer And Verify It From The List",
+  "goal": "Sign in to ERPNext, create a new customer, return to the customer list, and verify the saved customer from that second view.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "url": "http://localhost:8090/desk/customer?customer_name=%5B%22like%22%2C%22%25NExUI+Save+Verify+Customer%25%22%5D",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-01T04:28:33.547Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "erpnext-self-hosted",
+  "split": "test",
+  "stability_runs_passed": 5,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/customer?customer_name="
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Customer Name"
+      },
+      "value": "NExUI Save Verify Customer"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Save Verify Customer"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "url contains \"/desk/customer?customer_name=\""
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "customer-form",
+    "customer-list",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "First reseed-required mutating ERPNext task. It saves a customer and verifies it from the customer list on a second view."
+}

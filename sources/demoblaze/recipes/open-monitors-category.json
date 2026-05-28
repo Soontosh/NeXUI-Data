@@ -1,0 +1,76 @@
+{
+  "task_id": "demoblaze-open-monitors-category-001",
+  "title": "Open Monitors Category",
+  "goal": "Open the Monitors category from the Demoblaze storefront and stop on the filtered listing.",
+  "instruction": "On the Demoblaze storefront, open the Monitors category and stop when the filtered monitor listing is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "navigation",
+    "category-filter"
+  ],
+  "review_notes": "Second Demoblaze category task. It expands the retail slice beyond laptops while staying deterministic.",
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "value": "Apple monitor 24"
+    },
+    {
+      "type": "text_present",
+      "value": "ASUS Full HD"
+    },
+    {
+      "type": "text_absent",
+      "value": "Samsung galaxy s6"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "wait",
+        "duration_ms": 3000
+      },
+      "explanation": "I waited briefly for the storefront product grid to finish loading."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Monitors"
+      },
+      "explanation": "I opened the Monitors category to filter the storefront listing.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "value": "Apple monitor 24"
+        },
+        {
+          "type": "text_absent",
+          "value": "Samsung galaxy s6"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Monitors category and stopped when the filtered listing was visible."
+      },
+      "explanation": "The monitor-only product list is visible now, so I am ending the task."
+    }
+  ]
+}

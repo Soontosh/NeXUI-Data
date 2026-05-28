@@ -1,0 +1,125 @@
+{
+  "task_id": "cypress-rwa-open-notifications-001",
+  "title": "Sign In And Open Notifications",
+  "goal": "Sign in with a seeded example user, open the notifications page, and stop when the notifications list is visible.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the seeded account, open Notifications, and stop when the notifications list is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "notifications",
+    "hard"
+  ],
+  "review_notes": "Authenticated navigation task that opens the notifications center and verifies the notification list state.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/notifications"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Notifications"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Dismiss"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "requested payment"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the authenticated navigation can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='nav-top-notifications-link']"
+      },
+      "explanation": "I opened the notifications page from the top navigation so the alert list is visible.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/notifications"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Notifications"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened the notifications page, where the notification list is visible."
+      },
+      "explanation": "The notifications list is visible now, so I am ending the task."
+    }
+  ]
+}

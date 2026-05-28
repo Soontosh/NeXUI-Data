@@ -1,0 +1,133 @@
+- banner:
+  - button "open drawer"
+  - heading [level=1]:
+    - link:
+      - /url: /
+      - img
+  - link "New":
+    - /url: /transaction/new
+  - link "8":
+    - /url: /notifications
+  - tablist:
+    - tab "Everyone" [selected]
+    - tab "Friends"
+    - tab "Mine"
+- img "Ted Parisian"
+- heading "Ted P" [level=6]
+- heading "@Heath93" [level=6]
+- heading "$1,509.53" [level=6]
+- heading "Account Balance" [level=6]
+- separator
+- list:
+  - link "Home":
+    - /url: /
+  - link "My Account":
+    - /url: /user/settings
+  - link "Bank Accounts":
+    - /url: /bankaccounts
+  - link "Notifications":
+    - /url: /notifications
+- separator
+- list:
+  - button "Logout"
+- main:
+  - 'button "Date: ALL"'
+  - 'button "Amount: $0 - $1,000"'
+  - text: Public
+  - grid "grid":
+    - rowgroup:
+      - listitem:
+        - img
+        - img
+        - paragraph: Darrel Ortiz paid Lia Rosenbaum
+        - paragraph: "Payment: _XblMqbuoP to WHjJ4qR2R2"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$307.99"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Darrel Ortiz paid Lia Rosenbaum
+        - paragraph: "Payment: _XblMqbuoP to WHjJ4qR2R2"
+        - paragraph: "0"
+        - paragraph: "1"
+        - text: "-$312.31"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Darrel Ortiz paid Lia Rosenbaum
+        - paragraph: "Payment: _XblMqbuoP to WHjJ4qR2R2"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$86.07"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Lia Rosenbaum paid Darrel Ortiz
+        - paragraph: "Payment: WHjJ4qR2R2 to _XblMqbuoP"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$100.62"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Darrel Ortiz paid Lia Rosenbaum
+        - paragraph: "Payment: _XblMqbuoP to WHjJ4qR2R2"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$480.65"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Lia Rosenbaum
+        - paragraph: "Request: WHjJ4qR2R2 to uBmeaz5pX"
+        - paragraph: "1"
+        - paragraph: "0"
+        - text: +$42.36
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Lia Rosenbaum paid Ted Parisian
+        - paragraph: "Payment: WHjJ4qR2R2 to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$494.92"
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian charged Lia Rosenbaum
+        - paragraph: "Request: WHjJ4qR2R2 to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: +$204.68
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian requested Lia Rosenbaum
+        - paragraph: "Request: WHjJ4qR2R2 to uBmeaz5pX"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: +$43.23
+      - separator
+      - listitem:
+        - img
+        - img
+        - paragraph: Ted Parisian paid Lia Rosenbaum
+        - paragraph: "Payment: uBmeaz5pX to WHjJ4qR2R2"
+        - paragraph: "0"
+        - paragraph: "0"
+        - text: "-$387.37"
+      - separator
+  - paragraph:
+    - text: Built by
+    - link:
+      - /url: https://cypress.io
+      - img

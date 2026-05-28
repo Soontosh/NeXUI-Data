@@ -1,0 +1,41 @@
+{
+  "task_id": "w3c-bad-before-home-001",
+  "title": "Open Inaccessible Home Page",
+  "goal": "Open the inaccessible Home page from the BAD overview and stop there.",
+  "instruction": "Open the inaccessible Home page from the overview and stop when it is visible.",
+  "url": "https://www.w3.org/WAI/demos/bad/",
+  "source": {
+    "site_id": "w3c-bad",
+    "site_name": "W3C Before and After Demo",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility",
+    "before-after"
+  ],
+  "review_notes": "Pairs with the accessible home task to extend the before/after navigation slice.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e10"
+      },
+      "explanation": "I opened the inaccessible Home page from the overview comparison list."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the inaccessible Home page and stopped there."
+      },
+      "explanation": "The requested comparison page is open, so I am ending the task."
+    }
+  ]
+}

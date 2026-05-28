@@ -1,0 +1,52 @@
+{
+  "task_id": "accessible-university-before-open-info-from-click-here-001",
+  "title": "Open AU Info Page From Ambiguous Click Here Link",
+  "goal": "From the inaccessible AU home page, choose the correct repeated \"click here\" link that opens the Info page and stop there.",
+  "instruction": "On the inaccessible AU home page, choose the correct \"click here\" link that opens the Info page and stop when it loads.",
+  "url": "https://projects.accesscomputing.uw.edu/au/before.html",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "accessibility",
+    "navigation",
+    "confusing-links",
+    "disambiguation"
+  ],
+  "review_notes": "Accessibility-first disambiguation task using repeated uninformative link text on the inaccessible AU page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/info.html"
+    },
+    {
+      "type": "text_present",
+      "value": "Accessible University Info Page"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e9"
+      },
+      "explanation": "I chose the first repeated \"click here\" link because it opens the page that lists the accessibility issues."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Accessible University Info page from the ambiguous link set and stopped there."
+      },
+      "explanation": "The requested information page is open now, so I am ending the task."
+    }
+  ]
+}

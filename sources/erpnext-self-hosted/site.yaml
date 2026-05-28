@@ -1,0 +1,232 @@
+{
+  "schema_version": "0.0",
+  "site_id": "erpnext-self-hosted",
+  "site_name": "ERPNext Self-Hosted",
+  "base_url": "http://localhost:8090/",
+  "source_track": "enterprise_workflow",
+  "category": "other",
+  "hosting_mode": "self_hosted",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "reseed_command",
+  "determinism_level": "high",
+  "legal_review_status": "documented",
+  "reset_verified": true,
+  "source_priority": 3,
+  "auth": {
+    "auth_type": "seeded_local_account",
+    "credentials_env_vars": [],
+    "notes": "Use a deterministic local ERPNext administrator account created by the source bootstrap and reseed path. Keep login steps inside the first batch of recipes."
+  },
+  "task_families": [
+    "desk_navigation",
+    "list_filtering",
+    "document_open_and_review",
+    "customer_creation",
+    "sales_order_navigation",
+    "cross_module_enterprise_workflows"
+  ],
+  "difficulty_bands": [
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use the official frappe_docker checkout with a repo-managed port override so ERPNext binds to localhost:8090 without colliding with OrangeHRM. The deterministic reseed path now recreates the disposable demo site, completes the first-run setup wizard automatically, and seeds stable customer, item, supplier, address, and contact fixtures before task recording."
+  },
+  "runtime": {
+    "local_checkout_path": "../../external/frappe_docker",
+    "healthcheck_url": "http://localhost:8090/login",
+    "bootstrap_commands": [
+      "git clone https://github.com/frappe/frappe_docker external/frappe_docker",
+      "Create a repo-managed compose override that publishes ERPNext on localhost:8090",
+      "Bring the stack up with docker compose using the official frappe_docker files plus the local override",
+      "Create the nexui.localhost site and a deterministic administrator account",
+      "Add a reseed script that recreates the seeded customer, item, supplier, address, and contact fixtures"
+    ],
+    "start_command": "cd external/frappe_docker && docker compose -f pwd.yml -f /home/santosh/NeXUI/sources/erpnext-self-hosted/compose.erpnext-nexui.yml up -d",
+    "reseed_command": "./scripts/reseed_erpnext.sh",
+    "runtime_recipe": "frappe_docker + local compose override",
+    "notes": "Validated ERPNext runtime on top of the official frappe_docker demo stack. The local reseed script performs a full volume reset, waits for site creation, completes the first-run setup wizard automatically, and seeds deterministic customer, item, supplier, address, and contact fixtures before task runs on localhost:8090."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 3000,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "login",
+      "label": "Login",
+      "url": "http://localhost:8090/login",
+      "goal_hint": "Survey the ERPNext login page and confirm deterministic first-batch UI login steps.",
+      "notes": "The first authoring batch should log in explicitly rather than depending on stored session state."
+    },
+    {
+      "entry_id": "desk-home",
+      "label": "Desk Home",
+      "url": "http://localhost:8090/app",
+      "goal_hint": "Survey the post-login desk landing page and top-level module navigation.",
+      "notes": "Useful after login for navigation and dashboard tasks."
+    },
+    {
+      "entry_id": "item-list",
+      "label": "Item List",
+      "url": "http://localhost:8090/app/item",
+      "goal_hint": "Survey the seeded item list that will support list, filter, and detail-open tasks.",
+      "notes": "The first ERPNext batch should include a safe item-list and item-detail navigation slice."
+    },
+    {
+      "entry_id": "customer-list",
+      "label": "Customer List",
+      "url": "http://localhost:8090/app/customer",
+      "goal_hint": "Survey customer-list filtering, row selection, and save-and-verify workflows.",
+      "notes": "The deterministic customer fixture should appear here after the reseed path is in place."
+    },
+    {
+      "entry_id": "new-customer",
+      "label": "New Customer",
+      "url": "http://localhost:8090/app/customer/new-customer-1",
+      "goal_hint": "Survey the new-customer form for boundary and mutating save-and-verify tasks.",
+      "notes": "Use this surface for the first ERPNext confirmation-boundary and reset-aware mutating task pair."
+    },
+    {
+      "entry_id": "new-sales-order",
+      "label": "New Sales Order",
+      "url": "http://localhost:8090/app/sales-order/new-sales-order-1",
+      "goal_hint": "Survey the new-sales-order form for a second enterprise module surface after the first customer tasks are validated.",
+      "notes": "This is a navigation and form-surface target for the first ERPNext batch, not a mutating sales-order task yet."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "erpnext-login-open-desk-home",
+      "summary": "Log in to ERPNext and stop on the desk home page.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-login-open-desk-home-001."
+    },
+    {
+      "idea_id": "erpnext-open-item-list",
+      "summary": "Log in and stop on the item list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-item-list-001."
+    },
+    {
+      "idea_id": "erpnext-open-seeded-item-detail",
+      "summary": "Open the seeded item detail page for NEXUI-ITEM-001 and verify the document surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-seeded-item-detail-001."
+    },
+    {
+      "idea_id": "erpnext-open-item-uom-tab",
+      "summary": "Open the seeded item record and switch to the UOM tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-item-uom-tab-001."
+    },
+    {
+      "idea_id": "erpnext-open-item-inventory-tab",
+      "summary": "Open the seeded item record and switch to the Inventory tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-item-inventory-tab-001."
+    },
+    {
+      "idea_id": "erpnext-open-item-sales-tab",
+      "summary": "Open the seeded item record and switch to the Sales tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-item-sales-tab-001."
+    },
+    {
+      "idea_id": "erpnext-open-customer-list",
+      "summary": "Log in and stop on the customer list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-customer-list-001."
+    },
+    {
+      "idea_id": "erpnext-open-customer-list-filter",
+      "summary": "Filter the customer list to the seeded NExUI Test Customer row and stop on the filtered list state.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-customer-list-filter-001."
+    },
+    {
+      "idea_id": "erpnext-open-seeded-customer-detail",
+      "summary": "Open the seeded customer record for NExUI Test Customer and verify the document surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-seeded-customer-detail-001."
+    },
+    {
+      "idea_id": "erpnext-open-new-customer-form",
+      "summary": "Open the new-customer form and stop on the blank customer-creation surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-new-customer-form-001."
+    },
+    {
+      "idea_id": "erpnext-new-customer-boundary",
+      "summary": "Fill a new customer and ask for confirmation before saving it.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as erpnext-new-customer-boundary-001 with an explicit unsafe Save trace."
+    },
+    {
+      "idea_id": "erpnext-new-customer-save-verify-list",
+      "summary": "Create a new customer, save it, return to the list, and verify the new customer appears.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-new-customer-save-verify-list-001. This is the first reseed-required mutating ERPNext task."
+    },
+    {
+      "idea_id": "erpnext-new-customer-save-rename-reverify-detail",
+      "summary": "Create a new customer, verify it from the list, reopen it, rename it, save again, re-verify the revised row from the list, and finish on the Address & Contact tab of the renamed record.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-new-customer-save-rename-reverify-detail-001 as the first monstrous ERPNext customer workflow."
+    },
+    {
+      "idea_id": "erpnext-open-seeded-supplier-detail",
+      "summary": "Open the seeded supplier record for NExUI Test Supplier and verify the document surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-seeded-supplier-detail-001."
+    },
+    {
+      "idea_id": "erpnext-open-supplier-list-filter",
+      "summary": "Filter the supplier list to the seeded NExUI Test Supplier row and stop on the filtered list state.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-supplier-list-filter-001."
+    },
+    {
+      "idea_id": "erpnext-open-supplier-address-contact-tab",
+      "summary": "Open the seeded supplier record and switch to the Address & Contact tab.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-supplier-address-contact-tab-001."
+    },
+    {
+      "idea_id": "erpnext-open-new-sales-order-form",
+      "summary": "Open the new sales-order form and stop on the seeded document surface.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as erpnext-open-new-sales-order-form-001."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Validated ERPNext source using the official frappe_docker path. The source now includes deterministic customer, item, supplier, address, and contact fixtures plus seeded customer and supplier detail/list-filter tasks, the first mutating save-and-verify customer workflow, a monstrous customer create-rename-reverify workflow, a fixture-backed supplier Address & Contact detail task, and stable item-detail tab tasks for UOM, Inventory, and Sales."
+  }
+}

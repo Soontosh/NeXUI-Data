@@ -1,0 +1,181 @@
+{
+  "task_id": "pretix-product-default-price-save-verify-list-001",
+  "title": "Save A pretix Product Default Price Edit And Verify It From The Product List",
+  "goal": "Sign in to pretix, change the seeded product default price, save it, and verify the new price from the products list.",
+  "instruction": "Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Price tab, change the Default price to 35.00, save the change, return to the products list, and verify the updated price appears there.",
+  "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/",
+  "source": {
+    "site_id": "pretix-self-hosted",
+    "site_name": "pretix Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "pretix-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 7,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "pretix",
+    "authenticated",
+    "mutating",
+    "product-price",
+    "hard"
+  ],
+  "review_notes": "Reset-aware Pretix product-price mutation with second-view verification on the products list.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/control/event/nexui/nexui-event/items/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "Create a new product"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "$35.00"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_email",
+        "text": "admin@localhost"
+      },
+      "explanation": "I entered the seeded Pretix administrator email after landing on the protected product route."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded Pretix administrator password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Log in"
+      },
+      "explanation": "I signed in so Pretix can return to the seeded product detail page.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Price"
+      },
+      "explanation": "I switched to the product Price tab so the pricing controls become visible.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#tab-0-1-open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Default price"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#id_default_price",
+        "text": "35.00"
+      },
+      "explanation": "I changed the seeded product default price on the Price tab."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the default price change so I can verify it from the products list.",
+      "wait_until": "load",
+      "post_delay_ms": 1500,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Your changes have been saved."
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "value": "35.00"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/control/event/nexui/nexui-event/items/']"
+      },
+      "explanation": "I returned to the products list to verify the updated price from a second view.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/control/event/nexui/nexui-event/items/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "$35.00"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the Pretix product default price change and verified the updated price from the products list."
+      },
+      "explanation": "The updated price is visible on the products list now, so I am ending the task."
+    }
+  ]
+}

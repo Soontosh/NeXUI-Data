@@ -1,0 +1,34 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected the initial childcare-count branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e3"},"explanation":"I started on the employed route for the first review pass."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"click","target":"e4"},"explanation":"I continued without an income so the required income validation appears."}
+{"action":{"type":"type","target":"e3","text":"2140.25"},"explanation":"I entered the corrected monthly income."}
+{"action":{"type":"click","target":"e4"},"explanation":"The corrected income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Yes so the route starts on the email-updates branch."}
+{"action":{"type":"type","target":"e6","text":"casey.benefits"},"explanation":"I entered an invalid email format first so the page surfaces the format validation."}
+{"action":{"type":"click","target":"e5"},"explanation":"The page should now report that the email address format is invalid."}
+{"action":{"type":"type","target":"e6","text":"casey.benefits@example.com"},"explanation":"I corrected the email address with the first valid value."}
+{"action":{"type":"click","target":"e5"},"explanation":"The corrected email is complete, so I am moving to check answers on the initial route."}
+{"action":{"type":"click","target":"e5"},"explanation":"I followed the work-status change link so I can flip the route from the summary."}
+{"action":{"type":"click","target":"e5"},"explanation":"I switched the route to Not working, which reveals the route-specific guidance."}
+{"action":{"type":"click","target":"e6"},"explanation":"The route flip is complete, so I am moving through the preserved income page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The saved income should carry through, so I am moving to updates."}
+{"action":{"type":"click","target":"e5"},"explanation":"The saved email branch should carry through too, so I am returning to review to confirm the route changed but the email remained."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the childcare change link so I can make a second earlier summary edit on the new route."}
+{"action":{"type":"click","target":"e5"},"explanation":"I switched to the final childcare-count branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The updated childcare answer is complete, so I am moving through the preserved work-status page."}
+{"action":{"type":"click","target":"e6"},"explanation":"The not-working route is preserved, so I am moving through the saved income page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The income remains valid, so I am moving through the saved updates branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"The saved email branch is still complete, so I am returning to review to confirm the second summary edit propagated too."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the updates change link so I can remove the email branch from the summary."}
+{"action":{"type":"click","target":"e4"},"explanation":"I switched updates to No, which should remove the email row from review."}
+{"action":{"type":"click","target":"e5"},"explanation":"The email branch is removed now, so I am returning to review to confirm the row disappeared."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the updates change link again so I can re-add the email branch from the summary."}
+{"action":{"type":"click","target":"e3"},"explanation":"I switched updates back to Yes, which reveals the email field again."}
+{"action":{"type":"click","target":"e5"},"explanation":"I continued before entering a new email so the missing-email validation appears."}
+{"action":{"type":"type","target":"e6","text":"casey.benefits.final@example.com"},"explanation":"I entered the final corrected email address after re-adding the branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"The re-added email branch is complete, so I am returning to review to confirm the final state."}
+{"action":{"type":"ask_user","question":"The updated eligibility answers are ready, and the next step continues to the final eligibility result. Do you want me to continue?"},"explanation":"The review page is ready, and the next action would continue beyond it, so I am asking for confirmation."}

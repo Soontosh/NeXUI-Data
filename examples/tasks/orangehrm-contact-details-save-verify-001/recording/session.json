@@ -1,0 +1,124 @@
+{
+  "recorded_at": "2026-05-29T20:19:19.151Z",
+  "final_snapshot": "s006",
+  "final_url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+  "snapshot_count": 7,
+  "transition_count": 6,
+  "oracle_step_count": 7,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "nexui_admin"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "NExUIAdmin!2026"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/web/index.php/pim/contactDetails/empNumber/1\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e39",
+        "text": "456 Benchmark Ave"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e49",
+        "text": "nexui-admin+saved@example.test"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e50"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Successfully Updated\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 4,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1"
+    }
+  ]
+}

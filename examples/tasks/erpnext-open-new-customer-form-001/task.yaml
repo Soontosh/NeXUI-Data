@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "erpnext-open-new-customer-form-001",
+  "title": "Log In To ERPNext And Open The New Customer Form",
+  "goal": "Sign in to ERPNext and stop on the new customer form.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "url": "http://localhost:8090/desk/customer/new-customer-nrzcmcrkoz",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-01T03:45:57.354Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "erpnext-self-hosted",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": false,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/customer/new-customer-"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Customer Name"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "customer-form",
+    "hard"
+  ],
+  "review_notes": "Authenticated ERPNext form task that lands on a fresh New Customer document."
+}

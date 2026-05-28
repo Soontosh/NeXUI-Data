@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/explanation-judge-verdict.schema.json",
+  "title": "NExUI Explanation Judge Verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "clarity_score",
+    "task_relevance_score",
+    "detail_score",
+    "risk_communication_score",
+    "overall_helpfulness_score",
+    "confidence",
+    "abstained",
+    "evidence_refs",
+    "short_rationale"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "clarity_score": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "task_relevance_score": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "detail_score": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "risk_communication_score": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "overall_helpfulness_score": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "confidence": {
+      "$ref": "#/$defs/score_or_null"
+    },
+    "abstained": {
+      "type": "boolean"
+    },
+    "abstain_reason": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "short_rationale": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "score_or_null": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    }
+  }
+}

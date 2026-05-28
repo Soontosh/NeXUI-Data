@@ -1,0 +1,76 @@
+{
+  "task_id": "demoblaze-open-sony-vaio-i5-product-001",
+  "title": "Open Sony Vaio i5 Product Detail",
+  "goal": "Open the Sony vaio i5 product detail page from the Demoblaze storefront and stop there.",
+  "instruction": "On the Demoblaze storefront, open the Sony vaio i5 product page and stop when the product detail view is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "product-detail",
+    "navigation"
+  ],
+  "review_notes": "First Demoblaze product-detail task. It exercises product-card targeting on a dynamic storefront.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "prod.html?idp_=8"
+    },
+    {
+      "type": "text_present",
+      "value": "Sony vaio i5"
+    },
+    {
+      "type": "text_present",
+      "value": "Add to cart"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "wait",
+        "duration_ms": 3000
+      },
+      "explanation": "I waited briefly for the storefront product cards to finish loading."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Sony vaio i5"
+      },
+      "explanation": "I opened the Sony vaio i5 product detail page from the storefront listing.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "prod.html?idp_=8"
+        },
+        {
+          "type": "text_present",
+          "value": "Add to cart"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Sony vaio i5 product detail page and stopped there."
+      },
+      "explanation": "The requested product page is open now, so I am ending the task."
+    }
+  ]
+}

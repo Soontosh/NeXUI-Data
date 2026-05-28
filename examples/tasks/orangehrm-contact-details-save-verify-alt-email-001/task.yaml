@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "orangehrm-contact-details-save-verify-alt-email-001",
+  "title": "Save An Alternate Contact Email And Verify It",
+  "goal": "Log in to OrangeHRM, open the seeded admin Contact Details view, save a bounded Other Email update, and verify the new value remains visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "orangehrm-self-hosted",
+    "site_name": "OrangeHRM Self-Hosted",
+    "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+    "category": "hr_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T22:08:02.768Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "orangehrm-self-hosted",
+  "split": "test",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "nexui.admin+alt@example.test"
+      },
+      "value": "nexui.admin+alt@example.test"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "contact-details",
+    "mutating",
+    "hard"
+  ],
+  "review_notes": "Reset-aware enterprise profile-update save-and-verify task on the seeded admin Contact Details view using Other Email only."
+}

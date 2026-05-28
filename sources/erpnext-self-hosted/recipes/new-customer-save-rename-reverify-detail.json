@@ -1,0 +1,356 @@
+{
+  "task_id": "erpnext-new-customer-save-rename-reverify-detail-001",
+  "title": "Create An ERPNext Customer, Rename It, And Reverify The Revised Record Across List And Detail Views",
+  "goal": "Sign in to ERPNext, create a new customer, verify it from the customer list, reopen it, rename it, save again, verify the revised row from the customer list, reopen it again, and finish on the Address & Contact tab of the renamed record.",
+  "instruction": "Open the ERPNext new customer route, sign in as Administrator with password admin, create a new customer named NExUI Monster Customer, save it, return to the customer list, filter to that customer and verify it, reopen it, rename it to NExUI Monster Customer Prime, save the renamed record, return to the customer list, filter to the revised customer name, reopen it again, switch to Address & Contact, and verify the renamed customer record there.",
+  "url": "http://localhost:8090/app/customer/new-customer-1",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 17,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 7,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "customer-form",
+    "customer-list",
+    "customer-detail",
+    "mutating",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous ERPNext customer workflow that creates a customer, verifies it from the list, reopens it, renames it, saves again, re-verifies the revised row from the list, and finishes on a second detail-tab surface for the renamed record.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/customer/"
+    },
+    {
+      "type": "url_contains",
+      "value": "#contact_and_address_tab"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Monster Customer Prime"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "New Address"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "candidate exists for {\"role\":\"link\",\"name\":\"NExUI Monster Customer Prime\"}"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so ERPNext can redirect back to a fresh new customer form.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/new-customer-"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[data-fieldname=\"customer_name\"]",
+        "text": "NExUI Monster Customer"
+      },
+      "explanation": "I entered the deterministic first customer name."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Details"
+      },
+      "explanation": "I re-focused the Details tab so ERPNext commits the typed customer name before the first save."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the new customer so I can verify it from the customer list before applying a second mutation.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/NExUI%20Monster%20Customer"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/desk/customer']"
+      },
+      "explanation": "I returned to the customer list so I can verify the saved customer from a second view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "Customer Name"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Customer Name",
+        "text": "NExUI Monster Customer"
+      },
+      "explanation": "I entered the first saved customer name into the customer-list filter."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Filter"
+      },
+      "explanation": "I applied the filter so the first saved customer row is isolated.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer?customer_name="
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Monster Customer"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/desk/customer/NExUI%20Monster%20Customer']"
+      },
+      "explanation": "I reopened the saved customer from the filtered list so I can apply a second mutation from the persisted detail state.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/NExUI%20Monster%20Customer"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Monster Customer"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[data-fieldname=\"customer_name\"]",
+        "text": "NExUI Monster Customer Prime"
+      },
+      "explanation": "I renamed the reopened customer record to the deterministic revised name."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Details"
+      },
+      "explanation": "I re-focused the Details tab so ERPNext commits the revised name before the second save."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the renamed customer so I can verify the revised row from the list and then reopen the updated record again.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Monster Customer Prime"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=(//a[@href='/desk/customer'])[1]"
+      },
+      "explanation": "I returned to the customer list again so I can verify the revised customer row from a second post-save view.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "Customer Name"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Customer Name",
+        "text": "NExUI Monster Customer Prime"
+      },
+      "explanation": "I entered the revised customer name into the customer-list filter."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Filter"
+      },
+      "explanation": "I applied the revised-name filter so the renamed customer row is isolated for post-mutation verification.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer?customer_name="
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "link",
+            "name": "NExUI Monster Customer Prime"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "NExUI Monster Customer Prime"
+      },
+      "explanation": "I reopened the renamed customer from the list so I can verify the final persisted record on another detail surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/customer/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Monster Customer Prime"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "tab",
+        "target_name": "Address & Contact"
+      },
+      "explanation": "I switched to the Address & Contact tab so the final verification happens on a distinct detail state of the renamed customer record.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#contact_and_address_tab"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "New Address"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I created the customer, verified it from the list, renamed it, re-verified the revised row from the list, reopened it again, and confirmed the renamed record on the Address & Contact tab."
+      },
+      "explanation": "The renamed customer persisted across both list and detail surfaces, and the Address & Contact tab is visible now, so I am ending the task."
+    }
+  ]
+}

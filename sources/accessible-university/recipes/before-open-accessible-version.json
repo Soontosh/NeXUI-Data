@@ -1,0 +1,52 @@
+{
+  "task_id": "accessible-university-before-open-accessible-version-001",
+  "title": "Open Accessible Version From Inaccessible AU Page",
+  "goal": "From the inaccessible AU home page, open the more accessible version and stop there.",
+  "instruction": "On the inaccessible AU home page, choose the correct \"click here\" link that opens the more accessible version and stop when that page loads.",
+  "url": "https://projects.accesscomputing.uw.edu/au/before.html",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility",
+    "confusing-links",
+    "before-after"
+  ],
+  "review_notes": "Medium-difficulty accessibility-first task from the dataset matrix. Tests disambiguation among repeated uninformative link text on the inaccessible page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/after.html"
+    },
+    {
+      "type": "text_present",
+      "value": "Accessible University Demo Site - Accessible Version"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e10"
+      },
+      "explanation": "I chose the \"click here\" link that opens the more accessible version of this page."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the accessible AU home page and stopped there."
+      },
+      "explanation": "The accessible version is open now, so I am ending the task."
+    }
+  ]
+}

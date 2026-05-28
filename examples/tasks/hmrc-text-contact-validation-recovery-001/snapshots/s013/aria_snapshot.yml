@@ -1,0 +1,26 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/new-amount"
+- main:
+  - alert "There is a problem":
+    - heading "There is a problem" [level=2]
+    - list:
+      - listitem:
+        - link "Enter a mobile number with at least 8 digits":
+          - /url: "#contact-detail"
+  - region "How should we contact you if we need more details?":
+    - heading "How should we contact you if we need more details?" [level=1]
+    - paragraph: Choose one method for follow-up questions about this update.
+    - group "How should we contact you if we need more details?":
+      - text: How should we contact you if we need more details?
+      - radio "Email"
+      - text: Email
+      - radio "Text message" [checked]
+      - text: Text message
+      - radio "Post"
+      - text: Post
+    - text: Mobile number
+    - paragraph: Enter a mobile number we can text during the day.
+    - text: Enter a mobile number with at least 8 digits
+    - textbox "Mobile number": "0712"
+    - button "Continue"

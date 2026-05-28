@@ -1,0 +1,11 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I tried to continue immediately so the required-name validation appears."}
+{"action":{"type":"type","target":"e2","text":"Casey Morgan"},"explanation":"I entered the missing full name so the journey can continue."}
+{"action":{"type":"click","target":"e3"},"explanation":"The full name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e5"},"explanation":"I continued without choosing updates so the page shows the required selection validation."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected No for updates so the final summary stays on the no-email branch."}
+{"action":{"type":"click","target":"e5"},"explanation":"Both validation issues are resolved now, so I am moving to check answers."}
+{"action":{"type":"click","target":"e3"},"explanation":"I followed the change link for the full name so I can make a final summary edit."}
+{"action":{"type":"type","target":"e2","text":"Casey Morgan Jr"},"explanation":"I updated the name with the final corrected value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The corrected name is entered, so I am moving back through the preserved updates answer to check answers."}
+{"action":{"type":"click","target":"e5"},"explanation":"The preserved no-email branch is still suitable, so I am returning to review to verify the updated summary."}
+{"action":{"type":"ask_user","question":"The form is ready and Send application would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the application, so I need confirmation before continuing."}

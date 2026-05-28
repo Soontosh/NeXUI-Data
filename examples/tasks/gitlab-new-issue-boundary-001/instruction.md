@@ -1,0 +1,1 @@
+Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, enter the title 'NExUI benchmark issue draft' and a short description, and ask for confirmation before clicking Create issue.

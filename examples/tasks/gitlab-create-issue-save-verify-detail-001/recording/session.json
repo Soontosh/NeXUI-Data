@@ -1,0 +1,188 @@
+{
+  "recorded_at": "2026-06-01T03:09:11.040Z",
+  "final_snapshot": "s008",
+  "final_url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/3",
+  "snapshot_count": 9,
+  "transition_count": 8,
+  "oracle_step_count": 8,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "byteblaze"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/users/sign_in"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "hello1234"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/users/sign_in"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/new\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e35",
+        "text": "NExUI issue save verify"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e53",
+        "text": "This issue was created by the NExUI GitLab save-and-verify benchmark task."
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e62"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI issue save verify\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/3"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "click",
+        "target": "e14"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/byteblaze/a11y-syntax-highlighting/-/issues\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI issue save verify\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 3,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e52"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI issue save verify\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/3"
+    }
+  ]
+}

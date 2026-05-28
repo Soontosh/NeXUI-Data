@@ -1,0 +1,201 @@
+- paragraph:
+  - link "Skip to accessible demo page":
+    - /url: "#page"
+- paragraph:
+  - link "W3C logo":
+    - /url: https://www.w3.org/
+    - img "W3C logo"
+  - link "Web Accessibility Initiative (WAI) logo":
+    - /url: https://www.w3.org/WAI/
+    - img "Web Accessibility Initiative (WAI) logo"
+- heading "Accessible Template Page - Before and After Demonstration" [level=1]
+- paragraph: Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0
+- list:
+  - listitem:
+    - link "Overview":
+      - /url: ../Overview.html
+  - listitem:
+    - link "Home":
+      - /url: home.html
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem:
+    - link "Tickets":
+      - /url: tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+  - listitem:
+    - text: "Current location: Template"
+    - list:
+      - listitem:
+        - strong: "Inaccessible:"
+        - link "Inaccessible Template":
+          - /url: ../before/template.html
+        - link "Inaccessible Template Report":
+          - /url: ../before/reports/template.html
+      - listitem:
+        - strong: "Accessible:"
+        - text: Accessible Template
+        - link "Accessible Template Report":
+          - /url: ./reports/template.html
+    - link "Show Annotations":
+      - /url: ./annotated/template.html
+- paragraph: Demo starts here
+- list:
+  - listitem:
+    - link "Skip to content (within demo page)":
+      - /url: "#content"
+  - listitem:
+    - link "Skip to navigation (within demo page)":
+      - /url: "#navtarget"
+- 'link "Citylights: your access to the city."':
+  - /url: home.html
+  - 'img "Citylights: your access to the city."'
+- img "Sunny Spells"
+- text: "Explore Site by Topic:"
+- combobox "Explore Site by Topic:":
+  - option "Quick Menu" [selected]
+  - option "Broadcasting"
+  - option "Education"
+  - option "Electricity"
+  - option "Fire service"
+  - option "Gas service"
+  - option "Health care"
+  - option "Police service"
+  - option "Public Libraries"
+  - option "Social services"
+  - option "Social housing"
+  - option "Telecommunications"
+  - option "Town planning"
+  - option "Transportation"
+  - option "Waste management"
+  - option "Water services"
+- button "Go"
+- paragraph:
+  - strong: "Traffic:"
+  - text: Construction work on Main Road
+- paragraph:
+  - strong: "Today:"
+  - text: Thursday 28 May 2026, Sunny Spells, 23°C
+- heading "Navigation menu:" [level=2]
+- list:
+  - listitem: Home
+  - listitem:
+    - link "News":
+      - /url: news.html
+  - listitem:
+    - link "Tickets":
+      - /url: tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: survey.html
+- heading "Template" [level=1]
+- paragraph: "[content here]"
+- heading "[Title]" [level=2]
+- paragraph:
+  - text: "[INTRO]"
+  - link "[DESC] - read more":
+    - /url: "#"
+- heading "[Title]" [level=2]
+- paragraph:
+  - text: "[INTRO]"
+  - link "[DESC] - read more":
+    - /url: "#"
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: )
+- separator
+- paragraph:
+  - strong: "Status:"
+  - text: 20 February 2012 (see
+  - link "changelog":
+    - /url: ../changelog.html
+  - text: ") Editors:"
+  - link "Shadi Abou-Zahra":
+    - /url: https://www.w3.org/People/shadi/
+  - text: and the
+  - link "Education and Outreach Working Group (EOWG)":
+    - /url: https://www.w3.org/WAI/EO/
+  - text: . Developed with support from
+  - link "WAI-TIES":
+    - /url: https://www.w3.org/WAI/TIES/
+  - text: and
+  - link "WAI-AGE":
+    - /url: https://www.w3.org/WAI/WAI-AGE/
+  - text: projects, co-funded by the European Commission IST Programme. [see
+  - link "Acknowledgements":
+    - /url: ../acks.html
+  - text: "]"
+- paragraph:
+  - text: "["
+  - link "WAI Site Map":
+    - /url: https://www.w3.org/WAI/sitemap.html
+  - text: "] ["
+  - link "Help with WAI Website":
+    - /url: https://www.w3.org/WAI/sitehelp.html
+  - text: "] ["
+  - link "Search":
+    - /url: https://www.w3.org/WAI/search.php
+  - text: "] ["
+  - link "Contacting WAI":
+    - /url: https://www.w3.org/WAI/contacts
+  - text: "]"
+  - strong:
+    - text: Feedback welcome to
+    - link "wai-eo-editors@w3.org":
+      - /url: mailto:wai-eo-editors@w3.org
+  - text: (a publicly archived list) or
+  - link "wai@w3.org":
+    - /url: mailto:wai@w3.org
+  - text: (a WAI staff-only list).
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: ), All Rights Reserved. W3C
+  - link "liability":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer
+  - text: ","
+  - link "trademark":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks
+  - text: ","
+  - link "document use":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-documents
+  - text: and
+  - link "software licensing":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-software
+  - text: rules apply. Your interactions with this site are in accordance with our
+  - link "public":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Public
+  - text: and
+  - link "Member":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Members
+  - text: privacy statements.

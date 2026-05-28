@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open Add New User, create Ari Stone with username ari.stone and email ari.stone@example.test, keep the Administrators role selected, save the user, and verify the new account is visible in the users grid.

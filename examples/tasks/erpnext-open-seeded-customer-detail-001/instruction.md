@@ -1,0 +1,1 @@
+Open the ERPNext customer list, sign in as Administrator with password admin, filter Customer Name to NExUI Test Customer, open that customer record, and stop once the seeded customer detail page is visible.

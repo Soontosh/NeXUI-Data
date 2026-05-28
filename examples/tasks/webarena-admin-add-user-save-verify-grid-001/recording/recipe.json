@@ -1,0 +1,211 @@
+{
+  "task_id": "webarena-admin-add-user-save-verify-grid-001",
+  "title": "Create A Magento Admin User And Verify It In The Grid",
+  "goal": "Open the authenticated Magento Add New User form, create Ari Stone as an administrator, and verify the saved user from the admin users grid.",
+  "instruction": "From the authenticated Magento admin users grid, open Add New User, create Ari Stone with username ari.stone and email ari.stone@example.test, keep the Administrators role selected, save the user, and verify the new account is visible in the users grid.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 12,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 5,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "First reset-aware mutating WebArena task on the Magento admin users surface.",
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "ari.stone"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ari Stone"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Active"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add New User"
+      },
+      "explanation": "I opened the Magento admin user-creation form so I can create the seeded benchmark account.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/new/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 1: New User"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='username']",
+        "text": "ari.stone"
+      },
+      "explanation": "I entered the new admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='firstname']",
+        "text": "Ari"
+      },
+      "explanation": "I entered the new admin first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='lastname']",
+        "text": "Stone"
+      },
+      "explanation": "I entered the new admin last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='email']",
+        "text": "ari.stone@example.test"
+      },
+      "explanation": "I entered the benchmark email address."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I entered the new admin password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password_confirmation']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I confirmed the new admin password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='current_password']",
+        "text": "admin1234"
+      },
+      "explanation": "I entered the current admin password required to authorize the new account."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-roles-section']"
+      },
+      "explanation": "I switched to the role-selection tab so I can keep the account on the Administrators role.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Administrators"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//div[@id='permissionsUserRolesGrid']//td[normalize-space()='Administrators']/preceding-sibling::td//input[@type='radio']"
+      },
+      "explanation": "I selected the Administrators role for the new account.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "radio",
+            "value": "1",
+            "states": {
+              "checked": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-main-section']"
+      },
+      "explanation": "I returned to the main form so the completed user details are visible before saving.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "User Name"
+          },
+          "value": "ari.stone"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save User"
+      },
+      "explanation": "I saved the new Magento admin account so I can verify it from the users grid.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "ari.stone"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

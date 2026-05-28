@@ -1,0 +1,15 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e17"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - url contains \"/directions\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"name\":\"From\"}",
+      "postcondition 3: passed - candidate exists for {\"role\":\"textbox\",\"name\":\"To\"}"
+    ]
+  }
+]

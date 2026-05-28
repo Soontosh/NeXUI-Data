@@ -1,0 +1,233 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-syntax-highlighting":
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+        - text: A a11y-syntax-highlighting
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-syntax-highlighting/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: Issues 1
+      - list:
+        - listitem:
+          - link "Issues":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+            - text: List
+        - listitem:
+          - link "Boards":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/boards
+        - listitem:
+          - link "Service Desk":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/issues/service_desk
+        - listitem:
+          - link "Milestones":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/milestones
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: Merge requests 0
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - img
+        - text: CI/CD
+    - listitem:
+      - link "Security & Compliance":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/security/configuration
+        - img
+        - text: Security & Compliance
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Infrastructure":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Infrastructure
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/metrics
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/snippets
+        - img
+        - text: Snippets
+    - listitem:
+      - link "Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - img
+        - text: Settings
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+      - img
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+      - img
+    - listitem:
+      - link "New":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues/new
+- main:
+  - heading "New Issue" [level=1]
+  - text: Title (required)
+  - textbox "Title (required)": NExUI monstrous GitLab issue
+  - paragraph: This field is required.
+  - paragraph:
+    - text: Add
+    - link "description templates":
+      - /url: /help/user/project/description_templates
+    - text: to help your contributors to communicate effectively!
+  - text: Type
+  - button "Issue":
+    - text: Issue
+    - img
+  - text: Description
+  - list:
+    - listitem:
+      - button "Write"
+    - listitem:
+      - button "Preview"
+    - listitem:
+      - button "Add bold text (Ctrl+B)":
+        - img
+      - button "Add italic text (Ctrl+I)":
+        - img
+      - button "Add strikethrough text (Ctrl+⇧X)":
+        - img
+      - button "Insert a quote":
+        - img
+      - button "Insert code":
+        - img
+      - button "Add a link (Ctrl+K)":
+        - img
+      - button "Add a bullet list":
+        - img
+      - button "Add a numbered list":
+        - img
+      - button "Add a checklist":
+        - img
+      - button "Add a collapsible section":
+        - img
+      - button "Add a table":
+        - img
+      - button "Attach a file or image":
+        - img
+      - button "Go full screen":
+        - img
+  - textbox "Description":
+    - /placeholder: Write a description or drag your files here…
+  - img
+  - text: Supports
+  - link "Markdown":
+    - /url: /help/user/markdown
+  - text: . For
+  - link "quick actions":
+    - /url: /help/user/project/quick_actions
+  - text: ", type / ."
+  - checkbox "This issue is confidential and should only be visible to team members with at least Reporter access."
+  - text: This issue is confidential and should only be visible to team members with at least Reporter access. Assignee
+  - button "Unassigned":
+    - text: Unassigned
+    - img
+  - link "Assign to me":
+    - /url: "#"
+  - text: Milestone
+  - button "Select milestone"
+  - text: Labels
+  - button "Labels":
+    - text: Labels
+    - img
+  - text: Due date
+  - textbox "Select due date"
+  - button "Create issue"
+  - link "Cancel":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/issues

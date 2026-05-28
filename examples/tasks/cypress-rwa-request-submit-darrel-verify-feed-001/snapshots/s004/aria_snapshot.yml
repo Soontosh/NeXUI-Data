@@ -1,0 +1,53 @@
+- banner:
+  - button "open drawer"
+  - heading [level=1]:
+    - link:
+      - /url: /
+      - img
+  - link "New":
+    - /url: /transaction/new
+  - link "10":
+    - /url: /notifications
+- img "Ted Parisian"
+- heading "Ted P" [level=6]
+- heading "@Heath93" [level=6]
+- heading "$1,389.53" [level=6]
+- heading "Account Balance" [level=6]
+- separator
+- list:
+  - link "Home":
+    - /url: /
+  - link "My Account":
+    - /url: /user/settings
+  - link "Bank Accounts":
+    - /url: /bankaccounts
+  - link "Notifications":
+    - /url: /notifications
+- separator
+- list:
+  - button "Logout"
+- main:
+  - text: Select Contact Payment Complete
+  - textbox "Search..."
+  - list:
+    - listitem:
+      - img
+      - text: Kristian Bradtke
+      - paragraph: "U: Arvilla_Hegmann • E: Skyla.Stamm@yahoo.com • P: 410-786-2112"
+    - listitem:
+      - img
+      - text: Darrel Ortiz
+      - paragraph: "U: Dina20 • E: Marielle_Wiza@yahoo.com • P: 887-309-1593"
+    - listitem:
+      - img
+      - text: Ruthie Prosacco
+      - paragraph: "U: Reyes.Osinski • E: Norma27@gmail.com • P: 467-316-5352"
+    - listitem:
+      - img
+      - text: Lia Rosenbaum
+      - paragraph: "U: Judah_Dietrich50 • E: Nigel54@hotmail.com • P: 990-583-8419"
+  - paragraph:
+    - text: Built by
+    - link:
+      - /url: https://cypress.io
+      - img

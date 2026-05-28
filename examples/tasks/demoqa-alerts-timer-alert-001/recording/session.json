@@ -1,0 +1,33 @@
+{
+  "recorded_at": "2026-05-28T21:07:47.713Z",
+  "final_snapshot": "s001",
+  "final_url": "https://demoqa.com/alerts",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e7"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [
+        {
+          "type": "alert",
+          "message": "This alert appeared after 5 seconds",
+          "handled_as": "accept",
+          "prompt_text": ""
+        }
+      ],
+      "modal_state": "none",
+      "url": "https://demoqa.com/alerts"
+    }
+  ]
+}

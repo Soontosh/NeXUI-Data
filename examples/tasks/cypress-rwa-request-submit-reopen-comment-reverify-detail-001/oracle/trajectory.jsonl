@@ -1,0 +1,18 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I signed in so the authenticated transaction tools can load."}
+{"action":{"type":"click","target":"e3"},"explanation":"I opened the new transaction wizard from the top navigation."}
+{"action":{"type":"type","target":"e5","text":"Darrel"},"explanation":"I searched for Darrel Ortiz so the receiver list narrows to the intended person."}
+{"action":{"type":"click","target":"e6"},"explanation":"I selected Darrel Ortiz as the receiver for the request."}
+{"action":{"type":"type","target":"e5","text":"24"},"explanation":"I entered the request amount."}
+{"action":{"type":"type","target":"e6","text":"NExUI monstrous Darrel request"},"explanation":"I entered a unique request note so the new row can be tracked across the feed and detail views."}
+{"action":{"type":"click","target":"e7"},"explanation":"I submitted the request so the newly created transaction can be verified and reopened."}
+{"action":{"type":"click","target":"e5"},"explanation":"I returned to the transaction feeds so I can verify the created request from the personal feed."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched to the personal feed to verify the new request row from a second surface."}
+{"action":{"type":"click","target":"e17"},"explanation":"I reopened the request from the personal feed so the second mutation starts from the newly created transaction."}
+{"action":{"type":"type","target":"e6","text":"NExUI monstrous Darrel follow-up"},"explanation":"I entered the follow-up comment as the second mutation on the reopened request."}
+{"action":{"type":"press","key":"Enter"},"explanation":"I submitted the follow-up comment from the transaction detail view."}
+{"action":{"type":"click","target":"e8"},"explanation":"I returned to the transaction feeds so the updated social state can be verified from the feed."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched back to the personal feed to verify that the same request row now shows the updated comment count."}
+{"action":{"type":"click","target":"e17"},"explanation":"I reopened the updated request a second time so the saved follow-up comment is reverified from the detail surface."}
+{"action":{"type":"finish","summary":"I created a Darrel Ortiz request, verified it from the personal feed, reopened it, added a follow-up comment, reverified the updated feed row, and reopened it again to confirm the saved comment persisted."},"explanation":"The created request and the saved follow-up comment have both been reverified now, so I am ending the task."}

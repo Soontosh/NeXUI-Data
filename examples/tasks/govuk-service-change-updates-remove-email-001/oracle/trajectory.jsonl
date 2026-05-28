@@ -1,0 +1,9 @@
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the applicant name to start the service journey."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected email updates, which reveals the email field."}
+{"action":{"type":"type","target":"e5","text":"old-address@example.com"},"explanation":"I entered an email address so the initial review page includes the email summary row."}
+{"action":{"type":"click","target":"e6"},"explanation":"The initial answers are complete, so I am moving to the check-answers page."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the change link for the updates answer so I can switch to the no-email branch."}
+{"action":{"type":"click","target":"e4"},"explanation":"I switched the updates answer to No, which should remove the email branch from the summary."}
+{"action":{"type":"click","target":"e5"},"explanation":"The branch changed, so I am returning to the review page to verify the email row disappeared."}
+{"action":{"type":"finish","summary":"I changed the updates answer from Yes to No and confirmed the email row was removed from the check-answers page."},"explanation":"The check-answers page now reflects the no-email branch, so I am ending the task."}

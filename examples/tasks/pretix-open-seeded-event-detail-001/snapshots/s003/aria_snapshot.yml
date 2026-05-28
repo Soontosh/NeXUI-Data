@@ -1,0 +1,118 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  admin@localhost":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/
+      - listitem:
+        - link " Events":
+          - /url: /control/events/
+      - listitem:
+        - link " Organizers":
+          - /url: /control/organizers/
+      - listitem:
+        - link " Search":
+          - /url: /control/search/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " User settings":
+          - /url: /control/settings
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "Events" [level=1]
+- paragraph: The list below shows all events you have administrative access to. Click on the event name to access event details.
+- heading "Filter" [level=3]
+- text: Event name
+- textbox "Event name"
+- text: Status
+- combobox "Status":
+  - option "All events" [selected]
+  - option "Shop live"
+  - option "Shop live and presale running"
+  - option "Shop not live"
+  - option "Presale not started"
+  - option "Presale over"
+  - option "Single event running or in the future"
+  - option "Single event in the past"
+  - option "Event series"
+- text: Date from
+- textbox "Date from":
+  - /placeholder: 2000-12-31
+- text: Date until
+- textbox "Date until":
+  - /placeholder: 2000-12-31
+- text: Organizer
+- combobox "All organizers":
+  - textbox
+- button " Filter"
+- paragraph:
+  - link " Create a new event":
+    - /url: /control/events/add
+- table:
+  - rowgroup:
+    - row "Event name Sales channels Start date   / End date   Paid tickets per quota Status  ":
+      - columnheader "Event name"
+      - columnheader "Sales channels"
+      - columnheader "Start date   / End date  ":
+        - text: Start date
+        - link "":
+          - /url: "?ordering=-date_from"
+        - link "":
+          - /url: "?ordering=date_from"
+        - text: / End date
+        - link "":
+          - /url: "?ordering=-date_to"
+        - link "":
+          - /url: "?ordering=date_to"
+      - columnheader "Paid tickets per quota"
+      - columnheader "Status  ":
+        - text: Status
+        - link "":
+          - /url: "?ordering=-live"
+        - link "":
+          - /url: "?ordering=live"
+      - columnheader
+  - rowgroup:
+    - row "NExUI Benchmark Event nexui-event  2026-06-15 00:00 – 2026-06-15 23:59 0 / 100 Shop disabled  ":
+      - cell "NExUI Benchmark Event nexui-event":
+        - strong:
+          - link "NExUI Benchmark Event":
+            - /url: /control/event/nexui/nexui-event/
+        - text: nexui-event
+      - cell ""
+      - cell "2026-06-15 00:00 – 2026-06-15 23:59"
+      - cell "0 / 100":
+        - link "0 / 100":
+          - /url: /control/event/nexui/nexui-event/quotas/1/
+      - cell "Shop disabled"
+      - cell " ":
+        - link "":
+          - /url: /control/event/nexui/nexui-event/
+        - link "":
+          - /url: /control/events/add?clone=1
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3ALQWJDPqPLlnAjF9t01p65Lj3xmzDYm2YlkuERRH2iEQ

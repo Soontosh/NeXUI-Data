@@ -1,0 +1,162 @@
+- link:
+  - /url: admin.htm
+  - img
+- link "ParaBank":
+  - /url: index.htm
+  - img "ParaBank"
+- paragraph: Experience the difference
+- list:
+  - listitem: Solutions
+  - listitem:
+    - link "About Us":
+      - /url: about.htm
+  - listitem:
+    - link "Services":
+      - /url: services.htm
+  - listitem:
+    - link "Products":
+      - /url: http://www.parasoft.com/jsp/products.jsp
+  - listitem:
+    - link "Locations":
+      - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+  - listitem:
+    - link "Admin Page":
+      - /url: admin.htm
+- list:
+  - listitem:
+    - link "home":
+      - /url: index.htm
+  - listitem:
+    - link "about":
+      - /url: about.htm
+  - listitem:
+    - link "contact":
+      - /url: contact.htm
+- paragraph: Welcome John Smith
+- heading "Account Services" [level=2]
+- list:
+  - listitem:
+    - link "Open New Account":
+      - /url: openaccount.htm
+  - listitem:
+    - link "Accounts Overview":
+      - /url: overview.htm
+  - listitem:
+    - link "Transfer Funds":
+      - /url: transfer.htm
+  - listitem:
+    - link "Bill Pay":
+      - /url: billpay.htm
+  - listitem:
+    - link "Find Transactions":
+      - /url: findtrans.htm
+  - listitem:
+    - link "Update Contact Info":
+      - /url: updateprofile.htm
+  - listitem:
+    - link "Request Loan":
+      - /url: requestloan.htm
+  - listitem:
+    - link "Log Out":
+      - /url: logout.htm
+- heading "Accounts Overview" [level=1]
+- table:
+  - rowgroup:
+    - row "Account Balance* Available Amount":
+      - columnheader "Account"
+      - columnheader "Balance*"
+      - columnheader "Available Amount"
+  - rowgroup:
+    - row "13344 $4917.93 $4917.93":
+      - cell "13344":
+        - link "13344":
+          - /url: activity.htm?id=13344
+      - cell "$4917.93"
+      - cell "$4917.93"
+    - row "14565 -$100.00 $0.00":
+      - cell "14565":
+        - link "14565":
+          - /url: activity.htm?id=14565
+      - cell "-$100.00"
+      - cell "$0.00"
+    - row "14676 -$900.00 $0.00":
+      - cell "14676":
+        - link "14676":
+          - /url: activity.htm?id=14676
+      - cell "-$900.00"
+      - cell "$0.00"
+    - row "15009 -$100.00 $0.00":
+      - cell "15009":
+        - link "15009":
+          - /url: activity.htm?id=15009
+      - cell "-$100.00"
+      - cell "$0.00"
+    - row "15231 -$250.00 $0.00":
+      - cell "15231":
+        - link "15231":
+          - /url: activity.htm?id=15231
+      - cell "-$250.00"
+      - cell "$0.00"
+    - row "15675 $1000.00 $1000.00":
+      - cell "15675":
+        - link "15675":
+          - /url: activity.htm?id=15675
+      - cell "$1000.00"
+      - cell "$1000.00"
+    - row "15897 $200.00 $200.00":
+      - cell "15897":
+        - link "15897":
+          - /url: activity.htm?id=15897
+      - cell "$200.00"
+      - cell "$200.00"
+    - row "16008 $2855.00 $2855.00":
+      - cell "16008":
+        - link "16008":
+          - /url: activity.htm?id=16008
+      - cell "$2855.00"
+      - cell "$2855.00"
+    - row "Total $7622.93":
+      - cell "Total"
+      - cell "$7622.93"
+      - cell
+  - rowgroup:
+    - row "*Balance includes deposits that may be subject to holds":
+      - cell "*Balance includes deposits that may be subject to holds"
+- list:
+  - listitem:
+    - link "Home":
+      - /url: index.htm
+    - text: "|"
+  - listitem:
+    - link "About Us":
+      - /url: about.htm
+    - text: "|"
+  - listitem:
+    - link "Services":
+      - /url: services.htm
+    - text: "|"
+  - listitem:
+    - link "Products":
+      - /url: http://www.parasoft.com/jsp/products.jsp
+    - text: "|"
+  - listitem:
+    - link "Locations":
+      - /url: http://www.parasoft.com/jsp/pr/contacts.jsp
+    - text: "|"
+  - listitem:
+    - link "Forum":
+      - /url: http://forums.parasoft.com/
+    - text: "|"
+  - listitem:
+    - link "Site Map":
+      - /url: sitemap.htm
+    - text: "|"
+  - listitem:
+    - link "Contact Us":
+      - /url: contact.htm
+- paragraph: © Parasoft. All rights reserved.
+- list:
+  - listitem: "Visit us at:"
+  - listitem:
+    - link "www.parasoft.com":
+      - /url: http://www.parasoft.com/

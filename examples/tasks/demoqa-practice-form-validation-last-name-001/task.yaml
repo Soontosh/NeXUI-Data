@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "demoqa-practice-form-validation-last-name-001",
+  "title": "Submit DemoQA Practice Form With Missing Last Name",
+  "goal": "Fill most required fields, leave the last name blank, submit the form, and stop when the page rejects the submission.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "url": "https://demoqa.com/automation-practice-form",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-27T21:19:21.243Z"
+  },
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/automation-practice-form"
+    },
+    {
+      "type": "modal_state_is",
+      "value": "none"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "Nora"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Mobile Number"
+      },
+      "value": "7015550101"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "radio",
+        "name": "Female",
+        "states": {
+          "checked": true
+        }
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "was-validated"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "aria_snapshot",
+      "value": "Thanks for submitting the form"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "form",
+    "validation",
+    "rejected-submit",
+    "multi-step"
+  ],
+  "review_notes": "Validation-boundary task that checks whether the agent can recognize a rejected submission instead of claiming success.",
+  "source_surface": "demoqa",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 4,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  }
+}

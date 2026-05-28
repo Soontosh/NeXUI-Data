@@ -1,0 +1,15 @@
+- link:
+  - /url: /control/login
+  - img
+- text: Email
+- textbox "Email": admin@localhost
+- text: Password
+- textbox "Password"
+- checkbox "Keep me logged in"
+- text: Keep me logged in
+- button "Log in"
+- link "Lost password?":
+  - /url: /control/forgot
+- contentinfo:
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3AC1nCW_qhh3I8p0chu1vpYu7MfWtTSiu5y0EvKi1nIJI

@@ -1,0 +1,342 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list:
+    - listitem:
+      - link " Go to shop":
+        - /url: /nexui/nexui-event/
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  NExUI Benchmark Event Mon, June 15, 2026":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " TEST MODE":
+          - /url: /control/event/nexui/nexui-event/live/
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/event/nexui/nexui-event/
+      - listitem:
+        - link " Settings":
+          - /url: /control/event/nexui/nexui-event/settings/
+        - link "":
+          - /url: "#"
+        - list:
+          - listitem:
+            - link "General":
+              - /url: /control/event/nexui/nexui-event/settings/
+          - listitem:
+            - link "Payment":
+              - /url: /control/event/nexui/nexui-event/settings/payment
+          - listitem:
+            - link "Plugins":
+              - /url: /control/event/nexui/nexui-event/settings/plugins
+          - listitem:
+            - link "Tickets":
+              - /url: /control/event/nexui/nexui-event/settings/tickets
+          - listitem:
+            - link "Email":
+              - /url: /control/event/nexui/nexui-event/settings/email
+          - listitem:
+            - link "Taxes":
+              - /url: /control/event/nexui/nexui-event/settings/tax/
+          - listitem:
+            - link "Invoicing":
+              - /url: /control/event/nexui/nexui-event/settings/invoice
+          - listitem:
+            - link "Cancellation":
+              - /url: /control/event/nexui/nexui-event/settings/cancel
+          - listitem:
+            - link "Widget":
+              - /url: /control/event/nexui/nexui-event/settings/widget
+      - listitem:
+        - link " Products":
+          - /url: /control/event/nexui/nexui-event/items/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Orders":
+          - /url: /control/event/nexui/nexui-event/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Vouchers":
+          - /url: /control/event/nexui/nexui-event/vouchers/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Check-in":
+          - /url: /control/event/nexui/nexui-event/checkinlists/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Send out emails":
+          - /url: /control/event/nexui/nexui-event/sendmail/
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "General settings" [level=1]
+- list:
+  - listitem:
+    - tab "Basics" [expanded]
+  - listitem:
+    - tab "Localization"
+  - listitem:
+    - tab "Customer and attendee data"
+  - listitem:
+    - tab "Texts"
+  - listitem:
+    - tab "Shop design"
+  - listitem:
+    - tab "Timeline"
+  - listitem:
+    - tab "Display"
+  - listitem:
+    - tab "Cart"
+  - listitem:
+    - tab "Waiting list"
+  - listitem:
+    - tab "Item metadata"
+- group:
+  - group "Event name":
+    - text: Event name
+    - textbox "English": NExUI Benchmark Event
+  - text: Short form
+  - textbox "Short form": nexui-event
+  - text: Should be short, only contain lowercase letters, numbers, dots, and dashes, and must be unique among your events. We recommend some kind of abbreviation or a date with less than 10 characters that can be easily remembered, but you can also choose to use a random value. This will be used in URLs, order codes, invoice numbers, and bank transfer references. Domain
+  - combobox "Domain":
+    - option "Same as organizer account" [selected]
+  - text: You can add more domains in your organizer account.
+  - group "Event start time":
+    - text: Event start time
+    - textbox "Date":
+      - /placeholder: 2000-12-31
+      - text: 2026-06-15
+    - textbox "Time":
+      - /placeholder: 00:00:00
+      - text: 00:00:00
+  - group "Event end time Optional":
+    - text: Event end time Optional
+    - textbox "Date":
+      - /placeholder: 2000-12-31
+      - text: 2026-06-15
+    - textbox "Time":
+      - /placeholder: 00:00:00
+      - text: 23:59:59
+  - group "Location Optional":
+    - text: Location Optional
+    - textbox "English":
+      - /placeholder: "Sample Conference Center\nHeidelberg, Germany"
+  - text: Geo coordinates Optional Latitude
+  - textbox "Latitude"
+  - text: Longitude
+  - textbox "Longitude"
+  - group "Admission time Optional":
+    - text: Admission time Optional
+    - textbox "Date":
+      - /placeholder: 2000-12-31
+    - textbox "Time":
+      - /placeholder: 00:00:00
+  - text: Event currency
+  - combobox "Event currency":
+    - option "AED - UAE Dirham"
+    - option "AFN - Afghani"
+    - option "ALL - Lek"
+    - option "AMD - Armenian Dram"
+    - option "AOA - Kwanza"
+    - option "ARS - Argentine Peso"
+    - option "AUD - Australian Dollar"
+    - option "AWG - Aruban Florin"
+    - option "AZN - Azerbaijan Manat"
+    - option "BAM - Convertible Mark"
+    - option "BBD - Barbados Dollar"
+    - option "BDT - Taka"
+    - option "BHD - Bahraini Dinar"
+    - option "BIF - Burundi Franc"
+    - option "BMD - Bermudian Dollar"
+    - option "BND - Brunei Dollar"
+    - option "BOB - Boliviano"
+    - option "BOV - Mvdol"
+    - option "BRL - Brazilian Real"
+    - option "BSD - Bahamian Dollar"
+    - option "BTN - Ngultrum"
+    - option "BWP - Pula"
+    - option "BYN - Belarusian Ruble"
+    - option "BZD - Belize Dollar"
+    - option "CAD - Canadian Dollar"
+    - option "CDF - Congolese Franc"
+    - option "CHE - WIR Euro"
+    - option "CHF - Swiss Franc"
+    - option "CHW - WIR Franc"
+    - option "CLF - Unidad de Fomento"
+    - option "CLP - Chilean Peso"
+    - option "CNY - Yuan Renminbi"
+    - option "COP - Colombian Peso"
+    - option "COU - Unidad de Valor Real"
+    - option "CRC - Costa Rican Colon"
+    - option "CUP - Cuban Peso"
+    - option "CVE - Cabo Verde Escudo"
+    - option "CZK - Czech Koruna"
+    - option "DJF - Djibouti Franc"
+    - option "DKK - Danish Krone"
+    - option "DOP - Dominican Peso"
+    - option "DZD - Algerian Dinar"
+    - option "EGP - Egyptian Pound"
+    - option "ERN - Nakfa"
+    - option "ETB - Ethiopian Birr"
+    - option "EUR - Euro"
+    - option "FJD - Fiji Dollar"
+    - option "FKP - Falkland Islands Pound"
+    - option "GBP - Pound Sterling"
+    - option "GEL - Lari"
+    - option "GHS - Ghana Cedi"
+    - option "GIP - Gibraltar Pound"
+    - option "GMD - Dalasi"
+    - option "GNF - Guinean Franc"
+    - option "GTQ - Quetzal"
+    - option "GYD - Guyana Dollar"
+    - option "HKD - Hong Kong Dollar"
+    - option "HNL - Lempira"
+    - option "HTG - Gourde"
+    - option "HUF - Forint"
+    - option "IDR - Rupiah"
+    - option "ILS - New Israeli Sheqel"
+    - option "INR - Indian Rupee"
+    - option "IQD - Iraqi Dinar"
+    - option "IRR - Iranian Rial"
+    - option "ISK - Iceland Krona"
+    - option "JMD - Jamaican Dollar"
+    - option "JOD - Jordanian Dinar"
+    - option "JPY - Yen"
+    - option "KES - Kenyan Shilling"
+    - option "KGS - Som"
+    - option "KHR - Riel"
+    - option "KMF - Comorian Franc"
+    - option "KPW - North Korean Won"
+    - option "KRW - Won"
+    - option "KWD - Kuwaiti Dinar"
+    - option "KYD - Cayman Islands Dollar"
+    - option "KZT - Tenge"
+    - option "LAK - Lao Kip"
+    - option "LBP - Lebanese Pound"
+    - option "LKR - Sri Lanka Rupee"
+    - option "LRD - Liberian Dollar"
+    - option "LSL - Loti"
+    - option "LYD - Libyan Dinar"
+    - option "MAD - Moroccan Dirham"
+    - option "MDL - Moldovan Leu"
+    - option "MGA - Malagasy Ariary"
+    - option "MKD - Denar"
+    - option "MMK - Kyat"
+    - option "MNT - Tugrik"
+    - option "MOP - Pataca"
+    - option "MRU - Ouguiya"
+    - option "MUR - Mauritius Rupee"
+    - option "MVR - Rufiyaa"
+    - option "MWK - Malawi Kwacha"
+    - option "MXN - Mexican Peso"
+    - option "MXV - Mexican Unidad de Inversion (UDI)"
+    - option "MYR - Malaysian Ringgit"
+    - option "MZN - Mozambique Metical"
+    - option "NAD - Namibia Dollar"
+    - option "NGN - Naira"
+    - option "NIO - Cordoba Oro"
+    - option "NOK - Norwegian Krone"
+    - option "NPR - Nepalese Rupee"
+    - option "NZD - New Zealand Dollar"
+    - option "OMR - Rial Omani"
+    - option "PAB - Balboa"
+    - option "PEN - Sol"
+    - option "PGK - Kina"
+    - option "PHP - Philippine Peso"
+    - option "PKR - Pakistan Rupee"
+    - option "PLN - Zloty"
+    - option "PYG - Guarani"
+    - option "QAR - Qatari Rial"
+    - option "RON - Romanian Leu"
+    - option "RSD - Serbian Dinar"
+    - option "RUB - Russian Ruble"
+    - option "RWF - Rwanda Franc"
+    - option "SAR - Saudi Riyal"
+    - option "SBD - Solomon Islands Dollar"
+    - option "SCR - Seychelles Rupee"
+    - option "SDG - Sudanese Pound"
+    - option "SEK - Swedish Krona"
+    - option "SGD - Singapore Dollar"
+    - option "SHP - Saint Helena Pound"
+    - option "SLE - Leone"
+    - option "SOS - Somali Shilling"
+    - option "SRD - Surinam Dollar"
+    - option "SSP - South Sudanese Pound"
+    - option "STN - Dobra"
+    - option "SVC - El Salvador Colon"
+    - option "SYP - Syrian Pound"
+    - option "SZL - Lilangeni"
+    - option "THB - Baht"
+    - option "TJS - Somoni"
+    - option "TMT - Turkmenistan New Manat"
+    - option "TND - Tunisian Dinar"
+    - option "TOP - Pa’anga"
+    - option "TRY - Turkish Lira"
+    - option "TTD - Trinidad and Tobago Dollar"
+    - option "TWD - New Taiwan Dollar"
+    - option "TZS - Tanzanian Shilling"
+    - option "UAH - Hryvnia"
+    - option "UGX - Uganda Shilling"
+    - option "USD - US Dollar" [selected]
+    - option "UYI - Uruguay Peso en Unidades Indexadas (UI)"
+    - option "UYU - Peso Uruguayo"
+    - option "UYW - Unidad Previsional"
+    - option "UZS - Uzbekistan Sum"
+    - option "VED - Bolívar Soberano"
+    - option "VES - Bolívar Soberano"
+    - option "VND - Dong"
+    - option "VUV - Vatu"
+    - option "WST - Tala"
+    - option "XAD - Arab Accounting Dinar"
+    - option "XAF - CFA Franc BEAC"
+    - option "XCD - East Caribbean Dollar"
+    - option "XCG - Caribbean Guilder"
+    - option "XOF - CFA Franc BCEAO"
+    - option "XPF - CFP Franc"
+    - option "XXX - The codes assigned for transactions where no currency is involved"
+    - option "YER - Yemeni Rial"
+    - option "ZAR - Rand"
+    - option "ZMW - Zambian Kwacha"
+    - option "ZWG - Zimbabwe Gold"
+  - text: Contact address Optional
+  - textbox "Contact address Optional": admin@example.test
+  - text: We'll show this publicly to allow attendees to contact you. Imprint URL Optional
+  - textbox "Imprint URL Optional"
+  - text: This should point e.g. to a part of your website that has your contact details and legal information.
+  - checkbox "Show in lists" [checked]
+  - text: Show in lists If selected, this event will show up publicly on the list of events for your organizer account.
+  - checkbox "Sell on all sales channels" [checked]
+  - text: Sell on all sales channels
+  - group "Restrict to specific sales channels Optional":
+    - text: Restrict to specific sales channels Optional
+    - checkbox " Online shop" [disabled]
+    - text:  Online shop
+- button "Save"
+- link " Cancel or delete event":
+  - /url: /control/event/nexui/nexui-event/dangerzone/
+- link " Clone event":
+  - /url: /control/events/add?clone=1
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3ATqKcBsY9nZimb6wSAaAzku6MybIi45AUhm953yhD5oc

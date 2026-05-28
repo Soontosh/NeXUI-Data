@@ -1,0 +1,122 @@
+{
+  "task_id": "gitlab-login-open-project-issues-001",
+  "title": "Log In To GitLab And Open The Project Issues List",
+  "goal": "Sign in with the seeded GitLab account, open the a11y-syntax-highlighting project, and stop on its issues list.",
+  "instruction": "Sign in to the self-hosted WebArena Verified GitLab instance as byteblaze, open the byteblaze/a11y-syntax-highlighting project, then open its Issues page and stop on the authenticated issues list.",
+  "url": "http://localhost:8023/users/sign_in",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "issues",
+    "authenticated",
+    "hard"
+  ],
+  "review_notes": "Authenticated GitLab project navigation task that reaches the seeded a11y-syntax-highlighting issues list from the dashboard.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "New issue"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so the authenticated projects dashboard can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Projects"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting']"
+      },
+      "explanation": "I opened the seeded a11y-syntax-highlighting project from the projects dashboard.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "a[href='/byteblaze/a11y-syntax-highlighting/-/issues']"
+      },
+      "explanation": "I opened the project issues list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "New issue"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style service patterns.
+- main:
+  - region "What is your full name?":
+    - heading "What is your full name?" [level=1]
+    - paragraph: We use this to prepare your travel support application.
+    - text: Full name
+    - textbox "Full name": Amina Patel
+    - button "Continue"

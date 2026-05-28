@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.0",
+  "site_id": "hmrc-prototype-guidance",
+  "site_name": "HMRC Prototype Guidance",
+  "base_url": "https://design.tax.service.gov.uk/prototype-guidance/",
+  "source_track": "service_form_pattern",
+  "category": "government_pattern",
+  "hosting_mode": "pattern_proto",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "intake",
+  "reset_strategy": "fixture_reload",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": "Use HMRC guidance to author local prototype-kit tasks rather than benchmarking the guidance pages directly."
+  },
+  "task_families": [
+    "prototype_kit_flows",
+    "branching_logic",
+    "service_journeys",
+    "validation_and_review"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use this guidance source to standardize local prototype-kit setups for tax and public-service style tasks."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "home",
+      "label": "Prototype Guidance Home",
+      "url": "https://design.tax.service.gov.uk/prototype-guidance/",
+      "goal_hint": "Review guidance for building repeatable local prototype tasks with realistic service journeys.",
+      "notes": "This source informs track setup rather than direct benchmark capture."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "hmrc-branching-service-journey",
+      "summary": "Build a local prototype with branching tax-service questions and benchmark an answer-dependent route through it.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Prototype-derived service-form task."
+    },
+    {
+      "idea_id": "hmrc-review-and-correct",
+      "summary": "Reach a review page, correct an earlier answer, and verify that later content or eligibility changes.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Good fit for complex multi-step reasoning."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Guidance track for local HMRC-style prototypes with strong branching and validation patterns."
+  }
+}

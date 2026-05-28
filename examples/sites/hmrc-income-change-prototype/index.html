@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report an income change</title>
+    <style>
+      :root {
+        --hmrc-blue: #005ea5;
+        --hmrc-green: #00703c;
+        --hmrc-text: #0b0c0c;
+        --hmrc-border: #b1b4b6;
+        --hmrc-error: #d4351c;
+        --hmrc-panel: #f3f2f1;
+        --hmrc-inset: #e8f1fa;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--hmrc-text);
+        background: #fff;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: var(--hmrc-blue);
+      }
+
+      .service-banner {
+        padding: 12px 16px;
+        background: var(--hmrc-panel);
+        border-bottom: 1px solid var(--hmrc-border);
+      }
+
+      .service-tag {
+        display: inline-block;
+        margin-right: 8px;
+        padding: 4px 8px;
+        background: var(--hmrc-blue);
+        color: #fff;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .shell {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 24px 16px 64px;
+      }
+
+      main {
+        max-width: 700px;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      p,
+      label,
+      legend,
+      .hint,
+      .summary-list td,
+      .summary-list th {
+        font-size: 1.125rem;
+      }
+
+      .hint {
+        margin: 0 0 12px;
+        color: #505a5f;
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group.error {
+        padding-left: 12px;
+        border-left: 4px solid var(--hmrc-error);
+      }
+
+      .error-message {
+        display: block;
+        margin: 8px 0 12px;
+        color: var(--hmrc-error);
+        font-weight: 700;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .text-input,
+      .textarea {
+        width: min(32rem, 100%);
+        padding: 10px 12px;
+        border: 2px solid var(--hmrc-text);
+        font: inherit;
+      }
+
+      .textarea {
+        min-height: 9rem;
+      }
+
+      .text-input.error,
+      .textarea.error {
+        border-color: var(--hmrc-error);
+      }
+
+      fieldset {
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+
+      .radios {
+        display: grid;
+        gap: 12px;
+      }
+
+      .radio-item {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 12px 18px;
+        border: 0;
+        background: var(--hmrc-green);
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .button.secondary {
+        background: var(--hmrc-blue);
+      }
+
+      .inset-text {
+        margin: 20px 0 24px;
+        padding: 16px;
+        border-left: 8px solid var(--hmrc-blue);
+        background: var(--hmrc-inset);
+      }
+
+      .error-summary {
+        margin: 0 0 24px;
+        padding: 16px;
+        border: 4px solid var(--hmrc-error);
+      }
+
+      .error-summary h2 {
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+      }
+
+      .summary-list {
+        width: 100%;
+        margin-bottom: 24px;
+        border-collapse: collapse;
+      }
+
+      .summary-list tr {
+        border-bottom: 1px solid var(--hmrc-border);
+      }
+
+      .summary-list th,
+      .summary-list td {
+        padding: 14px 8px 14px 0;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .summary-list th {
+        width: 32%;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="service-banner">
+      <span class="service-tag">Prototype</span>
+      <span>This local fixture is derived from HMRC-style prototype patterns for complex service journeys.</span>
+    </div>
+
+    <div class="shell">
+      <a id="back-link" class="back-link" href="#/tax-year">Back</a>
+
+      <main id="main-content" role="main" tabindex="-1">
+        <div id="error-summary" class="error-summary hidden" role="alert" aria-labelledby="error-summary-title">
+          <h2 id="error-summary-title">There is a problem</h2>
+          <ul id="error-list"></ul>
+        </div>
+
+        <section id="page-tax-year" class="section" aria-labelledby="tax-year-title">
+          <h1 id="tax-year-title">Which tax year are you updating?</h1>
+          <p class="hint">Choose the tax year for the income change you want to report.</p>
+          <div id="tax-year-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">Which tax year are you updating?</legend>
+              <span id="tax-year-error" class="error-message hidden">Select a tax year</span>
+              <div class="radios">
+                <label class="radio-item" for="tax-year-2025">
+                  <input id="tax-year-2025" name="tax-year" type="radio" value="2025-26">
+                  <span>2025 to 2026</span>
+                </label>
+                <label class="radio-item" for="tax-year-2024">
+                  <input id="tax-year-2024" name="tax-year" type="radio" value="2024-25">
+                  <span>2024 to 2025</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <button id="continue-tax-year" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-income-source" class="section" aria-labelledby="income-source-title">
+          <h1 id="income-source-title">What income source changed?</h1>
+          <p class="hint">This helps us ask the right follow-up questions.</p>
+          <div id="income-source-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">What income source changed?</legend>
+              <span id="income-source-error" class="error-message hidden">Select the income source that changed</span>
+              <div class="radios">
+                <label class="radio-item" for="source-employed">
+                  <input id="source-employed" name="income-source" type="radio" value="Employment pay">
+                  <span>Employment pay</span>
+                </label>
+                <label class="radio-item" for="source-self-employed">
+                  <input id="source-self-employed" name="income-source" type="radio" value="Self-employment">
+                  <span>Self-employment</span>
+                </label>
+                <label class="radio-item" for="source-pension">
+                  <input id="source-pension" name="income-source" type="radio" value="Pension">
+                  <span>Pension</span>
+                </label>
+                <label class="radio-item" for="source-more-than-one">
+                  <input id="source-more-than-one" name="income-source" type="radio" value="More than one source">
+                  <span>More than one source</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div id="income-source-inset" class="inset-text hidden">
+            You may need to report one change now and come back for the other income source later.
+          </div>
+          <button id="continue-income-source" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-change-kind" class="section" aria-labelledby="change-kind-title">
+          <h1 id="change-kind-title">How did the income change?</h1>
+          <p id="change-kind-hint" class="hint">Tell us whether this income went up, went down, or stopped.</p>
+          <div id="change-kind-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">How did the income change?</legend>
+              <span id="change-kind-error" class="error-message hidden">Select how the income changed</span>
+              <div class="radios">
+                <label class="radio-item" for="change-increased">
+                  <input id="change-increased" name="change-kind" type="radio" value="Increased">
+                  <span>It increased</span>
+                </label>
+                <label class="radio-item" for="change-decreased">
+                  <input id="change-decreased" name="change-kind" type="radio" value="Decreased">
+                  <span>It decreased</span>
+                </label>
+                <label class="radio-item" for="change-stopped">
+                  <input id="change-stopped" name="change-kind" type="radio" value="Stopped">
+                  <span>It stopped</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <button id="continue-change-kind" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-old-amount" class="section" aria-labelledby="old-amount-title">
+          <h1 id="old-amount-title">What was the previous monthly amount?</h1>
+          <p class="hint">Enter the amount before the change, in pounds.</p>
+          <div id="old-amount-group" class="form-group">
+            <label for="old-amount">Previous monthly amount</label>
+            <span id="old-amount-error" class="error-message hidden">Enter a valid previous monthly amount</span>
+            <input id="old-amount" class="text-input" inputmode="decimal" autocomplete="off">
+          </div>
+          <button id="continue-old-amount" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-new-amount" class="section" aria-labelledby="new-amount-title">
+          <h1 id="new-amount-title">What is the new monthly amount?</h1>
+          <p id="new-amount-hint" class="hint">Enter the amount after the change, in pounds.</p>
+          <div id="new-amount-group" class="form-group">
+            <label for="new-amount">New monthly amount</label>
+            <span id="new-amount-error" class="error-message hidden">Enter a valid new monthly amount</span>
+            <input id="new-amount" class="text-input" inputmode="decimal" autocomplete="off">
+          </div>
+          <button id="continue-new-amount" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-contact-method" class="section" aria-labelledby="contact-method-title">
+          <h1 id="contact-method-title">How should we contact you if we need more details?</h1>
+          <p class="hint">Choose one method for follow-up questions about this update.</p>
+          <div id="contact-method-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">How should we contact you if we need more details?</legend>
+              <span id="contact-method-error" class="error-message hidden">Select a contact method</span>
+              <div class="radios">
+                <label class="radio-item" for="contact-email">
+                  <input id="contact-email" name="contact-method" type="radio" value="Email">
+                  <span>Email</span>
+                </label>
+                <label class="radio-item" for="contact-text">
+                  <input id="contact-text" name="contact-method" type="radio" value="Text message">
+                  <span>Text message</span>
+                </label>
+                <label class="radio-item" for="contact-post">
+                  <input id="contact-post" name="contact-method" type="radio" value="Post">
+                  <span>Post</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div id="contact-detail-group" class="form-group hidden">
+            <label id="contact-detail-label" for="contact-detail">Contact detail</label>
+            <p id="contact-detail-hint" class="hint"></p>
+            <span id="contact-detail-error" class="error-message hidden">Enter the required contact detail</span>
+            <input id="contact-detail" class="text-input" autocomplete="off">
+          </div>
+          <button id="continue-contact-method" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-notes" class="section" aria-labelledby="notes-title">
+          <h1 id="notes-title">Add anything that would help us understand the change</h1>
+          <p class="hint">This is optional, but it can reduce follow-up questions.</p>
+          <div class="inset-text">
+            For example, you can tell us when the change started or whether you expect it to happen again.
+          </div>
+          <div id="notes-group" class="form-group">
+            <label for="supporting-notes">Supporting notes</label>
+            <textarea id="supporting-notes" class="textarea"></textarea>
+          </div>
+          <button id="continue-notes" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-check-answers" class="section" aria-labelledby="check-answers-title">
+          <h1 id="check-answers-title">Check your answers before sending this update</h1>
+          <p class="hint">Make sure the information below matches the change you want to report.</p>
+          <table class="summary-list">
+            <tbody>
+              <tr>
+                <th scope="row">Tax year</th>
+                <td id="summary-tax-year"></td>
+                <td><a id="change-tax-year" href="#/tax-year">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Income source</th>
+                <td id="summary-income-source"></td>
+                <td><a id="change-income-source" href="#/income-source">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Change</th>
+                <td id="summary-change-kind"></td>
+                <td><a id="change-change-kind" href="#/change-kind">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Previous monthly amount</th>
+                <td id="summary-old-amount"></td>
+                <td><a id="change-old-amount" href="#/old-amount">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">New monthly amount</th>
+                <td id="summary-new-amount"></td>
+                <td><a id="change-new-amount" href="#/new-amount">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Contact method</th>
+                <td id="summary-contact-method"></td>
+                <td><a id="change-contact-method" href="#/contact-method">Change</a></td>
+              </tr>
+              <tr id="summary-contact-detail-row">
+                <th scope="row" id="summary-contact-detail-label">Contact detail</th>
+                <td id="summary-contact-detail"></td>
+                <td><a id="change-contact-detail" href="#/contact-method">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Supporting notes</th>
+                <td id="summary-notes"></td>
+                <td><a id="change-notes" href="#/notes">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="review-guidance" class="inset-text">
+            Do not send this update unless the new amount and contact details are correct.
+          </div>
+          <button id="send-update" class="button secondary" type="button">Send update</button>
+        </section>
+
+        <section id="page-submitted" class="section" aria-labelledby="submitted-title">
+          <h1 id="submitted-title">Income change submitted</h1>
+          <p>We have recorded the income change and will contact you if we need more details.</p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const steps = [
+        "tax-year",
+        "income-source",
+        "change-kind",
+        "old-amount",
+        "new-amount",
+        "contact-method",
+        "notes",
+        "check-answers",
+        "submitted"
+      ];
+
+      const state = {
+        taxYear: "",
+        incomeSource: "",
+        changeKind: "",
+        oldAmount: "",
+        newAmount: "",
+        contactMethod: "",
+        contactDetail: "",
+        notes: ""
+      };
+
+      function currentRoute() {
+        const route = window.location.hash.replace(/^#\//, "");
+        return steps.includes(route) ? route : "tax-year";
+      }
+
+      function showSection(route) {
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.toggle("active", section.id === `page-${route}`);
+        });
+        updateBackLink(route);
+        renderState(route);
+        clearErrorSummary();
+        const main = document.getElementById("main-content");
+        main.focus();
+      }
+
+      function updateBackLink(route) {
+        const link = document.getElementById("back-link");
+        const index = steps.indexOf(route);
+        if (index <= 0) {
+          link.classList.add("hidden");
+          return;
+        }
+        link.classList.remove("hidden");
+        link.href = `#/${steps[index - 1]}`;
+      }
+
+      function goTo(route) {
+        window.location.hash = `#/${route}`;
+      }
+
+      function renderState(route) {
+        document.getElementById("income-source-inset").classList.toggle("hidden", state.incomeSource !== "More than one source");
+        const detailLabel = document.getElementById("contact-detail-label");
+        const detailHint = document.getElementById("contact-detail-hint");
+        const detailGroup = document.getElementById("contact-detail-group");
+        const detailRow = document.getElementById("summary-contact-detail-row");
+        const summaryDetailLabel = document.getElementById("summary-contact-detail-label");
+
+        let label = "Contact detail";
+        let hint = "";
+        if (state.contactMethod === "Email") {
+          label = "Email address";
+          hint = "We will use this address only if we need more details about the update.";
+        } else if (state.contactMethod === "Text message") {
+          label = "Mobile number";
+          hint = "Enter a mobile number we can text during the day.";
+        } else if (state.contactMethod === "Post") {
+          label = "Postal address";
+          hint = "Enter the postal address where you want letters about this update.";
+        }
+
+        detailLabel.textContent = label;
+        detailHint.textContent = hint;
+        summaryDetailLabel.textContent = label;
+        detailGroup.classList.toggle("hidden", !state.contactMethod);
+        detailRow.classList.toggle("hidden", !state.contactMethod);
+
+        document.getElementById("change-kind-hint").textContent =
+          state.incomeSource
+            ? `Tell us whether your ${state.incomeSource.toLowerCase()} went up, went down, or stopped.`
+            : "Tell us whether this income went up, went down, or stopped.";
+
+        document.getElementById("new-amount-hint").textContent =
+          state.changeKind === "Stopped"
+            ? "Enter 0 if the income stopped completely."
+            : "Enter the amount after the change, in pounds.";
+
+        document.getElementById("summary-tax-year").textContent = state.taxYear || "Not answered";
+        document.getElementById("summary-income-source").textContent = state.incomeSource || "Not answered";
+        document.getElementById("summary-change-kind").textContent = state.changeKind || "Not answered";
+        document.getElementById("summary-old-amount").textContent = state.oldAmount ? `£${state.oldAmount}` : "Not answered";
+        document.getElementById("summary-new-amount").textContent = state.newAmount ? `£${state.newAmount}` : "Not answered";
+        document.getElementById("summary-contact-method").textContent = state.contactMethod || "Not answered";
+        document.getElementById("summary-contact-detail").textContent = state.contactDetail || "Not answered";
+        document.getElementById("summary-notes").textContent = state.notes || "No supporting notes added";
+
+        if (route === "check-answers") {
+          document.title = "Check your answers before sending this update";
+        } else if (route === "submitted") {
+          document.title = "Income change submitted";
+        } else {
+          document.title = "Report an income change";
+        }
+      }
+
+      function clearFieldError(prefix, inputId) {
+        document.getElementById(`${prefix}-group`).classList.remove("error");
+        document.getElementById(`${prefix}-error`).classList.add("hidden");
+        if (inputId) {
+          document.getElementById(inputId).classList.remove("error");
+        }
+      }
+
+      function setFieldError(prefix, inputId, message) {
+        document.getElementById(`${prefix}-group`).classList.add("error");
+        const error = document.getElementById(`${prefix}-error`);
+        error.textContent = message;
+        error.classList.remove("hidden");
+        if (inputId) {
+          document.getElementById(inputId).classList.add("error");
+        }
+      }
+
+      function clearErrorSummary() {
+        document.getElementById("error-summary").classList.add("hidden");
+        document.getElementById("error-list").innerHTML = "";
+        [
+          ["tax-year", null],
+          ["income-source", null],
+          ["change-kind", null],
+          ["old-amount", "old-amount"],
+          ["new-amount", "new-amount"],
+          ["contact-method", null],
+          ["contact-detail", "contact-detail"]
+        ].forEach(([prefix, inputId]) => clearFieldError(prefix, inputId));
+      }
+
+      function showErrors(errors) {
+        const summary = document.getElementById("error-summary");
+        const list = document.getElementById("error-list");
+        list.innerHTML = "";
+        errors.forEach((error) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = `#${error.href}`;
+          link.textContent = error.message;
+          item.appendChild(link);
+          list.appendChild(item);
+          setFieldError(error.prefix, error.inputId, error.message);
+        });
+        summary.classList.remove("hidden");
+        summary.focus();
+      }
+
+      function requireRadio(name, prefix, message) {
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        if (!selected) {
+          return { ok: false, errors: [{ prefix, inputId: null, href: selected ? selected.id : `${prefix}-group`, message }] };
+        }
+        return { ok: true, value: selected.value };
+      }
+
+      function parseAmount(value) {
+        const normalized = String(value || "").trim();
+        if (!normalized || Number.isNaN(Number(normalized))) {
+          return null;
+        }
+        return Number(normalized);
+      }
+
+      function validateAndContinue(route) {
+        clearErrorSummary();
+        const errors = [];
+
+        if (route === "tax-year") {
+          const result = requireRadio("tax-year", "tax-year", "Select a tax year");
+          if (!result.ok) {
+            errors.push(...result.errors);
+          } else {
+            state.taxYear = result.value;
+          }
+        }
+
+        if (route === "income-source") {
+          const result = requireRadio("income-source", "income-source", "Select the income source that changed");
+          if (!result.ok) {
+            errors.push(...result.errors);
+          } else {
+            state.incomeSource = result.value;
+          }
+        }
+
+        if (route === "change-kind") {
+          const result = requireRadio("change-kind", "change-kind", "Select how the income changed");
+          if (!result.ok) {
+            errors.push(...result.errors);
+          } else {
+            state.changeKind = result.value;
+          }
+        }
+
+        if (route === "old-amount") {
+          const value = document.getElementById("old-amount").value;
+          const amount = parseAmount(value);
+          if (amount === null || amount <= 0) {
+            errors.push({
+              prefix: "old-amount",
+              inputId: "old-amount",
+              href: "old-amount",
+              message: "Enter a valid previous monthly amount"
+            });
+          } else {
+            state.oldAmount = amount.toFixed(2);
+          }
+        }
+
+        if (route === "new-amount") {
+          const value = document.getElementById("new-amount").value;
+          const amount = parseAmount(value);
+          const oldAmount = parseAmount(state.oldAmount);
+          if (amount === null || amount < 0) {
+            errors.push({
+              prefix: "new-amount",
+              inputId: "new-amount",
+              href: "new-amount",
+              message: "Enter a valid new monthly amount"
+            });
+          } else if (state.changeKind === "Increased" && oldAmount !== null && amount <= oldAmount) {
+            errors.push({
+              prefix: "new-amount",
+              inputId: "new-amount",
+              href: "new-amount",
+              message: "New monthly amount must be higher than the previous amount"
+            });
+          } else if (state.changeKind === "Decreased" && oldAmount !== null && amount >= oldAmount) {
+            errors.push({
+              prefix: "new-amount",
+              inputId: "new-amount",
+              href: "new-amount",
+              message: "New monthly amount must be lower than the previous amount"
+            });
+          } else if (state.changeKind === "Stopped" && amount !== 0) {
+            errors.push({
+              prefix: "new-amount",
+              inputId: "new-amount",
+              href: "new-amount",
+              message: "Enter 0 if the income stopped"
+            });
+          } else {
+            state.newAmount = amount.toFixed(2);
+          }
+        }
+
+        if (route === "contact-method") {
+          const method = requireRadio("contact-method", "contact-method", "Select a contact method");
+          if (!method.ok) {
+            errors.push(...method.errors);
+          } else {
+            state.contactMethod = method.value;
+            const detail = document.getElementById("contact-detail").value.trim();
+            if (!detail) {
+              errors.push({
+                prefix: "contact-detail",
+                inputId: "contact-detail",
+                href: "contact-detail",
+                message: state.contactMethod === "Email"
+                  ? "Enter an email address"
+                  : state.contactMethod === "Text message"
+                    ? "Enter a mobile number"
+                    : "Enter a postal address"
+              });
+            } else if (state.contactMethod === "Email" && !detail.includes("@")) {
+              errors.push({
+                prefix: "contact-detail",
+                inputId: "contact-detail",
+                href: "contact-detail",
+                message: "Enter an email address in the correct format"
+              });
+            } else if (state.contactMethod === "Text message" && detail.replace(/[^0-9]/g, "").length < 8) {
+              errors.push({
+                prefix: "contact-detail",
+                inputId: "contact-detail",
+                href: "contact-detail",
+                message: "Enter a mobile number with at least 8 digits"
+              });
+            } else {
+              state.contactDetail = detail;
+            }
+          }
+        }
+
+        if (route === "notes") {
+          state.notes = document.getElementById("supporting-notes").value.trim();
+        }
+
+        if (errors.length) {
+          showErrors(errors);
+          return;
+        }
+
+        const nextIndex = Math.min(steps.indexOf(route) + 1, steps.length - 1);
+        goTo(steps[nextIndex]);
+      }
+
+      function bindRadios(name, callback) {
+        document.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+          input.addEventListener("change", () => callback(input.value));
+        });
+      }
+
+      function hydrateInputs() {
+        if (state.taxYear) {
+          const input = document.querySelector(`input[name="tax-year"][value="${state.taxYear}"]`);
+          if (input) input.checked = true;
+        }
+        if (state.incomeSource) {
+          const input = document.querySelector(`input[name="income-source"][value="${state.incomeSource}"]`);
+          if (input) input.checked = true;
+        }
+        if (state.changeKind) {
+          const input = document.querySelector(`input[name="change-kind"][value="${state.changeKind}"]`);
+          if (input) input.checked = true;
+        }
+        if (state.contactMethod) {
+          const input = document.querySelector(`input[name="contact-method"][value="${state.contactMethod}"]`);
+          if (input) input.checked = true;
+        }
+        document.getElementById("old-amount").value = state.oldAmount;
+        document.getElementById("new-amount").value = state.newAmount;
+        document.getElementById("contact-detail").value = state.contactDetail;
+        document.getElementById("supporting-notes").value = state.notes;
+        renderState(currentRoute());
+      }
+
+      document.getElementById("continue-tax-year").addEventListener("click", () => validateAndContinue("tax-year"));
+      document.getElementById("continue-income-source").addEventListener("click", () => validateAndContinue("income-source"));
+      document.getElementById("continue-change-kind").addEventListener("click", () => validateAndContinue("change-kind"));
+      document.getElementById("continue-old-amount").addEventListener("click", () => validateAndContinue("old-amount"));
+      document.getElementById("continue-new-amount").addEventListener("click", () => validateAndContinue("new-amount"));
+      document.getElementById("continue-contact-method").addEventListener("click", () => validateAndContinue("contact-method"));
+      document.getElementById("continue-notes").addEventListener("click", () => validateAndContinue("notes"));
+      document.getElementById("send-update").addEventListener("click", () => goTo("submitted"));
+
+      bindRadios("income-source", (value) => {
+        state.incomeSource = value;
+        renderState(currentRoute());
+      });
+
+      bindRadios("contact-method", (value) => {
+        state.contactMethod = value;
+        renderState(currentRoute());
+      });
+
+      window.addEventListener("hashchange", () => {
+        hydrateInputs();
+        showSection(currentRoute());
+      });
+
+      hydrateInputs();
+      showSection(currentRoute());
+    </script>
+  </body>
+</html>

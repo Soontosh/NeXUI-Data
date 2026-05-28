@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "webarena-map-reverse-monaco-route-to-foot-001",
+  "title": "Reverse The Monaco Route And Switch It To Foot",
+  "goal": "Reverse the seeded Monaco route, switch the reversed route from car to foot, and stop once the reversed walking route result is visible.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "select",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "webarena-verified-map",
+    "site_name": "WebArena Verified Map",
+    "url": "http://localhost:3030/directions?engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246",
+    "category": "other",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-06-02T23:58:52.315Z"
+  },
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 2,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": true,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "source_surface": "webarena-verified-map",
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": false,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "engine=fossgis_osrm_foot&route=43.7308%2C7.4189%3B43.7384%2C7.4246"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "From"
+      },
+      "value": "43.7308, 7.4189"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "To"
+      },
+      "value": "43.7384, 7.4246"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Distance: 1.4km. Time: 0:17."
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "webarena",
+    "map",
+    "routing",
+    "reverse-route",
+    "foot",
+    "hard"
+  ],
+  "review_notes": "Chained route-state task that first reverses the seeded Monaco route and then switches the reversed route to Foot (OSRM)."
+}

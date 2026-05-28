@@ -1,0 +1,51 @@
+{
+  "task_id": "accessible-university-open-info-001",
+  "title": "Open Accessible University Info Page",
+  "goal": "Open the AU Info page from the overview and stop there.",
+  "instruction": "Open the Accessible University Info page and stop after it loads.",
+  "url": "https://projects.accesscomputing.uw.edu/au/",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University Demo Site",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "accessibility",
+    "explanation-heavy"
+  ],
+  "review_notes": "Adds an explanation-oriented AU endpoint centered on accessibility issues and solutions rather than only before/after page selection.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/info.html"
+    },
+    {
+      "type": "text_present",
+      "value": "Accessible University Info Page"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "explanation": "I opened the AU Info page, which explains the accessibility problems and fixes shown in the demo."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the AU Info page and stopped there."
+      },
+      "explanation": "The requested explanation page is open now, so I am ending the task."
+    }
+  ]
+}

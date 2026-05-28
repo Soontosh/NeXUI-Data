@@ -1,0 +1,150 @@
+- banner:
+  - link "Skip to main content":
+    - /url: "#main"
+  - heading "Accessible University" [level=1]:
+    - img "Accessible University"
+  - navigation "Demo site menu":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: index.html
+      - listitem:
+        - link "Before":
+          - /url: before.html
+      - listitem:
+        - link "After":
+          - /url: after.html
+      - listitem:
+        - link "Info":
+          - /url: info.html
+- navigation "Main Menu":
+  - list:
+    - listitem:
+      - button "About"
+    - listitem:
+      - button "Academics"
+    - listitem:
+      - button "Admissions"
+    - listitem:
+      - button "Visitors"
+- main:
+  - region "Slideshow":
+    - group "1 of 4":
+      - img "An old brick building reflected in the glass exterior of a modern building"
+      - text: A modern school
+    - button "Previous"
+    - button "Next"
+    - list:
+      - listitem:
+        - button "Slide 1": "1"
+      - listitem:
+        - button "Slide 2": "2"
+      - listitem:
+        - button "Slide 3": "3"
+      - listitem:
+        - button "Slide 4": "4"
+  - heading "Welcome!" [level=2]
+  - paragraph: Accessible University (AU) is a fictional university, and this is its fictional home page. This page is designed to demonstrate a variety of common web design problems that result in visitors with disabilities being unable to access the content or features of a web page. Although the heading at the top of this section of the page suggests that AU may be a welcoming institution, the inaccessible design of this page sends the opposite message.
+  - heading "Bienvenido!" [level=2]
+  - paragraph: Accesible Universidad (UA) es una universidad ficticia, y esta es su página de ficción. Esta página está diseñada para demostrar una variedad de común de diseño web que se traducen en problemas de los visitantes con discapacidad no poder acceder al contenido o las características de una página web. Aunque el título en la parte superior de esta sección de la página sugiere que AU puede ser una institución de bienvenida, el diseño inaccesible de esta página envía el mensaje opuesto.
+  - heading "Can you spot the barriers?" [level=2]
+  - paragraph:
+    - text: This page is an improved version, with 22 accessibility issues corrected. Details about all known issues are on the
+    - link "Info":
+      - /url: info.html
+    - text: page. To see the original issues, consult the
+    - link "Inaccessible version":
+      - /url: before.html
+    - text: ". See also:"
+  - button "Short list of accessibility issues, opens in a dialog": Short list of accessibility issues
+  - heading "AU Enrollment Trends" [level=2]
+  - table "The following table shows undergraduate and graduate enrollment over a two-year period by subject.":
+    - caption: The following table shows undergraduate and graduate enrollment over a two-year period by subject.
+    - rowgroup:
+      - row "Last Year This Year":
+        - cell
+        - columnheader "Last Year"
+        - columnheader "This Year"
+      - row "CS Eng Eco Phy Psy CS Eng Eco Phy Psy":
+        - columnheader "CS"
+        - columnheader "Eng"
+        - columnheader "Eco"
+        - columnheader "Phy"
+        - columnheader "Psy"
+        - columnheader "CS"
+        - columnheader "Eng"
+        - columnheader "Eco"
+        - columnheader "Phy"
+        - columnheader "Psy"
+    - rowgroup:
+      - row "Undergraduate 1481 400 727 747 1006 1500 340 777 787 1112":
+        - rowheader "Undergraduate"
+        - cell "1481"
+        - cell "400"
+        - cell "727"
+        - cell "747"
+        - cell "1006"
+        - cell "1500"
+        - cell "340"
+        - cell "777"
+        - cell "787"
+        - cell "1112"
+      - row "Graduate 310 84 273 69 312 350 64 341 72 325":
+        - rowheader "Graduate"
+        - cell "310"
+        - cell "84"
+        - cell "273"
+        - cell "69"
+        - cell "312"
+        - cell "350"
+        - cell "64"
+        - cell "341"
+        - cell "72"
+        - cell "325"
+  - heading "AU Video" [level=2]
+- complementary "Apply Now!":
+  - heading "Apply Now!" [level=2]
+  - text: Name
+  - textbox "Name"
+  - text: Email
+  - textbox "Email"
+  - text: "Country:"
+  - textbox "Country:"
+  - group "Desired major(s):":
+    - text: "Desired major(s):"
+    - list:
+      - listitem:
+        - text: Computer Science
+        - checkbox "Computer Science"
+      - listitem:
+        - text: Engineering
+        - checkbox "Engineering"
+      - listitem:
+        - text: Economics
+        - checkbox "Economics"
+      - listitem:
+        - text: Physics
+        - checkbox "Physics"
+      - listitem:
+        - text: Psychology
+        - checkbox "Psychology"
+      - listitem:
+        - text: Spanish
+        - checkbox "Spanish"
+  - group "Security Question":
+    - text: Security Question Cow, pizza, car. Which of these has more than three letters?
+    - textbox "Cow, pizza, car. Which of these has more than three letters?"
+  - button "Submit"
+- contentinfo:
+  - link "Creative Commons License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+    - img "Creative Commons License"
+  - text: Accessible University by
+  - link "University of Washington":
+    - /url: http://washington.edu/accesscomputing/AU
+  - text: is licensed under a
+  - link "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License":
+    - /url: http://creativecommons.org/licenses/by-nc-sa/4.0/
+  - text: .
+  - paragraph: "This product was originally developed with support from the National Institute on Disability and Rehabilitation Research of the U.S. Department of Education (grant #H133D010306), and has been subsequently updated and maintained with support from the National Science Foundation (grants #CNS-0540615, CNS-0837508, CNS-1042260, CNS-1539179, and CNS-2137312). The contents do not necessarily represent the policies of the U.S. federal government, and you should not assume their endorsement."
+- alert

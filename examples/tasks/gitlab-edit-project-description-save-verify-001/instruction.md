@@ -1,0 +1,1 @@
+Open the self-hosted WebArena Verified GitLab project settings for byteblaze/a11y-syntax-highlighting, sign in if needed, append ' [NExUI saved]' to the project description, save the change, and verify the saved description still appears on the settings form.

@@ -1,0 +1,109 @@
+{
+  "task_id": "erpnext-open-seeded-item-detail-001",
+  "title": "Log In To ERPNext And Stop On The Seeded Item Detail Page",
+  "goal": "Sign in to ERPNext and stop on the seeded NEXUI-ITEM-001 item detail page.",
+  "instruction": "Open the ERPNext route for item NEXUI-ITEM-001, sign in as Administrator with password admin, and stop once the seeded item detail page is visible.",
+  "url": "http://localhost:8090/app/item/NEXUI-ITEM-001",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "item-detail",
+    "hard"
+  ],
+  "review_notes": "First fixture-backed ERPNext detail task using the deterministic seeded item.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/item/NEXUI-ITEM-001"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "NExUI Test Item"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so ERPNext can redirect back to the seeded item detail page.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/item/NEXUI-ITEM-001"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "NExUI Test Item"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened the seeded ERPNext item detail page."
+      },
+      "explanation": "The seeded item detail page is visible now, so I am ending the task."
+    }
+  ]
+}

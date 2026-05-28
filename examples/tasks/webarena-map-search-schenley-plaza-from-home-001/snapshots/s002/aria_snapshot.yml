@@ -1,0 +1,74 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=5/51.495/7.603
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=5/51.495/7.603
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=5/51.495/7.603
+    - link "Export":
+      - /url: http://localhost:3030/export#map=5/51.495/7.603
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2F#map=5/51.495/7.603
+    - link "Sign Up":
+      - /url: /user/new
+- textbox "Search": Schenley Plaza
+- button "Go"
+- link "Find directions between two points":
+  - /url: /directions
+  - img
+- heading "Search Results" [level=2]
+- button "Close"
+- heading "Results from OpenStreetMap Nominatim" [level=4]:
+  - text: Results from
+  - link "OpenStreetMap Nominatim":
+    - /url: https://nominatim.openstreetmap.org/
+- status: Loading...
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 300 km 100 mi ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

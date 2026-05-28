@@ -1,0 +1,1 @@
+Open the ERPNext new customer route, sign in as Administrator with password admin, create a new customer named NExUI Save Verify Customer, return to the customer list, filter the list to that customer name, and verify the new customer appears.

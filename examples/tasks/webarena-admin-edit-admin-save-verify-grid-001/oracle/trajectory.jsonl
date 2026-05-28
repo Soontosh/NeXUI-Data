@@ -1,0 +1,5 @@
+{"action":{"type":"click","target":"e37"},"explanation":"I opened the seeded admin user so I can update its email."}
+{"action":{"type":"type","target":"e29","text":"admin+nexui-saved@example.test"},"explanation":"I replaced the seeded admin email with the deterministic saved variant."}
+{"action":{"type":"type","target":"e34","text":"admin1234"},"explanation":"I entered the current admin password required to authorize the change."}
+{"action":{"type":"click","target":"e19"},"explanation":"I saved the updated admin email."}
+{"action":{"type":"finish","summary":"I updated the seeded Magento admin email and verified the change from the users grid."},"explanation":"The users grid shows the updated admin email now, so I am ending the task."}

@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"byteblaze"},"explanation":"I entered the seeded GitLab username after landing on the protected new-issue form."}
+{"action":{"type":"type","target":"e3","text":"hello1234"},"explanation":"I entered the seeded GitLab password."}
+{"action":{"type":"click","target":"e6"},"explanation":"I signed in so GitLab can redirect back to the new-issue form."}
+{"action":{"type":"type","target":"e35","text":"NExUI canceled issue draft"},"explanation":"I entered the deterministic issue title for the cancel-flow check."}
+{"action":{"type":"type","target":"e53","text":"This issue draft should be canceled instead of being created."},"explanation":"I filled the issue description before canceling the draft."}
+{"action":{"type":"click","target":"e63"},"explanation":"I canceled the issue draft so GitLab returns to the project issues list without creating it."}

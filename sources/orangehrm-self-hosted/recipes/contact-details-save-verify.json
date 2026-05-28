@@ -1,0 +1,133 @@
+{
+  "task_id": "orangehrm-contact-details-save-verify-001",
+  "title": "Save A Contact Details Update And Verify It",
+  "goal": "Log in to OrangeHRM, open the seeded admin Contact Details view, save a bounded contact-details update, and verify the new values remain visible.",
+  "instruction": "Sign in to the local OrangeHRM admin account, open Contact Details for the seeded admin employee, enter 456 Benchmark Ave for Street 1 and nexui-admin+saved@example.test for Other Email, save the update, and stop once the saved values are still visible.",
+  "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 6,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "contact-details",
+    "mutating",
+    "hard"
+  ],
+  "review_notes": "Reset-aware enterprise profile-update save-and-verify task on the seeded admin Contact Details view.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/web/index.php/pim/contactDetails/empNumber/1"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "456 Benchmark Ave"
+      },
+      "value": "456 Benchmark Ave"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "nexui-admin+saved@example.test"
+      },
+      "value": "nexui-admin+saved@example.test"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in and returned directly to the seeded admin Contact Details form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/contactDetails/empNumber/1"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "xpath=//label[normalize-space()='Street 1']/ancestor::div[contains(@class,'oxd-input-group')]//input[contains(@class,'oxd-input')]",
+        "text": "456 Benchmark Ave"
+      },
+      "explanation": "I entered the new Street 1 value."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "xpath=//label[normalize-space()='Other Email']/ancestor::div[contains(@class,'oxd-input-group')]//input[contains(@class,'oxd-input')]",
+        "text": "nexui-admin+saved@example.test"
+      },
+      "explanation": "I entered the new Other Email value."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save"
+      },
+      "explanation": "I saved the contact-details update and left the view on the persisted profile state.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Successfully Updated"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the Contact Details update and verified the new values remain visible."
+      },
+      "explanation": "The updated contact values are still visible now, so I am ending the task."
+    }
+  ]
+}

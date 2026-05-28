@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "cypress-rwa-comment-cross-view-verify-feed-001",
+  "title": "Add A Comment And Verify The Updated Count In The Personal Feed",
+  "goal": "Sign in, open a seeded request transaction detail, add a comment, return to the personal feed, and verify the updated social-count state from the feed view.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "press",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "url": "http://localhost:3000/personal",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T20:22:37.810Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 10,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "source_surface": "cypress-realworld-app",
+  "split": "challenge",
+  "stability_runs_passed": 5,
+  "requires_source_reset": true,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/personal"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted Parisian requested Kristian Bradtke"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Request: GjWovtg2hr to uBmeaz5pX"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "0 5"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "transaction-detail",
+    "cross-view-verification",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware modern-app task that adds a comment in transaction detail and then verifies the comment count from the personal feed."
+}

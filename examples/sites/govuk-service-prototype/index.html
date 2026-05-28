@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply for travel support</title>
+    <style>
+      :root {
+        --govuk-blue: #1d70b8;
+        --govuk-black: #0b0c0c;
+        --govuk-text: #0b0c0c;
+        --govuk-border: #b1b4b6;
+        --govuk-error: #d4351c;
+        --govuk-bg: #ffffff;
+        --govuk-panel: #f3f2f1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "GDS Transport", Arial, sans-serif;
+        color: var(--govuk-text);
+        background: var(--govuk-bg);
+        line-height: 1.45;
+      }
+
+      a {
+        color: var(--govuk-blue);
+      }
+
+      .phase-banner {
+        background: var(--govuk-panel);
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--govuk-border);
+      }
+
+      .phase-tag {
+        display: inline-block;
+        margin-right: 8px;
+        padding: 4px 8px;
+        background: var(--govuk-blue);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .shell {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 24px 16px 64px;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+
+      main {
+        max-width: 680px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+
+      p,
+      legend,
+      label,
+      .hint,
+      .summary-list dt,
+      .summary-list dd {
+        font-size: 1.125rem;
+      }
+
+      .hint {
+        color: #505a5f;
+        margin-bottom: 8px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group.error {
+        padding-left: 12px;
+        border-left: 4px solid var(--govuk-error);
+      }
+
+      .error-message {
+        display: block;
+        margin: 8px 0 12px;
+        color: var(--govuk-error);
+        font-weight: 700;
+      }
+
+      .text-input {
+        width: min(32rem, 100%);
+        padding: 10px 12px;
+        border: 2px solid var(--govuk-black);
+        font: inherit;
+      }
+
+      .text-input.error {
+        border-color: var(--govuk-error);
+      }
+
+      fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      .radios {
+        display: grid;
+        gap: 12px;
+      }
+
+      .radio-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 12px 18px;
+        border: 0;
+        background: #00703c;
+        color: white;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .error-summary {
+        margin: 0 0 24px;
+        padding: 16px;
+        border: 4px solid var(--govuk-error);
+      }
+
+      .error-summary h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+      }
+
+      .summary-list {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 24px;
+      }
+
+      .summary-list tr {
+        border-bottom: 1px solid var(--govuk-border);
+      }
+
+      .summary-list th,
+      .summary-list td {
+        padding: 14px 8px 14px 0;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .summary-list th {
+        width: 40%;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .inset-text {
+        margin: 24px 0;
+        padding: 16px;
+        border-left: 8px solid var(--govuk-border);
+        background: var(--govuk-panel);
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phase-banner">
+      <span class="phase-tag">Prototype</span>
+      <span>This local service prototype is derived from GOV.UK-style service patterns.</span>
+    </div>
+
+    <div class="shell">
+      <a class="back-link" id="back-link" href="#/name">Back</a>
+
+      <main id="main-content" role="main" tabindex="-1">
+        <div id="error-summary" class="error-summary hidden" role="alert" aria-labelledby="error-summary-title">
+          <h2 id="error-summary-title">There is a problem</h2>
+          <ul id="error-list"></ul>
+        </div>
+
+        <section id="page-name" aria-labelledby="name-title">
+          <h1 id="name-title">What is your full name?</h1>
+          <p class="hint">We use this to prepare your travel support application.</p>
+          <div id="name-group" class="form-group">
+            <label for="full-name">Full name</label>
+            <span id="name-error" class="error-message hidden">Enter your full name</span>
+            <input id="full-name" class="text-input" type="text" autocomplete="name">
+          </div>
+          <button id="continue-name" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-updates" class="hidden" aria-labelledby="updates-title">
+          <h1 id="updates-title">Do you want email updates about your application?</h1>
+          <div id="updates-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">Do you want email updates about your application?</legend>
+              <span id="updates-error" class="error-message hidden">Select whether you want email updates</span>
+              <div class="radios">
+                <label class="radio-item" for="updates-yes">
+                  <input id="updates-yes" name="updates" type="radio" value="yes">
+                  <span>Yes</span>
+                </label>
+                <label class="radio-item" for="updates-no">
+                  <input id="updates-no" name="updates" type="radio" value="no">
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div id="email-group" class="form-group hidden">
+            <label for="email-address">Email address</label>
+            <p class="hint">We will only use this to send status updates.</p>
+            <span id="email-error" class="error-message hidden">Enter your email address</span>
+            <input id="email-address" class="text-input" type="email" autocomplete="email">
+          </div>
+          <button id="continue-updates" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-check-answers" class="hidden" aria-labelledby="check-answers-title">
+          <h1 id="check-answers-title">Check your answers before sending your application</h1>
+          <table class="summary-list">
+            <tbody>
+              <tr>
+                <th scope="row">Full name</th>
+                <td id="summary-name"></td>
+                <td>
+                  <a id="change-name" href="#/name">Change<span class="visually-hidden"> full name</span></a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Email updates</th>
+                <td id="summary-updates"></td>
+                <td>
+                  <a id="change-updates" href="#/updates">Change<span class="visually-hidden"> email updates</span></a>
+                </td>
+              </tr>
+              <tr id="summary-email-row" class="hidden">
+                <th scope="row">Email address</th>
+                <td id="summary-email"></td>
+                <td>
+                  <a id="change-email" href="#/updates">Change<span class="visually-hidden"> email address</span></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="inset-text">
+            Your application is not sent yet. Review the details above before you continue.
+          </div>
+          <button id="send-application" class="button" type="button">Send application</button>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const state = {
+        fullName: '',
+        wantsUpdates: '',
+        emailAddress: '',
+        returnToCheckAnswers: false,
+        errors: {}
+      };
+
+      const mainContent = document.getElementById('main-content');
+      const backLink = document.getElementById('back-link');
+      const errorSummary = document.getElementById('error-summary');
+      const errorList = document.getElementById('error-list');
+
+      const pages = {
+        name: document.getElementById('page-name'),
+        updates: document.getElementById('page-updates'),
+        checkAnswers: document.getElementById('page-check-answers')
+      };
+
+      const fullNameInput = document.getElementById('full-name');
+      const updatesYes = document.getElementById('updates-yes');
+      const updatesNo = document.getElementById('updates-no');
+      const emailAddressInput = document.getElementById('email-address');
+      const emailGroup = document.getElementById('email-group');
+
+      const nameGroup = document.getElementById('name-group');
+      const updatesGroup = document.getElementById('updates-group');
+      const nameError = document.getElementById('name-error');
+      const updatesError = document.getElementById('updates-error');
+      const emailError = document.getElementById('email-error');
+
+      function currentStep() {
+        const hash = window.location.hash.replace(/^#\//, '');
+        if (hash === 'updates' || hash === 'check-answers') {
+          return hash;
+        }
+        return 'name';
+      }
+
+      function setStep(step) {
+        window.location.hash = `#/${step}`;
+      }
+
+      function clearErrors() {
+        state.errors = {};
+      }
+
+      function renderErrorSummary() {
+        const entries = Object.entries(state.errors);
+        if (entries.length === 0) {
+          errorSummary.classList.add('hidden');
+          errorList.innerHTML = '';
+          return;
+        }
+
+        errorList.innerHTML = entries
+          .map(([field, message]) => `<li><a href="#${field}">${message}</a></li>`)
+          .join('');
+        errorSummary.classList.remove('hidden');
+      }
+
+      function renderFieldErrors() {
+        const hasNameError = Boolean(state.errors['full-name']);
+        nameGroup.classList.toggle('error', hasNameError);
+        nameError.classList.toggle('hidden', !hasNameError);
+        fullNameInput.classList.toggle('error', hasNameError);
+
+        const hasUpdatesError = Boolean(state.errors.updates);
+        updatesGroup.classList.toggle('error', hasUpdatesError);
+        updatesError.classList.toggle('hidden', !hasUpdatesError);
+
+        const hasEmailError = Boolean(state.errors['email-address']);
+        emailGroup.classList.toggle('error', hasEmailError);
+        emailError.classList.toggle('hidden', !hasEmailError);
+        emailAddressInput.classList.toggle('error', hasEmailError);
+      }
+
+      function renderUpdatesControls() {
+        const wantsUpdates = state.wantsUpdates === 'yes';
+        emailGroup.classList.toggle('hidden', !wantsUpdates);
+      }
+
+      function renderCheckAnswers() {
+        document.getElementById('summary-name').textContent = state.fullName || 'Not provided';
+        document.getElementById('summary-updates').textContent =
+          state.wantsUpdates === 'yes' ? 'Yes' : state.wantsUpdates === 'no' ? 'No' : 'Not provided';
+        document.getElementById('summary-email').textContent = state.emailAddress || 'Not provided';
+        document.getElementById('summary-email-row').classList.toggle('hidden', state.wantsUpdates !== 'yes');
+      }
+
+      function renderBackLink(step) {
+        if (step === 'name') {
+          backLink.classList.add('hidden');
+          backLink.setAttribute('tabindex', '-1');
+          return;
+        }
+
+        backLink.classList.remove('hidden');
+        backLink.removeAttribute('tabindex');
+        if (step === 'updates') {
+          backLink.href = '#/name';
+        } else {
+          backLink.href = '#/updates';
+        }
+      }
+
+      function render() {
+        const step = currentStep();
+        pages.name.classList.toggle('hidden', step !== 'name');
+        pages.updates.classList.toggle('hidden', step !== 'updates');
+        pages.checkAnswers.classList.toggle('hidden', step !== 'check-answers');
+
+        fullNameInput.value = state.fullName;
+        updatesYes.checked = state.wantsUpdates === 'yes';
+        updatesNo.checked = state.wantsUpdates === 'no';
+        emailAddressInput.value = state.emailAddress;
+
+        renderUpdatesControls();
+        renderErrorSummary();
+        renderFieldErrors();
+        renderCheckAnswers();
+        renderBackLink(step);
+
+        const titles = {
+          name: 'What is your full name?',
+          updates: 'Do you want email updates about your application?',
+          'check-answers': 'Check your answers before sending your application'
+        };
+        document.title = `${titles[step]} - Apply for travel support`;
+      }
+
+      function focusMain() {
+        mainContent.focus();
+      }
+
+      function validateName() {
+        clearErrors();
+        state.fullName = fullNameInput.value.trim();
+        if (!state.fullName) {
+          state.errors['full-name'] = 'Enter your full name';
+          return false;
+        }
+        return true;
+      }
+
+      function validateUpdates() {
+        clearErrors();
+        state.wantsUpdates = updatesYes.checked ? 'yes' : updatesNo.checked ? 'no' : '';
+        state.emailAddress = emailAddressInput.value.trim();
+
+        if (!state.wantsUpdates) {
+          state.errors.updates = 'Select whether you want email updates';
+        }
+        if (state.wantsUpdates === 'yes' && !state.emailAddress) {
+          state.errors['email-address'] = 'Enter your email address';
+        }
+
+        return Object.keys(state.errors).length === 0;
+      }
+
+      document.getElementById('continue-name').addEventListener('click', () => {
+        if (!validateName()) {
+          render();
+          focusMain();
+          return;
+        }
+        setStep('updates');
+      });
+
+      document.getElementById('continue-updates').addEventListener('click', () => {
+        if (!validateUpdates()) {
+          render();
+          focusMain();
+          return;
+        }
+        setStep('check-answers');
+      });
+
+      [updatesYes, updatesNo].forEach((input) => {
+        input.addEventListener('change', () => {
+          state.wantsUpdates = updatesYes.checked ? 'yes' : updatesNo.checked ? 'no' : '';
+          if (state.wantsUpdates !== 'yes') {
+            state.emailAddress = '';
+            emailAddressInput.value = '';
+          }
+          renderUpdatesControls();
+        });
+      });
+
+      document.getElementById('change-name').addEventListener('click', (event) => {
+        event.preventDefault();
+        clearErrors();
+        setStep('name');
+      });
+
+      [document.getElementById('change-updates'), document.getElementById('change-email')].forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          clearErrors();
+          state.returnToCheckAnswers = true;
+          setStep('updates');
+        });
+      });
+
+      document.getElementById('send-application').addEventListener('click', () => {
+        document.title = 'Application sent - Apply for travel support';
+      });
+
+      window.addEventListener('hashchange', () => {
+        if (currentStep() === 'check-answers') {
+          state.returnToCheckAnswers = false;
+        }
+        render();
+        focusMain();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

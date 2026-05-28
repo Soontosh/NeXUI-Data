@@ -1,0 +1,8 @@
+{"action":{"type":"click","target":"e3"},"explanation":"The page rejected the empty full-name field, so I am checking the validation message before correcting it."}
+{"action":{"type":"type","target":"e3","text":"Amina Patel"},"explanation":"I entered the missing full name so the service can continue to the next question."}
+{"action":{"type":"click","target":"e4"},"explanation":"The full name is now filled in, so I am moving to the email-updates question."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected email updates, which reveals the email-address field required for this choice."}
+{"action":{"type":"click","target":"e6"},"explanation":"The page should now show a validation error because the email address is still missing."}
+{"action":{"type":"type","target":"e6","text":"amina@example.com"},"explanation":"I entered the required email address so the application can proceed."}
+{"action":{"type":"click","target":"e7"},"explanation":"The required answers are now present, so I am moving to the check-answers page."}
+{"action":{"type":"finish","summary":"I recovered from the validation errors and reached the check-answers page with the entered name and email visible."},"explanation":"The review page is visible and the corrected answers appear in the summary, so I am stopping here."}

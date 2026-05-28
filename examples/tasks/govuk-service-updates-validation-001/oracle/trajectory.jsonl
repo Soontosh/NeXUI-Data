@@ -1,0 +1,6 @@
+{"action":{"type":"type","target":"e2","text":"Amina Patel"},"explanation":"I entered the applicant name so the service can move to the next question."}
+{"action":{"type":"click","target":"e3"},"explanation":"The name is complete, so I am moving to the updates question."}
+{"action":{"type":"click","target":"e5"},"explanation":"The page should now report that no updates option was selected yet."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected no email updates to satisfy the missing required choice."}
+{"action":{"type":"click","target":"e6"},"explanation":"The required choice is now set, so I am moving to the review page."}
+{"action":{"type":"finish","summary":"I recovered from the missing updates selection and reached the check-answers page on the no-email branch."},"explanation":"The review page is visible with the corrected branch, so I am ending the task."}

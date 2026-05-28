@@ -1,0 +1,12 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected the highest childcare-count branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected Self-employed as the current work status."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"click","target":"e4"},"explanation":"I tried to continue without an income so the page can show the validation error."}
+{"action":{"type":"type","target":"e4","text":"1485.50"},"explanation":"I corrected the monthly income with a valid amount."}
+{"action":{"type":"click","target":"e5"},"explanation":"The corrected income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected no email updates, which keeps the route simple after the recovery."}
+{"action":{"type":"click","target":"e5"},"explanation":"The answers are complete, so I am moving to check answers."}
+{"action":{"type":"finish","summary":"I recovered from the invalid income entry and reached check answers with the corrected amount."},"explanation":"The corrected value is reflected on the review page, so I am ending the task."}

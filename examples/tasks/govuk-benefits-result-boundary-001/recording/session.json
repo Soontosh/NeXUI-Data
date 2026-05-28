@@ -1,0 +1,243 @@
+{
+  "recorded_at": "2026-05-28T20:58:44.054Z",
+  "final_snapshot": "s011",
+  "final_url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/check-answers",
+  "snapshot_count": 12,
+  "transition_count": 11,
+  "oracle_step_count": 12,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e2"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/children\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/children"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/children"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/work-status\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/work-status"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"You may still be eligible if you are about to start work\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/work-status"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/income\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/income"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "1650"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/income"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/updates\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 8,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s008",
+      "after_snapshot": "s009",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Email address\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 9,
+      "action": {
+        "type": "type",
+        "target": "e5",
+        "text": "guardians@example.com"
+      },
+      "before_snapshot": "s009",
+      "after_snapshot": "s010",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/updates"
+    },
+    {
+      "step_index": 10,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s010",
+      "after_snapshot": "s011",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/check-answers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"guardians@example.com\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/govuk-benefits-eligibility-prototype/index.html#/check-answers"
+    }
+  ]
+}

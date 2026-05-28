@@ -1,0 +1,9 @@
+{"action":{"type":"click","target":"e15"},"explanation":"I opened the Add New User form so I can trigger the missing-email validation path."}
+{"action":{"type":"type","target":"e24","text":"ari.validation"},"explanation":"I entered the benchmark username."}
+{"action":{"type":"type","target":"e25","text":"Ari"},"explanation":"I entered the first name."}
+{"action":{"type":"type","target":"e26","text":"Validation"},"explanation":"I entered the last name."}
+{"action":{"type":"type","target":"e28","text":"NExUIUser!2026"},"explanation":"I entered the password."}
+{"action":{"type":"type","target":"e29","text":"NExUIUser!2026"},"explanation":"I confirmed the password."}
+{"action":{"type":"type","target":"e33","text":"admin1234"},"explanation":"I entered the current admin password needed to authorize a save attempt."}
+{"action":{"type":"click","target":"e17"},"explanation":"I tried to save the user without an email so the required-field validation appears."}
+{"action":{"type":"finish","summary":"I attempted to save the new Magento admin user without an email and surfaced the validation error."},"explanation":"The missing-email validation is visible now, so I am ending the task."}

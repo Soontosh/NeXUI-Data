@@ -1,0 +1,77 @@
+{
+  "recorded_at": "2026-05-28T15:09:07.068Z",
+  "final_snapshot": "s003",
+  "final_url": "https://demoblaze.com/prod.html?idp_=10",
+  "snapshot_count": 4,
+  "transition_count": 3,
+  "oracle_step_count": 4,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "wait"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://demoblaze.com/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e13"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Apple monitor 24\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 3,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://demoblaze.com/#"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e15"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"prod.html?idp_=10\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Add to cart\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "https://demoblaze.com/prod.html?idp_=10"
+    }
+  ]
+}

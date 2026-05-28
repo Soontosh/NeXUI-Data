@@ -1,0 +1,26 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/new-amount"
+- main:
+  - alert "There is a problem":
+    - heading "There is a problem" [level=2]
+    - list:
+      - listitem:
+        - link "Enter an email address":
+          - /url: "#contact-detail"
+  - region "How should we contact you if we need more details?":
+    - heading "How should we contact you if we need more details?" [level=1]
+    - paragraph: Choose one method for follow-up questions about this update.
+    - group "How should we contact you if we need more details?":
+      - text: How should we contact you if we need more details?
+      - radio "Email" [checked]
+      - text: Email
+      - radio "Text message"
+      - text: Text message
+      - radio "Post"
+      - text: Post
+    - text: Email address
+    - paragraph: We will use this address only if we need more details about the update.
+    - text: Enter an email address
+    - textbox "Email address": worker@example.com
+    - button "Continue"

@@ -1,0 +1,59 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/notes"
+- main:
+  - region "Check your answers before sending this update":
+    - heading "Check your answers before sending this update" [level=1]
+    - paragraph: Make sure the information below matches the change you want to report.
+    - table:
+      - rowgroup:
+        - row "Tax year 2025-26 Change":
+          - rowheader "Tax year"
+          - cell "2025-26"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/tax-year"
+        - row "Income source Pension Change":
+          - rowheader "Income source"
+          - cell "Pension"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/income-source"
+        - row "Change Increased Change":
+          - rowheader "Change"
+          - cell "Increased"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/change-kind"
+        - row "Previous monthly amount £1200.00 Change":
+          - rowheader "Previous monthly amount"
+          - cell "£1200.00"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/old-amount"
+        - row "New monthly amount £1725.50 Change":
+          - rowheader "New monthly amount"
+          - cell "£1725.50"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/new-amount"
+        - row "Contact method Email Change":
+          - rowheader "Contact method"
+          - cell "Email"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Email address first@example.com Change":
+          - rowheader "Email address"
+          - cell "first@example.com"
+          - cell "Change":
+            - link "Change":
+              - /url: "#/contact-method"
+        - row "Supporting notes Annual pension adjustment. Change":
+          - rowheader "Supporting notes"
+          - cell "Annual pension adjustment."
+          - cell "Change":
+            - link "Change":
+              - /url: "#/notes"
+    - text: Do not send this update unless the new amount and contact details are correct.
+    - button "Send update"

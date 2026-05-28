@@ -1,0 +1,4 @@
+{"action":{"type":"click","target":"e37"},"explanation":"I opened the seeded admin user so I can trigger the missing-password validation path."}
+{"action":{"type":"type","target":"e29","text":"admin+needs-password@example.test"},"explanation":"I changed the admin email without filling the authorizing password field."}
+{"action":{"type":"click","target":"e19"},"explanation":"I tried to save the edit without the current password so the required-field validation appears."}
+{"action":{"type":"finish","summary":"I attempted to save the seeded Magento admin edit without a current password and surfaced the validation error."},"explanation":"The missing-password validation is visible now, so I am ending the task."}

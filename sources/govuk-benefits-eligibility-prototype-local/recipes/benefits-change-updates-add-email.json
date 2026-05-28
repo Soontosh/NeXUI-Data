@@ -1,0 +1,244 @@
+{
+  "task_id": "govuk-benefits-change-updates-add-email-001",
+  "title": "Add The Email Row From Check Answers",
+  "goal": "Reach check answers on the no-email branch, change the updates answer to Yes, and verify the email row appears.",
+  "instruction": "Complete the childcare-support eligibility prototype to check answers without email updates, then use the change flow to switch updates to Yes and verify the summary now includes the email address row.",
+  "path": "../../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 12,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "check-answers",
+    "branch-change",
+    "hard"
+  ],
+  "review_notes": "Hard summary-edit task on the benefits prototype. It changes the updates branch from No to Yes and verifies the email row appears.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "childcare@example.com"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Email address"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected Yes because the user usually lives in the UK."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The residency answer is complete, so I am moving to the childcare question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "1 child"
+      },
+      "explanation": "I selected one child for the childcare count."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The childcare answer is complete, so I am moving to work status.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/work-status"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Employed"
+      },
+      "explanation": "I selected Employed as the current work status."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The work status is complete, so I am moving to income.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Monthly income",
+        "text": "2100"
+      },
+      "explanation": "I entered the monthly income for the first pass through the form."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income is complete, so I am moving to updates.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "No"
+      },
+      "explanation": "I started on the no-email branch so the summary initially has no email row."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The initial branch is complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_absent",
+          "artifact": "reader_view",
+          "value": "Email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#change-updates"
+      },
+      "explanation": "I followed the change link for email updates so I can add the email branch.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I switched the updates answer to Yes, which reveals the email field.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Email address"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "childcare@example.com"
+      },
+      "explanation": "I entered the email address for updates."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The branch change is complete, so I am returning to check answers to verify the new row.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "childcare@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I returned to check answers after switching updates to Yes and the email row is now present."
+      },
+      "explanation": "The summary reflects the new updates branch, so I am ending the task."
+    }
+  ]
+}

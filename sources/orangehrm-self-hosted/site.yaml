@@ -1,0 +1,213 @@
+{
+  "schema_version": "0.0",
+  "site_id": "orangehrm-self-hosted",
+  "site_name": "OrangeHRM Self-Hosted",
+  "base_url": "http://localhost:8080/",
+  "source_track": "enterprise_workflow",
+  "category": "hr_demo",
+  "hosting_mode": "self_hosted",
+  "redistribution_class": "redistributable_source",
+  "authoring_status": "validated",
+  "reset_strategy": "reseed_command",
+  "determinism_level": "high",
+  "auth": {
+    "auth_type": "seeded_local_account",
+    "credentials_env_vars": [],
+    "notes": "Use a seeded local admin account defined by the self-hosted deployment and fixture setup."
+  },
+  "task_families": [
+    "employee_search",
+    "leave_and_attendance_workflows",
+    "profile_updates",
+    "admin_navigation",
+    "table_filter_and_detail_review"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard",
+    "very_hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Use the official OrangeHRM open-source development environment plus the OrangeHRM source checkout. This workspace uses rootless Docker via DOCKER_HOST, a repo-managed start wrapper that temporarily patches the PHP 8.1 vhost for localhost access, and a deterministic reseed script that rebuilds the seed employees and leave balance without leaving benchmark-specific edits in external/."
+  },
+  "runtime": {
+    "local_checkout_path": "../../external/orangehrm-os-dev-environment",
+    "healthcheck_url": "http://localhost:8080/",
+    "bootstrap_commands": [
+      "Clone https://github.com/orangehrm/orangehrm.git into external/orangehrm",
+      "Clone https://github.com/orangehrm/orangehrm-os-dev-environment.git into external/orangehrm-os-dev-environment",
+      "Install Docker Compose as a user-space CLI plugin if it is not already available",
+      "Run ./scripts/start_orangehrm.sh once to create external/orangehrm-os-dev-environment/.env and build the localhost-bound nginx image for this workspace"
+    ],
+    "start_command": "./scripts/start_orangehrm.sh",
+    "reseed_command": "./scripts/reseed_orangehrm.sh",
+    "notes": "Official dev-environment path with rootless Docker. Use DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock for local commands. The validated start and reseed paths now apply localhost and installer patches only transiently, then restore the nested OrangeHRM checkouts. The reseed path rebuilds the OrangeHRM install, frontend bundle, seeded employees Ava Patel and Marcus Lee, and an Annual Leave balance for the benchmark admin account."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 3000,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "login",
+      "label": "Login",
+      "url": "http://localhost:8080/",
+      "goal_hint": "Survey the login page and seeded admin-user workflow surface once the PHP 8.1 container is online.",
+      "notes": "Keep login credentials in local seed notes and avoid using the public hosted demo."
+    },
+    {
+      "entry_id": "pim",
+      "label": "PIM / Employee Management",
+      "url": "http://localhost:8080/web/index.php/pim/viewEmployeeList",
+      "goal_hint": "Survey employee search, filtering, row actions, and detail-page verification tasks once authenticated bootstrap is available.",
+      "notes": "Useful after the local admin account is installed, the client bundle is built, and login flow is stable."
+    },
+    {
+      "entry_id": "leave",
+      "label": "Leave / Apply Leave",
+      "url": "http://localhost:8080/web/index.php/leave/applyLeave",
+      "goal_hint": "Survey leave-application workflows and confirmation-boundary tasks against the seeded Annual Leave balance.",
+      "notes": "Use the reseeded admin account after login. The deterministic seed exposes Annual Leave with a 10-day balance for bounded leave-request authoring."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "orangehrm-pim-search-admin-employee",
+      "summary": "Log in, open the employee list, search for the seeded admin employee, and stop on the filtered table state.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-search-admin-employee-001."
+    },
+    {
+      "idea_id": "orangehrm-pim-open-admin-detail",
+      "summary": "Open the seeded admin employee detail page from the PIM module and verify the personal-details view.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-open-admin-detail-001."
+    },
+    {
+      "idea_id": "orangehrm-add-employee-boundary",
+      "summary": "Open the add-employee form, fill basic identity fields, and stop by asking for confirmation before saving the new employee record.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-add-employee-boundary-001."
+    },
+    {
+      "idea_id": "orangehrm-pim-search-ava-patel",
+      "summary": "Log in, open PIM, search for seeded employee Ava Patel, and stop on the filtered employee-list state.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-search-ava-patel-001."
+    },
+    {
+      "idea_id": "orangehrm-pim-open-ava-detail",
+      "summary": "Log in, search for Ava Patel from PIM, open the employee detail page, and verify employee id 0002 on the personal-details view.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-open-ava-detail-001."
+    },
+    {
+      "idea_id": "orangehrm-contact-details-open",
+      "summary": "Log in, open My Info contact details, and stop on the contact-details form view.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-contact-details-open-001."
+    },
+    {
+      "idea_id": "orangehrm-contact-details-boundary",
+      "summary": "Log in, open My Info contact details, fill a bounded subset of fields, and stop by asking for confirmation before Save.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-contact-details-boundary-001."
+    },
+    {
+      "idea_id": "orangehrm-apply-leave-boundary",
+      "summary": "Log in, open Apply Leave, choose Annual Leave, enter a one-day request, and stop by asking for confirmation before Apply.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-apply-leave-boundary-001 using the reseeded 10-day Annual Leave balance for the admin account."
+    },
+    {
+      "idea_id": "orangehrm-pim-search-marcus-lee",
+      "summary": "Log in, open PIM, search for seeded employee Marcus Lee, and stop on the filtered employee-list state.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-search-marcus-lee-001."
+    },
+    {
+      "idea_id": "orangehrm-pim-open-ava-edit-boundary",
+      "summary": "Log in, search for Ava Patel from PIM, open the employee detail page, change a stable personal-details field, and stop by asking for confirmation before Save.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-pim-open-ava-edit-boundary-001."
+    },
+    {
+      "idea_id": "orangehrm-add-employee-login-details-boundary",
+      "summary": "Log in, open Add Employee, enable Create Login Details, fill the employee and login fields, and stop by asking for confirmation before Save.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-add-employee-login-details-boundary-001 as the first conditional Create Login Details boundary task."
+    },
+    {
+      "idea_id": "orangehrm-contact-details-save-verify",
+      "summary": "Log in, open My Info contact details, save a bounded contact-details update, and verify the persisted values remain visible.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-contact-details-save-verify-001 as a reset-aware enterprise profile-update save-and-verify task."
+    },
+    {
+      "idea_id": "orangehrm-pim-open-marcus-edit-boundary",
+      "summary": "Log in, open the seeded Marcus Lee employee record, prepare a bounded personal-details edit, and ask for confirmation before Save.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-pim-open-marcus-edit-boundary-001."
+    },
+    {
+      "idea_id": "orangehrm-contact-details-save-verify-alt-email",
+      "summary": "Log in, open the seeded admin Contact Details view, save an alternate Other Email value, and verify the saved field remains visible.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-contact-details-save-verify-alt-email-001 as a reset-aware contact-details save-and-verify follow-up."
+    },
+    {
+      "idea_id": "orangehrm-pim-open-ava-save-verify-middle-name",
+      "summary": "Log in, open Ava Patel from PIM, save Middle Name = Quinn, and verify the saved value remains visible on the personal-details form.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-open-ava-save-verify-middle-name-001."
+    },
+    {
+      "idea_id": "orangehrm-apply-leave-save-verify-list",
+      "summary": "Log in, apply one day of Annual Leave, and verify the saved request from the leave list.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-apply-leave-save-verify-list-001."
+    },
+    {
+      "idea_id": "orangehrm-pim-save-reopen-contact-boundary",
+      "summary": "Log in, save a personal-details update for Ava Patel, return through PIM to reopen and verify the saved record, switch to Contact Details, and stop by asking for confirmation before a second Save.",
+      "status": "recorded",
+      "risk_level": "confirmation_required",
+      "notes": "Recorded as orangehrm-pim-save-reopen-contact-boundary-001. This is the first OrangeHRM task tagged for the monstrous difficulty cohort."
+    },
+    {
+      "idea_id": "orangehrm-pim-save-reopen-contact-save-reverify",
+      "summary": "Log in, save a personal-details update for Ava Patel, reopen and verify it through PIM, save a second contact-details update, return through PIM again, and reverify both changes from reopened employee views.",
+      "status": "recorded",
+      "risk_level": "safe",
+      "notes": "Recorded as orangehrm-pim-save-reopen-contact-save-reverify-001 as the first true double-save monstrous OrangeHRM workflow."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Validated enterprise workflow track. Rootless Docker, the official dev environment, runtime permissions, the built frontend bundle, and the generic reseed hook now support authenticated OrangeHRM authoring with deterministic employee-search, list-to-detail verification, bounded profile-edit tasks for multiple seeded employees, contact-details navigation, two reset-aware contact-details save-and-verify tasks, a reset-aware Ava Patel personal-details save-and-verify task, add-employee, apply-leave boundary and save-and-verify tasks, conditional Create Login Details boundary tasks, the first monstrous save-reopen-contact boundary workflow, and a second monstrous double-save reverify workflow on Ava Patel."
+  }
+}

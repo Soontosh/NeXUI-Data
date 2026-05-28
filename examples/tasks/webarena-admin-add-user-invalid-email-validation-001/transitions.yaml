@@ -1,0 +1,94 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e15"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - url contains \"/admin/admin/user/new/\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e24",
+      "text": "nova.hart"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "type",
+      "target": "e25",
+      "text": "Nova"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e26",
+      "text": "Hart"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e27",
+      "text": "nova.hart-at-example.test"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e28",
+      "text": "NExUIUser!2026"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e29",
+      "text": "NExUIUser!2026"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e33",
+      "text": "admin1234"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e17"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - text present \"Please enter a valid email address\""
+    ]
+  }
+]

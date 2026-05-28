@@ -1,0 +1,9 @@
+{"action":{"type":"click","target":"e10"},"explanation":"I opened the add-row form so I can enter the new employee details."}
+{"action":{"type":"type","target":"e21","text":"Nexui"},"explanation":"I entered the first name."}
+{"action":{"type":"type","target":"e22","text":"Row"},"explanation":"I entered the last name."}
+{"action":{"type":"type","target":"e23","text":"nexui.row@example.com"},"explanation":"I entered the email address."}
+{"action":{"type":"type","target":"e24","text":"29"},"explanation":"I entered the age."}
+{"action":{"type":"type","target":"e25","text":"12345"},"explanation":"I entered the salary."}
+{"action":{"type":"type","target":"e26","text":"QA"},"explanation":"I entered the department."}
+{"action":{"type":"click","target":"e27"},"explanation":"I submitted the new row details and will stop once the row appears in the table."}
+{"action":{"type":"finish","summary":"I added a new web-table row and stopped when it appeared in the table."},"explanation":"The new row is visible in the table now, so I am ending the task."}

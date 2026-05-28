@@ -1,0 +1,18 @@
+{"action":{"type":"click","target":"e3"},"explanation":"I selected the tax year for the report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is set, so I am moving to the income source."}
+{"action":{"type":"click","target":"e4"},"explanation":"I chose self-employment as the income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to how the income changed."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected stopped income, which means the new amount should be zero."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is complete, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"980"},"explanation":"I entered the previous monthly amount before the income stopped."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"125"},"explanation":"I entered an initial new amount, which should be checked against the stopped-income rule."}
+{"action":{"type":"click","target":"e4"},"explanation":"The service should validate that a stopped income must have a zero new amount."}
+{"action":{"type":"type","target":"e4","text":"0"},"explanation":"I corrected the new monthly amount to zero because the income stopped."}
+{"action":{"type":"click","target":"e5"},"explanation":"The corrected amount should allow the journey to continue to contact details."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose post as the contact method."}
+{"action":{"type":"type","target":"e6","text":"12 Station Road, York"},"explanation":"I entered the postal address for follow-up contact."}
+{"action":{"type":"click","target":"e7"},"explanation":"The contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Contract ended in March."},"explanation":"I added a short note explaining why the income stopped."}
+{"action":{"type":"click","target":"e4"},"explanation":"The route is complete, so I am moving to the review page."}
+{"action":{"type":"finish","summary":"I recovered from the nonzero stopped-income amount, corrected it to zero, and reached the review page with the final stopped-income details."},"explanation":"The review page shows the corrected stopped-income details, so I am ending the task."}

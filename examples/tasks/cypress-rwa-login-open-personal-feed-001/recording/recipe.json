@@ -1,0 +1,112 @@
+{
+  "task_id": "cypress-rwa-login-open-personal-feed-001",
+  "title": "Sign In And Reach The Personal Activity Feed",
+  "goal": "Sign in with a seeded example user and stop on the personal activity feed after the authenticated home view loads.",
+  "instruction": "Sign in to the self-hosted Cypress Real World App with the provided seeded account and stop once the personal activity feed is visible.",
+  "url": "http://localhost:3000/signin",
+  "source": {
+    "site_id": "cypress-realworld-app",
+    "site_name": "Cypress Real World App",
+    "category": "finance_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "cypress-realworld-app",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 4,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modern-app",
+    "authenticated",
+    "activity-feed",
+    "seeded-user"
+  ],
+  "review_notes": "First authenticated modern-app task for the benchmark. It verifies that the self-hosted Cypress RWA local-auth flow is recordable and lands on the post-login personal feed state.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:3000/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Account Balance"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Logout"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Ted P"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-username'] input",
+        "text": "Heath93"
+      },
+      "explanation": "I entered the seeded username for the local demo account."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-test='signin-password'] input",
+        "text": "s3cret"
+      },
+      "explanation": "I entered the shared seeded password for the example user."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-test='signin-submit']"
+      },
+      "explanation": "I submitted the sign-in form so the app can load the authenticated personal feed.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "http://localhost:3000/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Account Balance"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Logout"
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in with the seeded example account and reached the authenticated personal activity feed."
+      },
+      "explanation": "The authenticated home view is visible now, so I am ending the task."
+    }
+  ]
+}

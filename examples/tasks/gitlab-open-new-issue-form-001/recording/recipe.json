@@ -1,0 +1,102 @@
+{
+  "task_id": "gitlab-open-new-issue-form-001",
+  "title": "Open The New Issue Form For a11y-syntax-highlighting",
+  "goal": "Sign in and stop on the new-issue form for byteblaze/a11y-syntax-highlighting.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab new-issue form for byteblaze/a11y-syntax-highlighting, sign in if needed, and stop once the Title and Description fields are visible.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues/new",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "authenticated",
+    "new-issue",
+    "hard"
+  ],
+  "review_notes": "Authenticated navigation task that lands on the GitLab new-issue form.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "Title (required)"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "Description"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username after landing on the protected new-issue form."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab can redirect back to the new-issue form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-syntax-highlighting/-/issues/new"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "Title (required)"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

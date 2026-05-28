@@ -1,0 +1,106 @@
+{
+  "task_id": "webarena-map-open-directions-001",
+  "title": "Open The WebArena Map Directions Surface",
+  "goal": "Open the directions surface on the WebArena map environment and stop once the route-planning controls are visible.",
+  "instruction": "Open the self-hosted WebArena Verified map home page, switch to the directions surface, and stop once the From and To route-planning controls are visible.",
+  "url": "http://localhost:3030/",
+  "source": {
+    "site_id": "webarena-verified-map",
+    "site_name": "WebArena Verified Map",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-map",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "map",
+    "directions",
+    "hard"
+  ],
+  "review_notes": "First WebArena map route-planning task using the deterministic directions surface.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/directions"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "From"
+      }
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "textbox",
+        "name": "To"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Reverse Directions"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Find directions between two points"
+      },
+      "explanation": "I switched from the home search surface to the route-planning surface.",
+      "wait_until": "load",
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/directions"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "From"
+          }
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "textbox",
+            "name": "To"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the WebArena map directions surface and confirmed the route-planning controls are visible."
+      },
+      "explanation": "The directions surface is open with the From and To fields visible now, so I am ending the task."
+    }
+  ]
+}

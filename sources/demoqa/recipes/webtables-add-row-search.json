@@ -1,0 +1,163 @@
+{
+  "task_id": "demoqa-webtables-add-row-search-001",
+  "title": "Add And Filter A DemoQA Web Table Row",
+  "goal": "Add a new row to the DemoQA web table, then filter the table to that row and stop on the filtered result state.",
+  "instruction": "Add a new row to the DemoQA web table, search for the added row, and stop when the filtered result is visible.",
+  "url": "https://demoqa.com/webtables",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "table",
+    "modal",
+    "filter",
+    "row-add"
+  ],
+  "review_notes": "Combines row creation with table filtering to make the state verification less trivial than add-only.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/webtables"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Type to search"
+      },
+      "value": "Nexui"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "aria_snapshot",
+      "value": "Cierra Vega 39 cierra@example.com 10000 Insurance"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add"
+      },
+      "explanation": "I opened the add-row form so I can create the row I will filter for next.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Registration Form"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#firstName",
+        "text": "Nexui"
+      },
+      "explanation": "I entered the first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#lastName",
+        "text": "Row"
+      },
+      "explanation": "I entered the last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#userEmail",
+        "text": "nexui.row@example.com"
+      },
+      "explanation": "I entered the email address."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#age",
+        "text": "29"
+      },
+      "explanation": "I entered the age."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#salary",
+        "text": "12345"
+      },
+      "explanation": "I entered the salary."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#department",
+        "text": "QA"
+      },
+      "explanation": "I entered the department."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#submit"
+      },
+      "explanation": "I submitted the row details and will wait for the new row to appear before filtering it.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+        }
+      ],
+      "postcondition_timeout_ms": 5000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Type to search",
+        "text": "Nexui"
+      },
+      "explanation": "I filtered the table for the row I just added so the new entry is isolated.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Type to search"
+          },
+          "value": "Nexui"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+        }
+      ],
+      "postcondition_timeout_ms": 3000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I added a new web-table row, filtered the table to that row, and stopped on the filtered result."
+      },
+      "explanation": "The filtered result is visible now, so I am ending the task."
+    }
+  ]
+}

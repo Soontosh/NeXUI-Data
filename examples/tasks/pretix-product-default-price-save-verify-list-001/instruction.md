@@ -1,0 +1,1 @@
+Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Price tab, change the Default price to 35.00, save the change, return to the products list, and verify the updated price appears there.

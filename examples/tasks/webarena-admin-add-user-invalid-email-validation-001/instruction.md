@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open Add New User, enter username nova.hart, first name Nova, last name Hart, email nova.hart-at-example.test, password NExUIUser!2026, confirm the password, enter your current password admin1234, try to save, and stop when the invalid-email validation is visible.

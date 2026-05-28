@@ -1,0 +1,22 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "wait"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e29"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"prod.html?idp_=8\"",
+      "postcondition 2: passed - text present \"Add to cart\""
+    ]
+  }
+]

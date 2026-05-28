@@ -1,0 +1,97 @@
+- link "Magento Admin Panel":
+  - /url: http://localhost:7780/admin/admin/
+  - img "Magento Admin Panel"
+- navigation:
+  - menubar:
+    - listitem:
+      - link " Dashboard":
+        - /url: http://localhost:7780/admin/admin/dashboard/
+    - listitem:
+      - link " Sales":
+        - /url: "#"
+    - listitem:
+      - link " Catalog":
+        - /url: "#"
+    - listitem:
+      - link " Customers":
+        - /url: "#"
+    - listitem:
+      - link " Marketing":
+        - /url: "#"
+    - listitem:
+      - link " Content":
+        - /url: "#"
+    - listitem:
+      - link " Reports":
+        - /url: "#"
+    - listitem:
+      - link " Stores":
+        - /url: "#"
+    - listitem:
+      - link " System":
+        - /url: "#"
+    - listitem:
+      - link " Find Partners & Extensions":
+        - /url: http://localhost:7780/admin/marketplace/index/
+- banner:
+  - heading "Admin User" [level=1]
+  - link " admin":
+    - /url: http://localhost:7780/admin/admin/system_account/index/
+  - link "":
+    - /url: http://localhost:7780/admin/admin/notification/index/
+  - text: 
+  - textbox ""
+- main:
+  - button " Back"
+  - button "Reset"
+  - button "Delete User"
+  - button "Force Sign-In"
+  - button "Save User"
+  - tabpanel "User Info":
+    - group "Account Information":
+      - text: Account Information User Name *
+      - textbox "User Name *": admin
+      - text: First Name *
+      - textbox "First Name *": Admin
+      - text: Last Name *
+      - textbox "Last Name *": User
+      - text: Email *
+      - textbox "Email *": admin+nexui-persist@example.test
+      - text: New Password
+      - textbox "New Password"
+      - text: Password Confirmation
+      - textbox "Password Confirmation"
+      - text: Interface Locale
+      - combobox "Interface Locale":
+        - option "English (United Kingdom)"
+        - option "English (United States)" [selected]
+      - text: Expiration Date
+      - textbox "Expiration Date"
+      - button "undefined "
+    - group "Current User Identity Verification":
+      - text: Current User Identity Verification Your Password *
+      - textbox "Your Password *"
+  - strong: User Information
+  - tablist:
+    - tab "User Info" [expanded] [selected]:
+      - link "User Info":
+        - /url: "#page_tabs_main_section_content"
+    - tab "User Role":
+      - link "User Role":
+        - /url: "#page_tabs_roles_section_content"
+- contentinfo:
+  - paragraph:
+    - link "":
+      - /url: http://magento.com
+    - text: Copyright © 2026 Magento Commerce Inc. All rights reserved.
+  - paragraph:
+    - strong: Magento
+    - text: ver. 2.4.6
+  - link "Privacy Policy":
+    - /url: https://www.adobe.com/privacy/policy.html
+  - text: "|"
+  - link "Account Activity":
+    - /url: http://localhost:7780/admin/security/session/activity/
+  - text: "|"
+  - link "Report an Issue":
+    - /url: https://github.com/magento/magento2/issues

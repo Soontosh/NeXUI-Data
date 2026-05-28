@@ -1,0 +1,87 @@
+{
+  "task_id": "gitlab-login-open-projects-dashboard-001",
+  "title": "Log In To GitLab And Stop On The Projects Dashboard",
+  "goal": "Sign in with the seeded GitLab account and stop on the post-login projects dashboard.",
+  "instruction": "Sign in to the self-hosted WebArena Verified GitLab instance as byteblaze and stop on the projects dashboard once the authenticated landing page is visible.",
+  "url": "http://localhost:8023/users/sign_in",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "authenticated",
+    "dashboard",
+    "hard"
+  ],
+  "review_notes": "First authenticated GitLab navigation task on the WebArena Verified source.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "http://localhost:8023/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Projects"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so the authenticated projects dashboard can load.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Projects"
+        }
+      ],
+      "postcondition_timeout_ms": 20000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

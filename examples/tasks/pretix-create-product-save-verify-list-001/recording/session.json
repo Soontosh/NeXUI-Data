@@ -1,0 +1,165 @@
+{
+  "recorded_at": "2026-06-01T06:52:07.367Z",
+  "final_snapshot": "s007",
+  "final_url": "http://localhost:8100/control/event/nexui/nexui-event/items/",
+  "snapshot_count": 8,
+  "transition_count": 7,
+  "oracle_step_count": 7,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "admin@localhost"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/login?next=/control/event/nexui/nexui-event/items/add"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "admin"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/login?next=/control/event/nexui/nexui-event/items/add"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/control/event/nexui/nexui-event/items/add\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Create product\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/add"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e28",
+        "text": "NExUI Workshop Pass"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/add"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e43",
+        "text": "40.00"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/add"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e45"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/control/event/nexui/nexui-event/items/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Your changes have been saved.\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/2/"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "click",
+        "target": "e11"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/control/event/nexui/nexui-event/items/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI Workshop Pass\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/"
+    }
+  ]
+}

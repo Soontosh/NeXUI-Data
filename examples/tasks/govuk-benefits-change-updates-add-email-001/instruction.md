@@ -1,0 +1,1 @@
+Complete the childcare-support eligibility prototype to check answers without email updates, then use the change flow to switch updates to Yes and verify the summary now includes the email address row.

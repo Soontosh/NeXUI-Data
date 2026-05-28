@@ -1,0 +1,118 @@
+{
+  "task_id": "demoblaze-category-switch-apple-monitor-disambiguation-001",
+  "title": "Switch Categories And Open Apple Monitor 24",
+  "goal": "Open the Laptops category, switch to Monitors, then open Apple monitor 24 and stop on the product detail page.",
+  "instruction": "On the Demoblaze storefront, first open the Laptops category, then switch to Monitors, then open Apple monitor 24 and stop when the product detail page is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "hard",
+    "multi-step",
+    "category-switch",
+    "product-disambiguation"
+  ],
+  "review_notes": "First hard Demoblaze task. It forces category switching and dynamic-list disambiguation before the correct product can be opened.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "prod.html?idp_=10"
+    },
+    {
+      "type": "text_present",
+      "value": "Apple monitor 24"
+    },
+    {
+      "type": "text_present",
+      "value": "Add to cart"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "wait",
+        "duration_ms": 3000
+      },
+      "explanation": "I waited for the storefront product grid to finish loading."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Laptops"
+      },
+      "explanation": "I opened the Laptops category first.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "value": "MacBook air"
+        },
+        {
+          "type": "text_absent",
+          "value": "Samsung galaxy s6"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Monitors"
+      },
+      "explanation": "I switched from Laptops to Monitors to narrow the product list again.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "value": "Apple monitor 24"
+        },
+        {
+          "type": "text_absent",
+          "value": "MacBook air"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Apple monitor 24"
+      },
+      "explanation": "I opened the Apple monitor 24 product page from the filtered monitor list.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "prod.html?idp_=10"
+        },
+        {
+          "type": "text_present",
+          "value": "Add to cart"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I switched categories, opened Apple monitor 24, and stopped on the product detail page."
+      },
+      "explanation": "The requested product detail page is open now, so I am ending the task."
+    }
+  ]
+}

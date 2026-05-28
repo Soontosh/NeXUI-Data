@@ -1,0 +1,56 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin@localhost"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/settings/\"",
+      "postcondition 2: passed - text present \"Contact address\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e55",
+      "text": "contact@example.test"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e60"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - text present \"Your changes have been saved.\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"textbox\",\"value\":\"contact@example.test\"}"
+    ]
+  }
+]

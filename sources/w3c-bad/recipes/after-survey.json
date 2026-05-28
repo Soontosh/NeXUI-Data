@@ -1,0 +1,34 @@
+{
+  "task_id": "w3c-bad-after-survey-001",
+  "title": "Open Accessible Survey Page",
+  "goal": "Open the accessible Survey page and stop there.",
+  "instruction": "Open the accessible Survey page from the overview and stop after it loads.",
+  "url": "https://www.w3.org/WAI/demos/bad/",
+  "source": {
+    "site_id": "w3c-bad",
+    "site_name": "W3C Before and After Demo",
+    "category": "accessibility_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["click", "finish"],
+  "tags": ["recorded", "accessibility", "navigation"],
+  "review_notes": "Extends the W3C BAD accessible-navigation slice with a second stable page target.",
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Survey"
+      },
+      "explanation": "I opened the accessible Survey page from the main navigation."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the accessible Survey page and stopped there."
+      },
+      "explanation": "The requested page is open now, so I am ending the task."
+    }
+  ]
+}

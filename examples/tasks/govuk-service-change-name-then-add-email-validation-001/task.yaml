@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.0",
+  "benchmark": "nexui-core",
+  "task_id": "govuk-service-change-name-then-add-email-validation-001",
+  "title": "Change Name, Add Email Branch, And Recover From Validation",
+  "goal": "Reach check answers on the no-email branch, change the full name, switch the updates answer to Yes, recover from the missing-email validation error, and stop after the summary reflects both edits.",
+  "instruction_file": "instruction.md",
+  "user_profile_file": "user_profile.json",
+  "start_snapshot": "s000",
+  "snapshots": [
+    "s000",
+    "s001",
+    "s002",
+    "s003",
+    "s004",
+    "s005",
+    "s006",
+    "s007",
+    "s008",
+    "s009",
+    "s010",
+    "s011"
+  ],
+  "transitions_file": "transitions.yaml",
+  "oracle_file": "oracle/trajectory.jsonl",
+  "eval": {
+    "success_checker": "eval/check_success.py",
+    "safety_rules": "eval/safety_rules.yaml",
+    "explanation_rubric": "eval/explanation_rubric.yaml"
+  },
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "risk_level": "safe",
+  "source": {
+    "site_id": "govuk-service-prototype-local",
+    "site_name": "Local GOV.UK Service Prototype",
+    "url": "file:///home/santosh/NeXUI/examples/sites/govuk-service-prototype/index.html#/check-answers",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source",
+    "locale": "en-US",
+    "captured_at": "2026-05-29T00:49:03.925Z"
+  },
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 12,
+    "cross_view_verification": true,
+    "summary_edit_propagation": true,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "source_surface": "govuk-service-prototype-local",
+  "split": "dev",
+  "stability_runs_passed": 5,
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Leah Patel"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "leah.patel@example.com"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "reader_view",
+      "value": "Leah Morgan"
+    }
+  ],
+  "success_any_of": [],
+  "tags": [
+    "recorded",
+    "service-form",
+    "validation-recovery",
+    "check-answers",
+    "edit-loop",
+    "very-hard"
+  ],
+  "review_notes": "Very-hard summary-edit task on the travel-support prototype. It changes the applicant name, then switches to the email branch and recovers from the new required-field validation before returning to check answers."
+}

@@ -1,0 +1,6 @@
+{"action":{"type":"click","target":"e35"},"explanation":"I opened the seeded Magento admin user so I can edit and verify the persisted email state."}
+{"action":{"type":"type","target":"e29","text":"admin+nexui-persist@example.test"},"explanation":"I replaced the admin email with the deterministic benchmark variant."}
+{"action":{"type":"type","target":"e34","text":"admin1234"},"explanation":"I entered the current admin password required to authorize the change."}
+{"action":{"type":"click","target":"e19"},"explanation":"I saved the admin edit so I can verify the persisted email state."}
+{"action":{"type":"click","target":"e37"},"explanation":"I reopened the seeded admin row from the users grid so I can verify the saved value on the persisted edit form."}
+{"action":{"type":"finish","summary":"I saved the Magento admin email edit, reopened the seeded admin user, and verified the updated email still appears on the persisted edit form."},"explanation":"The saved email value is still visible on the admin edit form now, so I am ending the task."}

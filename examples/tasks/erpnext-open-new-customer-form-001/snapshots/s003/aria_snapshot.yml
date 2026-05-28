@@ -1,0 +1,57 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Customer":
+      - /url: /desk/customer
+  - listitem:
+    - link "/ New Customer":
+      - /url: /desk/customer/new-customer-nrzcmcrkoz
+- text: Not Saved
+- button "Save"
+- tablist:
+  - listitem:
+    - tab "Details"
+  - listitem:
+    - tab "Address & Contact"
+  - listitem:
+    - tab "Tax"
+  - listitem:
+    - tab "Accounting"
+  - listitem:
+    - tab "Sales Team"
+  - listitem:
+    - tab "Settings"
+  - listitem:
+    - tab "Portal Users"
+  - listitem:
+    - tab "More Info"
+- tabpanel "Details":
+  - text: Customer Type *
+  - combobox:
+    - option "Company" [selected]
+    - option "Individual"
+    - option "Partnership"
+  - text: customer_type Customer Name *
+  - textbox
+  - text: customer_name Customer Group
+  - combobox
+  - status: Begin typing for results.
+  - text: customer_group Territory
+  - combobox
+  - status: Begin typing for results.
+  - text: territory Defaults Billing Currency
+  - combobox
+  - status: Begin typing for results.
+  - text: default_currency Default Company Bank Account
+  - combobox
+  - status: Begin typing for results.
+  - text: default_bank_account Default Price List
+  - combobox
+  - status: Begin typing for results.
+  - text: default_price_list
+- contentinfo

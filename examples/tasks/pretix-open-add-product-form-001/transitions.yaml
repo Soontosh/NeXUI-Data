@@ -1,0 +1,46 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "admin@localhost"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "admin"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/\"",
+      "postcondition 2: passed - text present \"Create a new product\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e28"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"/control/event/nexui/nexui-event/items/add\"",
+      "postcondition 2: passed - text present \"Create product\""
+    ]
+  }
+]

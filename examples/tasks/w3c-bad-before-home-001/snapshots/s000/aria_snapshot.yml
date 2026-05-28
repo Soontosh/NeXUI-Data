@@ -1,0 +1,187 @@
+- paragraph:
+  - link "Jump to beginning of the overview page":
+    - /url: "#page"
+- paragraph:
+  - link "W3C logo":
+    - /url: https://www.w3.org/
+    - img "W3C logo"
+  - link "Web Accessibility Initiative (WAI) logo":
+    - /url: https://www.w3.org/WAI/
+    - img "Web Accessibility Initiative (WAI) logo"
+- heading "Overview Before and After Demonstration" [level=1]
+- paragraph: Improving a Web site using Web Content Accessibility Guidelines (WCAG) 2.0
+- list:
+  - listitem: Overview
+  - listitem:
+    - link "Home":
+      - /url: ./after/home.html
+  - listitem:
+    - link "News":
+      - /url: ./after/news.html
+  - listitem:
+    - link "Tickets":
+      - /url: ./after/tickets.html
+  - listitem:
+    - link "Survey":
+      - /url: ./after/survey.html
+  - listitem:
+    - link "Template":
+      - /url: ./after/template.html
+- heading "About the Demo" [level=2]
+- paragraph:
+  - text: The Before and After Demonstration is a multi-page resource that shows an inaccessible website and a retrofitted version of this same website. Each web page includes inline annotations that can be activated to highlight some of the key accessibility barriers or repairs. Each web page is also accompanied by an evaluation report to inform the developers on the level of conformance to the
+  - link "Web Content Accessibility Guidelines (WCAG)":
+    - /url: https://www.w3.org/WAI/intro/wcag
+  - text: .
+- paragraph:
+  - strong: "Note:"
+  - text: This Demo is intended to illustrate some of the aspects of web accessibility. It does not cover every type of accessibility barrier or accessibility requirement. Some of the inaccessible Demo content may not be easily usable by all readers.
+- heading "Demo Contents" [level=2]
+- list:
+  - listitem:
+    - strong: Before
+    - text: "- the inaccessible website"
+    - list:
+      - listitem:
+        - link "Home Page":
+          - /url: ./before/home.html
+        - text: "- shows highlights and teasers"
+      - listitem:
+        - link "News Page":
+          - /url: ./before/news.html
+        - text: "- shows news articles and text"
+      - listitem:
+        - link "Tickets Page":
+          - /url: ./before/tickets.html
+        - text: "- shows tables and information"
+      - listitem:
+        - link "Survey Page":
+          - /url: ./before/survey.html
+        - text: "- shows forms and interaction"
+      - listitem:
+        - link "Template":
+          - /url: ./before/template.html
+        - text: "- used to create all other pages"
+  - listitem:
+    - strong: After
+    - text: "- the accessible website"
+    - list:
+      - listitem:
+        - link "Home Page":
+          - /url: ./after/home.html
+        - text: "- shows highlights and teasers"
+      - listitem:
+        - link "News Page":
+          - /url: ./after/news.html
+        - text: "- shows news articles and text"
+      - listitem:
+        - link "Tickets Page":
+          - /url: ./after/tickets.html
+        - text: "- shows tables and information"
+      - listitem:
+        - link "Survey Page":
+          - /url: ./after/survey.html
+        - text: "- shows forms and interaction"
+      - listitem:
+        - link "Template":
+          - /url: ./after/template.html
+        - text: "- used to create all other pages"
+- paragraph:
+  - strong: "Download:"
+  - text: Entire
+  - link "Before and After Demo (BAD) as zip-archive (~600 kb)":
+    - /url: bad.zip
+  - text: . Note that the survey form requires a web server with PHP scripting to work; submitting the survey form will not work locally on your computer.
+- heading "Using the Demo" [level=2]
+- paragraph: "This Demo serves a variety of purposes such as raising awareness on web accessibility or for providing practical examples for developers. Some of the common ways of using and navigating through the Demo include:"
+- list:
+  - listitem:
+    - strong: "Preparing presentations on web accessibility:"
+    - text: Demonstrating practical examples during presentation is usually very effective. The description pages provide an overview of the accessibility barriers and features that are shown in the Demo. Together with the inaccessible and accessible Demo pages, concrete before and after examples can be explained during presentations.
+  - listitem:
+    - strong: "Learning about specific web accessibility barriers:"
+    - text: Often web developers want to learn more about specific accessibility barriers. For example, what is the cause of a problem and how can it be fixed? While the evaluation reports provide detailed analysis, the inaccessible and accessible Demo pages provide implementation examples for developers to study.
+  - listitem:
+    - strong: "Understanding the implications of web accessibility barriers:"
+    - text: In certain cases, the real issues for people with disabilities are not clear to developers or managers. Browsing through the inaccessible Demo pages using different browser configurations or assistive technologies (such as screen readers and magnifiers) helps highlight these issues. The accessible Demo pages can be browsed in the same manner to show the difference.
+  - listitem:
+    - strong: "Writing detailed reports of conformance evaluations:"
+    - text: A well written evaluation report is key in the process of retrofitting websites for accessibility. It communicates the problems to managers and the developers who need to decide which solutions to implement. The evaluation reports of the Demo serve as a sample format for evaluators.
+- paragraph:
+  - strong: "Status:"
+  - text: 20 February 2012 (see
+  - link "changelog":
+    - /url: ./changelog.html
+  - text: ") Editors:"
+  - link "Shadi Abou-Zahra":
+    - /url: https://www.w3.org/People/shadi/
+  - text: and the
+  - link "Education and Outreach Working Group (EOWG)":
+    - /url: https://www.w3.org/WAI/EO/
+  - text: . Developed with support from
+  - link "WAI-TIES":
+    - /url: https://www.w3.org/WAI/TIES/
+  - text: and
+  - link "WAI-AGE":
+    - /url: https://www.w3.org/WAI/WAI-AGE/
+  - text: projects, co-funded by the European Commission IST Programme. [see
+  - link "Acknowledgements":
+    - /url: acks.html
+  - text: "]"
+- paragraph:
+  - text: "["
+  - link "WAI Site Map":
+    - /url: https://www.w3.org/WAI/sitemap.html
+  - text: "] ["
+  - link "Help with WAI Website":
+    - /url: https://www.w3.org/WAI/sitehelp.html
+  - text: "] ["
+  - link "Search":
+    - /url: https://www.w3.org/WAI/search.php
+  - text: "] ["
+  - link "Contacting WAI":
+    - /url: https://www.w3.org/WAI/contacts
+  - text: "]"
+  - strong:
+    - text: Feedback welcome to
+    - link "wai-eo-editors@w3.org":
+      - /url: mailto:wai-eo-editors@w3.org
+  - text: (a publicly archived list) or
+  - link "wai@w3.org":
+    - /url: mailto:wai@w3.org
+  - text: (a WAI staff-only list).
+- paragraph:
+  - link "Copyright":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Copyright
+  - text: © 2012
+  - link "W3C":
+    - /url: https://www.w3.org/
+  - superscript: ®
+  - text: (
+  - link "MIT":
+    - /url: http://www.csail.mit.edu/
+  - text: ","
+  - link "ERCIM":
+    - /url: http://www.ercim.org/
+  - text: ","
+  - link "Keio":
+    - /url: http://www.keio.ac.jp/
+  - text: ), All Rights Reserved. W3C
+  - link "liability":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer
+  - text: ","
+  - link "trademark":
+    - /url: https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks
+  - text: ","
+  - link "document use":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-documents
+  - text: and
+  - link "software licensing":
+    - /url: https://www.w3.org/Consortium/Legal/copyright-software
+  - text: rules apply. Your interactions with this site are in accordance with our
+  - link "public":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Public
+  - text: and
+  - link "Member":
+    - /url: https://www.w3.org/Consortium/Legal/privacy-statement#Members
+  - text: privacy statements.

@@ -1,0 +1,77 @@
+{
+  "task_id": "internet-entry-ad-close-modal-001",
+  "title": "Close The Entry Ad Modal",
+  "goal": "Open The Internet entry-ad page, close the modal window, and stop after the page returns to its non-modal state.",
+  "instruction": "Dismiss the entry ad modal and stop when the page is back to its normal state.",
+  "url": "https://the-internet.herokuapp.com/entry_ad",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "the-internet",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "modal",
+    "selector-promotion",
+    "transient-ui"
+  ],
+  "review_notes": "Uses selector promotion to target the entry-ad close control, which is not part of the default candidate set before recorder canonicalization.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/entry_ad"
+    },
+    {
+      "type": "modal_state_is",
+      "value": "none"
+    },
+    {
+      "type": "text_present",
+      "artifact": "any_text",
+      "value": "click here"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#modal .modal-footer p"
+      },
+      "post_delay_ms": 1000,
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "none"
+        }
+      ],
+      "explanation": "I closed the entry ad modal so the underlying page content is available again."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I dismissed the entry ad modal and stopped once the page returned to its non-modal state."
+      },
+      "explanation": "The modal is gone now, so I am ending the task."
+    }
+  ]
+}

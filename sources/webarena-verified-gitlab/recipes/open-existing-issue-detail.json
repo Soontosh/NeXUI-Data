@@ -1,0 +1,66 @@
+{
+  "task_id": "gitlab-open-existing-issue-detail-001",
+  "title": "Open The Seeded GitLab Issue Detail",
+  "goal": "Open a concrete issue detail from the public issues list.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab issues list for byteblaze/a11y-syntax-highlighting, open the Tm Theme Editor issue, and stop on its issue-detail page.",
+  "url": "http://localhost:8023/byteblaze/a11y-syntax-highlighting/-/issues",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "issue-detail",
+    "hard"
+  ],
+  "review_notes": "Public GitLab list-to-detail task on the seeded a11y-syntax-highlighting issues list.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues/"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Tm Theme Editor"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e38"
+      },
+      "explanation": "I opened the Tm Theme Editor issue from the public issues list."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the requested issue-detail page and stopped there."
+      },
+      "explanation": "The requested issue detail page is open, so I am ending the task."
+    }
+  ]
+}

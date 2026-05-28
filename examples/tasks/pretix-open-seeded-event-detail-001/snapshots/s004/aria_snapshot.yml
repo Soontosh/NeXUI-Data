@@ -1,0 +1,130 @@
+- navigation:
+  - link "pretix.de":
+    - /url: /control/
+    - img
+    - text: pretix.de
+  - list:
+    - listitem:
+      - link " Go to shop":
+        - /url: /nexui/nexui-event/
+  - list:
+    - listitem:
+      - button " Admin mode"
+    - listitem:
+      - link " admin@localhost":
+        - /url: /control/settings
+    - listitem:
+      - link "":
+        - /url: /control/logout
+  - navigation:
+    - link "  NExUI Benchmark Event Mon, June 15, 2026":
+      - /url: "#"
+    - list:
+      - listitem:
+        - link " TEST MODE":
+          - /url: /control/event/nexui/nexui-event/live/
+      - listitem:
+        - link " Dashboard":
+          - /url: /control/event/nexui/nexui-event/
+      - listitem:
+        - link " Settings":
+          - /url: /control/event/nexui/nexui-event/settings/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Products":
+          - /url: /control/event/nexui/nexui-event/items/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Orders":
+          - /url: /control/event/nexui/nexui-event/orders/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Vouchers":
+          - /url: /control/event/nexui/nexui-event/vouchers/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Check-in":
+          - /url: /control/event/nexui/nexui-event/checkinlists/
+        - link "":
+          - /url: "#"
+      - listitem:
+        - link " Send out emails":
+          - /url: /control/event/nexui/nexui-event/sendmail/
+        - link "":
+          - /url: "#"
+- link "Starting with version 1.2.0, pretix automatically checks for updates in the background. During this check, anonymous data is transmitted to servers operated by pretix' developers. Click on this message to find out more, disable this feature or enter your email address to get notified via email if a new update arrives. This message will disappear once you clicked it.":
+  - /url: /control/global/update/
+- link "Click here to do a license compliance check to make sure your usage of pretix is in line with pretix' license.":
+  - /url: /control/global/license/
+- text: The cronjob component of pretix was not executed in the last hours. Please check that you have completed all installation steps and your cronjob is executed correctly.
+- heading "NExUI Benchmark Event Mon, June 15, 2026" [level=1]
+- text: "Shop URL: http://localhost:8000/nexui/nexui-event/"
+- button "Copy to clipboard"
+- button "Create QR code"
+- heading "Your timeline" [level=3]
+- strong: 2026-06-15
+- strong: 00:00
+- text: Your event starts
+- link "":
+  - /url: /control/event/nexui/nexui-event/settings/#id_date_from_0
+- strong: 23:59
+- text: Your event ends
+- link "":
+  - /url: /control/event/nexui/nexui-event/settings/#id_date_to_0
+- strong: 23:59
+- text: End of ticket sales (automatically because the event is over and no end of presale has been configured)
+- link "":
+  - /url: /control/event/nexui/nexui-event/settings/#id_presale_end_0
+- link "Your ticket shop is  in private test mode Click here to change":
+  - /url: /control/event/nexui/nexui-event/live/
+- link "0 Attendees (ordered)":
+  - /url: /control/event/nexui/nexui-event/orders/
+- link "0 Attendees (paid)":
+  - /url: /control/event/nexui/nexui-event/orders/overview/
+- link "0.00 Total revenue (USD)":
+  - /url: /control/event/nexui/nexui-event/orders/overview/
+- link "1 Active products":
+  - /url: /control/event/nexui/nexui-event/items/
+- link "0/0 Present – Default":
+  - /url: /control/event/nexui/nexui-event/checkinlists/1/
+- link "100/100 General Admission left":
+  - /url: /control/event/nexui/nexui-event/quotas/1/
+- paragraph
+- heading "Internal comment" [level=3]
+- text: Internal comment
+- textbox "Internal comment"
+- paragraph:
+  - button "Update comment"
+- heading "Event logs" [level=3]
+- list:
+  - listitem:
+    - text:  2026-06-01 06:33  admin@localhost  Quota
+    - link "General Admission":
+      - /url: /control/event/nexui/nexui-event/quotas/1/
+    - text: The quota has been added.
+  - listitem:
+    - text:  2026-06-01 06:33  admin@localhost  Product
+    - link "General Admission":
+      - /url: /control/event/nexui/nexui-event/items/1/
+    - text: The product has been created.
+  - listitem:
+    - text:  2026-06-01 06:33  admin@localhost  Category
+    - link "Tickets":
+      - /url: /control/event/nexui/nexui-event/categories/1/
+    - text: The category has been added.
+  - listitem:  2026-06-01 06:33  admin@localhost The event settings have been changed.
+  - listitem:
+    - text:  2026-06-01 06:33  admin@localhost  Plugin
+    - link "PDF ticket output":
+      - /url: /control/event/nexui/nexui-event/settings/plugins#plugin_pretix.plugins.ticketoutputpdf
+    - text: The plugin has been enabled.
+- link "Show more logs":
+  - /url: /control/event/nexui/nexui-event/logs/
+- contentinfo:
+  - text:  Times displayed in UTC ·
+  - link "ticketing powered by pretix":
+    - /url: /redirect/?url=https%3A//pretix.eu%3ALQWJDPqPLlnAjF9t01p65Lj3xmzDYm2YlkuERRH2iEQ

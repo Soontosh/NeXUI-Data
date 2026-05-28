@@ -1,0 +1,10 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/change-kind"
+- main:
+  - region "What was the previous monthly amount?":
+    - heading "What was the previous monthly amount?" [level=1]
+    - paragraph: Enter the amount before the change, in pounds.
+    - text: Previous monthly amount
+    - textbox "Previous monthly amount": "1250"
+    - button "Continue"

@@ -1,0 +1,150 @@
+{
+  "recorded_at": "2026-05-28T14:33:57.805Z",
+  "final_snapshot": "s008",
+  "final_url": "https://demoqa.com/webtables",
+  "snapshot_count": 9,
+  "transition_count": 8,
+  "oracle_step_count": 9,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e10"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Registration Form\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e21",
+        "text": "Nexui"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "type",
+        "target": "e22",
+        "text": "Row"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e23",
+        "text": "nexui.row@example.com"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "type",
+        "target": "e24",
+        "text": "29"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "type",
+        "target": "e25",
+        "text": "12345"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e26",
+        "text": "QA"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e27"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Nexui Row 29 nexui.row@example.com 12345 QA\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "dialog_open",
+      "url": "https://demoqa.com/webtables"
+    }
+  ]
+}

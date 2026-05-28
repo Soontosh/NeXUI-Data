@@ -1,0 +1,122 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Heath93"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "s3cret"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Account Balance\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/transaction/new\"",
+      "postcondition 2: passed - text present \"Select Contact\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "Kristian"
+    },
+    "to": "s005",
+    "notes": []
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - text present \"Kristian Bradtke\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"button\",\"name\":\"Request\"}"
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "33"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "NExUI seeded request"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - text present \"Requested $33.00 for NExUI seeded request\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"link\",\"name\":\"Return To Transactions\"}"
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/personal\"",
+      "postcondition 2: passed - text present \"NExUI seeded request\""
+    ]
+  }
+]

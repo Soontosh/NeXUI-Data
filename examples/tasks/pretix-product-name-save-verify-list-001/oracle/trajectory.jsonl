@@ -1,0 +1,7 @@
+{"action":{"type":"type","target":"e2","text":"admin@localhost"},"explanation":"I entered the seeded Pretix administrator email after landing on the protected product route."}
+{"action":{"type":"type","target":"e3","text":"admin"},"explanation":"I entered the seeded Pretix administrator password."}
+{"action":{"type":"click","target":"e5"},"explanation":"I signed in so Pretix can return to the seeded product detail page."}
+{"action":{"type":"type","target":"e38","text":"NExUI General Admission"},"explanation":"I renamed the seeded product on its General tab."}
+{"action":{"type":"click","target":"e52"},"explanation":"I saved the product rename so I can verify it from the products list."}
+{"action":{"type":"click","target":"e11"},"explanation":"I returned to the products list to verify the renamed product from a second view."}
+{"action":{"type":"finish","summary":"I saved the Pretix product rename and verified the new name from the products list."},"explanation":"The renamed product is visible on the products list now, so I am ending the task."}

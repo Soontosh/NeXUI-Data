@@ -1,0 +1,77 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - text present \"There is a problem\"",
+      "postcondition 2: passed - text present \"Enter your full name\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "Amina Patel"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - text present \"Enter your email address\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "amina@example.com"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "click",
+      "target": "e7"
+    },
+    "to": "s007",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Check your answers before sending your application\""
+    ]
+  }
+]

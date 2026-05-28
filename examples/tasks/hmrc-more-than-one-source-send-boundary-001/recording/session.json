@@ -1,0 +1,323 @@
+{
+  "recorded_at": "2026-05-29T22:10:54.017Z",
+  "final_snapshot": "s015",
+  "final_url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/check-answers",
+  "snapshot_count": 16,
+  "transition_count": 15,
+  "oracle_step_count": 16,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e2"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/income-source\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/income-source"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"You may need to report one change now and come back for the other income source later.\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/income-source"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e7"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/change-kind\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/change-kind"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/change-kind"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/old-amount\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/old-amount"
+    },
+    {
+      "step_index": 6,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "1100"
+      },
+      "before_snapshot": "s006",
+      "after_snapshot": "s007",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/old-amount"
+    },
+    {
+      "step_index": 7,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s007",
+      "after_snapshot": "s008",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/new-amount\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/new-amount"
+    },
+    {
+      "step_index": 8,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "1450"
+      },
+      "before_snapshot": "s008",
+      "after_snapshot": "s009",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/new-amount"
+    },
+    {
+      "step_index": 9,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s009",
+      "after_snapshot": "s010",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/contact-method\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/contact-method"
+    },
+    {
+      "step_index": 10,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s010",
+      "after_snapshot": "s011",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Mobile number\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/contact-method"
+    },
+    {
+      "step_index": 11,
+      "action": {
+        "type": "type",
+        "target": "e7",
+        "text": "07700900123"
+      },
+      "before_snapshot": "s011",
+      "after_snapshot": "s012",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/contact-method"
+    },
+    {
+      "step_index": 12,
+      "action": {
+        "type": "click",
+        "target": "e6"
+      },
+      "before_snapshot": "s012",
+      "after_snapshot": "s013",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/notes\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/notes"
+    },
+    {
+      "step_index": 13,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "Two income streams changed this month."
+      },
+      "before_snapshot": "s013",
+      "after_snapshot": "s014",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/notes"
+    },
+    {
+      "step_index": 14,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s014",
+      "after_snapshot": "s015",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"#/check-answers\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"More than one source\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "file:///home/santosh/NeXUI/examples/sites/hmrc-income-change-prototype/index.html#/check-answers"
+    }
+  ]
+}

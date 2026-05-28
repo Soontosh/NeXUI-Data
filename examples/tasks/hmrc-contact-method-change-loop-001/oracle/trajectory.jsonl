@@ -1,0 +1,21 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the income report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose pension as the income source for this path."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is set, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase so the new amount should be higher than before."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1200"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1500"},"explanation":"I entered the higher new monthly amount for the increase route."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount is complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the initial contact method."}
+{"action":{"type":"type","target":"e6","text":"first@example.com"},"explanation":"I entered the initial email address for contact."}
+{"action":{"type":"click","target":"e7"},"explanation":"The email contact details are complete, so I am moving to notes."}
+{"action":{"type":"type","target":"e3","text":"Annual pension adjustment."},"explanation":"I added a short note so the first review page has complete details."}
+{"action":{"type":"click","target":"e4"},"explanation":"The initial route is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e8"},"explanation":"I followed the contact-method change link so I can update how follow-up contact works."}
+{"action":{"type":"click","target":"e4"},"explanation":"I switched the contact method to text message."}
+{"action":{"type":"type","target":"e6","text":"07123456789"},"explanation":"I entered the mobile number required by the changed contact method."}
+{"action":{"type":"click","target":"e7"},"explanation":"The updated contact details are complete, so I am moving through notes back to the review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The notes page does not need changes, so I am returning to check answers to verify the new contact details."}
+{"action":{"type":"finish","summary":"I changed the contact method from email to text message and confirmed the review page now shows the mobile number details."},"explanation":"The review page reflects the changed contact method and value, so I am ending the task."}

@@ -1,0 +1,78 @@
+{
+  "task_id": "demoqa-alerts-prompt-enter-name-001",
+  "title": "Enter A Name In The Prompt Alert",
+  "goal": "Trigger the prompt alert on the DemoQA alerts page, enter a name, and stop after the page shows the entered text.",
+  "instruction": "Open the DemoQA alerts page, trigger the prompt alert, enter the provided name, and stop after the page shows the result.",
+  "url": "https://demoqa.com/alerts",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "demoqa",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "alerts",
+    "dialog",
+    "prompt"
+  ],
+  "review_notes": "Prompt-alert task on DemoQA using dialog text input and DOM-visible result verification.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/alerts"
+    },
+    {
+      "type": "text_present",
+      "artifact": "any_text",
+      "value": "You entered NExUI"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#promtButton"
+      },
+      "dialog": {
+        "action": "accept",
+        "prompt_text": "NExUI"
+      },
+      "post_delay_ms": 500,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "any_text",
+          "value": "You entered NExUI"
+        }
+      ],
+      "explanation": "I triggered the prompt alert and entered the requested name so the page can show the result."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I entered NExUI into the prompt alert and the page now shows the entered value."
+      },
+      "explanation": "The prompt result is visible on the page, so I am ending the task."
+    }
+  ]
+}

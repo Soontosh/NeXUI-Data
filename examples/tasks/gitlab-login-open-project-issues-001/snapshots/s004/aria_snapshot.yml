@@ -1,0 +1,662 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-syntax-highlighting":
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+        - text: A a11y-syntax-highlighting
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-syntax-highlighting/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: Issues 2
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: Merge requests 0
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - img
+        - text: CI/CD
+      - list:
+        - listitem:
+          - link "Pipelines":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - listitem:
+          - link "Editor":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/ci/editor?branch_name=main
+        - listitem:
+          - link "Jobs":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/jobs
+        - listitem:
+          - link "Schedules":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/pipeline_schedules
+    - listitem:
+      - link "Security & Compliance":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/security/configuration
+        - img
+        - text: Security & Compliance
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Infrastructure":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Infrastructure
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/metrics
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/snippets
+        - img
+        - text: Snippets
+    - listitem:
+      - link "Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - img
+        - text: Settings
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- alert:
+  - img
+  - button "Dismiss":
+    - img
+  - alert:
+    - text: You can't push or pull repositories using SSH until you add an SSH key to your profile.
+    - link "Add SSH key":
+      - /url: /-/profile/keys
+    - button "Don't show again"
+- alert:
+  - img
+  - button "Dismiss":
+    - img
+  - alert:
+    - text: The Auto DevOps pipeline has been enabled and will be used if no alternative CI configuration file is found. Container registry is not enabled on this GitLab instance. Ask an administrator to enable it in order for Auto DevOps to work.
+    - link "Settings":
+      - /url: /byteblaze/a11y-syntax-highlighting/-/settings/ci_cd
+    - link "More information":
+      - /url: /help/topics/autodevops/index.md
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+- main:
+  - text: A
+  - heading "a11y-syntax-highlighting" [level=1]:
+    - text: a11y-syntax-highlighting
+    - img
+  - text: "Project ID: 186"
+  - button "Copy project ID":
+    - img
+  - button
+  - button "Star":
+    - img
+    - text: Star
+  - link "1":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/starrers
+  - link "Fork":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/forks/new
+    - img
+    - text: Fork
+  - link "0":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/forks
+  - navigation:
+    - list:
+      - listitem:
+        - link "48 Commits":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/commits/main
+          - img
+          - strong: "48"
+          - text: Commits
+      - listitem:
+        - link "1 Branch":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/branches
+          - img
+          - strong: "1"
+          - text: Branch
+      - listitem:
+        - link "0 Tags":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/tags
+          - img
+          - strong: "0"
+          - text: Tags
+      - listitem:
+        - link "2 MB Project Storage":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/usage_quotas
+          - img
+          - strong: 2 MB
+          - text: Project Storage
+  - paragraph: 💄 Accessible light and dark syntax highlighting themes
+  - img "user avatar"
+  - link "Update README.md":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/commit/62820763d9b5f3b25720596f542aaf89d917fb17
+  - text: Eric Bailey authored
+  - time: 3 years ago
+  - button "Unverified"
+  - group:
+    - text: "62820763"
+    - button "Copy commit SHA"
+  - button "main"
+  - navigation "Files breadcrumb":
+    - list:
+      - listitem:
+        - link "a11y-syntax-highlighting":
+          - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main/
+      - listitem:
+        - text: /
+        - button "Add to tree"
+  - link "Find file":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/find_file/main
+  - link "Web IDE":
+    - /url: /-/ide/project/byteblaze/a11y-syntax-highlighting/edit/main/-/
+  - button "Download":
+    - img
+    - text: Select Archive Format
+    - img
+  - link "Clone":
+    - /url: "#"
+    - text: Clone
+    - img
+  - list:
+    - listitem:
+      - link "README":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/README.md
+        - img
+        - text: README
+    - listitem:
+      - link "MIT License":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/LICENSE
+        - img
+        - text: MIT License
+    - listitem:
+      - link "Auto DevOps enabled":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/settings/ci_cd#autodevops-settings
+        - img
+        - text: Auto DevOps enabled
+    - listitem:
+      - link "Add CHANGELOG":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/new/main?commit_message=Add+CHANGELOG&file_name=CHANGELOG
+        - img
+        - text: Add CHANGELOG
+    - listitem:
+      - link "Add CONTRIBUTING":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/new/main?commit_message=Add+CONTRIBUTING&file_name=CONTRIBUTING.md
+        - img
+        - text: Add CONTRIBUTING
+    - listitem:
+      - link "Add Kubernetes cluster":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Add Kubernetes cluster
+    - listitem:
+      - link "Configure Integrations":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/settings/integrations
+        - img
+        - text: Configure Integrations
+  - table "Files, directories, and submodules in the path / for commit reference main":
+    - rowgroup:
+      - row "Name Last commit Last update":
+        - columnheader "Name"
+        - columnheader "Last commit"
+        - columnheader "Last update"
+    - rowgroup:
+      - row "dist Loading Loading":
+        - cell "dist":
+          - link "dist":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main/dist
+        - cell "Loading":
+          - img "Loading"
+        - cell "Loading":
+          - img "Loading"
+      - row "images Loading Loading":
+        - cell "images":
+          - link "images":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main/images
+        - cell "Loading":
+          - img "Loading"
+        - cell "Loading":
+          - img "Loading"
+      - row "test Loading Loading":
+        - cell "test":
+          - link "test":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main/test
+        - cell "Loading":
+          - img "Loading"
+        - cell "Loading":
+          - img "Loading"
+      - row ".npmignore":
+        - cell ".npmignore":
+          - link ".npmignore":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/.npmignore
+            - img
+            - text: .npmignore
+        - cell
+        - cell
+      - row "LICENSE":
+        - cell "LICENSE":
+          - link "LICENSE":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/LICENSE
+            - img
+            - text: LICENSE
+        - cell
+        - cell
+      - row "README.md":
+        - cell "README.md":
+          - link "README.md":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/README.md
+            - img
+            - text: README.md
+        - cell
+        - cell
+      - row "package.json":
+        - cell "package.json":
+          - link "package.json":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/package.json
+            - img
+            - text: package.json
+        - cell
+        - cell
+  - article:
+    - link "README.md":
+      - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/README.md
+      - strong: README.md
+    - heading "a11y-syntax-highlighting" [level=1]
+    - paragraph: Accessible light and dark syntax highlighting themes.
+    - heading "Support" [level=2]
+    - heading "Libraries" [level=3]
+    - list:
+      - listitem:
+        - link "Highlight.js":
+          - /url: https://highlightjs.org/
+      - listitem:
+        - link "Prism.js":
+          - /url: http://prismjs.com/
+        - list:
+          - listitem:
+            - link "Line Highlight":
+              - /url: https://prismjs.com/plugins/line-highlight/
+          - listitem:
+            - link "Line Numbers":
+              - /url: https://prismjs.com/plugins/line-numbers/
+    - heading "Applications" [level=3]
+    - list:
+      - listitem:
+        - link "Adobe":
+          - /url: https://helpx.adobe.com/illustrator/using/using-creating-swatches.html
+      - listitem:
+        - link "Figma":
+          - /url: https://www.figma.com/
+        - text: (drag SVGs onto your canvas)
+      - listitem:
+        - link "macOS":
+          - /url: https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/DrawColor/Concepts/AboutColorLists.html
+      - listitem:
+        - link "Sketch":
+          - /url: https://www.sketchapp.com/
+        - text: (uses the
+        - link "Sketch Palettes plugin":
+          - /url: https://github.com/andrewfiorillo/sketch-palettes
+        - text: )
+    - heading "Misc" [level=3]
+    - list:
+      - listitem:
+        - link "Carbon":
+          - /url: https://carbon.now.sh/?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=a11y-dark&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false
+        - text: (remember to include alt text with your image!)
+      - listitem:
+        - link "JSON":
+          - /url: https://www.json.org/
+    - heading "Roadmap" [level=3]
+    - list:
+      - listitem:
+        - text: Editors
+        - list:
+          - listitem:
+            - link "Microsoft Visual Studio Code":
+              - /url: https://code.visualstudio.com/
+          - listitem:
+            - link "Sublime Text":
+              - /url: https://www.sublimetext.com/
+          - listitem:
+            - link "Vi/Vim":
+              - /url: http://www.vim.org/
+    - heading "Themes" [level=2]
+    - heading "a11y-dark" [level=3]
+    - paragraph:
+      - link "The a11y-dark theme being applied to the HTML of the Prism.js website. Screenshot.":
+        - /url: https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-dark.png
+        - img "The a11y-dark theme being applied to the HTML of the Prism.js website. Screenshot."
+    - list:
+      - listitem: Light text on a dark background.
+      - listitem:
+        - text: Background color of
+        - code: "#2b2b2b"
+        - text: .
+      - listitem:
+        - link "WCAG AAA compliant":
+          - /url: https://www.w3.org/TR/WCAG/#visual-audio-contrast-contrast
+        - text: for color contrast.
+    - table:
+      - rowgroup:
+        - row "Color Hex Ratio Normal Text Large Text":
+          - columnheader "Color"
+          - columnheader "Hex"
+          - columnheader "Ratio"
+          - columnheader "Normal Text"
+          - columnheader "Large Text"
+      - rowgroup:
+        - 'row "Bright Turquoise #00e0e0 8.59:1 AAA AAA"':
+          - cell "Bright Turquoise":
+            - link "Bright Turquoise":
+              - /url: http://chir.ag/projects/name-that-color/#00E0E0
+          - cell "#00e0e0":
+            - code: "#00e0e0"
+          - cell "8.59:1":
+            - link "8.59:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=00E0E0&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Chino #d4d0ab 9.04:1 AAA AAA"':
+          - cell "Chino":
+            - link "Chino":
+              - /url: http://chir.ag/projects/name-that-color/#D4D0AB
+          - cell "#d4d0ab":
+            - code: "#d4d0ab"
+          - cell "9.04:1":
+            - link "9.04:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=D4D0AB&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Conifer #abe338 9.29:1 AAA AAA"':
+          - cell "Conifer":
+            - link "Conifer":
+              - /url: http://chir.ag/projects/name-that-color/#ABE338
+          - cell "#abe338":
+            - code: "#abe338"
+          - cell "9.29:1":
+            - link "9.29:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=ABE338&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Gold #ffd700 10.09:1 AAA AAA"':
+          - cell "Gold":
+            - link "Gold":
+              - /url: http://chir.ag/projects/name-that-color/#FFD700
+          - cell "#ffd700":
+            - code: "#ffd700"
+          - cell "10.09:1":
+            - link "10.09:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=FFD700&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Snuff #dcc6e0 8.90:1 AAA AAA"':
+          - cell "Snuff":
+            - link "Snuff":
+              - /url: http://chir.ag/projects/name-that-color/#DCC6E0
+          - cell "#dcc6e0":
+            - code: "#dcc6e0"
+          - cell "8.90:1":
+            - link "8.90:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=DCC6E0&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Spring Wood #f8f8f2 13.28:1 AAA AAA"':
+          - cell "Spring Wood":
+            - link "Spring Wood":
+              - /url: http://chir.ag/projects/name-that-color/#F8F8F2
+          - cell "#f8f8f2":
+            - code: "#f8f8f2"
+          - cell "13.28:1":
+            - link "13.28:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=F8F8F2&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Vivid Tangerine #ffa07a 7.12:1 AAA AAA"':
+          - cell "Vivid Tangerine":
+            - link "Vivid Tangerine":
+              - /url: http://chir.ag/projects/name-that-color/#FFA07A
+          - cell "#ffa07a":
+            - code: "#ffa07a"
+          - cell "7.12:1":
+            - link "7.12:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=FFA07A&bcolor=2B2B2B
+          - cell "AAA"
+          - cell "AAA"
+    - heading "a11y-light" [level=3]
+    - paragraph:
+      - link "The a11y-light theme being applied to the HTML of the Prism.js website. Screenshot.":
+        - /url: https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-light.png
+        - img "The a11y-light theme being applied to the HTML of the Prism.js website. Screenshot."
+    - list:
+      - listitem: Dark text on a light background.
+      - listitem:
+        - text: Background color of
+        - code: "#fefefe"
+        - text: .
+      - listitem:
+        - link "WCAG AA compliant":
+          - /url: https://www.w3.org/TR/WCAG/#visual-audio-contrast-contrast
+        - text: for color contrast. WCAG AAA compliance forces the values on a light background to be too similar to each other to be used effectively for syntax highlighting.
+    - table:
+      - rowgroup:
+        - row "Color Hex Ratio Normal Text Large Text":
+          - columnheader "Color"
+          - columnheader "Hex"
+          - columnheader "Ratio"
+          - columnheader "Normal Text"
+          - columnheader "Large Text"
+      - rowgroup:
+        - 'row "Chelsea Gem #aa5d00 4.87:1 AA AAA"':
+          - cell "Chelsea Gem":
+            - link "Chelsea Gem":
+              - /url: http://chir.ag/projects/name-that-color/#AA5D00
+          - cell "#aa5d00":
+            - code: "#aa5d00"
+          - cell "4.87:1":
+            - link "4.87:1":
+              - /url: /byteblaze/a11y-syntax-highlighting/-/blob/main/d
+          - cell "AA"
+          - cell "AAA"
+        - 'row "Allports #007299 4.51:1 AA AAA"':
+          - cell "Allports":
+            - link "Allports":
+              - /url: http://chir.ag/projects/name-that-color/#007299
+          - cell "#007299":
+            - code: "#007299"
+          - cell "4.51:1":
+            - link "4.51:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=007299&bcolor=FEFEFE
+          - cell "AA"
+          - cell "AAA"
+        - 'row "Dove Gray #696969 5.44:1 AA AAA"':
+          - cell "Dove Gray":
+            - link "Dove Gray":
+              - /url: http://chir.ag/projects/name-that-color/#696969
+          - cell "#696969":
+            - code: "#696969"
+          - cell "5.44:1":
+            - link "5.44:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=696969&bcolor=FEFEFE
+          - cell "AA"
+          - cell "AAA"
+        - 'row "Emperor #545454 7.51:1 AAA AAA"':
+          - cell "Emperor":
+            - link "Emperor":
+              - /url: http://chir.ag/projects/name-that-color/#545454
+          - cell "#545454":
+            - code: "#545454"
+          - cell "7.51:1":
+            - link "7.51:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=545454&bcolor=FEFEFE
+          - cell "AAA"
+          - cell "AAA"
+        - 'row "Japanese Laurel #008000 5.09:1 AA AAA"':
+          - cell "Japanese Laurel":
+            - link "Japanese Laurel":
+              - /url: http://chir.ag/projects/name-that-color/#008000
+          - cell "#008000":
+            - code: "#008000"
+          - cell "5.09:1":
+            - link "5.09:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=008000&bcolor=FEFEFE
+          - cell "AA"
+          - cell "AAA"
+        - 'row "Thunderbird #d91e18 5.02:1 AA AAA"':
+          - cell "Thunderbird":
+            - link "Thunderbird":
+              - /url: http://chir.ag/projects/name-that-color/#D91E18
+          - cell "#d91e18":
+            - code: "#d91e18"
+          - cell "5.02:1":
+            - link "5.02:1":
+              - /url: https://webaim.org/resources/contrastchecker/?fcolor=D91E18&bcolor=FEFEFE
+          - cell "AA"
+          - cell "AAA"
+    - heading "High Contrast Mode" [level=3]
+    - paragraph:
+      - text: Both themes have enhanced support for
+      - link "Windows High Contrast Mode":
+        - /url: https://support.microsoft.com/en-us/help/13862/windows-use-high-contrast-mode
+      - text: "when possible:"
+    - paragraph:
+      - link "The a11y-dark theme responding to Windows High Contrast Mode. Screenshot.":
+        - /url: https://raw.githubusercontent.com/ericwbailey/a11y-prism-theme/master/images/a11y-high-contrast-mode.png
+        - img "The a11y-dark theme responding to Windows High Contrast Mode. Screenshot."
+    - heading "Used by" [level=2]
+    - list:
+      - listitem:
+        - link "Eleventy":
+          - /url: https://www.11ty.dev/docs/
+      - listitem:
+        - link "Melanie Richards":
+          - /url: https://melanie-richards.com/
+      - listitem:
+        - link "Paul Kinchla":
+          - /url: https://paulkinchla.com/blog/
+      - listitem:
+        - link "Sarah Higley":
+          - /url: https://sarahmhigley.com/writing/
+      - listitem:
+        - link "Quarto":
+          - /url: https://quarto.org/docs/output-formats/html-code.html#highlighting
+      - listitem:
+        - link "W3C Design System":
+          - /url: https://design-system.w3.org/
+      - listitem:
+        - link "aaron-gustafson.com":
+          - /url: https://www.aaron-gustafson.com/
+    - paragraph:
+      - text: Run across it being used elsewhere?
+      - link "Let me know":
+        - /url: https://ericwbailey.design#contact
+      - text: "!"
+    - heading "Thanks" [level=2]
+    - list:
+      - listitem:
+        - link "Michael Ball":
+          - /url: https://github.com/cycomachead
+        - text: ", for the idea."
+      - listitem:
+        - link "Scott Vinkle":
+          - /url: https://github.com/svinkle
+        - text: ","
+        - link "Carie Fischer":
+          - /url: https://github.com/cehfisher
+        - text: ", and"
+        - link "Scott O'Hara":
+          - /url: https://github.com/scottaohara
+        - text: for the encouragement.
+      - listitem:
+        - link "Aaron Gustafson":
+          - /url: https://github.com/aarongustafson
+        - text: ", for suggesting line highlighting support."
+      - listitem:
+        - link "Reuben L. Lillie":
+          - /url: https://reubenlillie.com/
+        - text: ", for Vi/Vim support."

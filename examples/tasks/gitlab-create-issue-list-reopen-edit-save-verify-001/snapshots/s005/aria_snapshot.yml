@@ -1,0 +1,184 @@
+- banner:
+  - link "Skip to content":
+    - /url: "#content-body"
+  - text: GitLab
+  - link "Dashboard":
+    - /url: /
+    - img
+  - list:
+    - listitem:
+      - button
+  - list:
+    - listitem:
+      - img
+      - textbox "Search GitLab"
+      - text: /
+  - list:
+    - listitem:
+      - link "Create new...":
+        - /url: /projects/new
+        - img
+        - img
+    - listitem:
+      - link "Issues":
+        - /url: /dashboard/issues?assignee_username=byteblaze
+        - img
+        - text: "13"
+    - listitem:
+      - link "Merge requests":
+        - /url: /dashboard/merge_requests?assignee_username=byteblaze
+        - img
+        - text: "8"
+        - img
+    - listitem:
+      - link "To-Do List":
+        - /url: /dashboard/todos
+        - img
+        - text: "5"
+    - listitem:
+      - link "Help":
+        - /url: /help
+        - text: Help
+        - img
+        - img
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+        - img "Byte Blaze"
+        - img
+- complementary "Project navigation":
+  - list:
+    - listitem "a11y-syntax-highlighting":
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+        - text: A a11y-syntax-highlighting
+    - listitem:
+      - link "Project information":
+        - /url: /byteblaze/a11y-syntax-highlighting/activity
+        - img
+        - text: Project information
+    - listitem:
+      - link "Repository":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/tree/main
+        - img
+        - text: Repository
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+        - img
+        - text: Issues 1
+      - list:
+        - listitem:
+          - link "Issues":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+            - text: List
+        - listitem:
+          - link "Boards":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/boards
+        - listitem:
+          - link "Service Desk":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/issues/service_desk
+        - listitem:
+          - link "Milestones":
+            - /url: /byteblaze/a11y-syntax-highlighting/-/milestones
+    - listitem:
+      - link "Merge requests":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/merge_requests
+        - img
+        - text: Merge requests 0
+    - listitem:
+      - link "CI/CD":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/pipelines
+        - img
+        - text: CI/CD
+    - listitem:
+      - link "Security & Compliance":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/security/configuration
+        - img
+        - text: Security & Compliance
+    - listitem:
+      - link "Deployments":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/environments
+        - img
+        - text: Deployments
+    - listitem:
+      - link "Packages and registries":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/packages
+        - img
+        - text: Packages and registries
+    - listitem:
+      - link "Infrastructure":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/clusters
+        - img
+        - text: Infrastructure
+    - listitem:
+      - link "Monitor":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/metrics
+        - img
+        - text: Monitor
+    - listitem:
+      - link "Analytics":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/value_stream_analytics
+        - img
+        - text: Analytics
+    - listitem:
+      - link "Wiki":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/wikis/home
+        - img
+        - text: Wiki
+    - listitem:
+      - link "Snippets":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/snippets
+        - img
+        - text: Snippets
+    - listitem:
+      - link "Settings":
+        - /url: /byteblaze/a11y-syntax-highlighting/edit
+        - img
+        - text: Settings
+  - button "Collapse sidebar":
+    - img
+    - text: Collapse sidebar
+- navigation "Breadcrumbs":
+  - list:
+    - listitem:
+      - link "Byte Blaze":
+        - /url: /byteblaze
+      - img
+    - listitem:
+      - link "a11y-syntax-highlighting":
+        - /url: /byteblaze/a11y-syntax-highlighting
+      - img
+    - listitem:
+      - link "Issues":
+        - /url: /byteblaze/a11y-syntax-highlighting/-/issues
+- main:
+  - tablist:
+    - tab "Open" [selected]
+    - tab "Closed"
+    - tab "All"
+  - tabpanel "Open"
+  - link "Subscribe to RSS feed":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/issues.atom?feed_token=TMN_bBn9Z48qVbUFZV45
+  - link "Subscribe to calendar":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/issues.ics?due_date=next_month_and_previous_two_weeks&feed_token=TMN_bBn9Z48qVbUFZV45&sort=closest_future_date
+  - group:
+    - button "Export as CSV"
+    - button "Import issues"
+  - button "Edit issues" [disabled]
+  - link "New issue":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/issues/new
+  - group:
+    - button "Toggle history"
+    - textbox "Search or filter results..."
+    - button "Search"
+  - group:
+    - button "Created date"
+    - 'button "Sort direction: Ascending"'
+  - complementary
+  - img
+  - heading "There are no open issues" [level=1]
+  - paragraph: To keep this project going, create a new issue
+  - link "New issue":
+    - /url: /byteblaze/a11y-syntax-highlighting/-/issues/new
+  - complementary "Bulk update"

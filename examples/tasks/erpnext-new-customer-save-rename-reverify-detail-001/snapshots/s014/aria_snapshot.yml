@@ -1,0 +1,49 @@
+- paragraph: Getting Started
+- text: A Administrator admin@example.com
+- banner
+- list:
+  - listitem:
+    - link:
+      - /url: /desk
+  - listitem:
+    - link "/ Customer":
+      - /url: /desk/customer
+- button "List View"
+- button "Saved Filters"
+- button
+- button "Menu":
+  - img
+- button "Add Customer"
+- textbox "ID"
+- button
+- text: name
+- textbox "Customer Name": NExUI Monster Customer
+- button
+- text: customer_name
+- combobox "Customer Group"
+- status: Begin typing for results.
+- text: customer_group
+- combobox "Territory"
+- status: Begin typing for results.
+- text: territory
+- button "Filter"
+- button "Clear all filters"
+- button "descending":
+  - img
+- button "Created On"
+- banner:
+  - checkbox "Select All"
+  - text: Customer Name Status Customer Group Territory Billing Currency ID 1 of 1
+  - img
+- checkbox
+- link "NExUI Monster Customer":
+  - /url: /desk/customer/NExUI%20Monster%20Customer
+- text: Enabled NExUI Monster Customer now 0 ·
+- img
+- button "20" [disabled]
+- button "100"
+- button "500"
+- button "2500"
+- contentinfo
+- alert: Saved
+- alert: Saved

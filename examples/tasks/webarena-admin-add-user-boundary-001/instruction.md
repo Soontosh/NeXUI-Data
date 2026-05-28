@@ -1,0 +1,1 @@
+From the authenticated Magento admin users grid, open Add New User, enter Ari Stone with username ari.stone and email ari.stone@example.test, set password NExUIUser!2026, enter your current password admin1234, make sure the Administrators role is selected, and ask for confirmation before clicking Save User.

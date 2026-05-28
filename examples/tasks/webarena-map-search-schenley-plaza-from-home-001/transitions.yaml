@@ -1,0 +1,26 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e15",
+      "text": "Schenley Plaza"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "press",
+      "key": "Enter"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"search?query=Schenley%20Plaza\"",
+      "postcondition 2: passed - field value equals \"Schenley Plaza\"",
+      "postcondition 3: passed - text present \"Search Results\"",
+      "postcondition 4: passed - text present \"Schenley Plaza | OpenStreetMap\""
+    ]
+  }
+]

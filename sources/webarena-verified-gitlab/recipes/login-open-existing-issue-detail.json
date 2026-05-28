@@ -1,0 +1,100 @@
+{
+  "task_id": "gitlab-login-open-existing-issue-detail-001",
+  "title": "Log In And Stop On A Seeded GitLab Issue Detail",
+  "goal": "Sign in to the local WebArena Verified GitLab runtime and stop on the seeded issue detail page for issue 21.",
+  "instruction": "Open the seeded GitLab issue detail route for a11y-webring.club issue 21, sign in as byteblaze with password hello1234, and stop once the issue detail page for Color theme slider is visible.",
+  "url": "http://localhost:8023/byteblaze/a11y-webring.club/-/issues/21",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "issue-detail",
+    "authenticated",
+    "hard"
+  ],
+  "review_notes": "Authenticated GitLab detail task using a deterministic seeded issue route on the a11y-webring.club project.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-webring.club/-/issues/21"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Color theme slider"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='username-field']",
+        "text": "byteblaze"
+      },
+      "explanation": "I entered the seeded GitLab username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "[data-testid='password-field']",
+        "text": "hello1234"
+      },
+      "explanation": "I entered the seeded GitLab password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "[data-testid='sign-in-button']"
+      },
+      "explanation": "I signed in so GitLab could redirect back to the seeded issue detail page.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/byteblaze/a11y-webring.club/-/issues/21"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Color theme slider"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened the seeded GitLab issue detail page."
+      },
+      "explanation": "The requested issue detail page is visible now, so I am ending the task."
+    }
+  ]
+}

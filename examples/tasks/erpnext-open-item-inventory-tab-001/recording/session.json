@@ -1,0 +1,83 @@
+{
+  "recorded_at": "2026-06-02T00:29:15.387Z",
+  "final_snapshot": "s004",
+  "final_url": "http://localhost:8090/desk/item/NEXUI-ITEM-001#inventory_section",
+  "snapshot_count": 5,
+  "transition_count": 4,
+  "oracle_step_count": 5,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "Administrator"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fitem%2FNEXUI-ITEM-001"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "admin"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/login?redirect-to=%2Fdesk%2Fitem%2FNEXUI-ITEM-001"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e4"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/desk/item/NEXUI-ITEM-001\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/desk/item/NEXUI-ITEM-001#details"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e15"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8090/desk/item/NEXUI-ITEM-001#inventory_section"
+    }
+  ]
+}

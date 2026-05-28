@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/explanation-justification.schema.json",
+  "title": "NExUI Explanation Justification",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "basis": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_effect": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "risk": {
+      "$ref": "#/$defs/risk"
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "value"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "candidate_name",
+            "candidate_text",
+            "field_value",
+            "url_contains",
+            "title_contains",
+            "visible_text",
+            "validation_state",
+            "text_present",
+            "field_value_equals",
+            "candidate_exists",
+            "boundary_ready"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "confirmation_required",
+            "destructive",
+            "mutating",
+            "boundary"
+          ]
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

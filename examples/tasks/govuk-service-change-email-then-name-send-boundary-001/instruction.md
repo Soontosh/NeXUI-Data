@@ -1,0 +1,1 @@
+Complete the travel support prototype with email updates enabled, then use the check-answers page to change the email to jordan.reed@example.com and the full name to Jordan Reed. Stop by asking whether to continue before clicking Send application.

@@ -1,0 +1,124 @@
+{
+  "task_id": "demoqa-webtables-add-row-001",
+  "title": "Add A New DemoQA Web Table Row",
+  "goal": "Open the add-row dialog, add a new row, and stop once the new row is visible in the web table.",
+  "instruction": "Use the DemoQA web table to add a new row and stop when the added row is visible.",
+  "url": "https://demoqa.com/webtables",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "table",
+    "modal",
+    "row-add"
+  ],
+  "review_notes": "Adds a richer table-editing task with a modal form and row-state verification.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/webtables"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add"
+      },
+      "explanation": "I opened the add-row form so I can enter the new employee details.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Registration Form"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#firstName",
+        "text": "Nexui"
+      },
+      "explanation": "I entered the first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#lastName",
+        "text": "Row"
+      },
+      "explanation": "I entered the last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#userEmail",
+        "text": "nexui.row@example.com"
+      },
+      "explanation": "I entered the email address."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#age",
+        "text": "29"
+      },
+      "explanation": "I entered the age."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#salary",
+        "text": "12345"
+      },
+      "explanation": "I entered the salary."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#department",
+        "text": "QA"
+      },
+      "explanation": "I entered the department."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#submit"
+      },
+      "explanation": "I submitted the new row details and will stop once the row appears in the table.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Nexui Row 29 nexui.row@example.com 12345 QA"
+        }
+      ],
+      "postcondition_timeout_ms": 5000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I added a new web-table row and stopped when it appeared in the table."
+      },
+      "explanation": "The new row is visible in the table now, so I am ending the task."
+    }
+  ]
+}

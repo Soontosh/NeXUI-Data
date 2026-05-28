@@ -1,0 +1,142 @@
+{
+  "recorded_at": "2026-06-01T22:24:59.664Z",
+  "final_snapshot": "s006",
+  "final_url": "http://localhost:8100/control/event/nexui/nexui-event/items/",
+  "snapshot_count": 7,
+  "transition_count": 6,
+  "oracle_step_count": 7,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "admin@localhost"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/login?next=/control/event/nexui/nexui-event/items/1/"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e3",
+        "text": "admin"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/login?next=/control/event/nexui/nexui-event/items/1/"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e5"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/control/event/nexui/nexui-event/items/1/\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "type",
+        "target": "e38",
+        "text": "NExUI General Admission"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/"
+    },
+    {
+      "step_index": 4,
+      "action": {
+        "type": "click",
+        "target": "e52"
+      },
+      "before_snapshot": "s004",
+      "after_snapshot": "s005",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"Your changes have been saved.\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"textbox\",\"value\":\"NExUI General Admission\"}",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/1/"
+    },
+    {
+      "step_index": 5,
+      "action": {
+        "type": "click",
+        "target": "e11"
+      },
+      "before_snapshot": "s005",
+      "after_snapshot": "s006",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/control/event/nexui/nexui-event/items/\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"NExUI General Admission\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8100/control/event/nexui/nexui-event/items/"
+    }
+  ]
+}

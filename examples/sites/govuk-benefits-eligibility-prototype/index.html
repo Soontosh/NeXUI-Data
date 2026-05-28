@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check childcare support eligibility</title>
+    <style>
+      :root {
+        --govuk-blue: #1d70b8;
+        --govuk-black: #0b0c0c;
+        --govuk-text: #0b0c0c;
+        --govuk-border: #b1b4b6;
+        --govuk-error: #d4351c;
+        --govuk-bg: #ffffff;
+        --govuk-panel: #f3f2f1;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: var(--govuk-text);
+        background: var(--govuk-bg);
+        line-height: 1.45;
+      }
+      a { color: var(--govuk-blue); }
+      .phase-banner {
+        background: var(--govuk-panel);
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--govuk-border);
+      }
+      .phase-tag {
+        display: inline-block;
+        margin-right: 8px;
+        padding: 4px 8px;
+        background: var(--govuk-blue);
+        color: white;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .shell {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 24px 16px 64px;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 16px;
+      }
+      main { max-width: 700px; }
+      h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+        line-height: 1.15;
+      }
+      p, legend, label, .hint, .summary-list th, .summary-list td {
+        font-size: 1.125rem;
+      }
+      .hint { color: #505a5f; margin-bottom: 8px; }
+      .form-group { margin-bottom: 24px; }
+      .form-group.error { padding-left: 12px; border-left: 4px solid var(--govuk-error); }
+      .error-message {
+        display: block;
+        margin: 8px 0 12px;
+        color: var(--govuk-error);
+        font-weight: 700;
+      }
+      .text-input {
+        width: min(32rem, 100%);
+        padding: 10px 12px;
+        border: 2px solid var(--govuk-black);
+        font: inherit;
+      }
+      .text-input.error { border-color: var(--govuk-error); }
+      fieldset { border: 0; padding: 0; margin: 0; }
+      .radios { display: grid; gap: 12px; }
+      .radio-item { display: flex; align-items: flex-start; gap: 10px; }
+      .button {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 12px 18px;
+        border: 0;
+        background: #00703c;
+        color: white;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .error-summary {
+        margin: 0 0 24px;
+        padding: 16px;
+        border: 4px solid var(--govuk-error);
+      }
+      .error-summary h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+      }
+      .summary-list {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 24px;
+      }
+      .summary-list tr { border-bottom: 1px solid var(--govuk-border); }
+      .summary-list th, .summary-list td {
+        padding: 14px 8px 14px 0;
+        text-align: left;
+        vertical-align: top;
+      }
+      .summary-list th { width: 38%; }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .inset-text {
+        margin: 24px 0;
+        padding: 16px;
+        border-left: 8px solid var(--govuk-border);
+        background: var(--govuk-panel);
+      }
+      .hidden { display: none; }
+      .page { display: none; }
+      .page.active { display: block; }
+    </style>
+  </head>
+  <body>
+    <div class="phase-banner">
+      <span class="phase-tag">Prototype</span>
+      <span>This local service prototype is derived from GOV.UK-style eligibility and review journeys.</span>
+    </div>
+    <div class="shell">
+      <a class="back-link" id="back-link" href="#/residency">Back</a>
+      <main id="main-content" role="main" tabindex="-1">
+        <div id="error-summary" class="error-summary hidden" role="alert" aria-labelledby="error-summary-title">
+          <h2 id="error-summary-title">There is a problem</h2>
+          <ul id="error-list"></ul>
+        </div>
+
+        <section id="page-residency" class="page" aria-labelledby="residency-title">
+          <h1 id="residency-title">Do you usually live in the UK?</h1>
+          <p class="hint">You must usually live in the UK to apply for this support.</p>
+          <div id="residency-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">Do you usually live in the UK?</legend>
+              <span id="residency-error" class="error-message hidden">Select whether you usually live in the UK</span>
+              <div class="radios">
+                <label class="radio-item" for="residency-yes">
+                  <input id="residency-yes" name="residency" type="radio" value="Yes">
+                  <span>Yes</span>
+                </label>
+                <label class="radio-item" for="residency-no">
+                  <input id="residency-no" name="residency" type="radio" value="No">
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <button id="continue-residency" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-children" class="page" aria-labelledby="children-title">
+          <h1 id="children-title">How many children need childcare?</h1>
+          <p class="hint">Choose the closest answer for the children covered by this application.</p>
+          <div id="children-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">How many children need childcare?</legend>
+              <span id="children-error" class="error-message hidden">Select how many children need childcare</span>
+              <div class="radios">
+                <label class="radio-item" for="children-one">
+                  <input id="children-one" name="children" type="radio" value="1 child">
+                  <span>1 child</span>
+                </label>
+                <label class="radio-item" for="children-two">
+                  <input id="children-two" name="children" type="radio" value="2 children">
+                  <span>2 children</span>
+                </label>
+                <label class="radio-item" for="children-three">
+                  <input id="children-three" name="children" type="radio" value="3 or more children">
+                  <span>3 or more children</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <button id="continue-children" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-work-status" class="page" aria-labelledby="work-status-title">
+          <h1 id="work-status-title">What best describes your current work status?</h1>
+          <div id="work-status-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">What best describes your current work status?</legend>
+              <span id="work-status-error" class="error-message hidden">Select your current work status</span>
+              <div class="radios">
+                <label class="radio-item" for="work-employed">
+                  <input id="work-employed" name="work-status" type="radio" value="Employed">
+                  <span>Employed</span>
+                </label>
+                <label class="radio-item" for="work-self-employed">
+                  <input id="work-self-employed" name="work-status" type="radio" value="Self-employed">
+                  <span>Self-employed</span>
+                </label>
+                <label class="radio-item" for="work-not-working">
+                  <input id="work-not-working" name="work-status" type="radio" value="Not working">
+                  <span>Not working</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div id="work-status-guidance" class="inset-text hidden">
+            You may still be eligible if you are about to start work, but you may need to explain your situation before you can submit an application.
+          </div>
+          <button id="continue-work-status" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-income" class="page" aria-labelledby="income-title">
+          <h1 id="income-title">What is your household income before tax each month?</h1>
+          <p class="hint">Enter the amount in pounds. Use an estimate if your income changes from month to month.</p>
+          <div id="income-group" class="form-group">
+            <label for="monthly-income">Monthly income</label>
+            <span id="income-error" class="error-message hidden">Enter a valid monthly income</span>
+            <input id="monthly-income" class="text-input" inputmode="decimal" autocomplete="off">
+          </div>
+          <button id="continue-income" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-updates" class="page" aria-labelledby="updates-title">
+          <h1 id="updates-title">Do you want updates about your eligibility check by email?</h1>
+          <div id="updates-group" class="form-group">
+            <fieldset>
+              <legend class="visually-hidden">Do you want updates by email?</legend>
+              <span id="updates-error" class="error-message hidden">Select whether you want email updates</span>
+              <div class="radios">
+                <label class="radio-item" for="updates-yes">
+                  <input id="updates-yes" name="updates" type="radio" value="Yes">
+                  <span>Yes</span>
+                </label>
+                <label class="radio-item" for="updates-no">
+                  <input id="updates-no" name="updates" type="radio" value="No">
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+          <div id="email-group" class="form-group hidden">
+            <label for="email-address">Email address</label>
+            <p class="hint">We will only use this to send updates about this eligibility check.</p>
+            <span id="email-error" class="error-message hidden">Enter an email address</span>
+            <input id="email-address" class="text-input" type="email" autocomplete="email">
+          </div>
+          <button id="continue-updates" class="button" type="button">Continue</button>
+        </section>
+
+        <section id="page-check-answers" class="page" aria-labelledby="check-answers-title">
+          <h1 id="check-answers-title">Check your answers before continuing</h1>
+          <table class="summary-list">
+            <tbody>
+              <tr>
+                <th scope="row">Usually live in the UK</th>
+                <td id="summary-residency"></td>
+                <td><a id="change-residency" href="#/residency">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Children needing childcare</th>
+                <td id="summary-children"></td>
+                <td><a id="change-children" href="#/children">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Work status</th>
+                <td id="summary-work-status"></td>
+                <td><a id="change-work-status" href="#/work-status">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Monthly income</th>
+                <td id="summary-income"></td>
+                <td><a id="change-income" href="#/income">Change</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Email updates</th>
+                <td id="summary-updates"></td>
+                <td><a id="change-updates" href="#/updates">Change</a></td>
+              </tr>
+              <tr id="summary-email-row">
+                <th scope="row">Email address</th>
+                <td id="summary-email"></td>
+                <td><a id="change-email" href="#/updates">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="eligibility-guidance" class="inset-text">
+            The next step would continue to a fuller eligibility result. Stop and review the details here before moving on.
+          </div>
+          <button id="continue-check-answers" class="button" type="button">Continue to eligibility result</button>
+        </section>
+
+        <section id="page-result" class="page" aria-labelledby="result-title">
+          <h1 id="result-title">Eligibility result</h1>
+          <p id="result-text"></p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const steps = ["residency", "children", "work-status", "income", "updates", "check-answers", "result"];
+      const state = {
+        residency: "",
+        children: "",
+        workStatus: "",
+        income: "",
+        updates: "",
+        email: ""
+      };
+
+      function currentRoute() {
+        const route = window.location.hash.replace(/^#\//, "");
+        return steps.includes(route) ? route : "residency";
+      }
+
+      function goTo(route) {
+        window.location.hash = `#/${route}`;
+      }
+
+      function updateBackLink(route) {
+        const link = document.getElementById("back-link");
+        const index = steps.indexOf(route);
+        if (index <= 0) {
+          link.classList.add("hidden");
+          return;
+        }
+        link.classList.remove("hidden");
+        link.href = `#/${steps[index - 1]}`;
+      }
+
+      function clearErrors() {
+        document.getElementById("error-summary").classList.add("hidden");
+        document.getElementById("error-list").innerHTML = "";
+        [["residency", null], ["children", null], ["work-status", null], ["income", "monthly-income"], ["updates", null], ["email", "email-address"]].forEach(([prefix, inputId]) => {
+          document.getElementById(`${prefix}-group`).classList.remove("error");
+          document.getElementById(`${prefix}-error`).classList.add("hidden");
+          if (inputId) {
+            document.getElementById(inputId).classList.remove("error");
+          }
+        });
+      }
+
+      function showErrors(errors) {
+        const summary = document.getElementById("error-summary");
+        const list = document.getElementById("error-list");
+        list.innerHTML = "";
+        errors.forEach((error) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${error.href}`;
+          a.textContent = error.message;
+          li.appendChild(a);
+          list.appendChild(li);
+          document.getElementById(`${error.prefix}-group`).classList.add("error");
+          const node = document.getElementById(`${error.prefix}-error`);
+          node.textContent = error.message;
+          node.classList.remove("hidden");
+          if (error.inputId) {
+            document.getElementById(error.inputId).classList.add("error");
+          }
+        });
+        summary.classList.remove("hidden");
+      }
+
+      function renderState(route) {
+        document.getElementById("work-status-guidance").classList.toggle("hidden", state.workStatus !== "Not working");
+        document.getElementById("email-group").classList.toggle("hidden", state.updates !== "Yes");
+        document.getElementById("summary-email-row").classList.toggle("hidden", state.updates !== "Yes");
+        document.getElementById("summary-residency").textContent = state.residency || "Not answered";
+        document.getElementById("summary-children").textContent = state.children || "Not answered";
+        document.getElementById("summary-work-status").textContent = state.workStatus || "Not answered";
+        document.getElementById("summary-income").textContent = state.income ? `£${state.income}` : "Not answered";
+        document.getElementById("summary-updates").textContent = state.updates || "Not answered";
+        document.getElementById("summary-email").textContent = state.email || "Not answered";
+        if (route === "result") {
+          document.getElementById("result-text").textContent =
+            state.residency === "Yes" && state.workStatus !== "Not working"
+              ? "You may be able to continue with a full childcare-support application."
+              : "You may need extra checks before a full childcare-support application can continue.";
+        }
+      }
+
+      function showPage(route) {
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.toggle("active", page.id === `page-${route}`);
+        });
+        updateBackLink(route);
+        clearErrors();
+        renderState(route);
+        document.getElementById("main-content").focus();
+      }
+
+      function parseMoney(value) {
+        const normalized = String(value || "").trim();
+        if (!normalized || Number.isNaN(Number(normalized))) {
+          return null;
+        }
+        return Number(normalized);
+      }
+
+      function requireRadio(name, prefix, message) {
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        if (!selected) {
+          return { ok: false, errors: [{ prefix, inputId: null, href: `${prefix}-group`, message }] };
+        }
+        return { ok: true, value: selected.value };
+      }
+
+      function validateAndContinue(route) {
+        clearErrors();
+        const errors = [];
+        if (route === "residency") {
+          const result = requireRadio("residency", "residency", "Select whether you usually live in the UK");
+          if (!result.ok) errors.push(...result.errors);
+          else state.residency = result.value;
+        }
+        if (route === "children") {
+          const result = requireRadio("children", "children", "Select how many children need childcare");
+          if (!result.ok) errors.push(...result.errors);
+          else state.children = result.value;
+        }
+        if (route === "work-status") {
+          const result = requireRadio("work-status", "work-status", "Select your current work status");
+          if (!result.ok) errors.push(...result.errors);
+          else state.workStatus = result.value;
+        }
+        if (route === "income") {
+          const amount = parseMoney(document.getElementById("monthly-income").value);
+          if (amount === null || amount < 0) {
+            errors.push({ prefix: "income", inputId: "monthly-income", href: "monthly-income", message: "Enter a valid monthly income" });
+          } else {
+            state.income = amount.toFixed(2);
+          }
+        }
+        if (route === "updates") {
+          const result = requireRadio("updates", "updates", "Select whether you want email updates");
+          if (!result.ok) {
+            errors.push(...result.errors);
+          } else {
+            state.updates = result.value;
+            if (state.updates === "Yes") {
+              const email = document.getElementById("email-address").value.trim();
+              if (!email) {
+                errors.push({ prefix: "email", inputId: "email-address", href: "email-address", message: "Enter an email address" });
+              } else if (!email.includes("@")) {
+                errors.push({ prefix: "email", inputId: "email-address", href: "email-address", message: "Enter an email address in the correct format" });
+              } else {
+                state.email = email;
+              }
+            } else {
+              state.email = "";
+            }
+          }
+        }
+        if (errors.length) {
+          showErrors(errors);
+          return;
+        }
+        const index = steps.indexOf(route);
+        goTo(steps[Math.min(index + 1, steps.length - 1)]);
+      }
+
+      function hydrateInputs() {
+        if (state.residency) {
+          const radio = document.querySelector(`input[name="residency"][value="${state.residency}"]`);
+          if (radio) radio.checked = true;
+        }
+        if (state.children) {
+          const radio = document.querySelector(`input[name="children"][value="${state.children}"]`);
+          if (radio) radio.checked = true;
+        }
+        if (state.workStatus) {
+          const radio = document.querySelector(`input[name="work-status"][value="${state.workStatus}"]`);
+          if (radio) radio.checked = true;
+        }
+        if (state.updates) {
+          const radio = document.querySelector(`input[name="updates"][value="${state.updates}"]`);
+          if (radio) radio.checked = true;
+        }
+        document.getElementById("monthly-income").value = state.income;
+        document.getElementById("email-address").value = state.email;
+      }
+
+      document.querySelectorAll('input[name="work-status"]').forEach((node) => {
+        node.addEventListener("change", () => {
+          state.workStatus = node.value;
+          renderState(currentRoute());
+        });
+      });
+      document.querySelectorAll('input[name="updates"]').forEach((node) => {
+        node.addEventListener("change", () => {
+          state.updates = node.value;
+          renderState(currentRoute());
+        });
+      });
+
+      document.getElementById("continue-residency").addEventListener("click", () => validateAndContinue("residency"));
+      document.getElementById("continue-children").addEventListener("click", () => validateAndContinue("children"));
+      document.getElementById("continue-work-status").addEventListener("click", () => validateAndContinue("work-status"));
+      document.getElementById("continue-income").addEventListener("click", () => validateAndContinue("income"));
+      document.getElementById("continue-updates").addEventListener("click", () => validateAndContinue("updates"));
+      document.getElementById("continue-check-answers").addEventListener("click", () => goTo("result"));
+
+      window.addEventListener("hashchange", () => {
+        hydrateInputs();
+        showPage(currentRoute());
+      });
+
+      hydrateInputs();
+      showPage(currentRoute());
+    </script>
+  </body>
+</html>

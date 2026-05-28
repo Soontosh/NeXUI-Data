@@ -1,0 +1,10 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- link "Back":
+  - /url: "#/old-amount"
+- main:
+  - region "What is the new monthly amount?":
+    - heading "What is the new monthly amount?" [level=1]
+    - paragraph: Enter the amount after the change, in pounds.
+    - text: New monthly amount
+    - textbox "New monthly amount": "1300"
+    - button "Continue"

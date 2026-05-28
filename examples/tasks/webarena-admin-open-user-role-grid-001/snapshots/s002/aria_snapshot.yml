@@ -1,0 +1,104 @@
+- link "Magento Admin Panel":
+  - /url: http://localhost:7780/admin/admin/
+  - img "Magento Admin Panel"
+- navigation:
+  - menubar:
+    - listitem:
+      - link " Dashboard":
+        - /url: http://localhost:7780/admin/admin/dashboard/
+    - listitem:
+      - link " Sales":
+        - /url: "#"
+    - listitem:
+      - link " Catalog":
+        - /url: "#"
+    - listitem:
+      - link " Customers":
+        - /url: "#"
+    - listitem:
+      - link " Marketing":
+        - /url: "#"
+    - listitem:
+      - link " Content":
+        - /url: "#"
+    - listitem:
+      - link " Reports":
+        - /url: "#"
+    - listitem:
+      - link " Stores":
+        - /url: "#"
+    - listitem:
+      - link " System":
+        - /url: "#"
+    - listitem:
+      - link " Find Partners & Extensions":
+        - /url: http://localhost:7780/admin/marketplace/index/
+- banner:
+  - heading "New User" [level=1]
+  - link " admin":
+    - /url: http://localhost:7780/admin/admin/system_account/index/
+  - link "":
+    - /url: http://localhost:7780/admin/admin/notification/index/
+  - text: 
+  - textbox ""
+- main:
+  - button " Back"
+  - button "Reset"
+  - button "Save User"
+  - tabpanel "User Role":
+    - button "Search"
+    - button "Reset Filter"
+    - text: 1 records found
+    - combobox "per page":
+      - option "20" [selected]
+      - option "30"
+      - option "50"
+      - option "100"
+      - option "200"
+    - text: per page
+    - button ""
+    - textbox "of 1": "1"
+    - text: of 1
+    - button ""
+    - table:
+      - rowgroup:
+        - row "Assigned Role":
+          - columnheader "Assigned"
+          - columnheader "Role"
+        - row "Any":
+          - cell "Any":
+            - combobox:
+              - option "Any" [selected]
+              - option "Yes"
+              - option "No"
+          - cell:
+            - textbox
+      - rowgroup:
+        - row "Administrators":
+          - cell:
+            - radio
+          - cell "Administrators"
+  - strong: User Information
+  - tablist:
+    - tab "User Info":
+      - link "User Info":
+        - /url: "#page_tabs_main_section_content"
+    - tab "User Role" [expanded] [selected]:
+      - link "User Role":
+        - /url: "#page_tabs_roles_section_content"
+- contentinfo:
+  - paragraph:
+    - link "":
+      - /url: http://magento.com
+    - text: Copyright © 2026 Magento Commerce Inc. All rights reserved.
+  - paragraph:
+    - strong: Magento
+    - text: ver. 2.4.6
+  - link "Privacy Policy":
+    - /url: https://www.adobe.com/privacy/policy.html
+  - text: "|"
+  - link "Account Activity":
+    - /url: http://localhost:7780/admin/security/session/activity/
+  - text: "|"
+  - link "Report an Issue":
+    - /url: https://github.com/magento/magento2/issues

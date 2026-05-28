@@ -1,0 +1,164 @@
+{
+  "task_id": "demoqa-practice-form-validation-last-name-001",
+  "title": "Submit DemoQA Practice Form With Missing Last Name",
+  "goal": "Fill most required fields, leave the last name blank, submit the form, and stop when the page rejects the submission.",
+  "instruction": "Enter the first name, choose a gender, enter the mobile number, leave the last name empty, submit the form, and stop when the submission is rejected.",
+  "url": "https://demoqa.com/automation-practice-form",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "form",
+    "validation",
+    "rejected-submit",
+    "multi-step"
+  ],
+  "review_notes": "Validation-boundary task that checks whether the agent can recognize a rejected submission instead of claiming success.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/automation-practice-form"
+    },
+    {
+      "type": "modal_state_is",
+      "value": "none"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "Nora"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Mobile Number"
+      },
+      "value": "7015550101"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "radio",
+        "name": "Female",
+        "states": {
+          "checked": true
+        }
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "was-validated"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "aria_snapshot",
+      "value": "Thanks for submitting the form"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "First Name",
+        "text": "Nora"
+      },
+      "explanation": "I entered the first name.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "First Name"
+          },
+          "value": "Nora"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Female"
+      },
+      "explanation": "I selected the female gender option.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "radio",
+            "name": "Female",
+            "states": {
+              "checked": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Mobile Number",
+        "text": "7015550101"
+      },
+      "explanation": "I entered the mobile number but intentionally left the last name blank.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Mobile Number"
+          },
+          "value": "7015550101"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Submit"
+      },
+      "explanation": "I submitted the incomplete form. I will stop when the page shows that the submission was rejected.",
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "none"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "was-validated"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I submitted the incomplete form and stopped when the page rejected it instead of opening the confirmation dialog."
+      },
+      "explanation": "The form was rejected and no confirmation dialog opened, so I am ending the task."
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "task_id": "orangehrm-pim-open-admin-detail-001",
+  "title": "Open The Seeded Admin Personal Details View",
+  "goal": "Log in to OrangeHRM, open the seeded admin personal-details page, and stop on the authenticated employee profile view.",
+  "instruction": "Sign in to the local OrangeHRM admin account, open the seeded admin personal-details page, and stop on the Personal Details view.",
+  "url": "http://localhost:8080/",
+  "source_surface": "orangehrm-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 5,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "enterprise",
+    "authenticated",
+    "employee-detail",
+    "personal-details",
+    "hard"
+  ],
+  "review_notes": "First enterprise employee-detail workflow on the self-hosted OrangeHRM track.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+        "value": "/web/index.php/pim/viewPersonalDetails/empNumber/1"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: NExUI Admin"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Heading level 6: Personal Details"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "NExUI"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Last Name"
+      },
+      "value": "Admin"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"username\"]",
+        "text": "nexui_admin"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name=\"password\"]",
+        "text": "NExUIAdmin!2026"
+      },
+      "explanation": "I entered the seeded OrangeHRM admin password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so I can access the enterprise employee records.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/dashboard/index"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "My Info"
+      },
+      "explanation": "I opened the seeded admin employee profile and stopped on the personal-details page.",
+      "wait_until": "load",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/web/index.php/pim/viewPersonalDetails/empNumber/1"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "First Name"
+          },
+          "value": "NExUI"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

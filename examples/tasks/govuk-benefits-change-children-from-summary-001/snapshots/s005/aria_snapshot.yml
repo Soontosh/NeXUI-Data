@@ -1,0 +1,15 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/children"
+- main:
+  - region "What best describes your current work status?":
+    - heading "What best describes your current work status?" [level=1]
+    - group "What best describes your current work status?":
+      - text: What best describes your current work status?
+      - radio "Employed" [checked]
+      - text: Employed
+      - radio "Self-employed"
+      - text: Self-employed
+      - radio "Not working"
+      - text: Not working
+    - button "Continue"

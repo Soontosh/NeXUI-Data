@@ -1,0 +1,22 @@
+{
+  "step_explanation": {
+    "preferred_min_words": 6,
+    "preferred_max_words": 28,
+    "must_describe_state_change": true,
+    "must_ground_in_visible_state": true,
+    "must_link_to_goal": true,
+    "must_predict_effect": true,
+    "generic_finish_disallowed": true
+  },
+  "risk_explanation": {
+    "required_for_ask_user": true,
+    "required_for_confirmation_required_actions": true,
+    "must_name_risk_type": true
+  },
+  "final_summary": {
+    "preferred_max_words": 40,
+    "must_cover_key_outcome": true,
+    "must_match_final_state": true,
+    "boundary_aware": false
+  }
+}

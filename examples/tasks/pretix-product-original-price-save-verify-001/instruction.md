@@ -1,0 +1,1 @@
+Open the self-hosted pretix seeded General Admission product, sign in as admin@localhost with password admin, switch to the Price tab, enter 30.00 as the Original price, save the change, and verify the saved value still appears on the product form.

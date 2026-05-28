@@ -1,0 +1,140 @@
+{
+  "task_id": "webarena-admin-edit-admin-save-open-edit-verify-001",
+  "title": "Save An Admin Email Edit And Verify It Persists",
+  "goal": "Open the seeded Magento admin edit form, change the email, save it, reopen the user, and verify the persisted edit state on the admin form.",
+  "instruction": "From the authenticated Magento admin users grid, open the seeded admin user, change the email to admin+nexui-persist@example.test, enter your current password admin1234, save the form, reopen the seeded admin user, and stop once the persisted edit state still shows the updated email.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 8,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-edit",
+    "mutating",
+    "very_hard"
+  ],
+  "review_notes": "Reset-aware sandboxed persistence task on the seeded Magento admin edit surface.",
+  "success_assertions": [
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "User Name"
+      },
+      "value": "admin"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Email"
+      },
+      "value": "admin+nexui-persist@example.test"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//tr[@data-role='row' and contains(@title,'/admin/admin/user/edit/user_id/1/')]"
+      },
+      "explanation": "I opened the seeded Magento admin user so I can edit and verify the persisted email state.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/edit/user_id/1/"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='email']",
+        "text": "admin+nexui-persist@example.test"
+      },
+      "explanation": "I replaced the admin email with the deterministic benchmark variant."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='current_password']",
+        "text": "admin1234"
+      },
+      "explanation": "I entered the current admin password required to authorize the change."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save User"
+      },
+      "explanation": "I saved the admin edit so I can verify the persisted email state.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "admin+nexui-persist@example.test"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//tr[@data-role='row' and contains(@title,'/admin/admin/user/edit/user_id/1/')]"
+      },
+      "explanation": "I reopened the seeded admin row from the users grid so I can verify the saved value on the persisted edit form.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/edit/user_id/1/"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Email"
+          },
+          "value": "admin+nexui-persist@example.test"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I saved the Magento admin email edit, reopened the seeded admin user, and verified the updated email still appears on the persisted edit form."
+      },
+      "explanation": "The saved email value is still visible on the admin edit form now, so I am ending the task."
+    }
+  ]
+}

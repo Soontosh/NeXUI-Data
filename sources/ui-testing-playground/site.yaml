@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.0",
+  "site_id": "ui-testing-playground",
+  "site_name": "UI Testing Playground",
+  "base_url": "https://uitestingplayground.com/",
+  "source_track": "ui_automation_demo",
+  "category": "ui_automation_demo",
+  "hosting_mode": "live_demo",
+  "redistribution_class": "live_only_academic_source",
+  "authoring_status": "blocked",
+  "reset_strategy": "none",
+  "determinism_level": "medium",
+  "auth": {
+    "auth_type": "none",
+    "credentials_env_vars": [],
+    "notes": ""
+  },
+  "task_families": [
+    "dynamic_targets",
+    "selector_instability",
+    "delayed_content"
+  ],
+  "difficulty_bands": [
+    "medium",
+    "hard"
+  ],
+  "onboarding": {
+    "bootstrap_doc": "bootstrap.md",
+    "reset_doc": "reset-notes.md",
+    "seed_notes_doc": "seed-notes.md",
+    "setup_notes": "Currently blocked because both remote checks and Playwright capture fail on the live site due to a certificate hostname mismatch."
+  },
+  "capture_defaults": {
+    "browser": "chromium",
+    "wait_until": "load",
+    "delay_ms": 0,
+    "timeout_ms": 30000,
+    "viewport_width": 1440,
+    "viewport_height": 900,
+    "locale": "en-US"
+  },
+  "entry_points": [
+    {
+      "entry_id": "home",
+      "label": "Home",
+      "url": "https://uitestingplayground.com/",
+      "goal_hint": "Survey interaction modules such as dynamic IDs and delayed content.",
+      "notes": "The site exists specifically for UI test automation practice."
+    }
+  ],
+  "task_ideas": [
+    {
+      "idea_id": "playground-dynamic-id",
+      "summary": "Activate a control whose identifier changes and explain how it was resolved.",
+      "status": "candidate",
+      "risk_level": "safe",
+      "notes": "Good for semantic targeting and explanation of ambiguity."
+    }
+  ],
+  "review": {
+    "owner": "",
+    "notes": "Valuable for brittle-target scenarios where refs should outperform selectors, but currently blocked because page capture fails with ERR_CERT_COMMON_NAME_INVALID on the live site."
+  }
+}

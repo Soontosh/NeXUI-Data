@@ -1,0 +1,76 @@
+{
+  "task_id": "demoblaze-open-laptops-category-001",
+  "title": "Open Laptops Category",
+  "goal": "Open the Laptops category from the Demoblaze storefront and stop on the filtered listing.",
+  "instruction": "On the Demoblaze storefront, open the Laptops category and stop when the filtered laptop listing is visible.",
+  "url": "https://demoblaze.com/",
+  "source": {
+    "site_id": "demoblaze",
+    "site_name": "Demoblaze Store",
+    "category": "ecommerce_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "wait",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "retail",
+    "navigation",
+    "category-filter"
+  ],
+  "review_notes": "First Demoblaze retail-navigation task. It fits the modern-app retail slice by requiring category filtering on a client-rendered storefront.",
+  "success_assertions": [
+    {
+      "type": "text_present",
+      "value": "MacBook air"
+    },
+    {
+      "type": "text_present",
+      "value": "Sony vaio i5"
+    },
+    {
+      "type": "text_absent",
+      "value": "Samsung galaxy s6"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "wait",
+        "duration_ms": 3000
+      },
+      "explanation": "I waited briefly for the storefront product grid to finish loading."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Laptops"
+      },
+      "explanation": "I opened the Laptops category to filter the storefront listing.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "value": "MacBook air"
+        },
+        {
+          "type": "text_absent",
+          "value": "Samsung galaxy s6"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the Laptops category and stopped when the filtered listing was visible."
+      },
+      "explanation": "The laptop-only product list is visible now, so I am ending the task."
+    }
+  ]
+}

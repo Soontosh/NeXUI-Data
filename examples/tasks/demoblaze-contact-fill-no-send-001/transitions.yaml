@@ -1,0 +1,49 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s001",
+    "notes": [
+      "postcondition 1: passed - modal state is \"dialog_open\""
+    ]
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "nexui@example.com"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - field value equals \"nexui@example.com\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "type",
+      "target": "e4",
+      "text": "NExUI"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - field value equals \"NExUI\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "Testing the contact dialog"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Testing the contact dialog\""
+    ]
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "task_id": "erpnext-open-new-sales-order-form-001",
+  "title": "Log In To ERPNext And Open The New Sales Order Form",
+  "goal": "Sign in to ERPNext and stop on a fresh new sales order form.",
+  "instruction": "Open the ERPNext new sales order route, sign in as Administrator with password admin, and stop once the blank New Sales Order form is visible.",
+  "url": "http://localhost:8090/app/sales-order/new-sales-order-1",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "sales-order",
+    "hard"
+  ],
+  "review_notes": "Authenticated ERPNext form task that lands on a fresh New Sales Order document.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk/sales-order/new-sales-order-"
+    },
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "button",
+        "name": "Save"
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Sales Order"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so ERPNext can redirect back to the new sales order form.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk/sales-order/new-sales-order-"
+        },
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "button",
+            "name": "Save"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I signed in and opened a fresh New Sales Order form."
+      },
+      "explanation": "The New Sales Order form is visible now, so I am ending the task."
+    }
+  ]
+}

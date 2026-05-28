@@ -1,0 +1,14 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected Yes because the user usually lives in the UK."}
+{"action":{"type":"click","target":"e4"},"explanation":"The residency answer is complete, so I am moving to the childcare question."}
+{"action":{"type":"click","target":"e5"},"explanation":"I selected the highest childcare-count branch."}
+{"action":{"type":"click","target":"e6"},"explanation":"The childcare answer is complete, so I am moving to work status."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected Self-employed as the current work status."}
+{"action":{"type":"click","target":"e6"},"explanation":"The work status is complete, so I am moving to income."}
+{"action":{"type":"type","target":"e7","text":"1750"},"explanation":"I entered the monthly income for the eligibility estimate."}
+{"action":{"type":"click","target":"e3"},"explanation":"The income is complete, so I am moving to updates."}
+{"action":{"type":"click","target":"e8"},"explanation":"I selected email updates, which reveals the email field."}
+{"action":{"type":"type","target":"e5","text":"invalid-email"},"explanation":"I entered an invalid email format so the page can surface the email validation message."}
+{"action":{"type":"click","target":"e4"},"explanation":"The service should now report that the email address format is invalid."}
+{"action":{"type":"type","target":"e5","text":"family@example.com"},"explanation":"I corrected the email address with a valid format."}
+{"action":{"type":"click","target":"e4"},"explanation":"The corrected email is complete, so I am moving to check answers."}
+{"action":{"type":"finish","summary":"I recovered from the invalid email format and reached check answers with the corrected email address."},"explanation":"The corrected email is reflected on the review page, so I am ending the task."}

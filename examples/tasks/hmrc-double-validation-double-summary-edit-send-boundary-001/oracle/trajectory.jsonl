@@ -1,0 +1,37 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose Pension as the initial income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to the change type."}
+{"action":{"type":"click","target":"e4"},"explanation":"I selected a decrease, which means the new amount must be lower than the old amount."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is set, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"3000"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e8","text":"3200"},"explanation":"I entered an invalid decreased amount first so the numeric validation error appears."}
+{"action":{"type":"click","target":"e3"},"explanation":"The page should reject a decreased route when the new amount is not actually lower."}
+{"action":{"type":"type","target":"e8","text":"2500"},"explanation":"I corrected the new amount so the decrease route can continue."}
+{"action":{"type":"click","target":"e3"},"explanation":"The corrected amount is valid now, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose Email as the initial contact method."}
+{"action":{"type":"click","target":"e6"},"explanation":"The page should now report that the email address is missing."}
+{"action":{"type":"type","target":"e7","text":"casey.hmrc@example.com"},"explanation":"I entered the required email address so the route can continue."}
+{"action":{"type":"click","target":"e6"},"explanation":"The corrected contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Benchmark monster HMRC path."},"explanation":"I added the deterministic supporting note before review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The first route is complete, so I am moving to the review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"I followed the income-source change link so I can correct the route choice from the summary."}
+{"action":{"type":"click","target":"e3"},"explanation":"I changed the income source to Employment pay."}
+{"action":{"type":"click","target":"e7"},"explanation":"The corrected source is set, so I am moving back through the remaining pages."}
+{"action":{"type":"click","target":"e6"},"explanation":"The existing change type is still suitable, so I am keeping it and moving to the previous amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount remains valid, so I am moving to the new amount."}
+{"action":{"type":"click","target":"e3"},"explanation":"The recovered new amount is still valid, so I am moving to contact details."}
+{"action":{"type":"click","target":"e6"},"explanation":"The saved email contact detail is still suitable, so I am moving to supporting notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The preserved note is still correct, so I am returning to review to verify the source change before the next edit."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the new-amount change link so I can update the amount from the summary."}
+{"action":{"type":"type","target":"e8","text":"2600"},"explanation":"I changed the new monthly amount to the final benchmark value."}
+{"action":{"type":"click","target":"e3"},"explanation":"The updated amount is set, so I am moving through contact details again."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact details remain valid, so I am moving to supporting notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The supporting note is unchanged, so I am returning to review to verify the updated amount before the final contact-method edit."}
+{"action":{"type":"click","target":"e8"},"explanation":"I followed the contact-method change link so I can switch the follow-up channel to text message."}
+{"action":{"type":"click","target":"e4"},"explanation":"I changed the contact method to Text message, which switches the detail field to a mobile number."}
+{"action":{"type":"type","target":"e7","text":"07700900123"},"explanation":"I entered the replacement mobile number for follow-up contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"The new contact details are complete, so I am moving back through notes to the final review page."}
+{"action":{"type":"click","target":"e4"},"explanation":"The preserved note is still suitable, so I am returning to review to verify all propagated changes and stop before sending."}
+{"action":{"type":"ask_user","question":"The form is ready and Send update would submit it. Do you want me to continue?"},"explanation":"The final send action would submit the update, so I need confirmation before continuing."}

@@ -1,0 +1,106 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "click",
+      "target": "e2"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s002",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/children\""
+    ]
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": []
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/work-status\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - text present \"You may still be eligible if you are about to start work\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e6"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/income\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e3",
+      "text": "1650"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s008",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/updates\""
+    ]
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s009",
+    "notes": []
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"#/check-answers\"",
+      "postcondition 2: passed - text present \"Not working\""
+    ]
+  }
+]

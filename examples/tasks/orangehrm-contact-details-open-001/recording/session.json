@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-05-29T17:57:51.935Z",
+  "final_snapshot": "s003",
+  "final_url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1",
+  "snapshot_count": 4,
+  "transition_count": 3,
+  "oracle_step_count": 3,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e1",
+        "text": "nexui_admin"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "NExUIAdmin!2026"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [],
+      "postcondition_attempts": 0,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/auth/login"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "click",
+        "target": "e3"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "url contains \"/web/index.php/pim/contactDetails/empNumber/1\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"Heading level 6: Contact Details\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 2,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [],
+      "modal_state": "none",
+      "url": "http://localhost:8080/web/index.php/pim/contactDetails/empNumber/1"
+    }
+  ]
+}

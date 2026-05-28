@@ -1,0 +1,95 @@
+{
+  "task_id": "erpnext-login-open-desk-home-001",
+  "title": "Log In To ERPNext And Stop On Desk Home",
+  "goal": "Sign in to ERPNext with the seeded administrator account and stop on the post-login desk home page.",
+  "instruction": "Open the self-hosted ERPNext login page, sign in as Administrator with password admin, and stop once the authenticated desk home page is visible.",
+  "url": "http://localhost:8090/login",
+  "source": {
+    "site_id": "erpnext-self-hosted",
+    "site_name": "ERPNext Self-Hosted",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "erpnext-self-hosted",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 3,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "erpnext",
+    "authenticated",
+    "desk-home",
+    "hard"
+  ],
+  "review_notes": "First ERPNext authenticated navigation task on the disposable demo site.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/desk"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "ERPNext Settings"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email",
+        "text": "Administrator"
+      },
+      "explanation": "I entered the seeded ERPNext administrator login."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Password",
+        "text": "admin"
+      },
+      "explanation": "I entered the seeded ERPNext password."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Login"
+      },
+      "explanation": "I signed in so the authenticated ERPNext desk can load.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/desk"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "ERPNext Settings"
+        }
+      ],
+      "postcondition_timeout_ms": 30000,
+      "postcondition_poll_interval_ms": 250
+    }
+  ]
+}

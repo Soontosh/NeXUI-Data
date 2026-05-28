@@ -1,0 +1,18 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the update."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is set, so I am moving to the income source."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected Employment pay as the income source."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is complete, so I am moving to how the income changed."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase so the new amount should be higher."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1250"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1580"},"explanation":"I entered the increased new amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount details are complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e4"},"explanation":"I chose Text message as the contact method, which requires a mobile number."}
+{"action":{"type":"type","target":"e7","text":"0712"},"explanation":"I entered a short mobile number so the page can validate the contact detail."}
+{"action":{"type":"click","target":"e6"},"explanation":"The service should now report that the mobile number is too short."}
+{"action":{"type":"type","target":"e7","text":"07123456789"},"explanation":"I corrected the mobile number with a valid value."}
+{"action":{"type":"click","target":"e6"},"explanation":"The corrected contact details are complete, so I am moving to supporting notes."}
+{"action":{"type":"type","target":"e3","text":"Annual salary update."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The route is complete, so I am moving to the review page."}
+{"action":{"type":"finish","summary":"I recovered from the invalid mobile number and reached the review page with the corrected contact details."},"explanation":"The corrected mobile number is reflected on the review page, so I am ending the task."}

@@ -1,0 +1,48 @@
+{
+  "task_id": "account-settings-local-recorded",
+  "title": "Open Account Settings",
+  "goal": "Open the account menu, choose Settings, and stop on the account settings page.",
+  "instruction": "Open the account menu, choose Settings, and stop when the account settings page is visible.",
+  "path": "../sites/account-settings/index.html",
+  "source": {
+    "site_id": "local-account-settings",
+    "site_name": "Local Account Settings Fixture",
+    "category": "ui_automation_demo",
+    "redistribution_class": "redistributable_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "navigation",
+    "settings"
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Account"
+      },
+      "explanation": "I opened the account menu. The settings option should now be available."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "menuitem",
+        "target_name": "Settings"
+      },
+      "explanation": "I selected Settings. The settings page should load next."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the account settings page and stopped there."
+      },
+      "explanation": "The target page is open, so I am ending the task."
+    }
+  ]
+}

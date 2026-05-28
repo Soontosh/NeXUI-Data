@@ -1,0 +1,66 @@
+{
+  "task_id": "gitlab-open-a11y-syntax-highlighting-issues-001",
+  "title": "Open The Seeded a11y-syntax-highlighting Issues List",
+  "goal": "Open the public issues list from a seeded GitLab issue detail page.",
+  "instruction": "Open the self-hosted WebArena Verified GitLab issue detail for byteblaze/a11y-webring.club issue 21, use the Issues navigation to return to the project issues list, and stop there.",
+  "url": "http://localhost:8023/byteblaze/a11y-webring.club/-/issues/21",
+  "source": {
+    "site_id": "webarena-verified-gitlab",
+    "site_name": "WebArena Verified GitLab",
+    "category": "other",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "webarena-verified-gitlab",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "webarena",
+    "gitlab",
+    "issues",
+    "hard"
+  ],
+  "review_notes": "Public GitLab navigation task that returns from a seeded issue detail page to the project issues list.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/byteblaze/a11y-syntax-highlighting/-/issues"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Issues"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target": "e26"
+      },
+      "explanation": "I used the public Issues link on the seeded issue detail page to return to the project issues list."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I reached the project issues list and stopped there."
+      },
+      "explanation": "The requested issues list is open, so I am ending the task."
+    }
+  ]
+}

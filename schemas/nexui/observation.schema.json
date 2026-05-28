@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nexui.dev/schemas/nexui/observation.schema.json",
+  "title": "NExUI Observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "snapshot_id",
+    "url",
+    "title",
+    "locale",
+    "viewport",
+    "focus_target",
+    "modal_state",
+    "artifacts",
+    "candidates"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.0"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^s[0-9]{3}$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "title": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "viewport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "focus_target": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^e[0-9]+$"
+    },
+    "modal_state": {
+      "type": "string",
+      "enum": [
+        "none",
+        "dialog_open",
+        "menu_open",
+        "sheet_open",
+        "unknown"
+      ]
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "screenshot",
+        "dom",
+        "ax_tree",
+        "aria_snapshot",
+        "reader_view",
+        "metadata"
+      ],
+      "properties": {
+        "screenshot": {
+          "type": "string"
+        },
+        "dom": {
+          "type": "string"
+        },
+        "ax_tree": {
+          "type": "string"
+        },
+        "aria_snapshot": {
+          "type": "string"
+        },
+        "reader_view": {
+          "type": "string"
+        },
+        "metadata": {
+          "type": "string"
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ref",
+          "role",
+          "name",
+          "keyboard_reachable",
+          "states"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "pattern": "^e[0-9]+$"
+          },
+          "role": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "keyboard_reachable": {
+            "type": "boolean"
+          },
+          "bounds": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "width": {
+                "type": "number"
+              },
+              "height": {
+                "type": "number"
+              }
+            }
+          },
+          "states": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "expanded": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "selected": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "checked": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "pressed": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "focused": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "invalid": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "required": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+- link "Fork me on GitHub":
+  - /url: https://github.com/tourdedave/the-internet
+  - img "Fork me on GitHub"
+- 'heading "Shifting Content: Menu Element" [level=3]'
+- paragraph: This example demonstrates a menu element shifting a few pixels in either direction on each page load.
+- paragraph:
+  - text: To load it randomly, append
+  - code: "?mode=random"
+  - text: to the URL. Or
+  - link "click here":
+    - /url: /shifting_content/menu?mode=random
+  - text: .
+- paragraph:
+  - text: To specify a differant numbor of pixels to shift the example, append
+  - code: "?pixel_shift=100"
+  - text: to the URL. Or
+  - link "click here":
+    - /url: /shifting_content/menu?pixel_shift=100
+  - text: .
+- paragraph:
+  - text: To do both together, use
+  - code: "?mode=random&pixel_shift=100"
+  - text: . Or
+  - link "click here":
+    - /url: /shifting_content/menu?mode=random&pixel_shift=100
+  - text: .
+- separator
+- list:
+  - listitem:
+    - link "Home":
+      - /url: /
+  - listitem:
+    - link "About":
+      - /url: /about/
+  - listitem:
+    - link "Contact Us":
+      - /url: /contact-us/
+  - listitem:
+    - link "Portfolio":
+      - /url: /portfolio/
+  - listitem:
+    - link "Gallery":
+      - /url: /gallery/
+  - list
+- separator
+- text: Powered by
+- link "Elemental Selenium":
+  - /url: http://elementalselenium.com/

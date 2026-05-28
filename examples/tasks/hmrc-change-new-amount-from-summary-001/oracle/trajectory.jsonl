@@ -1,0 +1,21 @@
+{"action":{"type":"click","target":"e2"},"explanation":"I selected the tax year for the report."}
+{"action":{"type":"click","target":"e4"},"explanation":"The tax year is selected, so I am moving to the income source."}
+{"action":{"type":"click","target":"e5"},"explanation":"I chose Pension as the income source for this route."}
+{"action":{"type":"click","target":"e7"},"explanation":"The income source is selected, so I am moving to the change type."}
+{"action":{"type":"click","target":"e3"},"explanation":"I selected an increase so the new amount should be higher than before."}
+{"action":{"type":"click","target":"e6"},"explanation":"The change type is selected, so I am moving to the previous amount."}
+{"action":{"type":"type","target":"e3","text":"1200"},"explanation":"I entered the previous monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The previous amount is complete, so I am moving to the new amount."}
+{"action":{"type":"type","target":"e3","text":"1500"},"explanation":"I entered the initial new monthly amount."}
+{"action":{"type":"click","target":"e4"},"explanation":"The amount is complete, so I am moving to contact details."}
+{"action":{"type":"click","target":"e3"},"explanation":"I chose email as the contact method."}
+{"action":{"type":"type","target":"e7","text":"first@example.com"},"explanation":"I entered the initial email address for contact."}
+{"action":{"type":"click","target":"e6"},"explanation":"The email contact details are complete, so I am moving to notes."}
+{"action":{"type":"type","target":"e3","text":"Annual pension adjustment."},"explanation":"I added a short note before reaching review."}
+{"action":{"type":"click","target":"e4"},"explanation":"The initial route is complete, so I am moving to check answers."}
+{"action":{"type":"click","target":"e7"},"explanation":"I followed the change link for the new amount so I can update that earlier answer."}
+{"action":{"type":"type","target":"e3","text":"1725.50"},"explanation":"I replaced the initial new amount with the corrected higher value."}
+{"action":{"type":"click","target":"e4"},"explanation":"The updated amount is set, so I am moving forward through the preserved later answers."}
+{"action":{"type":"click","target":"e6"},"explanation":"The contact-method answer remained intact, so I am moving to notes."}
+{"action":{"type":"click","target":"e4"},"explanation":"The supporting note remained intact, so I am returning to the review page to verify the updated amount."}
+{"action":{"type":"finish","summary":"I changed the new monthly amount from check answers and confirmed the review page now shows the updated amount."},"explanation":"The updated amount is visible on the review page, so I am ending the task."}

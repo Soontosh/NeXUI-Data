@@ -1,0 +1,182 @@
+{
+  "task_id": "demoqa-practice-form-submit-modal-001",
+  "title": "Submit DemoQA Practice Form To Confirmation Modal",
+  "goal": "Fill the required fields in the practice form, submit it, and stop when the confirmation dialog appears.",
+  "instruction": "Enter the required details in the DemoQA practice form, submit it, and stop when the confirmation dialog is open.",
+  "url": "https://demoqa.com/automation-practice-form",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": [
+    "type",
+    "click",
+    "finish"
+  ],
+  "tags": [
+    "recorded",
+    "form",
+    "modal",
+    "confirmation",
+    "multi-step"
+  ],
+  "review_notes": "First DemoQA form task that ends in a confirmation dialog and exercises multi-control form completion.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/automation-practice-form"
+    },
+    {
+      "type": "modal_state_is",
+      "value": "dialog_open"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "First Name"
+      },
+      "value": "Nora"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Last Name"
+      },
+      "value": "Reed"
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "name": "Mobile Number"
+      },
+      "value": "7015550101"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Thanks for submitting the form"
+    },
+    {
+      "type": "text_present",
+      "artifact": "aria_snapshot",
+      "value": "Student Name Nora Reed"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "First Name",
+        "text": "Nora"
+      },
+      "explanation": "I entered the first name.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "First Name"
+          },
+          "value": "Nora"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Last Name",
+        "text": "Reed"
+      },
+      "explanation": "I entered the last name.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Last Name"
+          },
+          "value": "Reed"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Female"
+      },
+      "explanation": "I selected the female gender option.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "radio",
+            "name": "Female",
+            "states": {
+              "checked": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Mobile Number",
+        "text": "7015550101"
+      },
+      "explanation": "I entered the mobile number.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Mobile Number"
+          },
+          "value": "7015550101"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Submit"
+      },
+      "explanation": "I submitted the form. I will stop when the confirmation dialog is available.",
+      "postconditions": [
+        {
+          "type": "modal_state_is",
+          "value": "dialog_open"
+        },
+        {
+          "type": "text_present",
+          "artifact": "aria_snapshot",
+          "value": "Thanks for submitting the form"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I completed the required fields, submitted the form, and stopped when the confirmation dialog opened."
+      },
+      "explanation": "The confirmation dialog is open now, so I am ending the task."
+    }
+  ]
+}

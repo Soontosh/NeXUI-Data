@@ -1,0 +1,74 @@
+{
+  "task_id": "demoqa-alerts-prompt-cancel-001",
+  "title": "Dismiss The Prompt Alert",
+  "goal": "Trigger the prompt alert on the DemoQA alerts page, dismiss it without entering text, and stop after the prompt event has been observed without a result being written to the page.",
+  "instruction": "Open the DemoQA alerts page, trigger the prompt alert, dismiss it, and stop once the prompt was handled without any entered-text result appearing.",
+  "url": "https://demoqa.com/alerts",
+  "source": {
+    "site_id": "demoqa",
+    "site_name": "DemoQA",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "demoqa",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": true,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "alerts",
+    "dialog",
+    "prompt"
+  ],
+  "review_notes": "Prompt-dismiss task on DemoQA using a transient dialog trace assertion plus a negative page-state assertion because prompt dismissal does not leave a visible result on the page.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/alerts"
+    },
+    {
+      "type": "trace_note_contains",
+      "value": "dialog: prompt - Please enter your name"
+    },
+    {
+      "type": "text_absent",
+      "artifact": "any_text",
+      "value": "You entered"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "#promtButton"
+      },
+      "dialog": {
+        "action": "dismiss"
+      },
+      "post_delay_ms": 500,
+      "explanation": "I triggered the prompt alert and dismissed it without entering any text."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I dismissed the prompt alert without entering any text, and the page did not show an entered-value result."
+      },
+      "explanation": "The prompt was handled and no entered-text result appeared, so I am ending the task."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e9",
+      "text": "john"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e10",
+      "text": "demo"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e11"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/overview.htm\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"link\",\"name\":\"Request Loan\"}"
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e15"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"/requestloan.htm\"",
+      "postcondition 2: passed - text present \"Apply for a Loan\""
+    ]
+  }
+]

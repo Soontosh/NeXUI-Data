@@ -1,0 +1,106 @@
+{
+  "recorded_at": "2026-05-27T21:19:21.245Z",
+  "final_snapshot": "s004",
+  "final_url": "https://demoqa.com/automation-practice-form",
+  "snapshot_count": 5,
+  "transition_count": 4,
+  "oracle_step_count": 5,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "type",
+        "target": "e2",
+        "text": "Nora"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"Nora\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoqa.com/automation-practice-form"
+    },
+    {
+      "step_index": 1,
+      "action": {
+        "type": "click",
+        "target": "e7"
+      },
+      "before_snapshot": "s001",
+      "after_snapshot": "s002",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "candidate exists for {\"role\":\"radio\",\"name\":\"Female\",\"states\":{\"checked\":true}}",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoqa.com/automation-practice-form"
+    },
+    {
+      "step_index": 2,
+      "action": {
+        "type": "type",
+        "target": "e9",
+        "text": "7015550101"
+      },
+      "before_snapshot": "s002",
+      "after_snapshot": "s003",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "field value equals \"7015550101\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoqa.com/automation-practice-form"
+    },
+    {
+      "step_index": 3,
+      "action": {
+        "type": "click",
+        "target": "e18"
+      },
+      "before_snapshot": "s003",
+      "after_snapshot": "s004",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "modal state is \"none\"",
+          "label": "postcondition",
+          "index": 1
+        },
+        {
+          "passed": true,
+          "message": "text present \"was-validated\"",
+          "label": "postcondition",
+          "index": 2
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "modal_state": "none",
+      "url": "https://demoqa.com/automation-practice-form"
+    }
+  ]
+}

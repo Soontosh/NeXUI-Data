@@ -1,0 +1,97 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Heath93"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "s3cret"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e4"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Account Balance\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e10"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/bankaccounts\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/bankaccounts/new\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "type",
+      "target": "e5",
+      "text": "NExUI Savings Bank"
+    },
+    "to": "s006",
+    "notes": []
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e6",
+      "text": "987654321"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e7",
+      "text": "123456789012"
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e13"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"http://localhost:3000/bankaccounts\"",
+      "postcondition 2: passed - text present \"NExUI Savings Bank\""
+    ]
+  }
+]

@@ -1,0 +1,193 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "byteblaze"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "hello1234"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e5"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - text present \"Projects\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "click",
+      "target": "e20"
+    },
+    "to": "s004",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting\""
+    ]
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues\"",
+      "postcondition 2: passed - text present \"New issue\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e42"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/new\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"button\",\"name\":\"Create issue\"}"
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e35",
+      "text": "NExUI monstrous GitLab issue"
+    },
+    "to": "s007",
+    "notes": []
+  },
+  {
+    "from": "s007",
+    "action": {
+      "type": "type",
+      "target": "e53",
+      "text": "Created for the NExUI monstrous GitLab benchmark path."
+    },
+    "to": "s008",
+    "notes": []
+  },
+  {
+    "from": "s008",
+    "action": {
+      "type": "click",
+      "target": "e62"
+    },
+    "to": "s009",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+      "postcondition 2: passed - text present \"NExUI monstrous GitLab issue\""
+    ]
+  },
+  {
+    "from": "s009",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s010",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues\"",
+      "postcondition 2: passed - text present \"NExUI monstrous GitLab issue\""
+    ]
+  },
+  {
+    "from": "s010",
+    "action": {
+      "type": "click",
+      "target": "e52"
+    },
+    "to": "s011",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+      "postcondition 2: passed - text present \"NExUI monstrous GitLab issue\""
+    ]
+  },
+  {
+    "from": "s011",
+    "action": {
+      "type": "click",
+      "target": "e38"
+    },
+    "to": "s012",
+    "notes": [
+      "postcondition 1: passed - candidate exists for {\"role\":\"button\",\"name\":\"Save changes\"}",
+      "postcondition 2: passed - field value equals \"NExUI monstrous GitLab issue\""
+    ]
+  },
+  {
+    "from": "s012",
+    "action": {
+      "type": "type",
+      "target": "e38",
+      "text": "NExUI monstrous GitLab issue revised"
+    },
+    "to": "s013",
+    "notes": []
+  },
+  {
+    "from": "s013",
+    "action": {
+      "type": "type",
+      "target": "e105",
+      "text": "Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation."
+    },
+    "to": "s014",
+    "notes": []
+  },
+  {
+    "from": "s014",
+    "action": {
+      "type": "click",
+      "target": "e108"
+    },
+    "to": "s015",
+    "notes": [
+      "postcondition 1: passed - text present \"NExUI monstrous GitLab issue revised\"",
+      "postcondition 2: passed - text present \"Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation.\""
+    ]
+  },
+  {
+    "from": "s015",
+    "action": {
+      "type": "click",
+      "target": "e14"
+    },
+    "to": "s016",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues\"",
+      "postcondition 2: passed - candidate exists for {\"role\":\"link\",\"name\":\"NExUI monstrous GitLab issue revised\"}"
+    ]
+  },
+  {
+    "from": "s016",
+    "action": {
+      "type": "click",
+      "target": "e52"
+    },
+    "to": "s017",
+    "notes": [
+      "postcondition 1: passed - url contains \"/byteblaze/a11y-syntax-highlighting/-/issues/\"",
+      "postcondition 2: passed - text present \"NExUI monstrous GitLab issue revised\"",
+      "postcondition 3: passed - text present \"Created for the NExUI monstrous GitLab benchmark path. Pending a second update confirmation.\""
+    ]
+  }
+]

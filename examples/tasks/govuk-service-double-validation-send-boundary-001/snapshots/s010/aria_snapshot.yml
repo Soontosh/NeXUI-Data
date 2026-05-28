@@ -1,0 +1,22 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style service patterns.
+- link "Back":
+  - /url: "#/updates"
+- main:
+  - region "Check your answers before sending your application":
+    - heading "Check your answers before sending your application" [level=1]
+    - table:
+      - rowgroup:
+        - row "Full name Casey Morgan Jr Change full name":
+          - rowheader "Full name"
+          - cell "Casey Morgan Jr"
+          - cell "Change full name":
+            - link "Change full name":
+              - /url: "#/name"
+        - row "Email updates No Change email updates":
+          - rowheader "Email updates"
+          - cell "No"
+          - cell "Change email updates":
+            - link "Change email updates":
+              - /url: "#/updates"
+    - text: Your application is not sent yet. Review the details above before you continue.
+    - button "Send application"

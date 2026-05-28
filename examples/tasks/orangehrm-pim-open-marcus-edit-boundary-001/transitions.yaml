@@ -1,0 +1,76 @@
+[
+  {
+    "from": "s000",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "nexui_admin"
+    },
+    "to": "s001",
+    "notes": []
+  },
+  {
+    "from": "s001",
+    "action": {
+      "type": "type",
+      "target": "e2",
+      "text": "NExUIAdmin!2026"
+    },
+    "to": "s002",
+    "notes": []
+  },
+  {
+    "from": "s002",
+    "action": {
+      "type": "click",
+      "target": "e3"
+    },
+    "to": "s003",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewEmployeeList\""
+    ]
+  },
+  {
+    "from": "s003",
+    "action": {
+      "type": "type",
+      "target": "e1",
+      "text": "Marcus"
+    },
+    "to": "s004",
+    "notes": []
+  },
+  {
+    "from": "s004",
+    "action": {
+      "type": "click",
+      "target": "e31"
+    },
+    "to": "s005",
+    "notes": [
+      "postcondition 1: passed - field value equals \"Marcus\""
+    ]
+  },
+  {
+    "from": "s005",
+    "action": {
+      "type": "click",
+      "target": "e34"
+    },
+    "to": "s006",
+    "notes": [
+      "postcondition 1: passed - url contains \"/web/index.php/pim/viewPersonalDetails/empNumber/3\"",
+      "postcondition 2: passed - text present \"Heading level 6: Personal Details\""
+    ]
+  },
+  {
+    "from": "s006",
+    "action": {
+      "type": "type",
+      "target": "e43",
+      "text": "Quinn"
+    },
+    "to": "s007",
+    "notes": []
+  }
+]

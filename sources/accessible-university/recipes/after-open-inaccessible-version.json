@@ -1,0 +1,74 @@
+{
+  "task_id": "accessible-university-after-open-inaccessible-version-001",
+  "title": "Open The Inaccessible Version From The Accessible AU Page",
+  "goal": "Open the inaccessible version from the Accessible University after page and stop on the destination page.",
+  "instruction": "From the accessible AU page, choose the Inaccessible version link and stop when the destination page is loaded.",
+  "url": "https://projects.accesscomputing.uw.edu/au/after.html",
+  "source": {
+    "site_id": "accessible-university",
+    "site_name": "Accessible University",
+    "category": "accessibility_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "source_surface": "accessible-university",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "finish"
+  ],
+  "difficulty_band": "medium",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 1,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": false,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "accessibility",
+    "before-after",
+    "navigation"
+  ],
+  "review_notes": "Accessibility-first mirror-navigation task from the corrected AU page back to the inaccessible version.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/au/before.html"
+    },
+    {
+      "type": "text_present",
+      "artifact": "any_text",
+      "value": "Inaccessible Version"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "link",
+        "target_name": "Inaccessible version"
+      },
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/au/before.html"
+        }
+      ],
+      "postcondition_timeout_ms": 5000,
+      "explanation": "I opened the inaccessible version from the accessible AU page so the destination comparison page is now loaded."
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I opened the inaccessible AU version from the accessible page and stopped on the destination page."
+      },
+      "explanation": "The destination page is loaded now, so I am ending the task."
+    }
+  ]
+}

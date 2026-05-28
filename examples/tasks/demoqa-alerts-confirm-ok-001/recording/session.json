@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-05-28T21:08:44.099Z",
+  "final_snapshot": "s001",
+  "final_url": "https://demoqa.com/alerts",
+  "snapshot_count": 2,
+  "transition_count": 1,
+  "oracle_step_count": 2,
+  "step_results": [
+    {
+      "step_index": 0,
+      "action": {
+        "type": "click",
+        "target": "e8"
+      },
+      "before_snapshot": "s000",
+      "after_snapshot": "s001",
+      "postconditions": [
+        {
+          "passed": true,
+          "message": "text present \"You selected Ok\"",
+          "label": "postcondition",
+          "index": 1
+        }
+      ],
+      "postcondition_attempts": 1,
+      "postconditions_passed": true,
+      "postconditions_timed_out": false,
+      "dialog_events": [
+        {
+          "type": "confirm",
+          "message": "Do you confirm action?",
+          "handled_as": "accept",
+          "prompt_text": ""
+        }
+      ],
+      "modal_state": "none",
+      "url": "https://demoqa.com/alerts"
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+[project]
+name = "webarena-verified"
+dynamic = ["version"]
+description = "A verified version of the WebArena Benchmark"
+readme = "README.md"
+authors = [
+    { name = "Amine Elhattami", email = "amine.elhattami@servicenow.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "geopy==2.4.1",
+    "geographiclib==2.1",
+    "pint==0.25",
+    "price-parser==0.5.0",
+    "pydantic==2.12.0",
+    "python-dateutil==2.9.0.post0",
+    "pytimeparse2==1.7.1",
+    "unidecode==1.4.0",
+    "url-normalize==2.2.1",
+    "word2number==1.1",
+    "usaddress==0.5.16",
+    "us==3.2.0",
+    "usaddress-scourgify==0.6.0",
+    "beautifulsoup4==4.14.2",
+    "jsonpath-ng==1.7.0",
+    "compact-json==1.8.1",
+    "thefuzz>=0.22.1",
+]
+
+[project.optional-dependencies]
+examples = [
+    "playwright>=1.55.0",
+    "browser-use>=0.8.1",
+    "jinja2>=3.1.6",
+    "aiohttp>=3.12.15",
+    "filelock>=3.16.1",
+    "requests>=2.32.0",
+    "browser-use>=0.9.6",
+]
+
+[project.scripts]
+webarena-verified = "webarena_verified.__main__:main"
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+version_scheme = "no-guess-dev"
+local_scheme = "no-local-version"
+tag_regex = "^v(?P<version>.*)$"
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+exclude = [
+    "dev/",
+]
+
+[tool.hatch.build.targets.wheel.force-include]
+"assets" = "webarena_verified/assets"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/**", "assets/**"]
+
+[dependency-groups]
+dev = [
+    "click>=8.3.0",
+    "datasets>=4.1.1",
+    "docker-squash>=1.2.2",
+    "huggingface-hub>=0.34.4",
+    "environment-control",
+    "pydantic-settings>=2.11.0",
+    "jinja2>=3.1.6",
+    "litellm>=1.80.5",
+    "invoke>=2.2.0",
+    "semver>=3.0.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.21",
+    "mkdocstrings>=0.30.1",
+    "mkdocstrings-python>=1.12.2",
+    "mkdocs-redirects>=1.2.2",
+    "mike>=2.1.0",
+    "pre-commit>=4.0.0",
+    "pytest>=8.4.2",
+    "pytest-cov>=6.0.0",
+    "pytest-playwright>=0.7.0",
+    "pytest-rerunfailures>=15.0",
+    "rich>=14.2.0",
+    "ruff>=0.14.1",
+    "twine>=6.0.1",
+    "ty>=0.0.13",
+    "vermin>=1.6.0",
+    "actionlint-py>=1.7.10.24",
+    "deepdiff>=8.6.1",
+]
+
+[tool.uv]
+default-groups = "all"
+
+[tool.uv.sources]
+environment-control = { path = "packages/environment_control", editable = true }
+
+[tool.ty.environment]
+python-version = "3.11"
+
+[tool.ty.rules]
+# Strict type checking - errors
+invalid-argument-type = "error"
+invalid-assignment = "error"
+invalid-return-type = "error"
+missing-argument = "error"
+unresolved-import = "error"
+
+# Warnings for potential issues
+unresolved-attribute = "warn"
+possibly-missing-attribute = "warn"
+possibly-unresolved-reference = "warn"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = ["examples"]
+
+[tool.ruff.lint]
+select = [
+    # Core
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+
+    # Style & Modernization
+    "N",     # pep8-naming
+    "UP",    # pyupgrade (modern Python syntax)
+
+    # Bug Prevention
+    "B",     # flake8-bugbear (common bugs)
+    "C4",    # flake8-comprehensions
+    "SIM",   # flake8-simplify
+    "RUF",   # Ruff-specific rules
+
+    # Type Annotations
+    "ANN",   # flake8-annotations (require type hints)
+    "TCH",   # type-checking imports
+
+    # Code Quality
+    "A",     # flake8-builtins (avoid shadowing builtins)
+    "ARG",   # flake8-unused-arguments
+    "PT",    # flake8-pytest-style
+    "RET",   # flake8-return
+    "PIE",   # flake8-pie (misc lints)
+
+    # Complexity
+    "C90",   # mccabe complexity
+    "PLC",   # pylint conventions (import placement, etc.)
+    "PLR",   # pylint refactoring (complexity rules)
+
+    # Docstrings (public functions)
+    "D1",    # missing docstrings
+]
+ignore = [
+    # Style preferences
+    "SIM108",  # ternary operator
+
+    # Type annotations
+    "ANN401",  # Any type allowed when needed
+
+    # Pragmatic exceptions
+    "ARG001",  # unused function args (needed for callbacks/API compatibility)
+    "ARG002",  # unused method args (needed for interface/protocol compliance)
+    "ARG003",  # unused class method args (needed for abstract base class signatures)
+
+    # Docstrings (keep public functions, skip the rest)
+    "D100",    # module docstrings
+    "D104",    # package __init__ docstrings
+    "D105",    # magic method docstrings
+    "D107",    # __init__ docstrings
+
+    # Complexity (noisy rules)
+    "PLR2004", # magic values (too noisy for numeric comparisons)
+    "PLR5501", # else-if collapsible (style preference)
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+[tool.ruff.lint.pylint]
+max-args = 7
+max-branches = 15
+max-statements = 60
+
+[tool.ruff.lint.isort]
+known-first-party = ["webarena_verified"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "ANN",     # tests don't need full type annotations
+    "ARG",     # fixtures often have unused args
+    "D",       # tests don't need docstrings
+    "E501",    # long test data URLs are acceptable
+    "PLC0415", # imports inside functions are acceptable in tests
+    "PLR0913", # test functions with many fixtures are acceptable
+    "PT011",   # pytest.raises without match is acceptable in tests
+]
+"**/conftest.py" = [
+    "ANN",     # conftest fixtures don't need annotations
+    "D",       # conftest doesn't need docstrings
+]
+"dev/**/*.py" = [
+    "ANN",     # invoke tasks use dynamic typing from CLI
+    "D101",    # settings classes don't need docstrings
+    "PLR0913", # CLI tasks naturally have many arguments (flags)
+]
+"packages/**/*.py" = [
+    "ANN401",  # Any type allowed for kwargs and generic functions
+]
+"**/patches/**/*.py" = [
+    "E501",    # embedded JavaScript code has long lines
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--strict-config",
+    "--tb=short",
+]
+filterwarnings = [
+    "error",
+    "ignore::DeprecationWarning",
+]
+markers = [
+    "docker: marks tests that require Docker",
+    "integration_docker_shopping: marks tests for shopping (storefront) container",
+    "integration_docker_shopping_admin: marks tests for shopping admin container",
+    "integration_docker_wikipedia: marks tests for wikipedia container",
+    "integration_docker_reddit: marks tests for reddit container",
+    "integration_docker_gitlab: marks tests for gitlab container",
+    "integration_docker_map: marks tests for map (OpenStreetMap) container",
+]
+
+[tool.coverage.run]
+source = ["src/webarena_verified"]
+omit = [
+    "*/tests/*",
+    "*/__main__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]
+precision = 2
+show_missing = true

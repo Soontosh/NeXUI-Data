@@ -1,0 +1,155 @@
+- banner:
+  - heading "OpenStreetMap logo OpenStreetMap" [level=1]:
+    - link "OpenStreetMap logo OpenStreetMap":
+      - /url: http://localhost:3030/#map=16/43.7350/7.4202
+      - img "OpenStreetMap logo"
+      - text: OpenStreetMap
+  - navigation:
+    - link "Edit":
+      - /url: http://localhost:3030/edit#map=16/43.7350/7.4202
+    - button
+    - link "History":
+      - /url: http://localhost:3030/history#map=16/43.7350/7.4202
+    - link "Export":
+      - /url: http://localhost:3030/export#map=16/43.7350/7.4202
+  - navigation:
+    - list:
+      - listitem:
+        - link "GPS Traces":
+          - /url: /traces
+      - listitem:
+        - link "User Diaries":
+          - /url: /diary
+      - listitem:
+        - link "Communities":
+          - /url: /communities
+      - listitem:
+        - link "Copyright":
+          - /url: /copyright
+      - listitem:
+        - link "Help":
+          - /url: /help
+      - listitem:
+        - link "About":
+          - /url: /about
+    - link "Log In":
+      - /url: http://localhost:3030/login?referer=%2Fdirections%3Fengine%3Dfossgis_osrm_car%26route%3D43.7384%2C7.4246%3B43.7308%2C7.4189%26from%3DAvenue%2520de%2520l%2527Hermitage%26to%3DMonaco-Ville#map=16/43.7350/7.4202
+    - link "Sign Up":
+      - /url: /user/new
+- button "Close"
+- img
+- textbox "From": 43.7308, 7.4189
+- img
+- textbox "To": 43.7384, 7.4246
+- combobox:
+  - option "Bicycle (OSRM)" [selected]
+  - option "Car (OSRM)"
+  - option "Foot (OSRM)"
+- button "Go"
+- button "Reverse Directions"
+- heading "Directions" [level=2]
+- button "Close"
+- paragraph: "Distance: 1.6km. Time: 0:07."
+- table:
+  - row "1. Start on Tunnel Rocher Palais 170m":
+    - cell
+    - cell "1. Start on Tunnel Rocher Palais"
+    - cell "170m"
+  - row "2. At the fork turn left onto Tunnel Rocher Albert Ier 130m":
+    - cell
+    - cell "2. At the fork turn left onto Tunnel Rocher Albert Ier"
+    - cell "130m"
+  - row "3. Continue on Tunnel Rocher Palais 120m":
+    - cell
+    - cell "3. Continue on Tunnel Rocher Palais"
+    - cell "120m"
+  - row "4. Continue on Boulevard Albert 1er 400m":
+    - cell
+    - cell "4. Continue on Boulevard Albert 1er"
+    - cell "400m"
+  - row "5. At roundabout take 2nd exit onto Avenue d'Ostende 10m":
+    - cell
+    - cell "5. At roundabout take 2nd exit onto Avenue d'Ostende"
+    - cell "10m"
+  - row "6. Exit roundabout onto Avenue d'Ostende 400m":
+    - cell
+    - cell "6. Exit roundabout onto Avenue d'Ostende"
+    - cell "400m"
+  - row "7. Continue on Avenue Princesse Alice 180m":
+    - cell
+    - cell "7. Continue on Avenue Princesse Alice"
+    - cell "180m"
+  - row "8. Turn left onto Square Beaumarchais 40m":
+    - cell
+    - cell "8. Turn left onto Square Beaumarchais"
+    - cell "40m"
+  - row "9. Slight left onto Avenue de l'Hermitage 140m":
+    - cell
+    - cell "9. Slight left onto Avenue de l'Hermitage"
+    - cell "140m"
+  - row "10. Turn right onto unnamed road 10m":
+    - cell
+    - cell "10. Turn right onto unnamed road"
+    - cell "10m"
+  - row "11. Reach destination":
+    - cell
+    - cell "11. Reach destination"
+    - cell
+- paragraph:
+  - text: Directions courtesy of
+  - link "OSRM (FOSSGIS)":
+    - /url: https://routing.openstreetmap.de/about.html
+- heading "Share" [level=4]
+- button "Close"
+- heading "Link or HTML" [level=4]
+- checkbox "Include marker"
+- text: Include marker
+- link "Link":
+  - /url: http://openstreetmap.example.com/#map=16/43.7350/7.4202
+- link "Short Link":
+  - /url: http://localhost/go/xXYlLbWi
+- link "HTML":
+  - /url: "#"
+- textbox: http://openstreetmap.example.com/#map=16/43.7350/7.4202
+- heading "Geo URI" [level=4]
+- link "geo:43.7350,7.4202?z=16":
+  - /url: geo:43.7350,7.4202?z=16
+- heading "Image" [level=4]
+- checkbox "Set custom dimensions"
+- text: "Set custom dimensions Format:"
+- combobox "Format:":
+  - option "PNG" [selected]
+  - option "JPEG"
+  - option "SVG"
+  - option "PDF"
+- text: "Scale: 1 :"
+- textbox "Scale:": "6251"
+- paragraph: Image will show standard layer at 1146 x 1153
+- button "Download"
+- img
+- button "Marker"
+- button "Marker"
+- link "Zoom In":
+  - /url: "#"
+- link "Zoom Out":
+  - /url: "#"
+- button "Show My Location"
+- link "Layers":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link "Share":
+  - /url: "#"
+- link:
+  - /url: "#"
+- link:
+  - /url: "#"
+- text: 100 m 500 ft ©
+- link "OpenStreetMap contributors":
+  - /url: /copyright
+- text: ♥
+- link "Make a Donation":
+  - /url: https://donate.openstreetmap.org
+- text: .
+- link "Website and API terms":
+  - /url: https://wiki.osmfoundation.org/wiki/Terms_of_Use

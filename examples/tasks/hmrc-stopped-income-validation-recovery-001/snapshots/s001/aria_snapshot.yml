@@ -1,0 +1,12 @@
+- text: Prototype This local fixture is derived from HMRC-style prototype patterns for complex service journeys.
+- main:
+  - region "Which tax year are you updating?":
+    - heading "Which tax year are you updating?" [level=1]
+    - paragraph: Choose the tax year for the income change you want to report.
+    - group "Which tax year are you updating?":
+      - text: Which tax year are you updating?
+      - radio "2025 to 2026"
+      - text: 2025 to 2026
+      - radio "2024 to 2025" [checked]
+      - text: 2024 to 2025
+    - button "Continue"

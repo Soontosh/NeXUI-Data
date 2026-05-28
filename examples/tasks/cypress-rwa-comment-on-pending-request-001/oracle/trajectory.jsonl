@@ -1,0 +1,8 @@
+{"action":{"type":"type","target":"e1","text":"Heath93"},"explanation":"I entered the seeded username for the local demo account."}
+{"action":{"type":"type","target":"e2","text":"s3cret"},"explanation":"I entered the shared seeded password for the example user."}
+{"action":{"type":"click","target":"e4"},"explanation":"I submitted the sign-in form so the authenticated transaction feeds can load."}
+{"action":{"type":"click","target":"e7"},"explanation":"I switched to the personal feed so the signed-in user's transactions are visible."}
+{"action":{"type":"click","target":"e17"},"explanation":"I opened the seeded pending request transaction so I can add a comment in its detail view."}
+{"action":{"type":"type","target":"e6","text":"NExUI seeded comment"},"explanation":"I entered a unique comment so the new detail-view state can be verified."}
+{"action":{"type":"press","key":"Enter"},"explanation":"I submitted the new comment from the transaction detail form."}
+{"action":{"type":"finish","summary":"I signed in, opened the seeded pending request detail page, and added a new comment."},"explanation":"The new comment is visible now, so I am ending the task."}

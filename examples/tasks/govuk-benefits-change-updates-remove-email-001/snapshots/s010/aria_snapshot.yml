@@ -1,0 +1,16 @@
+- text: Prototype This local service prototype is derived from GOV.UK-style eligibility and review journeys.
+- link "Back":
+  - /url: "#/income"
+- main:
+  - region "Do you want updates about your eligibility check by email?":
+    - heading "Do you want updates about your eligibility check by email?" [level=1]
+    - group "Do you want updates by email?":
+      - text: Do you want updates by email?
+      - radio "Yes" [checked]
+      - text: "Yes"
+      - radio "No"
+      - text: "No"
+    - text: Email address
+    - paragraph: We will only use this to send updates about this eligibility check.
+    - textbox "Email address": childcare@example.com
+    - button "Continue"

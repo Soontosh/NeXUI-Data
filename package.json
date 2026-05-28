@@ -1,0 +1,15 @@
+{
+  "name": "nexui",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Browser capture worker for NExUI snapshot generation",
+  "scripts": {
+    "browsers:install": "playwright install chromium",
+    "test:tools": "node --test tools/lib/browser-artifacts.test.mjs tools/capture-snapshot.test.mjs",
+    "capture:example": "node tools/capture-snapshot.mjs --url https://example.com --snapshot-dir tmp/example-capture",
+    "record:local-example": "node tools/record-task.mjs --recipe examples/recipes/account-settings-local.json --output-dir tmp/recorded-tasks --overwrite"
+  },
+  "dependencies": {
+    "playwright": "1.60.0"
+  }
+}

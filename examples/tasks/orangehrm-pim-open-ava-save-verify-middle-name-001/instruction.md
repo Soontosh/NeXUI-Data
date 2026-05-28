@@ -1,0 +1,1 @@
+Sign in to the local OrangeHRM admin account, search for Ava Patel in PIM, open the employee detail page, enter Quinn as the middle name, save the change, and stop once the saved value is still visible.

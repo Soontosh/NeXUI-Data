@@ -1,0 +1,282 @@
+{
+  "task_id": "webarena-admin-add-user-save-grid-open-edit-role-verify-001",
+  "title": "Create A Magento Admin User, Verify It In The Grid, Reopen It, And Verify The Administrator Role",
+  "goal": "Open the authenticated Magento Add New User form, create a new administrator, verify the row from the users grid, reopen the saved user, and verify the saved identity fields and selected role on the edit surface.",
+  "instruction": "From the authenticated Magento admin users grid, open Add New User, create Selene Voss with username selene.voss and email selene.voss@example.test, keep the Administrators role selected, save the user, verify the new account appears in the users grid, reopen the saved user from the grid, verify the saved username and email on the main form, switch to User Role, and stop once the Administrators role is still selected.",
+  "url": "http://localhost:7780/admin/admin/user/",
+  "http_headers": {
+    "X-M2-Admin-Auto-Login": "admin:admin1234"
+  },
+  "source_surface": "webarena-verified-shopping-admin",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "very_hard",
+  "difficulty_dimensions": {
+    "authentication_required": true,
+    "meaningful_action_count": 16,
+    "cross_view_verification": true,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": true,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 7,
+  "requires_source_reset": true,
+  "tags": [
+    "recorded",
+    "webarena",
+    "shopping-admin",
+    "admin-users",
+    "mutating",
+    "cross-view",
+    "very_hard",
+    "monstrous"
+  ],
+  "review_notes": "Monstrous WebArena shopping-admin task that creates a new admin user, verifies the grid row, reopens the saved user, re-verifies the identity fields, and ends on the role-selection surface with the Administrators role still selected.",
+  "success_assertions": [
+    {
+      "type": "candidate_exists",
+      "match": {
+        "role": "radio",
+        "value": "1",
+        "states": {
+          "checked": true
+        }
+      }
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "selene.voss"
+    },
+    {
+      "type": "text_present",
+      "artifact": "dom",
+      "value": "selene.voss@example.test"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Add New User"
+      },
+      "explanation": "I opened the Magento admin user-creation form so I can create the benchmark account.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/new/"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Heading level 1: New User"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='username']",
+        "text": "selene.voss"
+      },
+      "explanation": "I entered the new admin username."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='firstname']",
+        "text": "Selene"
+      },
+      "explanation": "I entered the new admin first name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='lastname']",
+        "text": "Voss"
+      },
+      "explanation": "I entered the new admin last name."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='email']",
+        "text": "selene.voss@example.test"
+      },
+      "explanation": "I entered the benchmark email address."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I entered the new admin password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='password_confirmation']",
+        "text": "NExUIUser!2026"
+      },
+      "explanation": "I confirmed the new admin password."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "input[name='current_password']",
+        "text": "admin1234"
+      },
+      "explanation": "I entered the current admin password required to authorize the new account."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-roles-section']"
+      },
+      "explanation": "I switched to the role-selection tab so the administrator role can be confirmed before saving.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "Administrators"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//div[@id='permissionsUserRolesGrid']//td[normalize-space()='Administrators']/preceding-sibling::td//input[@type='radio']"
+      },
+      "explanation": "I selected the Administrators role for the new account.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "radio",
+            "value": "1",
+            "states": {
+              "checked": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-main-section']"
+      },
+      "explanation": "I returned to the main form so the completed user details are visible before saving.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "User Name"
+          },
+          "value": "selene.voss"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Save User"
+      },
+      "explanation": "I saved the new Magento admin account so I can verify it from the users grid and then reopen it.",
+      "wait_until": "networkidle",
+      "post_delay_ms": 2000,
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "selene.voss"
+        },
+        {
+          "type": "text_present",
+          "artifact": "dom",
+          "value": "selene.voss@example.test"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//tr[@data-role='row' and .//td[normalize-space()='selene.voss']]"
+      },
+      "explanation": "I reopened the saved grid row so I can verify the persisted identity fields and role from the edit surface.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/admin/admin/user/edit/user_id/"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "User Name"
+          },
+          "value": "selene.voss"
+        },
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "name": "Email"
+          },
+          "value": "selene.voss@example.test"
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_selector": "xpath=//a[@data-ui-id='adminhtml-user-edit-tabs-tab-link-roles-section']"
+      },
+      "explanation": "I switched back to User Role on the reopened edit page so the final state proves the Administrators role persisted too.",
+      "postconditions": [
+        {
+          "type": "candidate_exists",
+          "match": {
+            "role": "radio",
+            "value": "1",
+            "states": {
+              "checked": true
+            }
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 15000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I created the Magento admin user Selene Voss, verified the saved grid row, reopened the user, and verified both the identity fields and the persisted Administrators role."
+      },
+      "explanation": "The reopened admin edit surface still shows the saved identity fields and the Administrators role, so I am ending the task."
+    }
+  ]
+}

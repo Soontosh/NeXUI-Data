@@ -1,0 +1,221 @@
+{
+  "task_id": "govuk-benefits-invalid-email-format-recovery-001",
+  "title": "Recover From An Invalid Email Address Format",
+  "goal": "Reach the updates step, trigger the invalid-email-format validation error, correct it, and stop on the check-answers page with the corrected email address.",
+  "instruction": "Complete the childcare-support eligibility prototype until the updates step. If the page rejects an invalid email address format, correct it and continue until the check-answers page is visible.",
+  "path": "../../../examples/sites/govuk-benefits-eligibility-prototype/index.html",
+  "source": {
+    "site_id": "govuk-benefits-eligibility-prototype-local",
+    "site_name": "Local GOV.UK Benefits Eligibility Prototype",
+    "category": "government_pattern",
+    "redistribution_class": "redistributable_source"
+  },
+  "source_surface": "govuk-benefits-eligibility-prototype-local",
+  "risk_level": "safe",
+  "allowed_actions": [
+    "click",
+    "type",
+    "finish"
+  ],
+  "difficulty_band": "hard",
+  "difficulty_dimensions": {
+    "authentication_required": false,
+    "meaningful_action_count": 12,
+    "cross_view_verification": false,
+    "summary_edit_propagation": false,
+    "conditional_ui": true,
+    "async_or_modal": false,
+    "dense_controls": false,
+    "safety_boundary": false
+  },
+  "split": "dev",
+  "stability_runs_passed": 1,
+  "tags": [
+    "recorded",
+    "service-form",
+    "eligibility-prototype",
+    "validation-recovery",
+    "email-format",
+    "hard"
+  ],
+  "review_notes": "Validation-recovery task on the benefits prototype. It intentionally triggers the email-format error on the updates branch and then corrects it.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "#/check-answers"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "family@example.com"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Yes"
+    },
+    {
+      "type": "text_present",
+      "artifact": "reader_view",
+      "value": "Self-employed"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected Yes because the user usually lives in the UK."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The residency answer is complete, so I am moving to the childcare question.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/children"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "3 or more children"
+      },
+      "explanation": "I selected the highest childcare-count branch."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The childcare answer is complete, so I am moving to work status.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/work-status"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Self-employed"
+      },
+      "explanation": "I selected Self-employed as the current work status."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The work status is complete, so I am moving to income.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/income"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Monthly income",
+        "text": "1750"
+      },
+      "explanation": "I entered the monthly income for the eligibility estimate."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The income is complete, so I am moving to updates.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/updates"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "radio",
+        "target_name": "Yes"
+      },
+      "explanation": "I selected email updates, which reveals the email field."
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "invalid-email"
+      },
+      "explanation": "I entered an invalid email format so the page can surface the email validation message."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The service should now report that the email address format is invalid.",
+      "postconditions": [
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "Enter an email address in the correct format"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_role": "textbox",
+        "target_name": "Email address",
+        "text": "family@example.com"
+      },
+      "explanation": "I corrected the email address with a valid format."
+    },
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Continue"
+      },
+      "explanation": "The corrected email is complete, so I am moving to check answers.",
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "#/check-answers"
+        },
+        {
+          "type": "text_present",
+          "artifact": "reader_view",
+          "value": "family@example.com"
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I recovered from the invalid email format and reached check answers with the corrected email address."
+      },
+      "explanation": "The corrected email is reflected on the review page, so I am ending the task."
+    }
+  ]
+}

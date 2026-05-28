@@ -1,0 +1,85 @@
+{
+  "task_id": "internet-dynamic-controls-enable-type-001",
+  "title": "Enable Dynamic Input And Type",
+  "goal": "Enable the disabled input, type short text, and stop there.",
+  "instruction": "Enable the input field, wait until it becomes available, type NExUI, and stop when the value is present.",
+  "url": "https://the-internet.herokuapp.com/dynamic_controls",
+  "source": {
+    "site_id": "the-internet",
+    "site_name": "The Internet",
+    "category": "ui_automation_demo",
+    "redistribution_class": "live_only_academic_source"
+  },
+  "risk_level": "safe",
+  "allowed_actions": ["click", "type", "finish"],
+  "tags": ["recorded", "dynamic-controls", "async", "postconditions"],
+  "review_notes": "Representative Stage 2 task for async state change plus postcondition-based verification.",
+  "success_assertions": [
+    {
+      "type": "url_contains",
+      "value": "/dynamic_controls"
+    },
+    {
+      "type": "field_enabled",
+      "match": {
+        "role": "textbox",
+        "tag": "input"
+      }
+    },
+    {
+      "type": "field_value_equals",
+      "match": {
+        "role": "textbox",
+        "tag": "input"
+      },
+      "value": "NExUI"
+    }
+  ],
+  "steps": [
+    {
+      "action": {
+        "type": "click",
+        "target_role": "button",
+        "target_name": "Enable"
+      },
+      "explanation": "I triggered the enable action. I will wait until the input becomes available before typing.",
+      "postconditions": [
+        {
+          "type": "field_enabled",
+          "match": {
+            "role": "textbox",
+            "tag": "input"
+          }
+        }
+      ],
+      "postcondition_timeout_ms": 10000,
+      "postcondition_poll_interval_ms": 250
+    },
+    {
+      "action": {
+        "type": "type",
+        "target_selector": "#input-example input",
+        "text": "NExUI"
+      },
+      "explanation": "The input is enabled now, so I typed the requested text.",
+      "postconditions": [
+        {
+          "type": "field_value_equals",
+          "match": {
+            "role": "textbox",
+            "tag": "input"
+          },
+          "value": "NExUI"
+        }
+      ],
+      "postcondition_timeout_ms": 2000
+    },
+    {
+      "action": {
+        "type": "finish",
+        "summary": "I enabled the input, typed NExUI, and stopped when the value was present."
+      },
+      "explanation": "The input is enabled and contains the requested value, so I am ending the task."
+    }
+  ]
+}
